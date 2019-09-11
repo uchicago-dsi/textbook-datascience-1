@@ -1,0 +1,32 @@
+version: '2'
+
+services:
+    jupyter:
+        # TODO: add'l required libraries?
+        build: ./image/jupyter-service
+        command:
+            - start-notebook.sh
+            - "--NotebookApp.notebook_dir=textbook/content"
+            - "--NotebookApp.token=${JUPYTER_TOKEN}"
+        ports:
+            - 8888:8888
+        volumes:
+            - ./textbook:/home/jovyan/textbook
+
+    preview:
+        image: emdupre/jupyter-book
+        command:
+            - bundle
+            - exec
+            - jekyll
+            - serve
+            - --host=0.0.0.0
+        ports:
+            # 8008 is more commonly forwarded by default (such as in
+            # virtual-machine set-ups); so, use this on the host:
+            - 8008:4000
+        security_opt:
+            - label:disable
+        user: 1000:1000
+        volumes:
+            - ./textbook:/srv/jekyll
