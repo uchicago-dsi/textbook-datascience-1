@@ -1,6 +1,6 @@
 = Textbook: Data Science I
 
-This repository contains the contents and build of the textbook of the University of Chicago course Data Science I.
+This repository contains the source materials and build artifacts of the textbook of the University of Chicago course Data Science I.
 
 All textbook contents are generated from Markdown source files and Jupyter Notebooks, converted by Jupyter Book into Jekyll-templated Markdown files, to be served by GitHub Pages.
 
