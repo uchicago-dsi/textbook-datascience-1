@@ -28,3 +28,12 @@ MANIFEST
 # Jekyll
 _site/
 .sass-cache
+
+# install-cli
+.install.*.bash.inc
+
+# pyenv
+.python-version
+
+# docker-compose
+.env

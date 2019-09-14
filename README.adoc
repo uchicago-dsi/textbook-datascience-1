@@ -2,9 +2,69 @@
 
 This repository contains the source materials and build artifacts of the textbook of the University of Chicago course Data Science I.
 
-All textbook contents are generated from Markdown source files and Jupyter Notebooks, converted by Jupyter Book into Jekyll-templated Markdown files, to be served by GitHub Pages.
+All textbook contents are generated from Markdown source files and Jupyter Notebooks, converted by https://jupyter.org/jupyter-book[Jupyter Book] into Jekyll-templated Markdown files, to be served by GitHub Pages.
+
+The published textbook may be accessed https://uchicagods.github.io/uchicagods/textbook-datascience-1/[here].
 
 
 == Getting started
 
-...
+=== Prerequisites
+
+Development of this textbook requires that you have pre-installed on your computer:
+
+* https://www.python.org/downloads/[Python version 3.6 or higher]
+* https://docs.docker.com/install/[Docker-CE]
+
+If you're not sure, you can test for the presence of commands in your terminal as follows:
+
+    $ which docker python3.6 python3.7
+
+=== Set-up
+
+Set up your environment for textbook development by executing the included Bash script:
+
+    $ ./setup
+
+The `setup` script will guide you through installation of any further required libraries.
+
+
+== Development
+
+Having set up your textbook-development environment, you may manage it via the installed shell command, `manage`:
+
+    $ manage [--help|...]
+
+To begin a session, you'll want to start the development servers:
+
+    $ manage start
+
+The above command will ensure that the necessary Docker containers are built and running.
+
+At the end of the output of the `start` command, you'll see the URLs of your local development servers:
+
+1. a Jupyter server, for authoring plain-text content via Markdown files and programmatic/interative content via Jupyter Notebooks
+1. a Jekyll server, for previewing Jupyter Book-generated Jekyll templates as HTML in your browser
+
+Note, however, that Jupyter Book does not build continuously.
+
+Therefore, once you've made a change to a source file under the `textbook/content/` directory, you may prepare it for previewing and publishing by executing the `build` command:
+
+    $ manage build
+
+The above command will generate Jekyll-templated Markdown files from your source content, and write these under the `textbook/_build/` directory. Your changes will then be available for previewing and publishing.
+
+=== Packing it in
+
+Once you've completed your session, feel free to release computational resources by stopping the development servers:
+
+    $ manage stop
+
+
+== Deployment
+
+GitHub Pages serves the contents of the `gh-pages` branch. The contents of this branch are *not* intended to be manipulated directly; rather, the contents of the sub-directory `textbook/` in the `master` branch may be pushed to the `gh-pages` branch -- and thereby published -- via Git command `subtree push`, or by executing the management command `promote`:
+
+    $ manage promote
+
+`promote` accepts the optional flags `-y|--yes` and `-f|--force`; refer to `manage promote --help` for details.
