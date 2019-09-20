@@ -4,7 +4,7 @@ This repository contains the source materials and build artifacts of the textboo
 
 All textbook contents are generated from Markdown source files and Jupyter Notebooks, converted by https://jupyter.org/jupyter-book[Jupyter Book] into Jekyll-templated Markdown files, to be served by GitHub Pages.
 
-The published textbook may be accessed https://uchicagods.github.io/uchicagods/textbook-datascience-1/[here].
+The published textbook may be accessed https://ds1.datascience.uchicago.edu/[here].
 
 
 == Getting started
@@ -68,3 +68,17 @@ GitHub Pages serves the contents of the `gh-pages` branch. The contents of this 
     $ manage promote
 
 `promote` accepts the optional flags `-y|--yes` and `-f|--force`; refer to `manage promote --help` for details.
+
+=== Troubleshooting builds
+
+If GitHub has a problem building what's promoted, it will e-mail the user who authored the failing changeset.
+
+Moreover, the `promote` command will poll the GitHub API for the status of your build, provided that you've populated your shell environment with the variable `GH_CREDENTIALS`.
+
+For basic authentication (with your GitHub password), you might set this variable as follows:
+
+    $ export GH_CREDENTIALS=my-user-name:my-password
+
+However, this form of authentication is not terribly secure as is. Alternatively, consider creating a https://github.com/settings/tokens[Personal Access Token], for use as your password in just this context. The token need only be given permissions in the `repo` scope, (and it can be easily recreated or deleted as appropriate).
+
+(And to configure your shell to automatically populate this variable, but only from this repository directory, consider https://direnv.net/[direnv].)

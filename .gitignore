@@ -33,3 +33,6 @@ MANIFEST
 
 # docker-compose
 .env
+
+# direnv
+.envrc
