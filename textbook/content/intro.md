@@ -21,7 +21,7 @@ Here are a few features of Jupyter Books
 * There are lots of nifty HTML features under-the-hood, such as
   Turbolinks fast-navigation and click-to-copy in code cells.
 
-Check out other features in the [Features section](features/features).
+~~Check out other features in the Features section.~~
 
 ## Getting started
 
