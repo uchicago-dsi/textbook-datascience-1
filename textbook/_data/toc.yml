@@ -24,14 +24,7 @@
 - title: Search
   search: true
 
-
-- title: GitHub repository
-  url: https://github.com/jupyter/jupyter-book
-  external: true
-  not_numbered: true
-
 - divider: true
-- header: Demo textbook
 
 - title: Data Science
   url: /01/what-is-data-science
