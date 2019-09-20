@@ -28,8 +28,8 @@ Here are a few features of Jupyter Books
 To get started, you may be interested in the following links.
 Here are a few links of interest:
 
-* **[Jupyter Book features](features/features)** is a quick demo and overview
-  of Jupyter Books.
+* ~~**Jupyter Book features** is a quick demo and overview
+  of Jupyter Books.~~
 
 * **[The Jupyter Book Guide](guide/01_overview)**
   will step you through the process of configuring and building your own Jupyter Book.
