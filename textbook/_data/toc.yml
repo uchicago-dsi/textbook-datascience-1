@@ -24,36 +24,6 @@
 - title: Search
   search: true
 
-- title: Features and customization
-  url: /features/features
-  not_numbered: true
-  expand_sections: true
-  sections:
-  - title: Markdown files
-    url: /features/markdown
-    not_numbered: true
-  - title: Jupyter notebooks
-    url: /features/notebooks
-    not_numbered: true
-  - title: Hiding code blocks or entire cells
-    url: /features/hiding
-    not_numbered: true
-  - title: Connecting content with JupyterHub and Binder
-    url: /features/interact
-    not_numbered: true
-  - title: Adding interactivity to your book pages
-    url: /features/interactive_cells
-    not_numbered: true
-  - title: Citations and bibliographies
-    url: /features/citations
-    not_numbered: true
-  - title: Searching your book
-    url: /features/search
-    not_numbered: true
-  - title: Feature Limits
-    url: /features/limits
-    not_numbered: true
-
 
 - title: GitHub repository
   url: https://github.com/jupyter/jupyter-book
