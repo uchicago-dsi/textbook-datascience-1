@@ -16,14 +16,14 @@
 
 #######################################################################################
 # Jekyll site settings
-title: Jupyter Book
-author: The Jupyter Book Community
-email: choldgraf@berkeley.edu
+title: Data Science I
+author: "University of Chicago"
+email: "jslondon@uchicago.edu"
 description: >- # this means to ignore newlines until "baseurl:"
-  This is an example book built with Jupyter Books.
+  The University of Chicago textbook to Data Science I.
 
-baseurl: "" # the subpath of your site, e.g. /blog. If there is no subpath for your site, use an empty string ""
-url: https://ds1.datascience.uchicago.edu # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: ""     # the subpath of your site, e.g. /blog. If there is no subpath for your site, use an empty string ""
+url: https://ds1.datascience.uchicago.edu       # the base hostname & protocol for your site, e.g. http://example.com
 
 
 #######################################################################################
@@ -47,21 +47,21 @@ search_max_words_in_content : 100  # In the search function, use at most this ma
 use_jupyterlab                   : false  # If 'true', interact links will use JupyterLab as the interface
 
 # Jupyterhub link settings
-use_jupyterhub_button            : false  # If 'true', display a button that will direct users to a JupyterHub (that you provide)
-jupyterhub_url                   : 'https://datascience.uchicago.edu/s/jupyter'                     # The URL for your JupyterHub. If no URL, use "". DO NOT include trailing slash.
-jupyterhub_interact_text         : "Interact"  # The text that interact buttons will contain.
+use_jupyterhub_button            : true  # If 'true', display a button that will direct users to a JupyterHub (that you provide)
+jupyterhub_url                   : https://datascience.uchicago.edu/s/jupyter                     # The URL for your JupyterHub. If no URL, use "". Do not include trailing slash.
+jupyterhub_interact_text         : Interact  # The text that interact buttons will contain.
 
 # Binder link settings
-use_binder_button                : true  # If 'true', add a binder button for interactive links
-binderhub_url                    : "https://mybinder.org"  # The URL for your BinderHub. If no URL, use ""
-binder_repo_base                 : "https://github.com/"  # The site on which the textbook repository is hosted
-binder_repo_org                  : "jupyter"  # The username or organization that owns this repository
-binder_repo_name                 : "jupyter-book"  # The name of the repository on the web
-binder_repo_branch               : "gh-pages"  # The branch on which your textbook is hosted.
-binderhub_interact_text          : "Interact"  # The text that interact buttons will contain.
+use_binder_button                : false  # If 'true', add a binder button for interactive links
+binderhub_url                    : https://mybinder.org  # The URL for your BinderHub. If no URL, use ""
+binder_repo_base                 : https://github.com  # The site on which the textbook repository is hosted
+binder_repo_org                  : uchicagods  # The username or organization that owns this repository
+binder_repo_name                 : textbook-datascience-1  # The name of the repository on the web
+binder_repo_branch               : gh-pages  # The branch on which your textbook is hosted.
+binderhub_interact_text          : Interact  # The text that interact buttons will contain.
 
 # Thebelab settings
-use_thebelab_button              : true  # If 'true', display a button to allow in-page running code cells with Thebelab
+use_thebelab_button              : false  # If 'true', display a button to allow in-page running code cells with Thebelab
 thebelab_button_text             : "Thebelab"  # The text to display inside the Thebelab initialization button
 codemirror_theme                 : "abcdef"  # Theme for codemirror cells, for options see https://codemirror.net/doc/manual.html#config
 

@@ -11,7 +11,7 @@
   <meta name="description" content="3.1 ExpressionsProgramming languages are much simpler than human languages. Nonetheless, there are some rules of grammar to learn in any language, and that i...">
 
   <link rel="canonical" href="https://ds1.datascience.uchicago.edu/03/1/Expressions.html">
-  <link rel="alternate" type="application/rss+xml" title="Jupyter Book" href="https://ds1.datascience.uchicago.edu/feed.xml">
+  <link rel="alternate" type="application/rss+xml" title="Data Science I" href="https://ds1.datascience.uchicago.edu/feed.xml">
 
   <meta property="og:url"         content="https://ds1.datascience.uchicago.edu/03/1/Expressions.html" />
 <meta property="og:type"        content="article" />
@@ -29,14 +29,14 @@
   "headline":
     "Expressions",
   "datePublished":
-    "2019-09-18T16:16:12-05:00",
+    "2019-09-20T12:28:51-05:00",
   "dateModified":
-    "2019-09-18T16:16:12-05:00",
+    "2019-09-20T12:28:51-05:00",
   "description":
     "3.1 ExpressionsProgramming languages are much simpler than human languages. Nonetheless, there are some rules of grammar to learn in any language, and that i...",
   "author": {
     "@type": "Person",
-    "name": "The Jupyter Book Community"
+    "name": "University of Chicago"
   },
   "publisher": {
     "@type": "Organization",
@@ -143,134 +143,6 @@ initFunction(function () {
 
   <!-- Load Thebelab for interactive widgets -->
   <!-- Include Thebelab for interactive code if it's enabled -->
-
-
-<!-- Display Thebelab button in each code cell -->
-<script>
-/**
- * Set up thebelab button for code blocks
- */
-
-const thebelabCellButton = id =>
-  `<a id="thebelab-cell-button-${id}" class="btn thebebtn o-tooltip--left" data-tooltip="Interactive Mode">
-    <img src="/assets/images/edit-button.svg" alt="Start interactive mode">
-  </a>`
-
-
-const addThebelabButtonToCodeCells =  () => {
-
-  const codeCells = document.querySelectorAll('div.input_area > div.highlighter-rouge:not(.output) pre')
-  codeCells.forEach((codeCell, index) => {
-    const id = codeCellId(index)
-    codeCell.setAttribute('id', id)
-    if (document.getElementById("thebelab-cell-button-" + id) == null) {
-      codeCell.insertAdjacentHTML('afterend', thebelabCellButton(id));
-    }
-  })
-}
-
-initFunction(addThebelabButtonToCodeCells);
-</script>
-
-
-
-<script type="text/x-thebe-config">
-    {
-      requestKernel: true,
-      binderOptions: {
-        repo: 'jupyter/jupyter-book',
-        ref: 'gh-pages',
-      },
-      codeMirrorConfig: {
-        theme: "abcdef"
-      },
-      kernelOptions: {
-        name: 'python3',
-      }
-    }
-</script>
-<script src="https://unpkg.com/thebelab@0.4.0/lib/index.js"></script>
-<script>
-    /**
-     * Add attributes to Thebelab blocks
-     */
-
-    const initThebelab = () => {
-        const addThebelabToCodeCells = () => {
-            console.log("Adding thebelab to code cells...");
-            // If Thebelab hasn't loaded, wait a bit and try again. This
-            // happens because we load ClipboardJS asynchronously.
-            if (window.thebelab === undefined) {
-                setTimeout(addThebelabToCodeCells, 250)
-            return
-            }
-
-            // If we already detect a Thebelab cell, don't re-run
-            if (document.querySelectorAll('div.thebelab-cell').length > 0) {
-                return;
-            }
-
-            // Find all code cells, replace with Thebelab interactive code cells
-            const codeCells = document.querySelectorAll('.input_area pre')
-            codeCells.forEach((codeCell, index) => {
-                const id = codeCellId(index)
-                codeCell.setAttribute('data-executable', 'true')
-
-                // Figure out the language it uses and add this too
-                var parentDiv = codeCell.parentElement.parentElement;
-                var arrayLength = parentDiv.classList.length;
-                for (var ii = 0; ii < arrayLength; ii++) {
-                    var parts = parentDiv.classList[ii].split('language-');
-                    if (parts.length === 2) {
-                        // If found, assign dataLanguage and break the loop
-                        var dataLanguage = parts[1];
-                        break;
-                    }
-                }
-                codeCell.setAttribute('data-language', dataLanguage)
-
-                // If the code cell is hidden, show it
-                var inputCheckbox = document.querySelector(`input#hidebtn${codeCell.id}`);
-                if (inputCheckbox !== null) {
-                    setCodeCellVisibility(inputCheckbox, 'visible');
-                }
-            });
-
-            // Remove the event listener from the page so keyboard press doesn't
-            // Change page
-            document.removeEventListener('keydown', initPageNav)
-            keyboardListener = false;
-
-            // Init thebelab
-            thebelab.bootstrap();
-
-            // Remove copy buttons since they won't work anymore
-            const copyAndThebeButtons = document.querySelectorAll('.copybtn, .thebebtn')
-            copyAndThebeButtons.forEach((button, index) => {
-                button.remove();
-            });
-
-            // Remove outputs since they'll be stale
-            const outputs = document.querySelectorAll('.output *, .output')
-            outputs.forEach((output, index) => {
-                output.remove();
-            });
-        }
-
-        // Add event listener for the function to modify code cells
-        const thebelabButtons = document.querySelectorAll('[id^=thebelab], [id$=thebelab]')
-        thebelabButtons.forEach((thebelabButton,index) => {
-            if (thebelabButton === null) {
-                setTimeout(initThebelab, 250)
-                return
-            };
-            thebelabButton.addEventListener('click', addThebelabToCodeCells);
-        });
-    }
-
-    // Initialize Thebelab
-    initFunction(initThebelab);
-</script>
 
 
 
@@ -695,7 +567,7 @@ initFunction(initQuery);
 
 <nav id="js-sidebar" class="c-textbook__sidebar">
   <a href="/"><img src="/images/logo/logo.png" class="textbook_logo" id="sidebar-logo" data-turbolinks-permanent/></a>
-  <h2 class="c-sidebar__title">Jupyter Book</h2>
+  <h2 class="c-sidebar__title">Data Science I</h2>
   <ul class="c-sidebar__chapters">
     
       
@@ -1508,7 +1380,6 @@ initFunction(initQuery);
 <button id="interact-button-download" class="interact-button">Download</button>
 </a>
 
-<button id="interact-button-thebelab" class="interact-button">Thebelab</button>
 
 
 
@@ -1518,7 +1389,8 @@ initFunction(initQuery);
 
 
 
-<a href="https://mybinder.org/v2/gh/jupyter/jupyter-book/gh-pages?filepath=content%2F03%2F1%2FExpressions.ipynb"><button class="interact-button" id="interact-button-binder"><img class="interact-button-logo" src="/assets/images/logo_binder.svg" alt="Interact" />Interact</button></a>
+<a href="https://datascience.uchicago.edu/s/jupyter/hub/user-redirect/git-pull?repo=https://github.com/uchicagods/textbook-datascience-1&amp;branch=gh-pages&amp;subPath=content%2F03%2F1%2FExpressions.ipynb&amp;app=notebook"><button class="interact-button" id="interact-button-jupyterhub"><img class="interact-button-logo" src="/assets/images/logo_jupyterhub.svg" alt="Interact" />Interact</button></a>
+
 
 
 </div>
