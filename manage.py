@@ -242,7 +242,10 @@ class Manage(Local):
                 print()
                 print('subtree-push failed' | colors.fatal)
                 print()
-                print("hint: if you're sure, force-push, with the manage-promote "
+                print("hint 1: make sure you've pulled remote changesets: git pull" |
+                      colors.yellow)
+                print()
+                print("hint 2: or, if you're sure, force-push, with the manage-promote "
                       "flag: -r / --rebased" | colors.yellow)
                 print()
                 raise
