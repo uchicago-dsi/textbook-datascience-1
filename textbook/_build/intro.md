@@ -12,6 +12,8 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 
 The below is demo content!
 
+We could use a real introduction: hint hint.
+
 ---
 
 Jupyter Books lets you build an online book using a collection of Jupyter Notebooks

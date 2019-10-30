@@ -25,6 +25,10 @@ wheels/
 *.egg
 MANIFEST
 
+# Jekyll
+_site/
+.sass-cache
+
 # install-cli
 .install.*.bash.inc
 

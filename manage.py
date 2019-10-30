@@ -38,7 +38,8 @@ ROOT_PATH = pathlib.Path(__file__).parent
 
 ENV_PATH = ROOT_PATH / '.env'
 
-TEXTBOOK_PATH = ROOT_PATH / 'textbook' / '_site'
+SITE_PATH = ROOT_PATH / 'site'
+TEXTBOOK_PATH = ROOT_PATH / 'textbook'
 
 ANSI_ERASE = "\033[K"
 ANSI_UPN = "\033[{n}A"
@@ -150,13 +151,31 @@ class Manage(Local):
     @localmethod
     def build(self):
         """build textbook content for previewing and/or promoting"""
-        return self.local.FG, self.compose[
-            'exec',
+        container_command = (
             'jupyter',
             'jupyter-book',
             'build',
             'textbook',
-        ]
+        )
+
+        try:
+            yield self.local.FG, self.compose['exec', container_command]
+        except self.local.ProcessExecutionError:
+            (_retcode, containers, _stderr) = yield SHH, self.compose['ps']
+            for container in containers:
+                if container.startswith('textbookdatascience1_jupyter_1 '):
+                    if ' Up ' in container:
+                        # it's running so there's something else wrong...
+                        raise
+                    else:
+                        break
+
+            # not already running so use run
+            print()
+            print('Server not started; launching temporary container ...' | colors.yellow)
+            print()
+
+            yield self.local.FG, self.compose['run', '--rm', container_command]
 
     @localmethod('-y', '--yes', action='store_true',
                  help="do not prompt for confirmation")
@@ -164,6 +183,9 @@ class Manage(Local):
                  help="override restriction against uncommitted promotion")
     @localmethod('-r', '--rebased', action='store_true',
                  help="force push against remote history")
+    @localmethod('--no-build', action='store_false', default=True, dest='build',
+                 help="just promote HTML already generated & committed by this "
+                      "command -- do not rebuild it")
     @localmethod('--no-poll', action='store_false', default=True, dest='poll',
                  help="do not poll build status (polling requires environ variable "
                       "GH_CREDENTIALS with value of the form: "
@@ -175,19 +197,38 @@ class Manage(Local):
             (_retcode, git_status, _stderr) = yield SHH, self.local['git'][
                 'status',
                 '--short',
+                SITE_PATH,
                 TEXTBOOK_PATH,
             ]
 
             if git_status:
-                print("uncommitted changes!" | colors.warn)
-                print("hint: commit changes or specify flag -f / --force" | colors.bold)
+                status_roots = {pathlib.Path(line[3:]).parts[0]
+                                for line in git_status.splitlines()}
+                print(
+                    "uncommitted changes under {}: {}".format(
+                        ('directory' if len(status_roots) == 1 else 'directories'),
+                        ', '.join(status_roots),
+                    ) | colors.warn
+                )
+                print("hint: build & commit changes or specify flag -f / --force" | colors.bold)
                 print()
                 print('aborted' | colors.fatal)
                 return
 
         if args.execute_commands and not args.yes:
-            print('the latest committed textbook content will be '
-                  'published to github.io' | colors.yellow)
+            if args.build:
+                message = (
+                    f"the latest {'built' | colors.bold} textbook content will be written "
+                    f"to HTML under directory {str(SITE_PATH) | colors.bold}, committed "
+                    f"and published to github.io"
+                )
+            else:
+                message = (
+                    f"the latest {'committed' | colors.bold} textbook content will "
+                    f"be published to github.io"
+                )
+
+            print(message | colors.yellow)
 
             confirmed = None
             while confirmed not in ('y', 'yes', 'n', 'no'):
@@ -202,12 +243,58 @@ class Manage(Local):
                 print('aborted' | colors.fatal)
                 return
 
+        # NOTE: It was attempted to both preview and promote the same content,
+        # NOTE: (and let the author worry about committing build changes); but,
+        # NOTE: this ran into two problems:
+        # NOTE:
+        # NOTE:   1. the development server assumes it should write content for
+        # NOTE:      the development environment, which isn't entirely appropriate
+        # NOTE:      for pushing to production. (this was solved by running a separate
+        # NOTE:      build server.)
+        # NOTE:
+        # NOTE:   2. it is not easy or perhaps impossible to force the jekyll build
+        # NOTE:      to only build what's been changed; and, it updates metadata --
+        # NOTE:      including a timestamp -- on every build. as such, the entirety
+        # NOTE:      of the deploy artifact is changed upon every local change and
+        # NOTE:      build, risking confusion & merge-conflict headaches.
+        # NOTE:
+        # NOTE: Therefore, instead, we let the preview server operate as it likes,
+        # NOTE: and ignore its artifacts. When instructed to promote the current
+        # NOTE: source content, only then we automate the process of building for
+        # NOTE: production, and pushing it via generation of a changeset and a
+        # NOTE: subtree-push.
+
+        if args.build:
+            # build latest
+            #
+            # destination /site/ in the container should be the repo root site/
+            # directory, as configured in docker-compose.yaml.
+            yield self.local.FG, self.compose[
+                'run',
+                '--rm',
+                'preview',
+                'bundle',
+                'exec',
+                'jekyll',
+                'build',
+                '--destination=/site',
+                '--no-watch',
+            ]
+
+            # commit site
+            yield self.local['git']['add', SITE_PATH]
+            yield self.local['git'][
+                'commit',
+                '--message', "textbook content promotion (automatic commit)",
+                SITE_PATH,
+            ]
+
         if args.execute_commands:
             build0 = yield from self._get_build()
         else:
             build0 = None
 
-        relative_path = TEXTBOOK_PATH.relative_to(ROOT_PATH)
+        relative_path = SITE_PATH.relative_to(ROOT_PATH)
         prefix_args = ('--prefix', relative_path)
 
         if args.rebased:

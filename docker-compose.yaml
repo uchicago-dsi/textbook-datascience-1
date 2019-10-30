@@ -13,26 +13,6 @@ services:
         volumes:
             - ./textbook:/home/jovyan/textbook
 
-    #
-    # NOTE: we separate jekyll builder from server to disable the local
-    # NOTE: server's development-only build options
-    #
-    #   https://github.com/jekyll/jekyll/issues/5743
-    #
-    build:
-        image: emdupre/jupyter-book
-        command:
-            - bundle
-            - exec
-            - jekyll
-            - build
-            - --watch
-        security_opt:
-            - label:disable
-        user: 1000:1000
-        volumes:
-            - ./textbook:/srv/jekyll
-
     preview:
         image: emdupre/jupyter-book
         command:
@@ -41,8 +21,6 @@ services:
             - jekyll
             - serve
             - --host=0.0.0.0
-            - --skip-initial-build
-            - --no-watch
         ports:
             # 8008 is more commonly forwarded by default (such as in
             # virtual-machine set-ups); so, use this on the host:
@@ -51,4 +29,8 @@ services:
             - label:disable
         user: 1000:1000
         volumes:
+            # mount textbook content at default point for preview
             - ./textbook:/srv/jekyll
+
+            # custom mount for true build command executed only by manage-promote
+            - ./site:/site
