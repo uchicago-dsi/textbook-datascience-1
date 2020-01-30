@@ -24,4 +24,4 @@ are expressed through programs.
 
 Programming languages, such as <a href="https://www.python.org/" target="_blank" rel="noopener">Python</a>,
 provide the computer programmer linguistic tools through which to compose programs.
-We'll begin with the Expression.
+We'll begin with the *expression*.
