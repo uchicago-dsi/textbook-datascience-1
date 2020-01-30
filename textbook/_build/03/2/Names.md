@@ -9,8 +9,8 @@ prev_page:
   url: /03/1/Expressions.html
   title: 'Expressions'
 next_page:
-  url: /03/3/Calls.html
-  title: 'Call Expressions'
+  url: /03/2/1/Growth.html
+  title: 'Example: Growth Rates'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
 ## 3.2 Names
