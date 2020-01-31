@@ -15,7 +15,27 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 ---
 Every value has a _type_. So far we've dealt mainly with numbers, such as `12`. You may also have seen text, which is represented in Python with either single or double quotes:
 
-    'this is known as a "string" of text'
+
+
+<div markdown="1" class="cell code_cell">
+<div class="input_area" markdown="1">
+```python
+print('this is known as a "string" of text')
+
+```
+</div>
+
+<div class="output_wrapper" markdown="1">
+<div class="output_subarea" markdown="1">
+{:.output_stream}
+```
+this is known as a "string" of text
+```
+</div>
+</div>
+</div>
+
+
 
 In fact, there are more types than that. Another type we have encountered already is the built-in function, such as `abs`. On the other hand, the built-in function `type` returns the type of the result of any expression.
 
