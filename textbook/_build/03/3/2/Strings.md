@@ -1,21 +1,21 @@
 ---
 redirect_from:
-  - "/04/2/strings"
-interact_link: content/04/2/Strings.ipynb
+  - "/03/3/2/strings"
+interact_link: content/03/3/2/Strings.ipynb
 kernel_name: python3
 has_widgets: false
 title: 'Strings'
 prev_page:
-  url: /04/1/Numbers.html
+  url: /03/3/1/Numbers.html
   title: 'Numbers'
 next_page:
-  url: /04/3/Comparison.html
+  url: /03/4/Comparison.html
   title: 'Comparisons'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
-Much of the world's data is text, and a piece of text represented in a computer is called a *string*. A string can represent a word, a sentence, or even the contents of every book in a library. Since text can include numbers (like this: 5) or truth values (True), a string can also describe those things.
+Much of the world's data is text. In many programming languages, text is referred to as a *string*, as in "a string of characters." A string can represent a single character, a word, a sentence, or even the contents of every book in a library. Since text can include characters representing numbers (such as `"5"`), a string can be used to describe that as well.
 
-The meaning of an expression depends both upon its structure and the types of values that are being combined. So, for instance, adding two strings together produces another string. This expression is still an addition expression, but it is combining a different type of value.
+The result of an expression depends both upon its structure and the types of values that are being combined. So, for instance, combining two strings produces another string. In Python, this is still an *addition expression*; but, it is combining a different type of value – strings rather than numbers.
 
 
 
@@ -43,7 +43,7 @@ The meaning of an expression depends both upon its structure and the types of va
 
 
 
-Addition is completely literal; it combines these two strings together without regard for their contents. It doesn't add a space because these are different words; that's up to the programmer (you) to specify.
+Addition is completely literal – it combines these two strings without regard for their contents. It doesn't add a space because these are different words; that's up to the programmer (you) to specify.
 
 
 
@@ -71,7 +71,7 @@ Addition is completely literal; it combines these two strings together without r
 
 
 
-Single and double quotes can both be used to create strings: `'hi'` and `"hi"` are identical expressions. Double quotes are often preferred because they allow you to include apostrophes inside of strings.
+Either single or double quotes can be used to define a string: `'hi'` and `"hi"` are identical expressions. Double quotes are often preferred for human language, because they allow you to include apostrophes inside of strings, (without additional work).
 
 
 
@@ -103,7 +103,7 @@ Why not? Try it out.
 
 
 
-The `str` function returns a string representation of any value. Using this function, strings can be constructed that have embedded values.
+The `str` function returns a standard string representation of any value. Using this function, strings can be constructed that have embedded values.
 
 
 
