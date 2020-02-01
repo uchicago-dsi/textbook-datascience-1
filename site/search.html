@@ -29,9 +29,9 @@
   "headline":
     "Search the site",
   "datePublished":
-    "2019-10-30T15:02:02-05:00",
+    "2020-01-31T18:35:51-06:00",
   "dateModified":
-    "2019-10-30T15:02:02-05:00",
+    "2020-01-31T18:35:51-06:00",
   "description":
     "The University of Chicago textbook to Data Science I.",
   "author": {
@@ -614,7 +614,7 @@ initFunction(initQuery);
           
             1.
           
-          Data Science
+          Demo: Data Science
         </a>
 
         
@@ -734,7 +734,7 @@ initFunction(initQuery);
           
             2.
           
-          Causality and Experiments
+          Demo: Causality and Experiments
         </a>
 
         
@@ -912,6 +912,20 @@ initFunction(initQuery);
 
                 
                 
+                  
+                  
+
+                  <li class="c-sidebar__subsection">
+                    <a class="c-sidebar__entry "
+                      href="/03/2/1/Growth.html"
+                    >
+                      
+                        3.2.1
+                        
+                      
+                      Example: Growth Rates
+                    </a>
+                
 
               </li>
               
@@ -921,126 +935,95 @@ initFunction(initQuery);
 
               <li class="c-sidebar__section">
                 <a class="c-sidebar__entry "
-                  href="/03/3/Calls.html"
+                  href="/03/3/Types.html"
                 >
                   
                     3.3
+                  
+                  Data Types
+                </a>
+
+                
+                
+                  
+                  
+
+                  <li class="c-sidebar__subsection">
+                    <a class="c-sidebar__entry "
+                      href="/03/3/1/Numbers.html"
+                    >
+                      
+                        3.3.1
+                        
+                      
+                      Numbers
+                    </a>
+                
+                  
+                  
+
+                  <li class="c-sidebar__subsection">
+                    <a class="c-sidebar__entry "
+                      href="/03/3/2/Strings.html"
+                    >
+                      
+                        3.3.2
+                        
+                      
+                      Strings
+                    </a>
+                
+
+              </li>
+              
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/03/4/Comparison.html"
+                >
+                  
+                    3.4
+                  
+                  Comparisons
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/03/5/Calls.html"
+                >
+                  
+                    3.5
                   
                   Call Expressions
                 </a>
 
                 
                 
-
-              </li>
-              
-            
-              
-              
-
-              <li class="c-sidebar__section">
-                <a class="c-sidebar__entry "
-                  href="/03/4/Introduction_to_Tables.html"
-                >
                   
-                    3.4
                   
-                  Introduction to Tables
-                </a>
 
-                
-                
-
-              </li>
-              
-            
-          </ul>
-        
-      </li>
-
-      
-    
-      
-      
-
-      
-      
-
-      
-      
-      <li class="c-sidebar__chapter">
-        <a class="c-sidebar__entry "
-          href="/04/Types.html"
-        >
-          
-            4.
-          
-          Data Types
-        </a>
-
-        
-
-          
-          
-          
-          
-
-          
-
-          <ul class="c-sidebar__sections u-hidden-visually">
-            
-              
-              
-
-              <li class="c-sidebar__section">
-                <a class="c-sidebar__entry "
-                  href="/04/1/Numbers.html"
-                >
-                  
-                    4.1
-                  
-                  Numbers
-                </a>
-
-                
-                
-
-              </li>
-              
-            
-              
-              
-
-              <li class="c-sidebar__section">
-                <a class="c-sidebar__entry "
-                  href="/04/2/Strings.html"
-                >
-                  
-                    4.2
-                  
-                  Strings
-                </a>
-
-                
-                
-
-              </li>
-              
-            
-              
-              
-
-              <li class="c-sidebar__section">
-                <a class="c-sidebar__entry "
-                  href="/04/3/Comparison.html"
-                >
-                  
-                    4.3
-                  
-                  Comparisons
-                </a>
-
-                
+                  <li class="c-sidebar__subsection">
+                    <a class="c-sidebar__entry "
+                      href="/03/5/1/String_Methods.html"
+                    >
+                      
+                        3.5.1
+                        
+                      
+                      String Methods
+                    </a>
                 
 
               </li>
@@ -1182,10 +1165,18 @@ initFunction(initQuery);
         "title": "Expressions",
         
         "excerpt":
-            "3.1 Expressions Programming languages are much simpler than human languages. Nonetheless, there are some rules of grammar to learn in any language, and that is where we will begin. In this text, we will use the Python programming language. Learning the grammar rules is essential, and the same rules used in the most basic programs are also central to more sophisticated programs. Programs are made up of expressions, which describe to the computer how to combine pieces of data. For example, a multiplication expression consists of a * symbol between two numerical expressions. Expressions, such as 3 * 4, are...",
+            "3.1 Expressions Programming languages are simpler than human languages. Nonetheless, there are rules of grammar to learn in any language. In this text, we will use the Python programming language. It’s essential to learn its grammatical rules – the same rules governing the most basic programs are also central to the most sophisticated. Computer programs are fundamentally constituted by expressions, which instruct the computer how to manipulate pieces of data. For example, a multiplication expression consists of a * symbol written between two numerical expressions. The expression 3 * 4 may be evaluated by the computer, via Python. The value...",
         "categories": [],
         "tags": [],
         "url": "https://ds1.datascience.uchicago.edu/03/1/Expressions.html",
+        "teaser":null},{
+        "title": "Example: Growth Rates",
+        
+        "excerpt":
+            "3.2.1 Growth The relationship between two measurements of the same quantity taken at different times is often expressed as a growth rate. For example, the United States federal government employed 2,766,000 people in 2002 and 2,814,000 people in 2012. To compute a growth rate, we must first decide which value to treat as the initial amount. For values over time, the earlier value is a natural choice. Then, we divide the difference between the changed and initial amount by the initial amount. initial = 2766000 changed = 2814000 (changed - initial) / initial 0.01735357917570499 It is also typical to subtract...",
+        "categories": [],
+        "tags": [],
+        "url": "https://ds1.datascience.uchicago.edu/03/2/1/Growth.html",
         "teaser":null},{
         "title": "Names",
         
@@ -1195,61 +1186,61 @@ initFunction(initQuery);
         "tags": [],
         "url": "https://ds1.datascience.uchicago.edu/03/2/Names.html",
         "teaser":null},{
-        "title": "Call Expressions",
-        
-        "excerpt":
-            "Call expressions invoke functions, which are named operations. The name of the function appears first, followed by expressions in parentheses. abs(-12) 12 round(5 - 1.3) 4 max(2, 2 + 3, 4) 5 In this last example, the max function is called on three arguments: 2, 5, and 4. The value of each expression within parentheses is passed to the function, and the function returns the final value of the full call expression. The max function can take any number of arguments and returns the maximum. A few functions are available by default, such as abs and round, but most functions...",
-        "categories": [],
-        "tags": [],
-        "url": "https://ds1.datascience.uchicago.edu/03/3/Calls.html",
-        "teaser":null},{
-        "title": "Introduction to Tables",
-        
-        "excerpt":
-            "We can now apply Python to analyze data. We will work with data stored in Table structures. Tables are a fundamental way of representing data sets. A table can be viewed in two ways: a sequence of named columns that each describe a single attribute of all entries in a data set, or a sequence of rows that each contain all information about a single individual in a data set. We will study tables in great detail in the next several chapters. For now, we will just introduce a few methods without going into technical details. The table cones has...",
-        "categories": [],
-        "tags": [],
-        "url": "https://ds1.datascience.uchicago.edu/03/4/Introduction_to_Tables.html",
-        "teaser":null},{
-        "title": "Programming in Python",
-        
-        "excerpt":
-            "Programming in Python   Programming can dramatically improve our ability to collect and analyze information about the world, which in turn can lead to discoveries through the kind of careful reasoning demonstrated in the previous section. In data science, the purpose of writing a program is to instruct a computer to carry out the steps of an analysis. Computers cannot study the world on their own. People must describe precisely what steps the computer should take in order to collect and analyze data, and those steps are expressed through programs.   ",
-        "categories": [],
-        "tags": [],
-        "url": "https://ds1.datascience.uchicago.edu/03/programming-in-python.html",
-        "teaser":null},{
         "title": "Numbers",
         
         "excerpt":
             "Computers are designed to perform numerical calculations, but there are some important details about working with numbers that every programmer working with quantitative data should know. Python (and most other programming languages) distinguishes between two different types of numbers: Integers are called int values in the Python language. They can only represent whole numbers (negative, zero, or positive) that don’t have a fractional component Real numbers are called float values (or floating point values) in the Python language. They can represent whole or fractional numbers but have some limitations. The type of a number is evident from the way it...",
         "categories": [],
         "tags": [],
-        "url": "https://ds1.datascience.uchicago.edu/04/1/Numbers.html",
+        "url": "https://ds1.datascience.uchicago.edu/03/3/1/Numbers.html",
         "teaser":null},{
         "title": "Strings",
         
         "excerpt":
-            "Much of the world’s data is text, and a piece of text represented in a computer is called a string. A string can represent a word, a sentence, or even the contents of every book in a library. Since text can include numbers (like this: 5) or truth values (True), a string can also describe those things. The meaning of an expression depends both upon its structure and the types of values that are being combined. So, for instance, adding two strings together produces another string. This expression is still an addition expression, but it is combining a different type...",
+            "Much of the world’s data is text. In many programming languages, text is referred to as a string, as in “a string of characters.” A string can represent a single character, a word, a sentence, or even the contents of every book in a library. Since text can include characters representing numbers (such as \"5\"), a string can be used to describe that as well. The result of an expression depends both upon its structure and the types of values that are being combined. So, for instance, combining two strings produces another string. In Python, this is still an addition...",
         "categories": [],
         "tags": [],
-        "url": "https://ds1.datascience.uchicago.edu/04/2/Strings.html",
-        "teaser":null},{
-        "title": "Comparisons",
-        
-        "excerpt":
-            "Boolean values most often arise from comparison operators. Python includes a variety of operators that compare values. For example, 3 is larger than 1 + 1. 3 &gt; 1 + 1 True The value True indicates that the comparison is valid; Python has confirmed this simple fact about the relationship between 3 and 1+1. The full set of common comparison operators are listed below. Comparison Operator True example False Example Less than &lt; 2 &lt; 3 2 &lt; 2 Greater than &gt; 3&gt;2 3&gt;3 Less than or equal &lt;= 2 &lt;= 2 3 &lt;= 2 Greater or equal &gt;= 3...",
-        "categories": [],
-        "tags": [],
-        "url": "https://ds1.datascience.uchicago.edu/04/3/Comparison.html",
+        "url": "https://ds1.datascience.uchicago.edu/03/3/2/Strings.html",
         "teaser":null},{
         "title": "Data Types",
         
         "excerpt":
-            "Every value has a type, and the built-in type function returns the type of the result of any expression.   One type we have encountered already is a built-in function. Python indicates that the type is a builtin_function_or_method; the distinction between a function and a method is not important at this stage.           type(abs)                          builtin_function_or_method                   This chapter will explore many useful types of data.   ",
+            "Every value has a type. So far we’ve dealt mainly with numbers, such as 12. You may also have seen text, which is represented in Python with either single or double quotes: print('this is known as a \"string\" of text') this is known as a \"string\" of text In fact, there are more types than that. Another type we have encountered already is the built-in function, such as abs. On the other hand, the built-in function type returns the type of the result of any expression. Python indicates that the type of abs is a builtin_function_or_method. (The distinction between a...",
         "categories": [],
         "tags": [],
-        "url": "https://ds1.datascience.uchicago.edu/04/Types.html",
+        "url": "https://ds1.datascience.uchicago.edu/03/3/Types.html",
+        "teaser":null},{
+        "title": "Comparisons",
+        
+        "excerpt":
+            "In the previous chapter, we were unceremoniously introduced to a value of the Boolean type: True. Boolean values serve to indicate whether a hypothesis is True or False, and they often arise from comparison operations. Python includes a variety of operators that compare values. For example, the value of the expression 1 + 1 is less than 3: 1 + 1 &lt; 3 True The value True indicates that the comparison is valid; Python has confirmed this simple fact about the relationship between 3 and 1 + 1. The full set of common comparison operators are listed below. Comparison Operator...",
+        "categories": [],
+        "tags": [],
+        "url": "https://ds1.datascience.uchicago.edu/03/4/Comparison.html",
+        "teaser":null},{
+        "title": "String Methods",
+        
+        "excerpt":
+            "In addition to standard operators and functions, values can be manipulated using methods. In the case of strings, a transformed string can be constructed from an existing string using a string method. A string method is a function which operates on a string, and which is invoked differently from a regular function – in Python, methods are called by placing a period after their target, and then calling the method function. For example, the upper method generates an uppercased version of a string. \"loud\".upper() 'LOUD' Perhaps the most important method is replace, which replaces all instances of a substring within...",
+        "categories": [],
+        "tags": [],
+        "url": "https://ds1.datascience.uchicago.edu/03/5/1/String_Methods.html",
+        "teaser":null},{
+        "title": "Call Expressions",
+        
+        "excerpt":
+            "Call expressions invoke functions. The name of the function appears first, followed by its inputs in parentheses. abs(-12) 12 Any expression is valid input. The value of the expression is computed first, and then passed to the function: round(5 - 1.3) 4 max(2, 2 + 3, 4) 5 In this last example, the max function is called given an input consisting of three arguments: 2, 5, and 4. The value of each expression within parentheses is passed to the function, and the function returns the final value of the full call expression. The max function can take any number of...",
+        "categories": [],
+        "tags": [],
+        "url": "https://ds1.datascience.uchicago.edu/03/5/Calls.html",
+        "teaser":null},{
+        "title": "Programming in Python",
+        
+        "excerpt":
+            "Programming in Python Computer programming can dramatically improve our ability to collect and analyze information about the world, which in turn can lead to discoveries through the kind of careful reasoning demonstrated in the previous section. In Data Science, the purpose of writing a program is to instruct a computer to carry out the steps of an analysis. Computers cannot study the world on their own. People must describe precisely what steps the computer should take in order to collect and analyze data, and those steps are expressed through programs. Programming languages, such as Python, provide the computer programmer linguistic...",
+        "categories": [],
+        "tags": [],
+        "url": "https://ds1.datascience.uchicago.edu/03/programming-in-python.html",
         "teaser":null},{
         "title": "Introduction",
         
