@@ -13,6 +13,8 @@ next_page:
   title: 'Call Expressions'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
+# Comparisons
+
 In the previous chapter, we were unceremoniously introduced to a value of the Boolean type: `True`. Boolean values serve to indicate whether a hypothesis is `True` or `False`, and they often arise from *comparison* operations.
 
 Python includes a variety of operators that compare values. For example, the value of the expression `1 + 1` is less than `3`:

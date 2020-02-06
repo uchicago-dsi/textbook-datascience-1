@@ -13,6 +13,8 @@ next_page:
   title: 'Comparisons'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
+# Sequences
+
 Modern computing would be inconceivable without the ability to interact with a *collection* of multiple values at once, and more specifically the ordered *sequence* of values. In Python, the most common of these data types is called the `list`.
 
 Lists are syntactically defined using commas to separate their constituent elements, and enclosed by square brackets.

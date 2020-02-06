@@ -13,6 +13,8 @@ next_page:
   title: 'String Methods'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
+# Call expressions
+
 *Call expressions* invoke functions.
 
 The name of the function appears first, followed by its inputs in parentheses. 

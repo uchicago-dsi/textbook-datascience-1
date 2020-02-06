@@ -13,7 +13,7 @@ next_page:
   title: 'Names'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
-# 3.1 Expressions
+# Expressions
 
 Programming languages are simpler than human languages. Nonetheless, there are rules of grammar to learn in any language. In this text, we will use the <a href="https://www.python.org/" target="_blank" rel="noopener">Python</a> programming language. It's essential to learn its grammatical rules &ndash; the same rules governing the most basic programs are also central to the most sophisticated.
 

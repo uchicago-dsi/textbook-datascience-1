@@ -13,6 +13,8 @@ next_page:
   title: 'Numbers'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
+# Data Types
+
 Every value has a _type_. So far we've dealt mainly with numbers, such as `12`. You may also have seen text, which is represented in Python with either single or double quotes:
 
 
