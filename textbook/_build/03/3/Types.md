@@ -39,16 +39,16 @@ this is known as a "string" of text
 
 
 
-In fact, there are more types than that. Another type we have encountered already is the built-in function, such as `abs`. On the other hand, the built-in function `type` returns the type of the result of any expression.
+In fact, there are more types than that. Above we also used the built-in function `print`, to display the underlying value of our string.
 
-Python indicates that the type of `abs` is a `builtin_function_or_method`. (The distinction between a *function* and a *method* is not important at this stage.)
+On the other hand, the built-in function `type` returns the type of the result of any expression. Python indicates that the type of `print` is a `builtin_function_or_method`. (The distinction between a *function* and a *method* is not important at this stage.)
 
 
 
 <div markdown="1" class="cell code_cell">
 <div class="input_area" markdown="1">
 ```python
-type(abs)
+type(print)
 
 ```
 </div>
