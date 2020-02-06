@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
   <title>Data Types</title>
-  <meta name="description" content="Every value has a type. So far we’ve dealt mainly with numbers, such as 12. You may also have seen text, which is represented in Python with either single or...">
+  <meta name="description" content="Data Types">
 
   <link rel="canonical" href="https://ds1.datascience.uchicago.edu/03/3/Types.html">
   <link rel="alternate" type="application/rss+xml" title="Data Science I" href="https://ds1.datascience.uchicago.edu/feed.xml">
@@ -16,7 +16,7 @@
   <meta property="og:url"         content="https://ds1.datascience.uchicago.edu/03/3/Types.html" />
 <meta property="og:type"        content="article" />
 <meta property="og:title"       content="Data Types" />
-<meta property="og:description" content="Every value has a type. So far we’ve dealt mainly with numbers, such as 12. You may also have seen text, which is represented in Python with either single or..." />
+<meta property="og:description" content="Data Types" />
 <meta property="og:image"       content="" />
 
 
@@ -29,11 +29,11 @@
   "headline":
     "Data Types",
   "datePublished":
-    "2020-01-31T18:35:51-06:00",
+    "2020-02-06T16:51:35-06:00",
   "dateModified":
-    "2020-01-31T18:35:51-06:00",
+    "2020-02-06T16:51:35-06:00",
   "description":
-    "Every value has a type. So far we’ve dealt mainly with numbers, such as 12. You may also have seen text, which is represented in Python with either single or...",
+    "Data Types",
   "author": {
     "@type": "Person",
     "name": "University of Chicago"
@@ -973,6 +973,20 @@ initFunction(initQuery);
                       Strings
                     </a>
                 
+                  
+                  
+
+                  <li class="c-sidebar__subsection">
+                    <a class="c-sidebar__entry "
+                      href="/03/3/3/Sequences.html"
+                    >
+                      
+                        3.3.3
+                        
+                      
+                      Sequences
+                    </a>
+                
 
               </li>
               
@@ -1085,7 +1099,9 @@ initFunction(initQuery);
 
 
             <div class="c-textbook__content">
-              <p>Every value has a <em>type</em>. So far we’ve dealt mainly with numbers, such as <code class="highlighter-rouge">12</code>. You may also have seen text, which is represented in Python with either single or double quotes:</p>
+              <h1 id="data-types">Data Types</h1>
+
+<p>Every value has a <em>type</em>. So far we’ve dealt mainly with numbers, such as <code class="highlighter-rouge">12</code>. You may also have seen text, which is represented in Python with either single or double quotes:</p>
 
 <div class="cell code_cell">
   <div class="input_area">
@@ -1102,13 +1118,13 @@ initFunction(initQuery);
   </div>
 </div>
 
-<p>In fact, there are more types than that. Another type we have encountered already is the built-in function, such as <code class="highlighter-rouge">abs</code>. On the other hand, the built-in function <code class="highlighter-rouge">type</code> returns the type of the result of any expression.</p>
+<p>In fact, there are more types than that. Above we also used the built-in function <code class="highlighter-rouge">print</code>, to display the underlying value of our string.</p>
 
-<p>Python indicates that the type of <code class="highlighter-rouge">abs</code> is a <code class="highlighter-rouge">builtin_function_or_method</code>. (The distinction between a <em>function</em> and a <em>method</em> is not important at this stage.)</p>
+<p>On the other hand, the built-in function <code class="highlighter-rouge">type</code> returns the type of the result of any expression. Python indicates that the type of <code class="highlighter-rouge">print</code> is a <code class="highlighter-rouge">builtin_function_or_method</code>. (The distinction between a <em>function</em> and a <em>method</em> is not important at this stage.)</p>
 
 <div class="cell code_cell">
   <div class="input_area">
-    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">type</span><span class="p">(</span><span class="nb">abs</span><span class="p">)</span>
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">type</span><span class="p">(</span><span class="k">print</span><span class="p">)</span>
 
 </code></pre></div>    </div>
   </div>

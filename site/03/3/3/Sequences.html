@@ -7,16 +7,16 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-  <title>Plotting the Classics</title>
-  <meta name="description" content="In this example, we will explore statistics for two classic novels: The Adventures of Huckleberry Finn by Mark Twain, and Little Women by Louisa May Alcott. ...">
+  <title>Sequences</title>
+  <meta name="description" content="Sequences">
 
-  <link rel="canonical" href="https://ds1.datascience.uchicago.edu/01/3/Plotting_the_Classics.html">
+  <link rel="canonical" href="https://ds1.datascience.uchicago.edu/03/3/3/Sequences.html">
   <link rel="alternate" type="application/rss+xml" title="Data Science I" href="https://ds1.datascience.uchicago.edu/feed.xml">
 
-  <meta property="og:url"         content="https://ds1.datascience.uchicago.edu/01/3/Plotting_the_Classics.html" />
+  <meta property="og:url"         content="https://ds1.datascience.uchicago.edu/03/3/3/Sequences.html" />
 <meta property="og:type"        content="article" />
-<meta property="og:title"       content="Plotting the Classics" />
-<meta property="og:description" content="In this example, we will explore statistics for two classic novels: The Adventures of Huckleberry Finn by Mark Twain, and Little Women by Louisa May Alcott. ..." />
+<meta property="og:title"       content="Sequences" />
+<meta property="og:description" content="Sequences" />
 <meta property="og:image"       content="" />
 
 
@@ -25,15 +25,15 @@
   "@context": "http://schema.org",
   "@type": "NewsArticle",
   "mainEntityOfPage":
-    "https://ds1.datascience.uchicago.edu/01/3/Plotting_the_Classics.html",
+    "https://ds1.datascience.uchicago.edu/03/3/3/Sequences.html",
   "headline":
-    "Plotting the Classics",
+    "Sequences",
   "datePublished":
     "2020-02-06T16:51:35-06:00",
   "dateModified":
     "2020-02-06T16:51:35-06:00",
   "description":
-    "In this example, we will explore statistics for two classic novels: The Adventures of Huckleberry Finn by Mark Twain, and Little Women by Louisa May Alcott. ...",
+    "Sequences",
   "author": {
     "@type": "Person",
     "name": "University of Chicago"
@@ -626,7 +626,7 @@ initFunction(initQuery);
 
           
 
-          <ul class="c-sidebar__sections ">
+          <ul class="c-sidebar__sections u-hidden-visually">
             
               
               
@@ -670,7 +670,7 @@ initFunction(initQuery);
               
 
               <li class="c-sidebar__section">
-                <a class="c-sidebar__entry c-sidebar__entry--active"
+                <a class="c-sidebar__entry "
                   href="/01/3/Plotting_the_Classics.html"
                 >
                   
@@ -876,7 +876,7 @@ initFunction(initQuery);
 
           
 
-          <ul class="c-sidebar__sections u-hidden-visually">
+          <ul class="c-sidebar__sections ">
             
               
               
@@ -977,7 +977,7 @@ initFunction(initQuery);
                   
 
                   <li class="c-sidebar__subsection">
-                    <a class="c-sidebar__entry "
+                    <a class="c-sidebar__entry c-sidebar__entry--active"
                       href="/03/3/3/Sequences.html"
                     >
                       
@@ -1078,7 +1078,7 @@ initFunction(initQuery);
 
             
 <div class="buttons">
-<a href="/content/01/3/Plotting_the_Classics.ipynb" download>
+<a href="/content/03/3/3/Sequences.ipynb" download>
 <button id="interact-button-download" class="interact-button">Download</button>
 </a>
 
@@ -1091,7 +1091,7 @@ initFunction(initQuery);
 
 
 
-<a href="https://datascience.uchicago.edu/s/jupyter/hub/user-redirect/git-pull?repo=https://github.com/uchicagods/textbook-datascience-1&amp;branch=gh-pages&amp;subPath=content%2F01%2F3%2FPlotting_the_Classics.ipynb&amp;app=notebook"><button class="interact-button" id="interact-button-jupyterhub"><img class="interact-button-logo" src="/assets/images/logo_jupyterhub.svg" alt="Interact" />Interact</button></a>
+<a href="https://datascience.uchicago.edu/s/jupyter/hub/user-redirect/git-pull?repo=https://github.com/uchicagods/textbook-datascience-1&amp;branch=gh-pages&amp;subPath=content%2F03%2F3%2F3%2FSequences.ipynb&amp;app=notebook"><button class="interact-button" id="interact-button-jupyterhub"><img class="interact-button-logo" src="/assets/images/logo_jupyterhub.svg" alt="Interact" />Interact</button></a>
 
 
 
@@ -1099,36 +1099,17 @@ initFunction(initQuery);
 
 
             <div class="c-textbook__content">
-              <p>In this example, we will explore statistics for two classic novels: <em>The Adventures of Huckleberry Finn</em> by Mark Twain, and <em>Little Women</em> by Louisa May Alcott. The text of any book can be read by a computer at great speed. Books published before 1923 are currently in the <em>public domain</em>, meaning that everyone has the right to copy or use the text in any way. <a href="http://www.gutenberg.org/">Project Gutenberg</a> is a website that publishes public domain books online. Using Python, we can load the text of these books directly from the web.</p>
+              <h1 id="sequences">Sequences</h1>
 
-<p>This example is meant to illustrate some of the broad themes of this text. Don’t worry if the details of the program don’t yet make sense. Instead, focus on interpreting the images generated below. Later sections of the text will describe most of the features of the Python programming language used below.</p>
+<p>Modern computing would be inconceivable without the ability to interact with a <em>collection</em> of multiple values at once, and more specifically the ordered <em>sequence</em> of values. In Python, the most common of these data types is called the <code class="highlighter-rouge">list</code>.</p>
 
-<p>First, we read the text of both books into lists of chapters, called <code class="highlighter-rouge">huck_finn_chapters</code> and <code class="highlighter-rouge">little_women_chapters</code>. In Python, a name cannot contain any spaces, and so we will often use an underscore <code class="highlighter-rouge">_</code> to stand in for a space. The <code class="highlighter-rouge">=</code> in the lines below give a name on the left to the result of some computation described on the right. A <em>uniform resource locator</em> or <em>URL</em> is an address on the Internet for some content; in this case, the text of a book. The <code class="highlighter-rouge">#</code> symbol starts a comment, which is ignored by the computer but helpful for people reading the code.</p>
-
-<div class="cell code_cell">
-  <div class="input_area">
-    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Read two books, fast!</span>
-
-<span class="n">huck_finn_url</span> <span class="o">=</span> <span class="s">'https://www.inferentialthinking.com/chapters/01/3/huck_finn.txt'</span>
-<span class="n">huck_finn_text</span> <span class="o">=</span> <span class="n">read_url</span><span class="p">(</span><span class="n">huck_finn_url</span><span class="p">)</span>
-<span class="n">huck_finn_chapters</span> <span class="o">=</span> <span class="n">huck_finn_text</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">'CHAPTER '</span><span class="p">)[</span><span class="mi">44</span><span class="p">:]</span>
-
-<span class="n">little_women_url</span> <span class="o">=</span> <span class="s">'https://www.inferentialthinking.com/chapters/01/3/little_women.txt'</span>
-<span class="n">little_women_text</span> <span class="o">=</span> <span class="n">read_url</span><span class="p">(</span><span class="n">little_women_url</span><span class="p">)</span>
-<span class="n">little_women_chapters</span> <span class="o">=</span> <span class="n">little_women_text</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">'CHAPTER '</span><span class="p">)[</span><span class="mi">1</span><span class="p">:]</span>
-
-</code></pre></div>    </div>
-  </div>
-
-</div>
-
-<p>While a computer cannot understand the text of a book, it can provide us with some insight into the structure of the text. The name <code class="highlighter-rouge">huck_finn_chapters</code> is currently bound to a list of all the chapters in the book. We can place them into a table to see how each chapter begins.</p>
+<p>Lists are syntactically defined using commas to separate their constituent elements, and enclosed by square brackets.</p>
 
 <div class="cell code_cell">
   <div class="input_area">
-    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Display the chapters of Huckleberry Finn in a table.</span>
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">primes_abridged</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">23</span><span class="p">]</span>
 
-<span class="n">Table</span><span class="p">()</span><span class="o">.</span><span class="n">with_column</span><span class="p">(</span><span class="s">'Chapters'</span><span class="p">,</span> <span class="n">huck_finn_chapters</span><span class="p">)</span>
+<span class="n">primes_abridged</span>
 
 </code></pre></div>    </div>
   </div>
@@ -1136,68 +1117,396 @@ initFunction(initQuery);
   <div class="output_wrapper">
     <div class="output_subarea">
 
-      <div class="output output_html">
-<table border="1" class="dataframe">
-    <thead>
-        <tr>
-            <th>Chapters</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>I. YOU don't know about me without you have read a book  ...</td>
-        </tr>
-        <tr>
-            <td>II. WE went tiptoeing along a path amongst the trees bac ...</td>
-        </tr>
-        <tr>
-            <td>III. WELL, I got a good going-over in the morning from o ...</td>
-        </tr>
-        <tr>
-            <td>IV. WELL, three or four months run along, and it was wel ...</td>
-        </tr>
-        <tr>
-            <td>V. I had shut the door to. Then I turned around and ther ...</td>
-        </tr>
-        <tr>
-            <td>VI. WELL, pretty soon the old man was up and around agai ...</td>
-        </tr>
-        <tr>
-            <td>VII. "GIT up! What you 'bout?" I opened my eyes and look ...</td>
-        </tr>
-        <tr>
-            <td>VIII. THE sun was up so high when I waked that I judged  ...</td>
-        </tr>
-        <tr>
-            <td>IX. I wanted to go and look at a place right about the m ...</td>
-        </tr>
-        <tr>
-            <td>X. AFTER breakfast I wanted to talk about the dead man a ...</td>
-        </tr>
-    </tbody>
-</table>
-<p>... (33 rows omitted)</p>
-</div>
+      <div class="output_data_text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[2, 3, 5, 7, 11, 13, 17, 19, 23]
+</code></pre></div>      </div>
 
     </div>
   </div>
 </div>
 
-<p>Each chapter begins with a chapter number in Roman numerals, followed by the first sentence of the chapter. Project Gutenberg has printed the first word of each chapter in upper case.</p>
+<h2 id="identifying-elements">Identifying elements</h2>
+<p>Lists not only enable us to address a sequence of values at once. They also permit us to refer to their elements:</p>
+
+<div class="cell code_cell">
+  <div class="input_area">
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">primes_abridged</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+</code></pre></div>    </div>
+  </div>
+
+  <div class="output_wrapper">
+    <div class="output_subarea">
+
+      <div class="output_data_text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>2
+</code></pre></div>      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="cell code_cell">
+  <div class="input_area">
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">primes_abridged</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span>
+
+</code></pre></div>    </div>
+  </div>
+
+  <div class="output_wrapper">
+    <div class="output_subarea">
+
+      <div class="output_data_text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>13
+</code></pre></div>      </div>
+
+    </div>
+  </div>
+</div>
+
+<p>Above, we retrieved individual elements from our list, by indicating the <em>index</em> of the element to retrieve – after the name assigned to the list, and with the index itself enclosed in square brackets.</p>
+
+<p><strong>Note!</strong> We referred to the <em>first</em> element of our list using the index <code class="highlighter-rouge">0</code>, and to the <em>sixth</em> with the index <code class="highlighter-rouge">5</code>. In computer programming, you can think of this reference not as the “number” or the “count” of the element, but rather as an “offset” from the beginning of the list.</p>
+
+<p>Even the index, or offset, <code class="highlighter-rouge">-1</code> is valid, and this is the general way to refer to the last element of the list:</p>
+
+<div class="cell code_cell">
+  <div class="input_area">
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">primes_abridged</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+</code></pre></div>    </div>
+  </div>
+
+  <div class="output_wrapper">
+    <div class="output_subarea">
+
+      <div class="output_data_text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>23
+</code></pre></div>      </div>
+
+    </div>
+  </div>
+</div>
+
+<h2 id="slices">Slices</h2>
+<p>We can also retrieve a subset of the elements of our list, for example using the <em>slice</em>.</p>
+
+<div class="cell code_cell">
+  <div class="input_area">
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">primes_really_abridged</span> <span class="o">=</span> <span class="n">primes_abridged</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span>
+
+<span class="n">primes_really_abridged</span>
+
+</code></pre></div>    </div>
+  </div>
+
+  <div class="output_wrapper">
+    <div class="output_subarea">
+
+      <div class="output_data_text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[5, 7, 11]
+</code></pre></div>      </div>
+
+    </div>
+  </div>
+</div>
+
+<p>In the syntax of the slice, we indicated that we would like to construct a new list, consisting of the elements at indices <code class="highlighter-rouge">2</code> through 4, ending <em>before</em> index <code class="highlighter-rouge">5</code>.</p>
+
+<p>A slice can also indicate a <em>step</em> other than <code class="highlighter-rouge">1</code>, such that some elements are stepped over, or skipped. And, a slice can omit either the element to start with, or the element to stop with, or both:</p>
+
+<div class="cell code_cell">
+  <div class="input_area">
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">every_other_prime_abridged</span> <span class="o">=</span> <span class="n">primes_abridged</span><span class="p">[::</span><span class="mi">2</span><span class="p">]</span>
+
+<span class="n">every_other_prime_abridged</span>
+
+</code></pre></div>    </div>
+  </div>
+
+  <div class="output_wrapper">
+    <div class="output_subarea">
+
+      <div class="output_data_text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[2, 5, 11, 17, 23]
+</code></pre></div>      </div>
+
+    </div>
+  </div>
+</div>
+
+<h2 id="aggregation">Aggregation</h2>
+<p>Most important, lists enable us to instruct the computer to apply an operation to each element of the list in sequence.</p>
+
+<p>Most simply, we can count the number of elements in our list.</p>
+
+<div class="cell code_cell">
+  <div class="input_area">
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">len</span><span class="p">(</span><span class="n">primes_abridged</span><span class="p">)</span>
+
+</code></pre></div>    </div>
+  </div>
+
+  <div class="output_wrapper">
+    <div class="output_subarea">
+
+      <div class="output_data_text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>9
+</code></pre></div>      </div>
+
+    </div>
+  </div>
+</div>
+
+<p>Better yet, we can <code class="highlighter-rouge">sum</code> the elements.</p>
+
+<div class="cell code_cell">
+  <div class="input_area">
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sum</span><span class="p">(</span><span class="n">primes_abridged</span><span class="p">)</span>
+
+</code></pre></div>    </div>
+  </div>
+
+  <div class="output_wrapper">
+    <div class="output_subarea">
+
+      <div class="output_data_text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>100
+</code></pre></div>      </div>
+
+    </div>
+  </div>
+</div>
+
+<p>Combining the two of these, we can compute an average or mean.</p>
+
+<div class="cell code_cell">
+  <div class="input_area">
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sum</span><span class="p">(</span><span class="n">primes_abridged</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">primes_abridged</span><span class="p">)</span>
+
+</code></pre></div>    </div>
+  </div>
+
+  <div class="output_wrapper">
+    <div class="output_subarea">
+
+      <div class="output_data_text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>11.11111111111111
+</code></pre></div>      </div>
+
+    </div>
+  </div>
+</div>
+
+<h2 id="mappings">Mappings</h2>
+<p>In the above, we computed <em>aggregates</em> of our data. But we can also process our data to make a new list, or <em>mapping</em>.</p>
+
+<p>Consider the following expression, which creates a (partial) mapping of <code class="highlighter-rouge">primes_abridged</code>, with its elements doubled:</p>
+
+<div class="cell code_cell">
+  <div class="input_area">
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">primes_doubled</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="mi">2</span> <span class="o">*</span> <span class="n">primes_abridged</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+    <span class="mi">2</span> <span class="o">*</span> <span class="n">primes_abridged</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+<span class="p">]</span>
+
+<span class="n">primes_doubled</span>
+
+</code></pre></div>    </div>
+  </div>
+
+  <div class="output_wrapper">
+    <div class="output_subarea">
+
+      <div class="output_data_text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[4, 6]
+</code></pre></div>      </div>
+
+    </div>
+  </div>
+</div>
+
+<p>The above form <em>works</em>, strictly speaking; but, it would require a lot of typing to process all the elements of <code class="highlighter-rouge">primes_abridged</code>! Moreover, an expression of the above form requires that there are a certain set number of elements – the expression will fail if there are too few elements, and it will ignore any more elements.</p>
+
+<p>We can instead write the following:</p>
+
+<div class="cell code_cell">
+  <div class="input_area">
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">primes_doubled</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">prime</span> <span class="ow">in</span> <span class="n">primes_abridged</span><span class="p">:</span>
+    <span class="n">primes_doubled</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">prime</span><span class="p">)</span>
+    
+<span class="n">primes_doubled</span>
+
+</code></pre></div>    </div>
+  </div>
+
+  <div class="output_wrapper">
+    <div class="output_subarea">
+
+      <div class="output_data_text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[4, 6, 10, 14, 22, 26, 34, 38, 46]
+</code></pre></div>      </div>
+
+    </div>
+  </div>
+</div>
+
+<p>In the above cell:</p>
+
+<ol>
+  <li>First, we initialized an <em>empty</em> list, and assigned to this the name, <code class="highlighter-rouge">primes_doubled</code></li>
+  <li>Then, using the control structure of the “for loop,” we considered the elements of <code class="highlighter-rouge">primes_abridged</code> sequentially, in each “loop” assigning one of its elements the name, <code class="highlighter-rouge">prime</code></li>
+  <li>Finally, in each loop, we multipled the value of the element by two, and added the value of this expression to the end of the list, <code class="highlighter-rouge">primes_doubled</code>, using the <em>list method</em> <code class="highlighter-rouge">append</code>. (More on <em>methods</em> later!)</li>
+</ol>
+
+<p>This is a fundamental pattern in the majority of programming languages; and, one which doesn’t apply only to lists.</p>
+
+<p>That said, there are other ways to instruct the computer to do the same – and which you may find are either <strong>more succinct</strong> (linguistically), <strong>more efficient</strong> (computationally), or both.</p>
+
+<p>The most “Pythonic” way of producing <code class="highlighter-rouge">primes_doubled</code> involves the <em>list comprehension</em>.</p>
+
+<div class="cell code_cell">
+  <div class="input_area">
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">primes_doubled</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span> <span class="o">*</span> <span class="n">prime</span> <span class="k">for</span> <span class="n">prime</span> <span class="ow">in</span> <span class="n">primes_abridged</span><span class="p">]</span>
+
+<span class="n">primes_doubled</span>
+
+</code></pre></div>    </div>
+  </div>
+
+  <div class="output_wrapper">
+    <div class="output_subarea">
+
+      <div class="output_data_text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[4, 6, 10, 14, 22, 26, 34, 38, 46]
+</code></pre></div>      </div>
+
+    </div>
+  </div>
+</div>
+
+<p>In the list comprehension, we again used the keywords <code class="highlighter-rouge">for</code> and <code class="highlighter-rouge">in</code>, in order to consider the elements of <code class="highlighter-rouge">primes_abridged</code> sequentially, under the name <code class="highlighter-rouge">prime</code>. But in this case, we were able to construct <code class="highlighter-rouge">primes_doubled</code> with a single, clear expression of our <em>mapping</em> from one set of data to another.</p>
+
+<p>Later, we’ll explore other efficient methods of processing collections.</p>
+
+<h2 id="other-lists">Other lists</h2>
+<p>So far we’ve only considered lists of numbers, but in fact a list element may refer to a value of any type.</p>
+
+<div class="cell code_cell">
+  <div class="input_area">
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">planets</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s">'Mercury'</span><span class="p">,</span>
+    <span class="s">'Venus'</span><span class="p">,</span>
+    <span class="s">'Earth'</span><span class="p">,</span>
+    <span class="s">'Mars'</span><span class="p">,</span>
+    <span class="s">'Jupiter'</span><span class="p">,</span>
+    <span class="s">'Saturn'</span><span class="p">,</span>
+    <span class="s">'Uranus'</span><span class="p">,</span>
+    <span class="s">'Neptune'</span><span class="p">,</span>
+<span class="p">]</span>
+
+</code></pre></div>    </div>
+  </div>
+
+</div>
+
+<p>In the above, we’ve constructed a list of the <code class="highlighter-rouge">planets</code>, whose elements are, of course, strings.</p>
+
+<p>And, as with numbers and strings, lists also support “addition,” also known as <em>concatenation</em>.</p>
+
+<p>Depending on when you attended grade school, you may prefer the following planetary listing:</p>
+
+<div class="cell code_cell">
+  <div class="input_area">
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">planets</span> <span class="o">+</span> <span class="p">[</span><span class="s">'Pluto'</span><span class="p">]</span>
+
+</code></pre></div>    </div>
+  </div>
+
+  <div class="output_wrapper">
+    <div class="output_subarea">
+
+      <div class="output_data_text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>['Mercury',
+ 'Venus',
+ 'Earth',
+ 'Mars',
+ 'Jupiter',
+ 'Saturn',
+ 'Uranus',
+ 'Neptune',
+ 'Pluto']
+</code></pre></div>      </div>
+
+    </div>
+  </div>
+</div>
+
+<p>But this needn’t worry the International Astronomical Union! We didn’t use <code class="highlighter-rouge">append()</code>, so the <code class="highlighter-rouge">planets</code> are safe.</p>
+
+<div class="cell code_cell">
+  <div class="input_area">
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">planets</span>
+
+</code></pre></div>    </div>
+  </div>
+
+  <div class="output_wrapper">
+    <div class="output_subarea">
+
+      <div class="output_data_text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>['Mercury', 'Venus', 'Earth', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune']
+</code></pre></div>      </div>
+
+    </div>
+  </div>
+</div>
+
+<p>Lists can even contain other lists of data.</p>
+
+<div class="cell code_cell">
+  <div class="input_area">
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># distances from the sun, millions of miles:</span>
+<span class="n">planetary_distances</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">[</span><span class="s">'Mercury'</span><span class="p">,</span> <span class="mi">36</span><span class="p">],</span>
+    <span class="p">[</span><span class="s">'Venus'</span><span class="p">,</span> <span class="mf">67.2</span><span class="p">],</span>
+    <span class="p">[</span><span class="s">'Earth'</span><span class="p">,</span> <span class="mi">93</span><span class="p">],</span>
+    <span class="p">[</span><span class="s">'Mars'</span><span class="p">,</span> <span class="mf">141.6</span><span class="p">],</span>
+    <span class="p">[</span><span class="s">'Jupiter'</span><span class="p">,</span> <span class="mf">483.6</span><span class="p">],</span>
+    <span class="p">[</span><span class="s">'Saturn'</span><span class="p">,</span> <span class="mf">886.7</span><span class="p">],</span>
+    <span class="p">[</span><span class="s">'Uranus'</span><span class="p">,</span> <span class="mi">1</span><span class="n">_784</span><span class="o">.</span><span class="mi">0</span><span class="p">],</span>
+    <span class="p">[</span><span class="s">'Neptune'</span><span class="p">,</span> <span class="mi">2</span><span class="n">_794</span><span class="o">.</span><span class="mi">4</span><span class="p">],</span>
+<span class="p">]</span>
+
+<span class="n">planetary_distances</span>
+
+</code></pre></div>    </div>
+  </div>
+
+  <div class="output_wrapper">
+    <div class="output_subarea">
+
+      <div class="output_data_text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[['Mercury', 36],
+ ['Venus', 67.2],
+ ['Earth', 93],
+ ['Mars', 141.6],
+ ['Jupiter', 483.6],
+ ['Saturn', 886.7],
+ ['Uranus', 1784.0],
+ ['Neptune', 2794.4]]
+</code></pre></div>      </div>
+
+    </div>
+  </div>
+</div>
+
+<p>In the above collection, we’ve combined lists, strings, integers and floats!</p>
+
+<p>This kind of structure, if constructed <em>arbitrarily</em>, can be difficult to use; but, constructed consistently, this is the basis of computational data and data science.</p>
+
+<p>But lists are not the only kind of useful collection available to us in Python, and we’ll explore a few!</p>
 
 
               <nav class="c-page__nav">
   
     
-    <a id="js-page__nav__prev" class="c-page__nav__prev" href="/01/2/why-data-science.html">
-      〈 <span class="u-margin-right-tiny"></span> Why Data Science?
+    <a id="js-page__nav__prev" class="c-page__nav__prev" href="/03/3/2/Strings.html">
+      〈 <span class="u-margin-right-tiny"></span> Strings
     </a>
   
 
   
     
-    <a id="js-page__nav__next" class="c-page__nav__next" href="/01/3/subsection/subsections.html">
-      Subsection Demo 1 <span class="u-margin-right-tiny"></span> 〉
+    <a id="js-page__nav__next" class="c-page__nav__next" href="/03/4/Comparison.html">
+      Comparisons <span class="u-margin-right-tiny"></span> 〉
     </a>
   
 </nav>
