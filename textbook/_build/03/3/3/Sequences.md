@@ -47,6 +47,7 @@ primes_abridged
 
 
 
+## Identifying elements
 Lists not only enable us to address a sequence of values at once. They also permit us to refer to their elements:
 
 
@@ -131,6 +132,7 @@ primes_abridged[-1]
 
 
 
+## Slices
 We can also retrieve a subset of the elements of our list, for example using the *slice*.
 
 
@@ -193,6 +195,7 @@ every_other_prime_abridged
 
 
 
+## Aggregation
 Most important, lists enable us to instruct the computer to apply an operation to each element of the list in sequence.
 
 Most simply, we can count the number of elements in our list.
@@ -279,6 +282,7 @@ sum(primes_abridged) / len(primes_abridged)
 
 
 
+## Mappings
 In the above, we computed *aggregates* of our data. But we can also process our data to make a new list, or *mapping*.
 
 Consider the following expression, which creates a (partial) mapping of `primes_abridged`, with its elements doubled:
@@ -395,6 +399,7 @@ Later, we'll explore other efficient methods of processing collections.
 
 
 
+## Other lists
 So far we've only considered lists of numbers, but in fact a list element may refer to a value of any type.
 
 
