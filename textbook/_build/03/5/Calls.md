@@ -13,7 +13,7 @@ next_page:
   title: 'String Methods'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
-# Call expressions
+# Call Expressions
 
 *Call expressions* invoke functions.
 
