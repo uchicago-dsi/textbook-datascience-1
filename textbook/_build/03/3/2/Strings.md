@@ -129,3 +129,7 @@ The `str` function returns a standard string representation of any value. Using 
 </div>
 </div>
 
+
+
+There's a lot more you can do with strings, as we'll see in [String Methods](/03/5/1/String_Methods.html).
+
