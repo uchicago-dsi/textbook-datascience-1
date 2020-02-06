@@ -9,8 +9,8 @@ prev_page:
   url: /03/3/1/Numbers.html
   title: 'Numbers'
 next_page:
-  url: /03/4/Comparison.html
-  title: 'Comparisons'
+  url: /03/3/3/Sequences.html
+  title: 'Sequences'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
 Much of the world's data is text. In many programming languages, text is referred to as a *string*, as in "a string of characters." A string can represent a single character, a word, a sentence, or even the contents of every book in a library. Since text can include characters representing numbers (such as `"5"`), a string can be used to describe that as well.

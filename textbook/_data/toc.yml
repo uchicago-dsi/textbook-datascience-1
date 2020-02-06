@@ -72,6 +72,8 @@
       url: /03/3/1/Numbers
     - title: Strings
       url: /03/3/2/Strings
+    - title: Sequences
+      url: /03/3/3/Sequences
   - title: Comparisons
     url: /03/4/Comparison
   - title: Call Expressions

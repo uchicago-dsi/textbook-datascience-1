@@ -6,8 +6,8 @@ kernel_name: python3
 has_widgets: false
 title: 'Comparisons'
 prev_page:
-  url: /03/3/2/Strings.html
-  title: 'Strings'
+  url: /03/3/3/Sequences.html
+  title: 'Sequences'
 next_page:
   url: /03/5/Calls.html
   title: 'Call Expressions'
