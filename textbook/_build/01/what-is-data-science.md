@@ -1,8 +1,8 @@
 ---
 title: 'Data Science'
 prev_page:
-  url: https://github.com/jupyter/jupyter-book
-  title: 'GitHub repository'
+  url: /intro.html
+  title: 'Introduction'
 next_page:
   url: /01/1/intro.html
   title: 'Introduction'

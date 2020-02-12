@@ -13,10 +13,15 @@ next_page:
   title: 'Names'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
-# 3.1 Expressions
-Programming languages are much simpler than human languages. Nonetheless, there are some rules of grammar to learn in any language, and that is where we will begin. In this text, we will use the [Python](https://www.python.org/) programming language. Learning the grammar rules is essential, and the same rules used in the most basic programs are also central to more sophisticated programs.
+# Expressions
 
-Programs are made up of *expressions*, which describe to the computer how to combine pieces of data. For example, a multiplication expression consists of a `*` symbol between two numerical expressions. Expressions, such as `3 * 4`, are *evaluated* by the computer. The value (the result of *evaluation*) of the last expression in each cell, `12` in this case, is displayed below the cell.
+Programming languages are simpler than human languages. Nonetheless, there are rules of grammar to learn in any language. In this text, we will use the <a href="https://www.python.org/" target="_blank" rel="noopener">Python</a> programming language. It's essential to learn its grammatical rules &ndash; the same rules governing the most basic programs are also central to the most sophisticated.
+
+Computer programs are fundamentally constituted by *expressions*, which instruct the computer how to manipulate pieces of data.
+
+For example, a multiplication expression consists of a `*` symbol written between two numerical expressions. The expression `3 * 4` may be *evaluated* by the computer, via Python. The value of the expression &ndash; the result of its evaluation &ndash; is `12`.
+
+In fact, the page you're reading was generated from a <a href="https://jupyter.org/" target="_blank" rel="noopener">Jupyter Notebook</a>. Notebooks record programming expressions input into "cells" – such as the one below – _and_ evaluate these and record their results.
 
 
 
@@ -44,7 +49,7 @@ Programs are made up of *expressions*, which describe to the computer how to com
 
 
 
-The grammar rules of a programming language are rigid. In Python, the `*` symbol cannot appear twice in a row. The computer will not try to interpret an expression that differs from its prescribed expression structures. Instead, it will show a `SyntaxError` error. The *Syntax* of a language is its set of grammar rules, and a `SyntaxError` indicates that an expression structure doesn't match any of the rules of the language.
+Note that the grammar rules of a programming language are rigid. In Python, the `*` symbol cannot appear twice in a row. The computer will not try to interpret an expression that differs from its prescribed expression structures. Instead, it will show a `SyntaxError` error. The *syntax* of a language is its set of grammar rules, and a `SyntaxError` indicates that the structure of an expression doesn't match any of the rules of the language.
 
 
 
@@ -61,7 +66,7 @@ The grammar rules of a programming language are rigid. In Python, the `*` symbol
 {:.output_traceback_line}
 ```
 
-      File "<ipython-input-4-d90564f70db7>", line 1
+      File "<ipython-input-2-012ea60b41dd>", line 1
         3 * * 4
             ^
     SyntaxError: invalid syntax
@@ -75,7 +80,7 @@ The grammar rules of a programming language are rigid. In Python, the `*` symbol
 
 
 
-Small changes to an expression can change its meaning entirely. Below, the space between the `*`'s has been removed. Because `**` appears between two numerical expressions, the expression is a well-formed *exponentiation* expression (the first number raised to the power of the second: 3 times 3 times 3 times 3). The symbols `*` and `**` are called *operators*, and the values they combine are called *operands*.
+Small changes to an expression can change its meaning entirely. Below, the space between the `*`s has been removed. Because `**` appears between two numerical expressions, the expression is a well-formed *exponentiation* expression (the first number raised to the power of the second: 3 times 3 times 3 times 3). The symbols `*` and `**` are called *operators*, and the values they combine are called *operands*.
 
 
 
@@ -169,4 +174,8 @@ Python expressions obey the same familiar rules of *precedence* as in algebra: m
 
 
 This chapter introduces many types of expressions. Learning to program involves trying out everything you learn in combination, investigating the behavior of the computer. What happens if you divide by zero? What happens if you divide twice in a row? You don't always need to ask an expert (or the Internet); many of these details can be discovered by trying them out yourself. 
+
+
+
+**Did you know?** You can interact with the Jupyter Notebook for this page, and try out Python! See the [top of the page](#3.1-Expressions) for enabled buttons, such as **Download** and **Interact**.
 

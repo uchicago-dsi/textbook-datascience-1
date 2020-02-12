@@ -110,11 +110,14 @@ class Manage(Local):
         if args.execute_commands and args.detach:
             environ = read_env()
 
+            crostini_env = pathlib.Path('/etc/apt/sources.list.d/cros.list').exists()
+            hostname = 'penguin.linux.test' if crostini_env else 'localhost'
+
             print()
             print('your jupyter development server is running at:' | colors.bold)
             print(
                 '\n\t',
-                f"http://localhost:8888/?token={environ['JUPYTER_TOKEN']}" | colors.underline,
+                f"http://{hostname}:8888/?token={environ['JUPYTER_TOKEN']}" | colors.underline,
             )
             print()
             print("edit textbook content there through the jupyter interface." | colors.info)
@@ -123,7 +126,7 @@ class Manage(Local):
             print('your textbook preview server is running at:' | colors.bold)
             print(
                 '\n\t',
-                "http://localhost:8008/" | colors.underline,
+                f"http://{hostname}:8008/" | colors.underline,
             )
             print()
             print("preview the published result there prior to "
