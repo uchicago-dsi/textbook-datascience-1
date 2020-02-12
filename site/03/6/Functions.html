@@ -7,16 +7,16 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-  <title>John Snow and the Broad Street Pump</title>
-  <meta name="description" content="Observation and Visualization: John Snow and the Broad Street Pump">
+  <title>Functions</title>
+  <meta name="description" content="Functions">
 
-  <link rel="canonical" href="https://ds1.datascience.uchicago.edu/02/1/observation-and-visualization-john-snow-and-the-broad-street-pump.html">
+  <link rel="canonical" href="https://ds1.datascience.uchicago.edu/03/6/Functions.html">
   <link rel="alternate" type="application/rss+xml" title="Data Science I" href="https://ds1.datascience.uchicago.edu/feed.xml">
 
-  <meta property="og:url"         content="https://ds1.datascience.uchicago.edu/02/1/observation-and-visualization-john-snow-and-the-broad-street-pump.html" />
+  <meta property="og:url"         content="https://ds1.datascience.uchicago.edu/03/6/Functions.html" />
 <meta property="og:type"        content="article" />
-<meta property="og:title"       content="John Snow and the Broad Street Pump" />
-<meta property="og:description" content="Observation and Visualization: John Snow and the Broad Street Pump" />
+<meta property="og:title"       content="Functions" />
+<meta property="og:description" content="Functions" />
 <meta property="og:image"       content="" />
 
 
@@ -25,15 +25,15 @@
   "@context": "http://schema.org",
   "@type": "NewsArticle",
   "mainEntityOfPage":
-    "https://ds1.datascience.uchicago.edu/02/1/observation-and-visualization-john-snow-and-the-broad-street-pump.html",
+    "https://ds1.datascience.uchicago.edu/03/6/Functions.html",
   "headline":
-    "John Snow and the Broad Street Pump",
+    "Functions",
   "datePublished":
     "2020-02-12T14:03:16-06:00",
   "dateModified":
     "2020-02-12T14:03:16-06:00",
   "description":
-    "Observation and Visualization: John Snow and the Broad Street Pump",
+    "Functions",
   "author": {
     "@type": "Person",
     "name": "University of Chicago"
@@ -746,13 +746,13 @@ initFunction(initQuery);
 
           
 
-          <ul class="c-sidebar__sections ">
+          <ul class="c-sidebar__sections u-hidden-visually">
             
               
               
 
               <li class="c-sidebar__section">
-                <a class="c-sidebar__entry c-sidebar__entry--active"
+                <a class="c-sidebar__entry "
                   href="/02/1/observation-and-visualization-john-snow-and-the-broad-street-pump.html"
                 >
                   
@@ -876,7 +876,7 @@ initFunction(initQuery);
 
           
 
-          <ul class="c-sidebar__sections u-hidden-visually">
+          <ul class="c-sidebar__sections ">
             
               
               
@@ -1047,7 +1047,7 @@ initFunction(initQuery);
               
 
               <li class="c-sidebar__section">
-                <a class="c-sidebar__entry "
+                <a class="c-sidebar__entry c-sidebar__entry--active"
                   href="/03/6/Functions.html"
                 >
                   
@@ -1096,117 +1096,353 @@ initFunction(initQuery);
 </div>
 
             
+<div class="buttons">
+<a href="/content/03/6/Functions.ipynb" download>
+<button id="interact-button-download" class="interact-button">Download</button>
+</a>
+
+
+
+
+
+
+
+
+
+
+<a href="https://datascience.uchicago.edu/s/jupyter/hub/user-redirect/git-pull?repo=https://github.com/uchicagods/textbook-datascience-1&amp;branch=gh-pages&amp;subPath=content%2F03%2F6%2FFunctions.ipynb&amp;app=notebook"><button class="interact-button" id="interact-button-jupyterhub"><img class="interact-button-logo" src="/assets/images/logo_jupyterhub.svg" alt="Interact" />Interact</button></a>
+
+
+
+</div>
+
 
             <div class="c-textbook__content">
-              <h2 id="observation-and-visualization-john-snow-and-the-broad-street-pump">Observation and Visualization: John Snow and the Broad Street Pump</h2>
+              <h1 id="functions">Functions</h1>
 
-<p>One of the earliest examples of astute observation eventually leading to the
-establishment of causality dates back more than 150 years. To get your mind into
-the right timeframe, try to imagine London in the 1850’s. It was the world’s
-wealthiest city but many of its people were desperately poor. Charles Dickens,
-then at the height of his fame, was writing about their plight. Disease was rife
-in the poorer parts of the city, and cholera was among the most feared. It was
-not yet known that germs cause disease; the leading theory was that “miasmas”
-were the main culprit. Miasmas manifested themselves as bad smells, and were
-thought to be invisible poisonous particles arising out of decaying matter.
-Parts of London did smell very bad, especially in hot weather. To protect
-themselves against infection, those who could afford to held sweet-smelling
-things to their noses.</p>
+<p>Python provides a great many built-in functions for processing and analyzing data; but, these are finite. Before long you’ll find need to define your own functions.</p>
 
-<p>For several years, a doctor by the name of John Snow had been following the
-devastating waves of cholera that hit England from time to time. The disease
-arrived suddenly and was almost immediately deadly: people died within a day or
-two of contracting it, hundreds could die in a week, and the total death toll in
-a single wave could reach tens of thousands. Snow was skeptical of the miasma
-theory. He had noticed that while entire households were wiped out by cholera,
-the people in neighboring houses sometimes remained completely unaffected. As
-they were breathing the same air—and miasmas—as their neighbors, there was no
-compelling association between bad smells and the incidence of cholera.</p>
+<p>Functions essentially enable you to assign a name to an <em>expression</em> – (really to an entire block of code) – facilitating the re-use of complex code and the organization of code. And, as important, this allows for the evaluation of your code by another function, such that you may customize how another function operates!</p>
 
-<p>Snow had also noticed that the onset of the disease almost always involved
-vomiting and diarrhea. He therefore believed that that infection was carried by
-something people ate or drank, not by the air that they breathed. His prime
-suspect was water contaminated by sewage.</p>
+<p>In our exploration of <a href="/03/3/3/Sequences.html#mappings">list mappings</a>, we considered the none-too-complex expression <code class="highlighter-rouge">2 * prime</code>, where <code class="highlighter-rouge">prime</code> referred to a prime number, and an element of an abridged list of these.</p>
 
-<p>At the end of August 1854, cholera struck in the overcrowded Soho district of
-London. As the deaths mounted, Snow recorded them diligently, using a method
-that went on to become standard in the study of how diseases spread: <em>he drew a
-map</em>. On a street map of the district, he recorded the location of each death.</p>
+<p>We might encapsulate this expression by a function as follows.</p>
 
-<p>Here is Snow’s original map. Each black bar represents one death. The black
-discs mark the locations of water pumps. The map displays a striking
-revelation–the deaths are roughly clustered around the Broad Street pump.
-<img src="../../images/snow_map.jpg" alt="Snow’s Cholera Map" /></p>
+<div class="cell code_cell">
+  <div class="input_area">
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">double</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">num</span>
 
-<p>Snow studied his map carefully and investigated the apparent anomalies. All of
-them implicated the Broad Street pump. For example:</p>
-<ul>
-  <li>There were deaths in houses that were nearer the Rupert Street pump than the
-Broad Street pump. Though the Rupert Street pump was closer as the crow flies,
-it was less convenient to get to because of dead ends and the layout of the
-streets. The residents in those houses used the Broad Street pump instead.</li>
-  <li>There were no deaths in two blocks just east of the pump. That was the
-location of the Lion Brewery, where the workers drank what they brewed. If
-they wanted water, the brewery had its own well.</li>
-  <li>There were scattered deaths in houses several blocks away from the Broad
-Street pump. Those were children who drank from the Broad Street pump on their
-way to school. The pump’s water was known to be cool and refreshing.</li>
-</ul>
+</code></pre></div>    </div>
+  </div>
 
-<p>The final piece of evidence in support of Snow’s theory was provided by two
-isolated deaths in the leafy and genteel Hampstead area, quite far from Soho.
-Snow was puzzled by these until he learned that the deceased were Mrs. Susannah
-Eley, who had once lived in Broad Street, and her niece. Mrs. Eley had water
-from the Broad Street pump delivered to her in Hampstead every day. She liked
-its taste.</p>
+</div>
 
-<p>Later it was discovered that a cesspit that was just a few feet away from the
-well of the Broad Street pump had been leaking into the well. Thus the pump’s
-water was contaminated by sewage from the houses of cholera victims.</p>
+<p>As you can see, the syntax of a function definition requires:</p>
 
-<p>Snow used his map to convince local authorities to remove the handle of the
-Broad Street pump. Though the cholera epidemic was already on the wane when he
-did so, it is possible that the disabling of the pump prevented many deaths from
-future waves of the disease.</p>
+<ol>
+  <li>the keyword <code class="highlighter-rouge">def</code></li>
+  <li>followed by the name to assign to the function – in this case <code class="highlighter-rouge">double</code></li>
+  <li>in parentheses, names to assign to any values expected as input to the function, when it is called – in this case the single argument <code class="highlighter-rouge">num</code></li>
+  <li>a colon to finalize this first line</li>
+</ol>
 
-<p>The removal of the Broad Street pump handle has become the stuff of legend. At
-the Centers for Disease Control (CDC) in Atlanta, when scientists look for
-simple answers to questions about epidemics, they sometimes ask each other,
-“Where is the handle to this pump?”</p>
+<p>With the above <em>signature</em> line complete, the <em>body</em> of the function consists of the expression(s) we’d like to be evaluated whenever the function is called.</p>
 
-<p>Snow’s map is one of the earliest and most powerful uses of data visualization.
-Disease maps of various kinds are now a standard tool for tracking epidemics.</p>
+<p>Note: the body of the function – every line of its code – must be indented. Conventionally, this indentation is by <strong>four spaces</strong>.</p>
 
-<p><strong>Towards Causality</strong></p>
+<p>Finally, the keyword <code class="highlighter-rouge">return</code> indicates that execution of the function should <strong>stop</strong> with that line. And, the value of whatever expression follows <code class="highlighter-rouge">return</code> will be the value of the function’s <em>call expression</em>, and “returned” to where the function was called.</p>
 
-<p>Though the map gave Snow a strong indication that  the cleanliness of the water
-supply was the key to controlling cholera, he was still a long way from a
-convincing scientific argument that contaminated water was causing the spread of
-the disease. To make a more compelling case, he had to use the method of
-<em>comparison</em>.</p>
+<p>The function signature and body are required; however, the <code class="highlighter-rouge">return</code> keyword is not required. Moreover, not all functions will have any particular value to return, and may therefore omit this.</p>
 
-<p>Scientists use comparison to identify an association between a treatment and an
-outcome. They compare the outcomes of a group of individuals who got the
-treatment (the <em>treatment group</em>) to the outcomes of a group who did not (the
-<em>control group</em>). For example, researchers today might compare the average
-murder rate in states that have the death penalty with the average murder rate
-in states that don’t.</p>
+<p>Having defined <code class="highlighter-rouge">double</code>, it is now available to us to use no differently from a built-in function.</p>
 
-<p>If the results are different, that is evidence for an association. To determine
-causation, however, even more care is needed.</p>
+<div class="cell code_cell">
+  <div class="input_area">
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">double</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+
+</code></pre></div>    </div>
+  </div>
+
+  <div class="output_wrapper">
+    <div class="output_subarea">
+
+      <div class="output_data_text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>4
+</code></pre></div>      </div>
+
+    </div>
+  </div>
+</div>
+
+<p>This works no matter what input <code class="highlighter-rouge">num</code> we provide – that is, <code class="highlighter-rouge">num</code> is reassigned, and our expression reevaluated, every time.</p>
+
+<div class="cell code_cell">
+  <div class="input_area">
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">double</span><span class="p">(</span><span class="mi">55</span><span class="p">)</span>
+
+</code></pre></div>    </div>
+  </div>
+
+  <div class="output_wrapper">
+    <div class="output_subarea">
+
+      <div class="output_data_text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>110
+</code></pre></div>      </div>
+
+    </div>
+  </div>
+</div>
+
+<p>And though the name <code class="highlighter-rouge">num</code> is assigned <em>within</em> the body of the function, for evaluation by the expressions it contains, <code class="highlighter-rouge">num</code> <em>is not</em> assigned elsewhere.</p>
+
+<div class="cell code_cell">
+  <div class="input_area">
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">num</span>
+
+</code></pre></div>    </div>
+  </div>
+
+  <div class="output_wrapper">
+    <div class="output_subarea">
+      <div class="output_traceback_line highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+    ---------------------------------------------------------------------------
+
+    NameError                                 Traceback (most recent call last)
+
+    &lt;ipython-input-4-c774dac2b598&gt; in &lt;module&gt;
+    ----&gt; 1 num
+    
+
+    NameError: name 'num' is not defined
+
+
+</code></pre></div>      </div>
+    </div>
+  </div>
+</div>
+
+<p>To wit, if we were to assign <code class="highlighter-rouge">num</code>, it would be safe from reassignment by <code class="highlighter-rouge">double</code>.</p>
+
+<div class="cell code_cell">
+  <div class="input_area">
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">num</span> <span class="o">=</span> <span class="mi">2015</span>
+
+<span class="n">double</span><span class="p">(</span><span class="mi">99</span><span class="p">)</span>
+
+</code></pre></div>    </div>
+  </div>
+
+  <div class="output_wrapper">
+    <div class="output_subarea">
+
+      <div class="output_data_text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>198
+</code></pre></div>      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="cell code_cell">
+  <div class="input_area">
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">num</span>
+
+</code></pre></div>    </div>
+  </div>
+
+  <div class="output_wrapper">
+    <div class="output_subarea">
+
+      <div class="output_data_text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>2015
+</code></pre></div>      </div>
+
+    </div>
+  </div>
+</div>
+
+<p>However trivial the code, being able to assign a callable name to it can be fantastically useful – for you and for anyone else who might review your code or collaborate with you.</p>
+
+<p>In Python it is also therefore conventional to assign descriptions to functions, in the form of “documentation strings,” or <em>docstrings</em>.</p>
+
+<div class="cell code_cell">
+  <div class="input_area">
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">double</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+    <span class="s">"""Multiply any number by `2`
+    
+    "…Why?" you might ask – it's FUNdamental!
+    
+    """</span>
+    <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">num</span>
+
+</code></pre></div>    </div>
+  </div>
+
+</div>
+
+<p>Above we’ve redefined <code class="highlighter-rouge">double</code> with a docstring.</p>
+
+<p>Syntactically, a docstring is <em>any</em> string which immediately follows the function definition’s signature. Conventionally, rather than either a single-quoted or double-quoted string, a <em>triple-quoted</em> string is used – either <code class="highlighter-rouge">'''</code> or <code class="highlighter-rouge">"""</code> – (though technically you might consider the latter a <em>sextuple-quote</em>!). This is so that you needn’t worry about using either a <code class="highlighter-rouge">'</code> or a <code class="highlighter-rouge">"</code> within your text; and, as above, your triple-quoted string may span multiple lines.</p>
+
+<p>Docstrings are supremely useful for explaining the intent and features of a function. You might also have seen <em>comments</em> in Python code:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># The below computes a number's double
+</code></pre></div></div>
+
+<p>And, comments serve a similar and complementary purpose. However, docstrings receive special handling in Python.</p>
+
+<div class="cell code_cell">
+  <div class="input_area">
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">help</span><span class="p">(</span><span class="n">double</span><span class="p">)</span>
+
+</code></pre></div>    </div>
+  </div>
+
+  <div class="output_wrapper">
+    <div class="output_subarea">
+      <div class="output_stream highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Help on function double in module __main__:
+
+double(num)
+    Multiply any number by `2`
+    
+    "…Why?" you might ask – it's FUNdamental!
+
+</code></pre></div>      </div>
+    </div>
+  </div>
+</div>
+
+<p>Above, Python reproduced our docstring as part of its “help” document for the function.</p>
+
+<p>Of course, functions aren’t just about reuse, organization and clarity. As we’ll see in later chapters, they’re hugely important in Data Science, for specifying arbitrary expressions as arguments to another function. This form is slightly less conventional in Python, but still supported and widely-used.</p>
+
+<p>We can now extend our toolkit of ways of mapping a sequence of input data to a desired output. Remember the list comprehension:</p>
+
+<div class="cell code_cell">
+  <div class="input_area">
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">primes_abridged</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">23</span><span class="p">]</span>
+
+<span class="p">[</span><span class="mi">2</span> <span class="o">*</span> <span class="n">prime</span> <span class="k">for</span> <span class="n">prime</span> <span class="ow">in</span> <span class="n">primes_abridged</span><span class="p">]</span>
+
+</code></pre></div>    </div>
+  </div>
+
+  <div class="output_wrapper">
+    <div class="output_subarea">
+
+      <div class="output_data_text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[4, 6, 10, 14, 22, 26, 34, 38, 46]
+</code></pre></div>      </div>
+
+    </div>
+  </div>
+</div>
+
+<p>While the list comprehension is useful, it is not always applicable. A <em>functional</em> way of achieving the same might involve the type <code class="highlighter-rouge">map</code>.</p>
+
+<p><code class="highlighter-rouge">map</code> is built into Python, like <code class="highlighter-rouge">list</code>; however, unlike <code class="highlighter-rouge">list</code>, <code class="highlighter-rouge">map</code> doesn’t have a syntax dedicated to its construction. Instead, it can be called by name – no different from a function – to construct maps.</p>
+
+<div class="cell code_cell">
+  <div class="input_area">
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">doubled_map</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="n">double</span><span class="p">,</span> <span class="n">primes_abridged</span><span class="p">)</span>
+
+</code></pre></div>    </div>
+  </div>
+
+</div>
+
+<p>In fact, the <em>call signature</em> of <code class="highlighter-rouge">map</code> isn’t <em>so</em> different from the syntax of the list comprehension. But, we’ve <em>factored</em> our expression <code class="highlighter-rouge">2 * prime</code> into our function under the name <code class="highlighter-rouge">double</code>; and, <code class="highlighter-rouge">map</code> handles the logic of calling <code class="highlighter-rouge">double</code> sequentially, for each element contained by <code class="highlighter-rouge">primes_abridged</code>.</p>
+
+<p><strong>However</strong>: Depending on your version of Python, <code class="highlighter-rouge">doubled_map</code> might not yet be quite what you want!</p>
+
+<div class="cell code_cell">
+  <div class="input_area">
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">doubled_map</span>
+
+</code></pre></div>    </div>
+  </div>
+
+  <div class="output_wrapper">
+    <div class="output_subarea">
+
+      <div class="output_data_text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;map at 0x7ae09853fb70&gt;
+</code></pre></div>      </div>
+
+    </div>
+  </div>
+</div>
+
+<p>After all, it’s not really a <code class="highlighter-rouge">list</code>.</p>
+
+<div class="cell code_cell">
+  <div class="input_area">
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">type</span><span class="p">(</span><span class="n">doubled_map</span><span class="p">)</span>
+
+</code></pre></div>    </div>
+  </div>
+
+  <div class="output_wrapper">
+    <div class="output_subarea">
+
+      <div class="output_data_text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>map
+</code></pre></div>      </div>
+
+    </div>
+  </div>
+</div>
+
+<p>However, a <code class="highlighter-rouge">map</code> is <em>like</em> a sequence, (if an opaque one). <strong>And</strong> we’re free to convert it into a list for our purposes here.</p>
+
+<div class="cell code_cell">
+  <div class="input_area">
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">primes_doubled</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">doubled_map</span><span class="p">)</span>
+
+<span class="n">primes_doubled</span>
+
+</code></pre></div>    </div>
+  </div>
+
+  <div class="output_wrapper">
+    <div class="output_subarea">
+
+      <div class="output_data_text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[4, 6, 10, 14, 22, 26, 34, 38, 46]
+</code></pre></div>      </div>
+
+    </div>
+  </div>
+</div>
+
+<p>Therefore, our full functional equivalent of the list comprehension may be expressed as follows:</p>
+
+<div class="cell code_cell">
+  <div class="input_area">
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">double</span><span class="p">,</span> <span class="n">primes_abridged</span><span class="p">))</span>
+
+</code></pre></div>    </div>
+  </div>
+
+  <div class="output_wrapper">
+    <div class="output_subarea">
+
+      <div class="output_data_text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[4, 6, 10, 14, 22, 26, 34, 38, 46]
+</code></pre></div>      </div>
+
+    </div>
+  </div>
+</div>
+
+<p>While you’ll find that the Data Science toolkit often doesn’t look quite like the above, these are nonetheless its fundamentals. And you are now ready to proceed!</p>
+
 
               <nav class="c-page__nav">
   
     
-    <a id="js-page__nav__prev" class="c-page__nav__prev" href="/02/causality-and-experiments.html">
-      〈 <span class="u-margin-right-tiny"></span> Causality and Experiments
+    <a id="js-page__nav__prev" class="c-page__nav__prev" href="/03/5/1/String_Methods.html">
+      〈 <span class="u-margin-right-tiny"></span> String Methods
     </a>
   
 
   
     
-    <a id="js-page__nav__next" class="c-page__nav__next" href="/02/2/snow-s-grand-experiment.html">
-      Snow’s “Grand Experiment” <span class="u-margin-right-tiny"></span> 〉
+    <a id="js-page__nav__next" class="c-page__nav__next" href="">
+       <span class="u-margin-right-tiny"></span> 〉
     </a>
   
 </nav>
