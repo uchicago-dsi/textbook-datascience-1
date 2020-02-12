@@ -81,3 +81,5 @@
     subsections:
       - title: String Methods
         url: /03/5/1/String_Methods
+  - title: Functions
+    url: /03/6/Functions

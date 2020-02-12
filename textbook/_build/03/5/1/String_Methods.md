@@ -9,8 +9,8 @@ prev_page:
   url: /03/5/Calls.html
   title: 'Call Expressions'
 next_page:
-  url: 
-  title: ''
+  url: /03/6/Functions.html
+  title: 'Functions'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
 # String Methods
