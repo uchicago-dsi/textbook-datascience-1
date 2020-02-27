@@ -9,8 +9,8 @@ prev_page:
   url: /03/5/1/String_Methods.html
   title: 'String Methods'
 next_page:
-  url: 
-  title: ''
+  url: /04/DataFrames.html
+  title: 'DataFrames'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
 # Functions

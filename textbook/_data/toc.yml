@@ -83,3 +83,6 @@
         url: /03/5/1/String_Methods
   - title: Functions
     url: /03/6/Functions
+
+- title: DataFrames
+  url: /04/DataFrames
