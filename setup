@@ -62,7 +62,7 @@ which_python_min() {
   #
   local min_version="$1"
 
-  local installed_info python_exe
+  local installed_info python_exe python_version
 
   for python_version in $(compgen -c python | grep -E "^python[.0-9]+$" | sed 's/^python//' | sort -ut. -k 1,1nr -k2nr); do
     python_exe="python$python_version"
@@ -125,6 +125,22 @@ require lib \
   icli::always_install \
   install_lib \
   --fail-message="install libraries (via $PYTHON_EXE)?"
+
+
+# ensure PATH
+
+manage_on_path() {
+  icli::check_command manage
+}
+
+fix_manage_path() {
+  [ -x "$HOME/.local/bin/manage" ] && echo -e '\nexport PATH="$HOME/.local/bin:$PATH"' >> $HOME/.profile
+}
+
+require path \
+  manage_on_path \
+  fix_manage_path \
+  --fail-message="modify PATH in ~/.profile file?"
 
 #
 # end project check/install
