@@ -116,7 +116,7 @@ if [ -z "$VIRTUAL_ENV" ]; then
 fi
 
 install_lib() {
-  $PYTHON_EXE -m pip install $PIP_FLAGS argcmdr==0.6.0
+  $PYTHON_EXE -m pip install $PIP_FLAGS argcmdr==0.13.1
 }
 
 # no great way to check that python libs installed;
