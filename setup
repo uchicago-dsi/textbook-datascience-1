@@ -64,7 +64,8 @@ which_python_min() {
 
   local installed_info python_exe
 
-  for python_exe in $(compgen -c python | grep -E "^python[.0-9]*$" | sort -ru); do
+  for python_version in $(compgen -c python | grep -E "^python[.0-9]+$" | sed 's/^python//' | sort -ut. -k 1,1nr -k2nr); do
+    python_exe="python$python_version"
     installed_info="$($python_exe --version 2> /dev/null)"
     if [ $? = 0 ] && [ -z "$installed_info" ]; then
       # python <3.4 printed version to stderr
