@@ -8,35 +8,16 @@ import string
 import sys
 import time
 
-from argcmdr import Local, localmethod
+from argcmdr import Local, localmethod, SHH
 from descriptors import cachedproperty
 from plumbum import colors
-from plumbum.commands import ExecutionModifier
 
-
-# TODO: add _SHH to argcmdr!
-
-class _SHH(ExecutionModifier):
-    """plumbum execution modifier to ensure output is not echoed to terminal
-    essentially a no-op, this may be used to override argcmdr settings
-    and cli flags controlling this feature, on a line-by-line basis, to
-    hide unnecessary or problematic (e.g. highly verbose) command output.
-    """
-    __slots__ = ('retcode', 'timeout')
-
-    def __init__(self, retcode=0, timeout=None):
-        self.retcode = retcode
-        self.timeout = timeout
-
-    def __rand__(self, cmd):
-        return cmd.run(retcode=self.retcode, timeout=self.timeout)
-
-
-SHH = _SHH()
 
 ROOT_PATH = pathlib.Path(__file__).parent
 
 ENV_PATH = ROOT_PATH / '.env'
+
+IMAGE_PATH = ROOT_PATH / 'image'
 
 SITE_PATH = ROOT_PATH / 'site'
 TEXTBOOK_PATH = ROOT_PATH / 'textbook'
@@ -45,7 +26,15 @@ ANSI_ERASE = "\033[K"
 ANSI_UPN = "\033[{n}A"
 ANSI_BACKN = "\033[{n}D"
 
-BUILDS_URL = 'https://api.github.com/repos/uchicagods/textbook-datascience-1/pages/builds'
+REPO_OWNER = 'chicago-cdac'
+
+REPO_NAME = 'textbook-datascience-1'
+
+REPO_URI = f'https://github.com/{REPO_OWNER}/{REPO_NAME}'
+
+BUILDS_URL = f'https://api.github.com/repos/{REPO_OWNER}/{REPO_NAME}/pages/builds'
+
+REGISTRY_HOST = 'ghcr.io'
 
 
 def setup_env():
@@ -403,7 +392,7 @@ class Manage(Local):
 
     def _poll_until(self, build0, changed):
         build = build0
-        spinner = itertools.cycle('\|/-')
+        spinner = itertools.cycle(r'\|/-')
 
         sys.stdout.write('polling page build api ... ')
         sys.stdout.write(next(spinner))
@@ -420,6 +409,46 @@ class Manage(Local):
 
         print()
         return build
+
+    class Image(Local):
+        """manage the textbook-authoring docker image"""
+
+        image_paths = frozenset(element.name for element in IMAGE_PATH.iterdir()
+                                if element.is_dir())
+
+        def __init__(self, parser):
+            parser.add_argument(
+                'target',
+                choices=self.image_paths,
+                help="image/ directory to build",
+            )
+
+        @cachedproperty
+        def registry_uri(self):
+            distro_name = f'textbook-{self.args.target}'
+            return f'{REGISTRY_HOST}/{REPO_OWNER}/{distro_name}'
+
+        @localmethod
+        def build(self, args):
+            """build a docker image"""
+            timestamp_build = int(time.time())
+
+            yield self.local['docker'][
+                'build',
+                '--label', f'org.opencontainers.image.source={REPO_URI}',
+                '--tag', f'{self.registry_uri}:{timestamp_build}',
+                '--tag', f'{self.registry_uri}:latest',
+                IMAGE_PATH / args.target,
+            ]
+
+        @localmethod
+        def push(self):
+            """push a docker image to the registry"""
+            yield self.local['docker'][
+                'push',
+                '--all-tags',
+                self.registry_uri,
+            ]
 
 
 def _print_build_status(build):
