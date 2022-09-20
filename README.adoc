@@ -1,8 +1,8 @@
 = Textbook: Data Science I
 
-This repository contains the source materials and build artifacts of the textbook of the University of Chicago course Data Science I.
+This repository contains the source materials, as well as the authoring and publishing tools, of the textbook of the University of Chicago course Data Science I.
 
-All textbook contents are generated from Markdown source files and Jupyter Notebooks, converted by https://jupyter.org/jupyter-book[Jupyter Book] into Jekyll-templated Markdown files, to be served by GitHub Pages.
+All textbook contents are generated from Jupyter Notebooks and Markdown files, converted by https://jupyterbook.org/[Jupyter Book] into HTML, and served by GitHub Pages.
 
 The published textbook may be accessed https://ds1.datascience.uchicago.edu/[here].
 
@@ -22,63 +22,44 @@ If you're not sure, you can test for the presence of commands in your terminal a
 
 === Set-up
 
-Set up your environment for textbook development by executing the included Bash script:
+Set up your environment for textbook authoring by executing the repository's included Bash script:
 
     $ ./setup
 
 The `setup` script will guide you through installation of any further required libraries.
 
 
-== Development
+== Authoring content
 
-Having set up your textbook-development environment, you may manage it via the installed shell command, `manage`:
+Having set up your textbook-authoring environment, you may manage it via the installed shell command, `manage`, (executed from the repository's root directory):
 
     $ manage [--help|...]
 
-To begin a session, you'll want to start the development servers:
+To begin a session, you'll want to start the authoring servers:
 
     $ manage start
 
 The above command will ensure that the necessary Docker containers are built and running.
 
-At the end of the output of the `start` command, you'll see the URLs of your local development servers:
+At the end of the output of the `start` command, you'll see the URL of your local authoring server: a Jupyter server, for authoring plain-text content via Markdown files and programmatic/interative content via Jupyter Notebooks.
 
-1. a Jupyter server, for authoring plain-text content via Markdown files and programmatic/interative content via Jupyter Notebooks
-1. a Jekyll server, for previewing Jupyter Book-generated Jekyll templates as HTML in your browser
+Textbook source files reside under the `textbook/` directory. (The Jupyter server opens this directory by default.)
 
-Note, however, that Jupyter Book does not build continuously.
-
-Therefore, once you've made a change to a source file under the `textbook/content/` directory, you may prepare it for previewing and publishing by executing the `build` command:
+To preview local changes to these files, execute the `build` command:
 
     $ manage build
 
-The above command will generate Jekyll-templated Markdown files from your source content, and write these under the `textbook/_build/` directory. Your changes will then be available for previewing and publishing.
+The above command will generate HTML from the textbook source files, and write these under the `preview/html/` directory. Your changes will then be available for preview.
+
+[NOTE]
+====
+HTML files generated for local preview are not intended to be committed to the repository.
+
+(The `.gitignore` file reflects this and these will be ignored by default.)
+====
 
 === Packing it in
 
-Once you've completed your session, feel free to release computational resources by stopping the development servers:
+Once you've completed your session, feel free to release computational resources by stopping the authoring servers:
 
     $ manage stop
-
-
-== Deployment
-
-GitHub Pages serves the contents of the `gh-pages` branch. The contents of this branch are *not* intended to be manipulated directly; rather, the contents of the sub-directory `textbook/` in the `master` branch may be pushed to the `gh-pages` branch -- and thereby published -- via Git command `subtree push`, or by executing the management command `promote`:
-
-    $ manage promote
-
-`promote` accepts the optional flags `-y|--yes` and `-f|--force`; refer to `manage promote --help` for details.
-
-=== Troubleshooting builds
-
-If GitHub has a problem building what's promoted, it will e-mail the user who authored the failing changeset.
-
-Moreover, the `promote` command will poll the GitHub API for the status of your build, provided that you've populated your shell environment with the variable `GH_CREDENTIALS`.
-
-For basic authentication (with your GitHub password), you might set this variable as follows:
-
-    $ export GH_CREDENTIALS=my-user-name:my-password
-
-However, this form of authentication is not terribly secure as is. Alternatively, consider creating a https://github.com/settings/tokens[Personal Access Token], for use as your password in just this context. The token need only be given permissions in the `repo` scope, (and it can be easily recreated or deleted as appropriate).
-
-(And to configure your shell to automatically populate this variable, but only from this repository directory, consider https://direnv.net/[direnv].)
