@@ -185,7 +185,7 @@ class Manage(Local):
             'run',
             '--rm',
             '--volume', f'{TEXTBOOK_PATH}:/home/jovyan/textbook',
-            '--volume', f'{PREVIEW_PATH}:/home/jovyan/preview',
+            '--volume', f'{PREVIEW_PATH}:/home/jovyan/preview:rw',
             f'{self.registry_uri}:latest',
             'jupyter-book',
             'build',
