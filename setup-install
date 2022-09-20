@@ -40,6 +40,17 @@ INSTALL_URL=https://raw.githubusercontent.com/dssg/install-cli/$INSTALL_VERSION/
 # Invoke 'require' to ensure your project's basic requirements are met.
 #
 
+
+# Docker
+
+exists_docker() {
+  icli::check_command docker
+}
+
+require docker \
+  exists_docker
+
+
 #
 # NOTE: This would be well-served by pipenv!
 #
@@ -88,7 +99,7 @@ which_python_min() {
 
 PY_VERSION=3.6
 
-PY_REQUIRED="python${PY_VERSION}"
+PY_REQUIRED="python${PY_VERSION}+"
 
 PYTHON_EXE=$(which_python_min $PY_VERSION)
 
@@ -115,14 +126,20 @@ if [ -z "$VIRTUAL_ENV" ]; then
   PIP_FLAGS="--user"
 fi
 
+LIB_VERSION="0.13.1"
+
+lib_installed() {
+  test "$(pip show argcmdr 2> /dev/null | grep Version | sed 's/Version: //')" == "$LIB_VERSION"
+}
+
 install_lib() {
-  $PYTHON_EXE -m pip install $PIP_FLAGS argcmdr==0.13.1
+  $PYTHON_EXE -m pip install $PIP_FLAGS argcmdr=="$LIB_VERSION"
 }
 
 # no great way to check that python libs installed;
 # rather, always fail check and let pip figure it out
 require lib \
-  icli::always_install \
+  lib_installed \
   install_lib \
   --fail-message="install libraries (via $PYTHON_EXE)?"
 
