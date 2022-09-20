@@ -190,9 +190,9 @@ class Manage(Local):
             'jupyter-book',
             'build',
             '--quiet',
-            '--path-output', 'preview/',
+            '--path-output', '/home/jovyan/preview/',
             ('--all',) if args.all else (),
-            'textbook',
+            '/home/jovyan/textbook',
         ]
 
         if args.execute_commands:
