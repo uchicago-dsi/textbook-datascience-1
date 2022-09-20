@@ -43,3 +43,6 @@ _site/
 
 # direnv
 .envrc
+
+/preview/*
+!/preview/html
