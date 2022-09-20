@@ -21,6 +21,7 @@ IMAGE_PATH = ROOT_PATH / 'image'
 
 SITE_PATH = ROOT_PATH / 'site'
 TEXTBOOK_PATH = ROOT_PATH / 'textbook'
+PREVIEW_PATH = ROOT_PATH / 'preview'
 
 ANSI_ERASE = "\033[K"
 ANSI_UPN = "\033[{n}A"
@@ -38,7 +39,7 @@ REGISTRY_HOST = 'ghcr.io'
 
 
 def setup_env():
-    """generate and set jupyter token in docker-compose environ"""
+    """generate and set jupyter token in environ"""
     try:
         env_text = ENV_PATH.read_text()
     except FileNotFoundError:
@@ -50,7 +51,7 @@ def setup_env():
     print(
         '[setup]' | colors.yellow,
         'one-time setup:',
-        'generating docker-compose environment file',
+        'generating environment file:',
         ENV_PATH,
     )
 
@@ -64,7 +65,7 @@ def setup_env():
 
 
 def read_env():
-    """read docker-compose environ file into dict"""
+    """read environ file into dict"""
     try:
         env_text = ENV_PATH.read_text()
     except FileNotFoundError:
@@ -77,97 +78,152 @@ def read_env():
     )
 
 
+def get_host():
+    crostini_env = pathlib.Path('/etc/apt/sources.list.d/cros.list').exists()
+    return 'penguin.linux.test' if crostini_env else 'localhost'
+
+
 class Manage(Local):
     """manage the textbook-authoring environment"""
 
+    image_name = 'textbook-jupyter-service'
+    registry_uri = f'{REGISTRY_HOST}/{REPO_OWNER}/{image_name}'
+
     @cachedproperty
-    def compose(self):
+    def environ(self):
         if self.args.execute_commands:
             setup_env()
 
-        return self.local['docker-compose']
+        return read_env()
 
-    @localmethod('--no-detach', dest='detach', default=True, action='store_false',
+    @localmethod('--no-pull', dest='pull', action='store_false',
+                 help="do not pull latest image")
+    @localmethod('--no-detach', dest='detach', action='store_false',
                  help="do not run containers in background")
+    @localmethod('--name', default=image_name,
+                 help="name to assign to container (default: %(default)s)")
     def start(self, args):
-        """start development servers"""
-        yield self.local.FG, self.compose[
-            'up',
-            ('-d',) if args.detach else (),
+        """start development server"""
+        token = self.environ.get('JUPYTER_TOKEN', 'TO-BE-DEFINED')
+
+        if args.pull:
+            yield self.local['docker'][
+                'pull',
+                f'{self.registry_uri}:latest',
+            ]
+
+        yield from self['stop'].prepare(args)
+
+        yield self.local.FG, self.local['docker'][
+            'run',
+            '--rm',
+            '--publish', '8888:8888',
+            '--volume', f'{TEXTBOOK_PATH}:/home/jovyan/textbook',
+            '--name', args.name,
+            ('--detach',) if args.detach else (),
+            f'{self.registry_uri}:latest',
+            'start-notebook.sh',
+            '--NotebookApp.notebook_dir=textbook',
+            f'--NotebookApp.token={token}',
         ]
 
         if args.execute_commands and args.detach:
-            environ = read_env()
-
-            crostini_env = pathlib.Path('/etc/apt/sources.list.d/cros.list').exists()
-            hostname = 'penguin.linux.test' if crostini_env else 'localhost'
+            hostname = get_host()
 
             print()
             print('your jupyter development server is running at:' | colors.bold)
             print(
                 '\n\t',
-                f"http://{hostname}:8888/?token={environ['JUPYTER_TOKEN']}" | colors.underline,
+                f"http://{hostname}:8888/?token={token}" | colors.underline,
             )
             print()
             print("edit textbook content there through the jupyter interface." | colors.info)
 
-            print('\n')
-            print('your textbook preview server is running at:' | colors.bold)
-            print(
-                '\n\t',
-                f"http://{hostname}:8008/" | colors.underline,
-            )
             print()
-            print("preview the published result there prior to "
-                  "committing and/or promoting." | colors.info)
-            print()
+            print('to preview changes to the textbook see:' | colors.info,
+                  'manage build' | colors.underline)
 
-    @localmethod
-    def status(self):
+    @localmethod('--name', default=image_name,
+                 help="name assigned to container (default: %(default)s)")
+    def status(self, args):
         """list running development servers"""
-        return self.local.FG, self.compose['ps']
+        (retcode, stdout, _stderr) = yield SHH(retcode=None), self.local['docker'][
+            'inspect',
+            '--format', '{{json .State.Status}}',
+            args.name,
+        ]
 
-    @localmethod
-    def restart(self):
+        if retcode is None:
+            return
+
+        status = 'stopped' if retcode > 0 else json.loads(stdout)
+
+        print(status)
+
+    @localmethod('--name', default=image_name,
+                 help="name assigned to container (default: %(default)s)")
+    def restart(self, args):
         """restart development servers"""
-        return self.local.FG, self.compose['restart']
+        yield self.local['docker'][
+            'restart',
+            args.name,
+        ]
 
-    @localmethod('--destroy', action='store_true', help="tear down servers")
+    @localmethod('--name', default=image_name,
+                 help="name assigned to container (default: %(default)s)")
     def stop(self, args):
-        """stop development servers"""
-        if args.destroy:
-            return self.compose['down']
+        """stop development server"""
+        yield SHH(retcode=None), self.local['docker'][
+            'stop',
+            args.name,
+        ]
 
-        return self.compose['stop']
+    @localmethod('--all', action='store_true',
+                 help="build all pages "
+                      "(regardless of whether they *appear* to have changed)")
+    @localmethod('--no-pull', dest='pull', action='store_false',
+                 help="do not pull latest image")
+    def build(self, args):
+        """build textbook content for local preview"""
+        if args.pull:
+            yield self.local['docker'][
+                'pull',
+                f'{self.registry_uri}:latest',
+            ]
 
-    @localmethod
-    def build(self):
-        """build textbook content for previewing and/or promoting"""
-        container_command = (
-            'jupyter',
+        yield self.local['docker'][
+            'run',
+            '--rm',
+            '--volume', f'{TEXTBOOK_PATH}:/home/jovyan/textbook',
+            '--volume', f'{PREVIEW_PATH}:/home/jovyan/preview',
+            f'{self.registry_uri}:latest',
             'jupyter-book',
             'build',
+            '--quiet',
+            '--path-output', 'preview/',
+            ('--all',) if args.all else (),
             'textbook',
-        )
+        ]
 
-        try:
-            yield self.local.FG, self.compose['exec', container_command]
-        except self.local.ProcessExecutionError:
-            (_retcode, containers, _stderr) = yield SHH, self.compose['ps']
-            for container in containers:
-                if container.startswith('textbookdatascience1_jupyter_1 '):
-                    if ' Up ' in container:
-                        # it's running so there's something else wrong...
-                        raise
-                    else:
-                        break
+        if args.execute_commands:
+            path_html = PREVIEW_PATH / 'html'
+            path_index = path_html / 'index.html'
 
-            # not already running so use run
             print()
-            print('Server not started; launching temporary container ...' | colors.yellow)
+            print('the textbook has been built at:' | colors.bold)
+            print(
+                '\n\t',
+                str(path_html) | colors.underline,
+            )
             print()
-
-            yield self.local.FG, self.compose['run', '--rm', container_command]
+            print("open" | colors.info,
+                  "index.html" | colors.underline,
+                  "in your browser to preview:" | colors.info)
+            print(
+                '\n\t',
+                f'file://{path_index}' | colors.underline,
+            )
+            print()
 
     @localmethod('-y', '--yes', action='store_true',
                  help="do not prompt for confirmation")
