@@ -22,11 +22,20 @@ If you're not sure, you can test for the presence of commands in your terminal a
 
 === Set-up
 
-Set up your environment for textbook authoring by executing the repository's included Bash script:
+Set up your environment for textbook authoring by sourcing the repository's included Bash script:
 
-    $ ./setup
+    $ source setup
 
 The `setup` script will guide you through installation of any further required libraries.
+
+[TIP]
+====
+If you use a shell other than Bash, you may instead execute the following setup command directly:
+
+    ./setup-install
+
+However, this command is unable to affect your active shell; to correct this, you may simply start a new shell.
+====
 
 
 == Authoring content
