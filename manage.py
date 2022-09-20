@@ -173,6 +173,8 @@ class Manage(Local):
                       "(regardless of whether they *appear* to have changed)")
     @localmethod('--no-pull', dest='pull', action='store_false',
                  help="do not pull latest image")
+    @localmethod('--as-root', action='store_true',
+                 help="run as root (useful in some environments)")
     def build(self, args):
         """build textbook content for local preview"""
         if args.pull:
@@ -186,11 +188,12 @@ class Manage(Local):
             '--rm',
             '--volume', f'{TEXTBOOK_PATH}:/home/jovyan/textbook',
             '--volume', f'{PREVIEW_PATH}:/home/jovyan/preview',
+            ('--user', '0') if args.as_root else (),
             f'{self.registry_uri}:latest',
             'jupyter-book',
             'build',
             '--quiet',
-            '--path-output', '/home/jovyan/preview/',
+            '--path-output', '/home/jovyan/preview',
             ('--all',) if args.all else (),
             '/home/jovyan/textbook',
         ]
