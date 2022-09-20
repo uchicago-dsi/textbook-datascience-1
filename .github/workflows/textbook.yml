@@ -32,7 +32,7 @@ jobs:
 
       - name: Build textbook
         run: |
-          manage --show build --all
+          manage --show build --all --as-root
 
       - name: Setup Pages
         uses: actions/configure-pages@v2
