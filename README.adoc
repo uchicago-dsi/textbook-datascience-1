@@ -87,3 +87,10 @@ NOTE: Release tags *must* follow the semantic versioning pattern: `[0-9].[0-9]*`
 === Troubleshooting builds
 
 If GitHub has a problem building what's been committed, it will e-mail the user who authored the failing release.
+
+
+== Managing the Image
+
+The textbook authoring- and build-environment is provided as https://github.com/chicago-cdac/textbook-datascience-1/pkgs/container/textbook-jupyter-service[a Docker container], the image of which is maintained under directory link:image/[].
+
+Changes to any files under that directory, once pushed to the repository, trigger the rebuild and push of that image, via the https://github.com/chicago-cdac/textbook-datascience-1/actions/workflows/image.yml[Github Actions workflow: Image] (controlled via link:.github/workflows/image.yml[image.yml]).
