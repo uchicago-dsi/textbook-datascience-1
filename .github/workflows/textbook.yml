@@ -40,7 +40,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          path: './preview/html/'
+          path: './preview/_build/html'
 
   deploy:
     runs-on: ubuntu-latest
