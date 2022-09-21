@@ -88,6 +88,8 @@ NOTE: Release tags *must* follow the semantic versioning pattern: `[0-9].[0-9]*`
 
 If GitHub has a problem building what's been committed, it will e-mail the user who authored the failing release.
 
+The progress of the publishing workflow may otherwise be reviewed: https://github.com/chicago-cdac/textbook-datascience-1/actions/workflows/textbook.yml[Github Actions workflow: Textbook].
+
 
 == Managing the Image
 
