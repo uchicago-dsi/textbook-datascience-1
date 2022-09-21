@@ -155,7 +155,7 @@ fix_manage_path() {
 
   for path_prefix in ".local" "Library/Python/${PYTHON_EXE#python}"; do
     if [ -x "$HOME/$path_prefix/bin/manage" ]; then
-      echo -e "\nexport PATH=\"\$HOME/$path_prefix/bin:\$PATH\"" >> $HOME/.profile
+      echo -e "\nexport PATH=\"\$HOME/$path_prefix/bin:\$PATH\"" >> "$HOME/.profile"
       return 0
     fi
   done

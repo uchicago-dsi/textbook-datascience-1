@@ -1,5 +1,9 @@
 ./setup-install
 
-if [ -x "$HOME/.local/bin/manage" ] && ! command -v manage > /dev/null; then
-  export PATH="$HOME/.local/bin:$PATH"
+if ! command -v manage > /dev/null; then
+  if [ -x "$HOME/.local/bin/manage" ]; then
+    export PATH="$HOME/.local/bin:$PATH"
+  else
+    source "$HOME/.profile"
+  fi
 fi
