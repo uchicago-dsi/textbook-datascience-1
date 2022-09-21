@@ -10,7 +10,7 @@ from descriptors import cachedproperty
 from plumbum import colors
 
 
-ROOT_PATH = pathlib.Path(__file__).parent
+ROOT_PATH = pathlib.Path(__file__).absolute().parent
 
 ENV_PATH = ROOT_PATH / '.env'
 
