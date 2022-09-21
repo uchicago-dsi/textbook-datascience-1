@@ -1,4 +1,5 @@
 = Textbook: Data Science I
+:toc: preamble
 
 This repository contains the source materials, as well as the authoring and publishing tools, of the textbook of the University of Chicago course Data Science I.
 
