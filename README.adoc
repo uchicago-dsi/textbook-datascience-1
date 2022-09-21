@@ -1,4 +1,5 @@
 = Textbook: Data Science I
+:toc: preamble
 
 This repository contains the source materials, as well as the authoring and publishing tools, of the textbook of the University of Chicago course Data Science I.
 
@@ -22,20 +23,40 @@ If you're not sure, you can test for the presence of commands in your terminal a
 
 === Set-up
 
-Set up your environment for textbook authoring by sourcing the repository's included Bash script:
+Set up and check your environment for textbook authoring by sourcing the repository's included Bash script:
 
     $ source setup
 
 The `setup` script will guide you through installation of any further required libraries.
 
-[TIP]
-====
+==== Troubleshooting set-up
+
+===== Other shells
+
 If you use a shell other than Bash, you may instead execute the following setup command directly:
 
-    ./setup-install
+    $ ./setup-install
 
 However, this command is unable to affect your active shell; to correct this, you may simply start a new shell.
-====
+
+===== Other situations
+
+Set-up scripting attempts to guide authors in setting up their computers; however, your computer might vary considerably from expectations!
+
+If you have both Docker and Python installed, the only further requirement is to install https://pypi.org/project/argcmdr/[argcmdr].
+
+This may be achieved generally via `pip`, _e.g._:
+
+    $ pip install argcmdr
+
+Then, the `manage` command should be available through your `PATH`:
+
+    $ which manage
+    /path/to/manage
+
+`setup` performs the above on your behalf, attempting to correct for environmental variability.
+
+Issues with `setup` and the above instructions may be https://github.com/chicago-cdac/textbook-datascience-1/issues[reported as Issues].
 
 
 == Authoring content

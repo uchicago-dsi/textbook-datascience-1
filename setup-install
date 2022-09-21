@@ -151,7 +151,16 @@ manage_on_path() {
 }
 
 fix_manage_path() {
-  [ -x "$HOME/.local/bin/manage" ] && echo -e '\nexport PATH="$HOME/.local/bin:$PATH"' >> $HOME/.profile
+  local path_prefix
+
+  for path_prefix in ".local" "Library/Python/${PYTHON_EXE#python}"; do
+    if [ -x "$HOME/$path_prefix/bin/manage" ]; then
+      echo -e "\nexport PATH=\"\$HOME/$path_prefix/bin:\$PATH\"" >> "$HOME/.profile"
+      return 0
+    fi
+  done
+
+  return 1
 }
 
 require path \
