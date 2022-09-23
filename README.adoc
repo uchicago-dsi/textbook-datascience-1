@@ -94,6 +94,11 @@ Once you've completed your session, feel free to release computational resources
 
     $ manage stop
 
+=== Essential Guidelines and Notebook Structure
+
+Make sure to follow the set of guidelines provided in this [wiki](https://github.com/chicago-cdac/textbook-datascience-1/wiki/Guidelines) for branching and sharing your work on github. 
+This also contains guidlines on avoiding merge conflicts and structure of the textbook.
+
 
 == Publishing
 
