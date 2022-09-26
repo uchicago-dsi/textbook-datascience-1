@@ -56,3 +56,10 @@ chapters:
   - file: 03/6/Functions
 
 - file: 04/DataFrames
+
+- file: 06/1/Merge_groups
+- file: 06/2/Groups_pivots
+
+- file: 09/1/Intro
+- file: 09/2/Control_Statements_conditionals
+- file: 09/3/Control_Statements_Iteration
