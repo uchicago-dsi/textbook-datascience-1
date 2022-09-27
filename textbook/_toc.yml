@@ -61,6 +61,6 @@ chapters:
   file: 11/ch11intro
 
   sections:
-  - file: 11/1/ch11causality
-  - file: 11/2/ch11experiments
-  - file: 11/3/ch11sampling
+  - file: 11/01/ch11causality
+  - file: 11/02/ch11experiments
+  - file: 11/03/ch11sampling
