@@ -57,4 +57,10 @@ chapters:
 
 - file: 04/DataFrames
 
-- file: 11/DataCollection
+- title: "Data Collection"
+  file: 11/ch11intro
+
+  sections:
+  - file: 11/1/ch11causality
+  - file: 11/2/ch11experiments
+  - file: 11/3/ch11sampling
