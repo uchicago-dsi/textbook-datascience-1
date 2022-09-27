@@ -26,4 +26,4 @@ libraries, and the Jupyter notebook environment.
 
 This text includes a complete introduction to all of these computational tools.
 You will learn to write programs, generate images from data, and work with
-real-world data sets that are published online.
+real-world data sets that are published online. Testing.
