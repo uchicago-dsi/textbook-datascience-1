@@ -56,11 +56,3 @@ chapters:
   - file: 03/6/Functions
 
 - file: 04/DataFrames
-
-- title: "Data Collection"
-  file: 11/ch11intro
-
-  sections:
-  - file: 11/01/ch11causality
-  - file: 11/02/ch11experiments
-  - file: 11/03/ch11sampling
