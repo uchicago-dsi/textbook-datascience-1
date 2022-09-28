@@ -15,13 +15,13 @@ The next sampling design is **cluster sampling** which is commonly confused with
 The image below depicts each type of sampling (in maroon) from a population of 100 (in grey). Panel a shows the full population before sampling. Panel b shows a simple random sample of 10 units. Panel c shows a stratified random sample of 10 units with 5 strata. Panel d shows a cluster sample of 10 units with 20 clusters.
 
 <p style="text-align:center;">
-<img src="/Users/amandakube/textbook-datascience-1/textbook/images/SamplingSchemes.png" alt="Image of Sampling Designs" width="500"/>
+<img src="SamplingSchemes.png" alt="Image of Sampling Designs" width="500"/>
 </p>
 
 The last type of sampling we will discuss, **multistage sampling**, conducts sampling in stages and is often used for large nationwide samples of households or individuals. The major advantage of multistage sampling is that it does not require a complete sampling frame. For example, consider a polling company interested in obtaining a generalizable sample of American households. First, they might stratify households by state to ensure sampling from each state. Within states, they might cluster households by county and take a simple random sample of those counties. Lastly, they take a simple random sample of n households from each of the sampled counties. This sampling strategy is depicted below. Multistage sampling mixes stratified and cluster sampling in stages and as a result, the researcher never required a list of all households in the US, but rather a sampling frame of US counties and then a sampling frame of households within a much smaller subset of US counties.
 
 <p style="text-align:center;">
-<img src="/Users/amandakube/textbook-datascience-1/textbook/images/MultistageSampling.png" alt="Example of Multistage Sampling" width="600"/>
+<img src="MultistageSampling.png" alt="Example of Multistage Sampling" width="600"/>
 </p>
 
 ### Biases

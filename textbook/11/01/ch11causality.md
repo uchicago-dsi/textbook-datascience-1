@@ -10,7 +10,7 @@ When we see that two variables X and Y are associated, we often wonder if one ca
 Well-designed studies, which we will discuss further in the next section, can help distinguish between the three scenarios which are often depicted using causal graphs. A causal graph is a graph where each node depicts a variable and each edge is directed (an arrow) pointing in the direction of a cause. The figure below shows causal graphs as well as examples for all three scenarios.
 
 <p style="text-align:center;">
-<img src="/Users/amandakube/textbook-datascience-1/textbook/images/Causality.png" alt="Three Types of Association" width="500"/>
+<img src="Causality.png" alt="Three Types of Association" width="500"/>
 </p>
 
 The first panel shows a causal association. When we see a causal association between X and Y we can depict it with an arrow from the cause to the effect. For example jumping in the lake is the direct cause of getting wet so the arrow is drawn from jumping in the lake to getting wet. 
