@@ -57,9 +57,15 @@ chapters:
 
 - file: 04/DataFrames
 
-- file: 06/1/Merge_groups
-- file: 06/2/Groups_pivots
+- title: "Merge, Group and Pivot Table"
+  file: 06/merge-group-pivot
+  sections:
+  - file: 06/1/Merge_groups
+  - file: 06/2/Groups_pivots
 
-- file: 09/1/Intro
-- file: 09/2/Control_Statements_conditionals
-- file: 09/3/Control_Statements_Iteration
+- file: 09/randomness-and-sampling
+  sections:
+  - file: 09/1/Intro
+  - file: 09/2/Control_Statements_conditionals
+  - file: 09/3/Control_Statements_Iteration
+  - file: 09/4/Random_Selection_and_Sampling
