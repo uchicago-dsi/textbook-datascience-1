@@ -70,9 +70,8 @@ chapters:
   - file: 09/3/Control_Statements_Iteration
   - file: 09/4/Random_Selection_and_Sampling
 
-- title: "Data Collection"
-  file: 11/ch11intro
+- file: 11/data-collection
   sections:
-  - file: 11/01/ch11causality
-  - file: 11/02/ch11experiments
-  - file: 11/03/ch11sampling
+  - file: 11/1/causality
+  - file: 11/2/experiments
+  - file: 11/3/sampling
