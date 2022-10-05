@@ -6,3 +6,11 @@ logo: ""  # path to a logo file
 sphinx:
   config:
     execution_show_tb: true
+
+parse:
+  myst_enable_extensions:
+    - dollarmath
+    - linkify
+    - substitution
+    - colon_fence
+    - deflist
