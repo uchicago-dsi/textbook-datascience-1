@@ -63,6 +63,13 @@ chapters:
   - file: 06/1/Merge_groups
   - file: 06/2/Groups_pivots
 
+- file: 08/data-visualization
+  sections:
+  - title: Libraries
+    file: 08/1/Libraries
+  - file: 08/2/Categorical_Data
+  - file: 08/3/Numerical_Data
+
 - file: 09/randomness-and-sampling
   sections:
   - file: 09/1/Intro
