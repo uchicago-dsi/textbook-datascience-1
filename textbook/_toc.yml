@@ -75,3 +75,9 @@ chapters:
   - file: 11/1/causality
   - file: 11/2/experiments
   - file: 11/3/sampling
+
+- file: 12/probabilityDistributions
+  sections:
+  - file: 12/1/sampling
+  - file: 12/2/simulation
+  - file: 12/3/bias-variance
