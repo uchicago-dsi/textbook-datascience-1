@@ -77,6 +77,14 @@ chapters:
   - file: 09/3/Control_Statements_Iteration
   - file: 09/4/Random_Selection_and_Sampling
 
+- title: Probability
+  file: 10/Probability
+  sections:
+  - file: 10/1/Rules_Definitions
+  - file: 10/2/Simulation_Solution
+  - file: 10/3/Math_vs_Computation
+  - file: 10/4/Birthday_Pb_Relaxed_Assumptions
+
 - file: 11/data-collection
   sections:
   - file: 11/1/causality
