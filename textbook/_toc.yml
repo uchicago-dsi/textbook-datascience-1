@@ -78,6 +78,6 @@ chapters:
 
 - file: 12/probability-sampling-empiricaldistributions
   sections:
-  - file: 12/1/sampling
-  - file: 12/2/simulation
+  - file: 12/1/Sampling
+  - file: 12/2/Simulation
   - file: 12/3/bias-variance
