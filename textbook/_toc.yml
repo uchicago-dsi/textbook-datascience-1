@@ -7,52 +7,17 @@ chapters:
 - title: "DEMO: What is Data Science"
   file: 01/what-is-data-science
 
+- title: "Case study: text analysis and authorship"
+  file: 02/casestudy
   sections:
-  - title: Introduction
-    file: 01/1/intro
-    sections:
-    - file: 01/1/1/computational-tools
-    - file: 01/1/2/statistical-techniques
-
-  - file: 01/2/why-data-science
-
-  - file: 01/3/Plotting_the_Classics
-
-- title: "DEMO: Causality and Experiments"
-  file: 02/causality-and-experiments
-
-  sections:
-  - file: 02/1/observation-and-visualization-john-snow-and-the-broad-street-pump
-  - file: 02/2/snow-s-grand-experiment
-  - file: 02/3/establishing-causality
-  - file: 02/4/randomization
-  - file: 02/5/endnote
+       - file: 02/case-study-federalist-papers
 
 - file: 03/programming-in-python
 
   sections:
-  - file: 03/1/Expressions
-
-  - file: 03/2/Names
-    sections:
-      - title: "Example: Growth Rates"
-        file: 03/2/1/Growth
-
   - title: Data Types
     file: 03/3/Types
-    sections:
-    - file: 03/3/1/Numbers
-    - file: 03/3/2/Strings
-    - file: 03/3/3/Sequences
-
-  - title: Comparisons
-    file: 03/4/Comparison
-
-  - title: Call Expressions
-    file: 03/5/Calls
-    sections:
-      - file: 03/5/1/String_Methods
-
+  - file: 03/3/3/Sequences
   - file: 03/6/Functions
 
 - file: 04/DataFrames
