@@ -6,21 +6,17 @@ chapters:
 
 - title: "DEMO: What is Data Science"
   file: 01/what-is-data-science
-
   sections:
   - title: Introduction
     file: 01/1/intro
     sections:
     - file: 01/1/1/computational-tools
     - file: 01/1/2/statistical-techniques
-
   - file: 01/2/why-data-science
-
   - file: 01/3/Plotting_the_Classics
 
 - title: "DEMO: Causality and Experiments"
   file: 02/causality-and-experiments
-
   sections:
   - file: 02/1/observation-and-visualization-john-snow-and-the-broad-street-pump
   - file: 02/2/snow-s-grand-experiment
@@ -29,64 +25,84 @@ chapters:
   - file: 02/5/endnote
 
 - file: 03/programming-in-python
-
   sections:
   - file: 03/1/Expressions
-
   - file: 03/2/Names
     sections:
       - title: "Example: Growth Rates"
         file: 03/2/1/Growth
-
   - title: Data Types
     file: 03/3/Types
     sections:
     - file: 03/3/1/Numbers
     - file: 03/3/2/Strings
     - file: 03/3/3/Sequences
-
   - title: Comparisons
     file: 03/4/Comparison
-
   - title: Call Expressions
     file: 03/5/Calls
     sections:
       - file: 03/5/1/String_Methods
-
   - file: 03/6/Functions
 
-- file: 04/DataFrames
+- title: "Data Structures"
+  file: 04/placeholder4
+
+- title: "Functions, Conditionals, and Iteration"
+  file: 05/placeholder5
+
+- file: 06/DataFrames
 
 - title: "Merge, Group and Pivot Table"
-  file: 06/merge-group-pivot
+  file: 07/merge-group-pivot
   sections:
-  - file: 06/1/Merge_groups
-  - file: 06/2/Groups_pivots
+  - file: 07/1/Merge_groups
+  - file: 07/2/Groups_pivots
 
-- file: 08/data-visualization
+- title: "String Data and Fuzzy Matching"
+  file: 08/placeholder8
+
+- file: 09/data-visualization
   sections:
   - title: Libraries
-    file: 08/1/Libraries
-  - file: 08/2/Categorical_Data
-  - file: 08/3/Numerical_Data
+    file: 09/1/Libraries
+  - file: 09/2/Categorical_Data
+  - file: 09/3/Numerical_Data
 
-- file: 09/randomness-and-sampling
+- file: 10/data-collection
   sections:
-  - file: 09/1/Intro
-  - file: 09/2/Control_Statements_conditionals
-  - file: 09/3/Control_Statements_Iteration
-  - file: 09/4/Random_Selection_and_Sampling
+  - file: 10/1/causality
+  - file: 10/2/experiments
+  - file: 10/3/sampling
+
+# - file: 09/randomness-and-sampling
+#   sections:
+#   - file: 09/1/Intro
+#   - file: 09/2/Control_Statements_conditionals
+#   - file: 09/3/Control_Statements_Iteration
+#   - file: 09/4/Random_Selection_and_Sampling
 
 - title: Probability
-  file: 10/Probability
+  file: 11/Probability
   sections:
-  - file: 10/1/Rules_Definitions
-  - file: 10/2/Simulation_Solution
-  - file: 10/3/Math_vs_Computation
-  - file: 10/4/Birthday_Pb_Relaxed_Assumptions
+  - file: 11/1/Rules_Definitions
+  - file: 11/2/Simulation_Solution
+  - file: 11/3/Math_vs_Computation
+  - file: 11/4/Birthday_Pb_Relaxed_Assumptions
 
-- file: 11/data-collection
-  sections:
-  - file: 11/1/causality
-  - file: 11/2/experiments
-  - file: 11/3/sampling
+- title: "Sampling and Empirical Distributions"
+  file: 12/placeholder12
+
+- title: "Hypothesis Testing"
+  file: 13/placeholder13
+
+- title: "Estimation and Confidence Intervals"
+  file: 14/placeholder14
+
+- title: "Ethics and Pitfalls in Data Science"
+  file: 15/placeholder15
+
+- title: "Data Science Case Study"
+  file: 16/placeholder16
+
+#End of 118
