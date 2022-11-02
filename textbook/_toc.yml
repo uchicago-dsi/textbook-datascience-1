@@ -52,6 +52,13 @@ chapters:
   file: 05/placeholder5
 
 - file: 06/DataFrames
+  sections:
+  - file: 06/1/Creating_DataFrame
+  - file: 06/2/Extracting_Columns
+  - file: 06/3/Accessing_Rows
+  - file: 06/4/Adding_Columns
+  - file: 06/5/Select_Label
+  - file: 06/6/Select_Condition
 
 - title: "Merge, Group and Pivot Table"
   file: 07/merge-group-pivot
