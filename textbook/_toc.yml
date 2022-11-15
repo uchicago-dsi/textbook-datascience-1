@@ -4,25 +4,11 @@ root: intro
 
 chapters:
 
-- title: "DEMO: What is Data Science"
-  file: 01/what-is-data-science
-  sections:
-  - title: Introduction
-    file: 01/1/intro
-    sections:
-    - file: 01/1/1/computational-tools
-    - file: 01/1/2/statistical-techniques
-  - file: 01/2/why-data-science
-  - file: 01/3/Plotting_the_Classics
+- title: "Data Science"
+  file: 01/placeholder1
 
-- title: "DEMO: Causality and Experiments"
-  file: 02/causality-and-experiments
-  sections:
-  - file: 02/1/observation-and-visualization-john-snow-and-the-broad-street-pump
-  - file: 02/2/snow-s-grand-experiment
-  - file: 02/3/establishing-causality
-  - file: 02/4/randomization
-  - file: 02/5/endnote
+- title: "Data Science Case Study"
+  file: 02/placeholder2
 
 - file: 03/programming-in-python
   sections:
