@@ -14,3 +14,4 @@ parse:
     - substitution
     - colon_fence
     - deflist
+    - html_image
