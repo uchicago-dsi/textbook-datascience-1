@@ -4,13 +4,14 @@ root: intro
 
 chapters:
 
-- title: "Data Science"
+- title: "1. Data Science"
   file: 01/placeholder1
 
-- title: "Data Science Case Study"
+- title: "2. Data Science Case Study"
   file: 02/placeholder2
 
-- file: 03/programming-in-python
+- title: "3. Programming in Python"
+  file: 03/programming-in-python
   sections:
   - file: 03/1/Expressions
   - file: 03/2/Names
@@ -31,13 +32,14 @@ chapters:
       - file: 03/5/1/String_Methods
   - file: 03/6/Functions
 
-- title: "Data Structures"
+- title: "4. Functions, Conditionals, and Iteration"
   file: 04/placeholder4
 
-- title: "Functions, Conditionals, and Iteration"
+- title: "5. Data Structures"
   file: 05/placeholder5
 
-- file: 06/DataFrames
+- title: "6. DataFrames"
+  file: 06/DataFrames
   sections:
   - file: 06/1/Creating_DataFrame
   - file: 06/2/Extracting_Columns
@@ -46,23 +48,25 @@ chapters:
   - file: 06/5/Select_Label
   - file: 06/6/Select_Condition
 
-- title: "Merge, Group and Pivot Table"
+- title: "7. Merge, Group and Pivot Table"
   file: 07/merge-group-pivot
   sections:
   - file: 07/1/Merge_groups
   - file: 07/2/Groups_pivots
 
-- title: "String Data and Fuzzy Matching"
+- title: "8. String Data and Fuzzy Matching"
   file: 08/placeholder8
 
-- file: 09/data-visualization
+- title: "9. Data Visualization"
+  file: 09/data-visualization
   sections:
   - title: Libraries
     file: 09/1/Libraries
   - file: 09/2/Categorical_Data
   - file: 09/3/Numerical_Data
 
-- file: 10/data-collection
+- title: "10. Data Collection"
+  file: 10/data-collection
   sections:
   - file: 10/1/causality
   - file: 10/2/experiments
@@ -78,7 +82,7 @@ chapters:
 #   - file: 09/3/Control_Statements_Iteration
 #   - file: 09/4/Random_Selection_and_Sampling
 
-- title: Probability
+- title: "11. Probability"
   file: 11/Probability
   sections:
   - title: Definitions and Rules
@@ -87,17 +91,17 @@ chapters:
   - file: 11/3/Math_vs_Computation
   - file: 11/4/Birthday_Pb_Relaxed_Assumptions
 
-- title: "Sampling and Empirical Distributions"
+- title: "12. Empirical and Probability Distributions"
   file: 12/placeholder12
 
-- title: "Hypothesis Testing"
+- title: "13. Hypothesis Testing"
   file: 13/placeholder13
 
-- title: "Estimation and Confidence Intervals"
+- title: "14. Estimation and Confidence Intervals"
   file: 14/placeholder14
 
-- title: "Ethics and Pitfalls in Data Science"
+- title: "15. Ethics and Pitfalls in Data Science"
   file: 15/placeholder15
 
-- title: "Data Science Case Study"
+- title: "16. Data Science Case Study"
   file: 16/placeholder16
