@@ -48,3 +48,4 @@ _site/
 !/preview/html
 
 .DS_Store
+.Rhistory

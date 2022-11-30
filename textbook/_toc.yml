@@ -81,7 +81,8 @@ chapters:
 - title: Probability
   file: 11/Probability
   sections:
-  - file: 11/1/Rules_Definitions
+  - title: Definitions and Rules
+    file: 11/1/Rules_Definitions
   - file: 11/2/Simulation_Solution
   - file: 11/3/Math_vs_Computation
   - file: 11/4/Birthday_Pb_Relaxed_Assumptions
