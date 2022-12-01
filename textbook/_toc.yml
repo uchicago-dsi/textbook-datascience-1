@@ -92,7 +92,11 @@ chapters:
   - file: 11/4/Birthday_Pb_Relaxed_Assumptions
 
 - title: "12. Empirical and Probability Distributions"
-  file: 12/placeholder12
+  file: 12/empirical-distributions
+  sections:
+  - file: 12/1/uniform
+  - file: 12/2/normal
+  - file: 12/3/binomial
 
 - title: "13. Hypothesis Testing"
   file: 13/placeholder13
