@@ -32,11 +32,15 @@ chapters:
       - file: 03/5/1/String_Methods
   - file: 03/6/Functions
 
-- title: "4. Functions, Conditionals, and Iteration"
+- title: "4. Data Structures"
   file: 04/placeholder4
 
-- title: "5. Data Structures"
-  file: 05/placeholder5
+- title: "5. Randomness and Control Statements"
+  file: 05/randomness-and-control-statement
+  sections:
+  - file: 05/1/Intro
+  - file: 05/2/Control_Statements_conditionals
+  - file: 05/3/Control_Statements_Iteration
 
 - title: "6. DataFrames"
   file: 06/DataFrames
@@ -51,8 +55,9 @@ chapters:
 - title: "7. Merge, Group and Pivot Table"
   file: 07/merge-group-pivot
   sections:
-  - file: 07/1/Merge_groups
-  - file: 07/2/Groups_pivots
+  - file: 07/1/Merge
+  - file: 07/2/Groups
+  - file: 07/3/pivots
 
 - title: "8. String Data and Fuzzy Matching"
   file: 08/placeholder8
