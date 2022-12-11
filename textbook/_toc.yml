@@ -33,9 +33,10 @@ chapters:
     - file: 03/5/2/Functions
 
 - title: "4. Data Structures"
-  file: 04/placeholder4
+  file: 04/DataStructures
   sections:
-  - file: 04/1/Sequences
+  - file: 04/1/Lists
+  - file: 04/2/Dictionaries
 
 - title: "5. Randomness and Control Statements"
   file: 05/randomness-and-control-statement
