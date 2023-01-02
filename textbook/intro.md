@@ -10,4 +10,4 @@ with support of the **UC Berkeley Data Science Education Program and the
 [Berkeley Institute for Data Science](https://bids.berkeley.edu/)**.
 
 [sam]: http://www.samlau.me/
-[chris]: https://predictablynoisy.com
+[chris]: https://2i2c.org/author/chris-holdgraf/
