@@ -16,14 +16,9 @@ chapters:
   - title: "Operations"
     file: 03/1/Operations
   - title: "Assignment Statements"
-    file: 03/2/Names
+    file: 03/2/Assignments
   - title: "Data Types"
-    file: 03/3/Types
-    sections:
-    - file: 03/3/1/Integer
-    - file: 03/3/2/Float
-    - file: 03/3/3/Strings
-    - file: 03/3/4/Boolean
+    file: 03/3/DataTypes
   - title: "Comparisons"
     file: 03/4/Comparison
   - title: "Functions"
@@ -33,9 +28,13 @@ chapters:
     - file: 03/5/2/Functions
 
 - title: "4. Data Structures"
-  file: 04/placeholder4
+  file: 04/DataStructures
   sections:
-  - file: 04/1/Sequences
+  - file: 04/1/Lists
+  - file: 04/2/Dictionaries
+  - file: 04/3/Arrays-Intro
+    sections:
+    - file: 04/3/1/Arrays-Slicing
 
 - title: "5. Randomness and Control Statements"
   file: 05/randomness-and-control-statement
