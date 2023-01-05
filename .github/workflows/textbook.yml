@@ -1,6 +1,7 @@
 name: Textbook
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - draft-build
