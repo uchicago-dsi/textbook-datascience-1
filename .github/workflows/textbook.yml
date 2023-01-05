@@ -1,8 +1,10 @@
 name: Textbook
 
 on:
-  release:
-    types: [published]
+ workflow_dispatch:
+ push:
+   branches:
+     - draft-build
 
 permissions:
   contents: read
