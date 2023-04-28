@@ -2,122 +2,165 @@ format: jb-book
 
 root: intro
 
-chapters:
+parts:
+- caption: "Part 1"
+  chapters:
+  
+  - title: "1. Data Science"
+    file: 01/placeholder1
 
-- title: "1. Data Science"
-  file: 01/placeholder1
+  - title: "2. Data Science Case Study"
+    file: 02/placeholder2
 
-- title: "2. Data Science Case Study"
-  file: 02/placeholder2
-
-- title: "3. Programming in Python"
-  file: 03/programming-in-python
-  sections:
-  - title: "Operations"
-    file: 03/1/Operations
-  - title: "Assignment Statements"
-    file: 03/2/Assignments
-  - title: "Data Types"
-    file: 03/3/DataTypes
-  - title: "Comparisons"
-    file: 03/4/Comparison
-  - title: "Functions"
-    file: 03/5/IntroFunctions
+  - title: "3. Programming in Python"
+    file: 03/programming-in-python
     sections:
-    - file: 03/5/1/BuiltIn
-    - file: 03/5/2/Functions
+    - title: "Operations"
+      file: 03/1/Operations
+    - title: "Assignment Statements"
+      file: 03/2/Assignments
+    - title: "Data Types"
+      file: 03/3/DataTypes
+    - title: "Comparisons"
+      file: 03/4/Comparison
+    - title: "Functions"
+      file: 03/5/IntroFunctions
+      sections:
+      - file: 03/5/1/BuiltIn
+      - file: 03/5/2/Functions
 
-- title: "4. Data Structures"
-  file: 04/DataStructures
-  sections:
-  - file: 04/1/Lists
-  - file: 04/2/Dictionaries
-  - file: 04/3/Arrays-Intro
+  - title: "4. Data Structures"
+    file: 04/DataStructures
     sections:
-    - file: 04/3/1/Arrays-Slicing
+    - file: 04/1/Lists
+    - file: 04/2/Dictionaries
+    - file: 04/3/Arrays-Intro
+      sections:
+      - file: 04/3/1/Arrays-Slicing
 
-- title: "5. Randomness and Control Statements"
-  file: 05/randomness-and-control-statement
-  sections:
-  - file: 05/1/Intro
-  - file: 05/2/Control_Statements_conditionals
-  - file: 05/3/Control_Statements_Iteration
+  - title: "5. Randomness and Control Statements"
+    file: 05/randomness-and-control-statement
+    sections:
+    - file: 05/1/Intro
+    - file: 05/2/Control_Statements_conditionals
+    - file: 05/3/Control_Statements_Iteration
 
-- title: "6. DataFrames"
-  file: 06/DataFrames
-  sections:
-  - file: 06/1/Creating_DataFrame
-  - file: 06/2/Extracting_Columns
-  - file: 06/3/Accessing_Rows
-  - file: 06/4/Adding_Columns
-  - file: 06/5/Select_Label
-  - file: 06/6/Select_Condition
+  - title: "6. DataFrames"
+    file: 06/DataFrames
+    sections:
+    - file: 06/1/Creating_DataFrame
+    - file: 06/2/Extracting_Columns
+    - file: 06/3/Accessing_Rows
+    - file: 06/4/Adding_Columns
+    - file: 06/5/Select_Label
+    - file: 06/6/Select_Condition
 
-- title: "7. Merge, Group and Pivot Table"
-  file: 07/merge-group-pivot
-  sections:
-  - file: 07/1/Merge
-  - file: 07/2/Groups
-  - file: 07/3/pivots
+  - title: "7. Merge, Group and Pivot Table"
+    file: 07/merge-group-pivot
+    sections:
+    - file: 07/1/Merge
+    - file: 07/2/Groups
+    - file: 07/3/pivots
 
-- title: "8. String Data and Fuzzy Matching"
-  file: 08/placeholder8
+  - title: "8. String Data and Fuzzy Matching"
+    file: 08/placeholder8
 
-- title: "9. Data Visualization"
-  file: 09/data-visualization
-  sections:
-  - title: Libraries
-    file: 09/1/Libraries
-  - file: 09/2/Categorical_Data
-  - file: 09/3/Numerical_Data
+  - title: "9. Data Visualization"
+    file: 09/data-visualization
+    sections:
+    - title: Libraries
+      file: 09/1/Libraries
+    - file: 09/2/Categorical_Data
+    - file: 09/3/Numerical_Data
 
-- title: "10. Data Collection"
-  file: 10/data-collection
-  sections:
-  - file: 10/1/causality
-  - file: 10/2/experiments
-  - file: 10/3/sampling
-  - file: 10/4/biases
+  - title: "10. Data Collection"
+    file: 10/data-collection
+    sections:
+    - file: 10/1/causality
+    - file: 10/2/experiments
+    - file: 10/3/sampling
+    - file: 10/4/biases
 
-# This chapter's contents are to be split up into other chapters.
-#
-# - file: 09/randomness-and-sampling
-#   sections:
-#   - file: 09/1/Intro
-#   - file: 09/2/Control_Statements_conditionals
-#   - file: 09/3/Control_Statements_Iteration
-#   - file: 09/4/Random_Selection_and_Sampling
+  # This chapter's contents are to be split up into other chapters.
+  #
+  # - file: 09/randomness-and-sampling
+  #   sections:
+  #   - file: 09/1/Intro
+  #   - file: 09/2/Control_Statements_conditionals
+  #   - file: 09/3/Control_Statements_Iteration
+  #   - file: 09/4/Random_Selection_and_Sampling
 
-- title: "11. Probability"
-  file: 11/Probability
-  sections:
-  - title: Definitions and Rules
-    file: 11/1/Rules_Definitions
-  - file: 11/2/Simulation_Solution
-  - file: 11/3/Math_vs_Computation
-  - file: 11/4/Birthday_Pb_Relaxed_Assumptions
+  - title: "11. Probability"
+    file: 11/Probability
+    sections:
+    - title: Definitions and Rules
+      file: 11/1/Rules_Definitions
+    - file: 11/2/Simulation_Solution
+    - file: 11/3/Math_vs_Computation
+    - file: 11/4/Birthday_Pb_Relaxed_Assumptions
 
-- title: "12. Empirical and Probability Distributions"
-  file: 12/empirical-distributions
-  sections:
-  - file: 12/1/uniform
-  - file: 12/2/normal
-  - file: 12/3/binomial
+  - title: "12. Empirical and Probability Distributions"
+    file: 12/empirical-distributions
+    sections:
+    - file: 12/1/uniform
+    - file: 12/2/normal
+    - file: 12/3/binomial
 
-- title: "13. Hypothesis Testing"
-  file: 13/placeholder13
+  - title: "13. Hypothesis Testing"
+    file: 13/placeholder13
 
-- title: "14. Estimation and Confidence Intervals"
-  file: 14/placeholder14
+  - title: "14. Estimation and Confidence Intervals"
+    file: 14/placeholder14
 
-- title: "15. Ethics and Pitfalls in Data Science"
-  file: 15/data-ethics-intro
-  sections:
-  - file: 15/1/ethics-and-law
-  - file: 15/2/pillar1
-  - file: 15/3/pillar2
-  - file: 15/4/pillar3
-  - file: 15/5/pillar4
+  - title: "15. Ethics and Pitfalls in Data Science"
+    file: 15/data-ethics-intro
+    sections:
+    - file: 15/1/ethics-and-law
+    - file: 15/2/pillar1
+    - file: 15/3/pillar2
+    - file: 15/4/pillar3
+    - file: 15/5/pillar4
 
-- title: "16. Data Science Case Study"
-  file: 16/placeholder16
+  - title: "16. Data Science Case Study"
+    file: 16/placeholder16
+
+- caption: "Part 2"
+  chapters:
+  - title: "17. Prediction and Correlation"
+    file: 17/placeholder17
+
+  - title: "18. Simple Linear Regression"
+    file: 18/placeholder18
+
+  - title: "19. Multiple Linear Regression"
+    file: 19/placeholder19
+
+  - title: "20. Relational Databases and SQL"
+    file: 20/placeholder20
+
+  - title: "21. Data Warehouses and Data Lakes"
+    file: 21/placeholder21
+
+  - title: "22. Scalable Data Processing"
+    file: 22/placeholder22
+
+  - title: "23. Classification"
+    file: 23/placeholder23
+
+  - title: "24. Clustering"
+    file: 24/placeholder24
+
+  - title: "25. Feature Engineering and Feature Selection"
+    file: 25/placeholder25
+
+  - title: "26. Prediction with Many Features"
+    file: 26/placeholder26
+
+  - title: "27. Neural Networks"
+    file: 27/placeholder27
+
+  - title: "28. Cloud Computing"
+    file: 28/placeholder28
+
+  - title: "29. Reproducibility"
+    file: 29/placeholder29
