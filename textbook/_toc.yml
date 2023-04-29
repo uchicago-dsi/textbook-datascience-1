@@ -3,10 +3,10 @@ format: jb-book
 root: intro
 
 parts:
-- caption: "Part 1"
+- caption: "Data Science I"
   chapters:
   
-  - title: "1. Data Science"
+  - title: "1. What is Data Science?"
     file: 01/placeholder1
 
   - title: "2. Data Science Case Study"
@@ -124,7 +124,7 @@ parts:
   - title: "16. Data Science Case Study"
     file: 16/placeholder16
 
-- caption: "Part 2"
+- caption: "Data Science II"
   chapters:
   - title: "17. Prediction and Correlation"
     file: 17/placeholder17
