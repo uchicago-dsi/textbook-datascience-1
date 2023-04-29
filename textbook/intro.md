@@ -1,16 +1,14 @@
 # Introduction to Data Science
-## University of Chicago
-### Authors (in order of appearance):
-- [Dan L. Nicolae][https://www.stat.uchicago.edu/~nicolae/]
-- [Michael J. Franklin][https://cs.uchicago.edu/people/michael-franklin/]
-- [Amanda R. Kube Jotte][https://amandakube.github.io/]
+
+- [Dan L. Nicolae](https://www.stat.uchicago.edu/~nicolae/)
+- [Michael J. Franklin](https://cs.uchicago.edu/people/michael-franklin/)
+- [Amanda R. Kube Jotte](https://amandakube.github.io/)
 - Evelyn Campbell
 - Susanna Lange
 - Jesse London
 - Will Trimble
 
 
-## Introduction:
 Forthcoming...
 
 
