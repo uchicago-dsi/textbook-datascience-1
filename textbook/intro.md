@@ -1,4 +1,4 @@
-# Introduction to Data Science
+# Introduction to Data Science I & II
 
 - [Dan L. Nicolae](https://www.stat.uchicago.edu/~nicolae/)
 - [Michael J. Franklin](https://cs.uchicago.edu/people/michael-franklin/)
