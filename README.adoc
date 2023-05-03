@@ -56,7 +56,7 @@ Then, the `manage` command should be available through your `PATH`:
 
 `setup` performs the above on your behalf, attempting to correct for environmental variability.
 
-Issues with `setup` and the above instructions may be https://github.com/chicago-cdac/textbook-datascience-1/issues[reported as Issues].
+Issues with `setup` and the above instructions may be https://github.com/uchicago-dsi/textbook-datascience-1/issues[reported as Issues].
 
 
 == Authoring content
@@ -96,9 +96,9 @@ Once you've completed your session, feel free to release computational resources
 
 === More information
 
-Consult the https://github.com/chicago-cdac/textbook-datascience-1/wiki[repository Wiki] for more information on authoring content.
+Consult the https://github.com/uchicago-dsi/textbook-datascience-1/wiki[repository Wiki] for more information on authoring content.
 
-In particular, be aware of the https://github.com/chicago-cdac/textbook-datascience-1/wiki/Guidelines[provided Guidelines] for:
+In particular, be aware of the https://github.com/uchicago-dsi/textbook-datascience-1/wiki/Guidelines[provided Guidelines] for:
 
 * branching and sharing your work on GitHub
 * avoiding merge conflicts
@@ -107,11 +107,11 @@ In particular, be aware of the https://github.com/chicago-cdac/textbook-datascie
 
 == Publishing
 
-https://github.com/chicago-cdac/textbook-datascience-1/deployments/activity_log?environment=github-pages[GitHub Pages] serves the textbook's generated HTML at https://ds1.datascience.uchicago.edu/[its configured domain].
+https://github.com/uchicago-dsi/textbook-datascience-1/deployments/activity_log?environment=github-pages[GitHub Pages] serves the textbook's generated HTML at https://ds1.datascience.uchicago.edu/[its configured domain].
 
-The textbook is so published via the https://github.com/chicago-cdac/textbook-datascience-1/actions/workflows/textbook.yml[Github Actions workflow: Textbook] (controlled via link:.github/workflows/textbook.yml[textbook.yml]).
+The textbook is so published via the https://github.com/uchicago-dsi/textbook-datascience-1/actions/workflows/textbook.yml[Github Actions workflow: Textbook] (controlled via link:.github/workflows/textbook.yml[textbook.yml]).
 
-And the workflow is triggered &ndash; and the textbook published &ndash; by the https://github.com/chicago-cdac/textbook-datascience-1/releases[publishing of a new Release].
+And the workflow is triggered &ndash; and the textbook published &ndash; by the https://github.com/uchicago-dsi/textbook-datascience-1/releases[publishing of a new Release].
 
 NOTE: Release tags *must* follow the semantic versioning pattern: `[0-9].[0-9]*`. For example: `0.0.4`.
 
@@ -119,11 +119,11 @@ NOTE: Release tags *must* follow the semantic versioning pattern: `[0-9].[0-9]*`
 
 If GitHub has a problem building what's been committed, it will e-mail the user who authored the failing release.
 
-The progress of the publishing workflow may otherwise be reviewed: https://github.com/chicago-cdac/textbook-datascience-1/actions/workflows/textbook.yml[Github Actions workflow: Textbook].
+The progress of the publishing workflow may otherwise be reviewed: https://github.com/uchicago-dsi/textbook-datascience-1/actions/workflows/textbook.yml[Github Actions workflow: Textbook].
 
 
 == Managing the Image
 
-The textbook authoring- and build-environment is provided as https://github.com/chicago-cdac/textbook-datascience-1/pkgs/container/textbook-jupyter-service[a Docker container], the image of which is maintained under directory link:image/[].
+The textbook authoring- and build-environment is provided as https://github.com/uchicago-dsi/textbook-datascience-1/pkgs/container/textbook-jupyter-service[a Docker container], the image of which is maintained under directory link:image/[].
 
-Changes to any files under that directory, once pushed to the repository, trigger the rebuild and push of that image, via the https://github.com/chicago-cdac/textbook-datascience-1/actions/workflows/image.yml[Github Actions workflow: Image] (controlled via link:.github/workflows/image.yml[image.yml]).
+Changes to any files under that directory, once pushed to the repository, trigger the rebuild and push of that image, via the https://github.com/uchicago-dsi/textbook-datascience-1/actions/workflows/image.yml[Github Actions workflow: Image] (controlled via link:.github/workflows/image.yml[image.yml]).
