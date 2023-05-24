@@ -15,52 +15,72 @@ parts:
   - title: "3. Programming in Python"
     file: 03/programming-in-python
     sections:
-    - title: "Operations"
+    - title: "3.1 Operations"
       file: 03/1/Operations
-    - title: "Assignment Statements"
+    - title: "3.2 Assignment Statements"
       file: 03/2/Assignments
-    - title: "Data Types"
+    - title: "3.3 Data Types"
       file: 03/3/DataTypes
-    - title: "Comparisons"
-      file: 03/4/Comparison
-    - title: "Functions"
+    - title: "3.4 Comparisons"
+      file: 03/4/Comparisons
+    - title: "3.5 Functions"
       file: 03/5/IntroFunctions
       sections:
-      - file: 03/5/1/BuiltIn
-      - file: 03/5/2/Functions
+      - title: "3.5.1 Built-In Functions and Methods"
+        file: 03/5/1/BuiltIn
+      - title: "3.5.2 User-Defined Functions"
+        file: 03/5/2/Functions
 
-  - title: "4. Data Structures"
+  - title: "4. Collections of Data"
     file: 04/DataStructures
     sections:
-    - file: 04/1/Lists
-    - file: 04/2/Dictionaries
-    - file: 04/3/Arrays-Intro
+    - title: "4.1 Lists"
+      file: 04/1/Lists
+    - title: "4.2 Dictionaries"
+      file: 04/2/Dictionaries
+    - title: "4.3 Arrays"
+      file: 04/3/Arrays-Intro
       sections:
-      - file: 04/3/1/Arrays-Slicing
+      - title: "4.3.1 Indexing and Slicing"
+        file: 04/3/1/Arrays-Slicing
+    - title: "4.4 Assignment for Mutable Data Types"
+      file: 04/4/assignment
 
   - title: "5. Randomness and Control Statements"
     file: 05/randomness-and-control-statement
     sections:
-    - file: 05/1/Intro
-    - file: 05/2/Control_Statements_conditionals
-    - file: 05/3/Control_Statements_Iteration
+    - title: "5.1 Randomness"
+      file: 05/1/Intro
+    - title: "5.2 Conditional Statements"
+      file: 05/2/Control_Statements_conditionals
+    - title: "5.3 Iteration and Simulation"
+      file: 05/3/Control_Statements_Iteration
 
   - title: "6. DataFrames"
     file: 06/DataFrames
     sections:
-    - file: 06/1/Creating_DataFrame
-    - file: 06/2/Extracting_Columns
-    - file: 06/3/Accessing_Rows
-    - file: 06/4/Adding_Columns
-    - file: 06/5/Select_Label
-    - file: 06/6/Select_Condition
+    - title: "6.1 Creating a DataFrame"
+      file: 06/1/Creating_DataFrame
+    - title: "6.2 Extracting Columns"
+      file: 06/2/Extracting_Columns
+    - title: "6.3 Accessing Rows"
+      file: 06/3/Accessing_Rows
+    - title: "6.4 Adding Columns"
+      file: 06/4/Adding_Columns
+    - title: "6.5 Selection by Label"
+      file: 06/5/Select_Label
+    - title: "6.6 Selection by Condition"
+      file: 06/6/Select_Condition
 
   - title: "7. Merge, Group and Pivot Table"
     file: 07/merge-group-pivot
     sections:
-    - file: 07/1/Merge
-    - file: 07/2/Groups
-    - file: 07/3/pivots
+    - title: "7.1 Merging Data"
+      file: 07/1/Merge
+    - title: "7.2 Grouping Data"
+      file: 07/2/Groups
+    - title: "7.3 Pivot Tables"
+      file: 07/3/pivots
 
   - title: "8. String Data and Fuzzy Matching"
     file: 08/placeholder8
@@ -68,43 +88,46 @@ parts:
   - title: "9. Data Visualization"
     file: 09/data-visualization
     sections:
-    - title: Libraries
+    - title: "9.1 Libraries"
       file: 09/1/Libraries
-    - file: 09/2/Categorical_Data
-    - file: 09/3/Numerical_Data
+    - title: "9.2 Categorical Data"
+      file: 09/2/Categorical_Data
+    - title: "9.3 Numerical Data"
+      file: 09/3/Numerical_Data
 
   - title: "10. Data Collection"
     file: 10/data-collection
     sections:
-    - file: 10/1/causality
-    - file: 10/2/experiments
-    - file: 10/3/sampling
-    - file: 10/4/biases
-
-  # This chapter's contents are to be split up into other chapters.
-  #
-  # - file: 09/randomness-and-sampling
-  #   sections:
-  #   - file: 09/1/Intro
-  #   - file: 09/2/Control_Statements_conditionals
-  #   - file: 09/3/Control_Statements_Iteration
-  #   - file: 09/4/Random_Selection_and_Sampling
+    - title: "10.1 Causality vs Association"
+      file: 10/1/causality
+    - title: "10.2 Observational vs Experimental Studies"
+      file: 10/2/experiments
+    - title: "10.3 Sampling"
+      file: 10/3/sampling
+    - title: "10.4 Biases"
+      file: 10/4/biases
 
   - title: "11. Probability"
     file: 11/Probability
     sections:
-    - title: Definitions and Rules
+    - title: "11.1 Definitions and Rules"
       file: 11/1/Rules_Definitions
-    - file: 11/2/Simulation_Solution
-    - file: 11/3/Math_vs_Computation
-    - file: 11/4/Birthday_Pb_Relaxed_Assumptions
+    - title: "11.2 A Simulation-Based Solution" 
+      file: 11/2/Simulation_Solution
+    - title: "11.3 Mathematical Derivation vs Computational Estimation" 
+      file: 11/3/Math_vs_Computation
+    - title: "11.4 The Birthday Problem: Relaxed Assumptions" 
+      file: 11/4/Birthday_Pb_Relaxed_Assumptions
 
   - title: "12. Empirical and Probability Distributions"
     file: 12/empirical-distributions
     sections:
-    - file: 12/1/uniform
-    - file: 12/2/normal
-    - file: 12/3/binomial
+    - title: "12.1 Uniform Distribution" 
+      file: 12/1/uniform
+    - title: "12.2 Normal Distribution" 
+      file: 12/2/normal
+    - title: "12.3 Binomial Distribution" 
+      file: 12/3/binomial
 
   - title: "13. Hypothesis Testing"
     file: 13/placeholder13
@@ -115,11 +138,16 @@ parts:
   - title: "15. Ethics and Pitfalls in Data Science"
     file: 15/data-ethics-intro
     sections:
-    - file: 15/1/ethics-and-law
-    - file: 15/2/pillar1
-    - file: 15/3/pillar2
-    - file: 15/4/pillar3
-    - file: 15/5/pillar4
+    - title: "15.1 Data Ethics and the Law" 
+      file: 15/1/ethics-and-law
+    - title: "15.2 Pillar 1" 
+      file: 15/2/pillar1
+    - title: "15.3 Pillar 2" 
+      file: 15/3/pillar2
+    - title: "15.4 Pillar 3" 
+      file: 15/4/pillar3
+    - title: "15.5 Pillar 4" 
+      file: 15/5/pillar4
 
   - title: "16. Data Science Case Study"
     file: 16/placeholder16
