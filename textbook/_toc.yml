@@ -43,6 +43,8 @@ parts:
       sections:
       - title: "4.3.1 Indexing and Slicing"
         file: 04/3/1/Arrays-Slicing
+    - title: "4.4 Assignment for Mutable Data Types"
+      file: 04/4/assignment
 
   - title: "5. Randomness and Control Statements"
     file: 05/randomness-and-control-statement
@@ -77,7 +79,7 @@ parts:
       file: 07/1/Merge
     - title: "7.2 Grouping Data"
       file: 07/2/Groups
-    - title: "4.3 Pivot Tables"
+    - title: "7.3 Pivot Tables"
       file: 07/3/pivots
 
   - title: "8. String Data and Fuzzy Matching"
@@ -124,7 +126,7 @@ parts:
       file: 12/1/uniform
     - title: "12.2 Normal Distribution" 
       file: 12/2/normal
-    - title: "12.2 Binomial Distribution" 
+    - title: "12.3 Binomial Distribution" 
       file: 12/3/binomial
 
   - title: "13. Hypothesis Testing"
