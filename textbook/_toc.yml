@@ -40,11 +40,10 @@ parts:
       file: 04/2/Dictionaries
     - title: "4.3 Arrays"
       file: 04/3/Arrays-Intro
-      sections:
-      - title: "4.3.1 Indexing and Slicing"
-        file: 04/3/1/Arrays-Slicing
-    - title: "4.4 Assignment for Mutable Data Types"
-      file: 04/4/assignment
+    - title: "4.4 Array Indexing and Slicing"
+      file: 04/4/Arrays-Slicing
+    - title: "4.5 Assignment for Mutable Data Types"
+      file: 04/5/assignment
 
   - title: "5. Randomness and Control Statements"
     file: 05/randomness-and-control-statement
