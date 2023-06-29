@@ -129,7 +129,18 @@ parts:
       file: 12/3/binomial
 
   - title: "13. Hypothesis Testing"
-    file: 13/placeholder13
+    file: 13/HypothesisTesting_Intro
+    sections:
+    - title: "13.1 Data Ethics and the Law" 
+      file: 13/1/HypothesisTesting_1_Consistency
+    - title: "13.2 Pillar 1" 
+      file: 13/2/HypothesisTesting_2_Test
+    - title: "13.3 Pillar 2" 
+      file: 13/3/HypothesisTesting_3_TwoSample
+    - title: "13.4 Pillar 3" 
+      file: 13/4/HypothesisTesting_4_Categorical
+    - title: "13.5 Pillar 4" 
+      file: 13/5/HypothesisTesting_5_ClassicalStats
 
   - title: "14. Estimation and Confidence Intervals"
     file: 14/placeholder14
@@ -154,7 +165,12 @@ parts:
 - caption: "Data Science II"
   chapters:
   - title: "17. Prediction and Correlation"
-    file: 17/placeholder17
+    file: 17/prediction-and-correlation
+    sections:
+    - title: "17.1 Prediction" 
+      file: 17/1/prediction
+    - title: "17.2 Correlation" 
+      file: 17/2/correlation
 
   - title: "18. Simple Linear Regression"
     file: 18/placeholder18
