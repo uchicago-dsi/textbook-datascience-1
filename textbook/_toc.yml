@@ -131,19 +131,26 @@ parts:
   - title: "13. Hypothesis Testing"
     file: 13/HypothesisTesting_Intro
     sections:
-    - title: "13.1 Data Ethics and the Law" 
+    - title: "13.1 Evaluating Consistency Between Data and a Model" 
       file: 13/1/HypothesisTesting_1_Consistency
-    - title: "13.2 Pillar 1" 
+    - title: "13.2 Hypothesis Testing" 
       file: 13/2/HypothesisTesting_2_Test
-    - title: "13.3 Pillar 2" 
+    - title: "13.3 Two-Sample Testing" 
       file: 13/3/HypothesisTesting_3_TwoSample
-    - title: "13.4 Pillar 3" 
+    - title: "13.4 Categorical Data" 
       file: 13/4/HypothesisTesting_4_Categorical
-    - title: "13.5 Pillar 4" 
+    - title: "13.5 Connections with Classical Statistical Methods" 
       file: 13/5/HypothesisTesting_5_ClassicalStats
 
   - title: "14. Estimation and Confidence Intervals"
-    file: 14/placeholder14
+    file: 14/ConfidenceIntervals_Intro
+    sections:
+    - title: "14.1 Theoretical Justification for Confidence Intervals" 
+      file: 14/1/ConfidenceIntervals_1_Theory
+    - title: "14.2 The Bootstrap" 
+      file: 14/2/ConfidenceIntervals_2_Bootstrap
+    - title: "14.3 Percential Bootstrap Confidence Intervals" 
+      file: 14/3/ConfidenceIntervals_3_PercentileBootstrap
 
   - title: "15. Ethics and Pitfalls in Data Science"
     file: 15/data-ethics-intro
