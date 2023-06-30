@@ -1,7 +1,4 @@
-# Introduction to Data Science I & II
-
-[Dan L. Nicolae](https://www.stat.uchicago.edu/~nicolae/), [Michael J. Franklin](https://cs.uchicago.edu/people/michael-franklin/), [Amanda R. Kube Jotte](https://amandakube.github.io/), Evelyn Campbell, Susanna Lange, Jesse London, and Will Trimble
-
+# Introduction to Data Science I
 
 Forthcoming...
 
