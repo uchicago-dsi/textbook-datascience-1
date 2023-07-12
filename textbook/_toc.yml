@@ -160,7 +160,7 @@ parts:
       file: 14/1/ConfidenceIntervals_1_Theory
     - title: "14.2 The Bootstrap" 
       file: 14/2/ConfidenceIntervals_2_Bootstrap
-    - title: "14.3 Percential Bootstrap Confidence Intervals" 
+    - title: "14.3 Percentile Bootstrap Confidence Intervals" 
       file: 14/3/ConfidenceIntervals_3_PercentileBootstrap
 
   - title: "15. Ethics and Pitfalls in Data Science"
