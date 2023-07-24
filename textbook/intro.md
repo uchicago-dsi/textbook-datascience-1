@@ -1,4 +1,7 @@
-# Introduction to Data Science I
+# Introduction to Data Science I & II
+
+[Dan L. Nicolae](https://www.stat.uchicago.edu/~nicolae/), [Michael J. Franklin](https://cs.uchicago.edu/people/michael-franklin/), [Amanda R. Kube Jotte](https://amandakube.github.io/), Evelyn Campbell, Susanna Lange, Jesse London, and Will Trimble
+
 
 Forthcoming...
 
@@ -10,4 +13,4 @@ with support of the **UC Berkeley Data Science Education Program and the
 [Berkeley Institute for Data Science](https://bids.berkeley.edu/)**.
 
 [sam]: http://www.samlau.me/
-[chris]: https://predictablynoisy.com
+[chris]: https://2i2c.org/author/chris-holdgraf/

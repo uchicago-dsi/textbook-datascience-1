@@ -2,112 +2,226 @@ format: jb-book
 
 root: intro
 
-chapters:
+parts:
+- caption: "Data Science I"
+  chapters:
+  
+  - title: "1. What is Data Science?"
+    file: 01/placeholder1
 
-- title: "1. Data Science"
-  file: 01/placeholder1
+  - title: "2. Data Science Case Study"
+    file: 02/placeholder2
 
-- title: "2. Data Science Case Study"
-  file: 02/placeholder2
-
-- title: "3. Programming in Python"
-  file: 03/programming-in-python
-  sections:
-  - file: 03/1/Expressions
-  - file: 03/2/Names
+  - title: "3. Programming in Python"
+    file: 03/programming-in-python
     sections:
-      - title: "Example: Growth Rates"
-        file: 03/2/1/Growth
-  - title: Data Types
-    file: 03/3/Types
+    - title: "3.1 Operations"
+      file: 03/1/Operations
+    - title: "3.2 Assignment Statements"
+      file: 03/2/Assignments
+    - title: "3.3 Data Types"
+      file: 03/3/DataTypes
+    - title: "3.4 Comparisons"
+      file: 03/4/Comparisons
+    - title: "3.5 Functions"
+      file: 03/5/IntroFunctions
+      sections:
+      - title: "3.5.1 Built-In Functions and Methods"
+        file: 03/5/1/BuiltIn
+      - title: "3.5.2 User-Defined Functions"
+        file: 03/5/2/Functions
+
+  - title: "4. Collections of Data"
+    file: 04/DataStructures
     sections:
-    - file: 03/3/1/Numbers
-    - file: 03/3/2/Strings
-    - file: 03/3/3/Sequences
-  - title: Comparisons
-    file: 03/4/Comparison
-  - title: Call Expressions
-    file: 03/5/Calls
+    - title: "4.1 Lists"
+      file: 04/1/Lists
+    - title: "4.2 Dictionaries"
+      file: 04/2/Dictionaries
+    - title: "4.3 Arrays"
+      file: 04/3/Arrays-Intro
+    - title: "4.4 Array Indexing and Slicing"
+      file: 04/4/Arrays-Slicing
+    - title: "4.5 Assignment for Mutable Data Types"
+      file: 04/5/assignment
+
+  - title: "5. Randomness and Control Statements"
+    file: 05/randomness-and-control-statement
     sections:
-      - file: 03/5/1/String_Methods
-  - file: 03/6/Functions
+    - title: "5.1 Randomness"
+      file: 05/1/Intro
+    - title: "5.2 Conditional Statements"
+      file: 05/2/Control_Statements_conditionals
+    - title: "5.3 Iteration and Simulation"
+      file: 05/3/Control_Statements_Iteration
 
-- title: "4. Functions, Conditionals, and Iteration"
-  file: 04/placeholder4
+  - title: "6. DataFrames"
+    file: 06/DataFrames
+    sections:
+    - title: "6.1 Creating a DataFrame"
+      file: 06/1/Creating_DataFrame
+    - title: "6.2 Extracting Columns"
+      file: 06/2/Extracting_Columns
+    - title: "6.3 Accessing Rows"
+      file: 06/3/Accessing_Rows
+    - title: "6.4 Adding Columns"
+      file: 06/4/Adding_Columns
+    - title: "6.5 Selection by Label"
+      file: 06/5/Select_Label
+    - title: "6.6 Selection by Condition"
+      file: 06/6/Select_Condition
 
-- title: "5. Data Structures"
-  file: 05/placeholder5
+  - title: "7. Merge, Group and Pivot Table"
+    file: 07/merge-group-pivot
+    sections:
+    - title: "7.1 Merging Data"
+      file: 07/1/Merge
+    - title: "7.2 Grouping Data"
+      file: 07/2/Groups
+    - title: "7.3 Pivot Tables"
+      file: 07/3/pivots
 
-- title: "6. DataFrames"
-  file: 06/DataFrames
-  sections:
-  - file: 06/1/Creating_DataFrame
-  - file: 06/2/Extracting_Columns
-  - file: 06/3/Accessing_Rows
-  - file: 06/4/Adding_Columns
-  - file: 06/5/Select_Label
-  - file: 06/6/Select_Condition
+  - title: "8. String Data and Fuzzy Matching"
+    file: 08/Fuzzy_Matching
+    sections: 
+    - title: "8.1 Coping with Unicode"
+      file: 08/1/Unicode
+    - title: "8.2 Canonicalization"
+      file: 08/2/Canonicalization
+    - title: "8.3 Set-Based (Jaccard) Similarity"
+      file: 08/3/Set_Based_Similarity
+    - title: "8.4 Sequence-Based Similarlity"
+      file: 08/4/Sequence_Based_Similarity
+    - title: "8.5 Reduced Alphabet Similarity"
+      file: 08/5/Reduced_Alphabets 
 
-- title: "7. Merge, Group and Pivot Table"
-  file: 07/merge-group-pivot
-  sections:
-  - file: 07/1/Merge_groups
-  - file: 07/2/Groups_pivots
+  - title: "9. Data Visualization"
+    file: 09/data-visualization
+    sections:
+    - title: "9.1 Libraries"
+      file: 09/1/Libraries
+    - title: "9.2 Categorical Data"
+      file: 09/2/Categorical_Data
+    - title: "9.3 Numerical Data"
+      file: 09/3/Numerical_Data
 
-- title: "8. String Data and Fuzzy Matching"
-  file: 08/placeholder8
+  - title: "10. Data Collection"
+    file: 10/data-collection
+    sections:
+    - title: "10.1 Causality vs Association"
+      file: 10/1/causality
+    - title: "10.2 Observational vs Experimental Studies"
+      file: 10/2/experiments
+    - title: "10.3 Sampling"
+      file: 10/3/sampling
+    - title: "10.4 Biases"
+      file: 10/4/biases
 
-- title: "9. Data Visualization"
-  file: 09/data-visualization
-  sections:
-  - title: Libraries
-    file: 09/1/Libraries
-  - file: 09/2/Categorical_Data
-  - file: 09/3/Numerical_Data
+  - title: "11. Probability"
+    file: 11/Probability
+    sections:
+    - title: "11.1 Definitions and Rules"
+      file: 11/1/Rules_Definitions
+    - title: "11.2 A Simulation-Based Solution" 
+      file: 11/2/Simulation_Solution
+    - title: "11.3 Mathematical Derivation vs Computational Estimation" 
+      file: 11/3/Math_vs_Computation
+    - title: "11.4 The Birthday Problem: Relaxed Assumptions" 
+      file: 11/4/Birthday_Pb_Relaxed_Assumptions
 
-- title: "10. Data Collection"
-  file: 10/data-collection
-  sections:
-  - file: 10/1/causality
-  - file: 10/2/experiments
-  - file: 10/3/sampling
-  - file: 10/4/biases
+  - title: "12. Empirical and Probability Distributions"
+    file: 12/empirical-distributions
+    sections:
+    - title: "12.1 Uniform Distribution" 
+      file: 12/1/uniform
+    - title: "12.2 Normal Distribution" 
+      file: 12/2/normal
+    - title: "12.3 Binomial Distribution" 
+      file: 12/3/binomial
 
-# This chapter's contents are to be split up into other chapters.
-#
-# - file: 09/randomness-and-sampling
-#   sections:
-#   - file: 09/1/Intro
-#   - file: 09/2/Control_Statements_conditionals
-#   - file: 09/3/Control_Statements_Iteration
-#   - file: 09/4/Random_Selection_and_Sampling
+  - title: "13. Hypothesis Testing"
+    file: 13/HypothesisTesting_Intro
+    sections:
+    - title: "13.1 Evaluating Consistency Between Data and a Model" 
+      file: 13/1/HypothesisTesting_1_Consistency
+    - title: "13.2 Hypothesis Testing" 
+      file: 13/2/HypothesisTesting_2_Test
+    - title: "13.3 Two-Sample Testing" 
+      file: 13/3/HypothesisTesting_3_TwoSample
+    - title: "13.4 Categorical Data" 
+      file: 13/4/HypothesisTesting_4_Categorical
+    - title: "13.5 Connections with Classical Statistical Methods" 
+      file: 13/5/HypothesisTesting_5_ClassicalStats
 
-- title: "11. Probability"
-  file: 11/Probability
-  sections:
-  - title: Definitions and Rules
-    file: 11/1/Rules_Definitions
-  - file: 11/2/Simulation_Solution
-  - file: 11/3/Math_vs_Computation
-  - file: 11/4/Birthday_Pb_Relaxed_Assumptions
+  - title: "14. Estimation and Confidence Intervals"
+    file: 14/ConfidenceIntervals_Intro
+    sections:
+    - title: "14.1 Theoretical Justification for Confidence Intervals" 
+      file: 14/1/ConfidenceIntervals_1_Theory
+    - title: "14.2 The Bootstrap" 
+      file: 14/2/ConfidenceIntervals_2_Bootstrap
+    - title: "14.3 Percentile Bootstrap Confidence Intervals" 
+      file: 14/3/ConfidenceIntervals_3_PercentileBootstrap
 
-- title: "12. Empirical and Probability Distributions"
-  file: 12/placeholder12
+  - title: "15. Ethics and Pitfalls in Data Science"
+    file: 15/data-ethics-intro
+    sections:
+    - title: "15.1 Data Ethics and the Law" 
+      file: 15/1/ethics-and-law
+    - title: "15.2 Pillar 1" 
+      file: 15/2/pillar1
+    - title: "15.3 Pillar 2" 
+      file: 15/3/pillar2
+    - title: "15.4 Pillar 3" 
+      file: 15/4/pillar3
+    - title: "15.5 Pillar 4" 
+      file: 15/5/pillar4
 
-- title: "13. Hypothesis Testing"
-  file: 13/placeholder13
+  - title: "16. Data Science Case Study"
+    file: 16/placeholder16
 
-- title: "14. Estimation and Confidence Intervals"
-  file: 14/placeholder14
+- caption: "Data Science II"
+  chapters:
+  - title: "17. Prediction and Correlation"
+    file: 17/prediction-and-correlation
+    sections:
+    - title: "17.1 Prediction" 
+      file: 17/1/prediction
+    - title: "17.2 Correlation" 
+      file: 17/2/correlation
 
-- title: "15. Ethics and Pitfalls in Data Science"
-  file: 15/data-ethics-intro
-  sections:
-  - file: 15/1/ethics-and-law
-  - file: 15/2/pillar1
-  - file: 15/3/pillar2
-  - file: 15/4/pillar3
-  - file: 15/5/pillar4
+  - title: "18. Simple Linear Regression"
+    file: 18/placeholder18
 
-- title: "16. Data Science Case Study"
-  file: 16/placeholder16
+  - title: "19. Multiple Linear Regression"
+    file: 19/placeholder19
+
+  - title: "20. Relational Databases and SQL"
+    file: 20/placeholder20
+
+  - title: "21. Data Warehouses and Data Lakes"
+    file: 21/placeholder21
+
+  - title: "22. Scalable Data Processing"
+    file: 22/placeholder22
+
+  - title: "23. Classification"
+    file: 23/placeholder23
+
+  - title: "24. Clustering"
+    file: 24/placeholder24
+
+  - title: "25. Feature Engineering and Feature Selection"
+    file: 25/placeholder25
+
+  - title: "26. Prediction with Many Features"
+    file: 26/placeholder26
+
+  - title: "27. Neural Networks"
+    file: 27/placeholder27
+
+  - title: "28. Cloud Computing"
+    file: 28/placeholder28
+
+  - title: "29. Reproducibility"
+    file: 29/placeholder29
