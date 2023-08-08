@@ -132,12 +132,14 @@ parts:
   - title: "12. Empirical and Probability Distributions"
     file: 12/empirical-distributions
     sections:
-    - title: "12.1 Uniform Distribution" 
-      file: 12/1/uniform
-    - title: "12.2 Normal Distribution" 
-      file: 12/2/normal
-    - title: "12.3 Binomial Distribution" 
-      file: 12/3/binomial
+    - title: "12.1 Distributions Overview" 
+      file: 12/1/distributions
+    - title: "12.2 Uniform Distribution" 
+      file: 12/2/uniform
+    - title: "12.3 Normal Distribution" 
+      file: 12/3/normal
+    - title: "12.4 Binomial Distribution" 
+      file: 12/4/binomial
 
   - title: "13. Hypothesis Testing"
     file: 13/HypothesisTesting_Intro
