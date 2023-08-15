@@ -170,13 +170,13 @@ parts:
     sections:
     - title: "15.1 Data Ethics and the Law" 
       file: 15/1/ethics-and-law
-    - title: "15.2 Pillar 1" 
+    - title: "15.2 Pillar 1: Data Transparency & Accountability" 
       file: 15/2/pillar1
-    - title: "15.3 Pillar 2" 
+    - title: "15.3 Pillar 2: Data Privacy" 
       file: 15/3/pillar2
-    - title: "15.4 Pillar 3" 
+    - title: "15.4 Pillar 3: Informed Consent" 
       file: 15/4/pillar3
-    - title: "15.5 Pillar 4" 
+    - title: "15.5 Pillar 4: Mitigating Unintended Consequences" 
       file: 15/5/pillar4
 
   - title: "16. Data Science Case Study"
