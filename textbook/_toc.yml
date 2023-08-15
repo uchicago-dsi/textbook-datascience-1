@@ -71,15 +71,17 @@ parts:
     - title: "6.6 Selection by Condition"
       file: 06/6/Select_Condition
 
-  - title: "7. Merge, Group and Pivot Table"
+  - title: "7. DataFrame Methods and Operations"
     file: 07/merge-group-pivot
     sections:
-    - title: "7.1 Merging Data"
-      file: 07/1/Merge
-    - title: "7.2 Grouping Data"
-      file: 07/2/Groups
-    - title: "7.3 Pivot Tables"
-      file: 07/3/pivots
+    - title: "7.1 Applying Functions"
+      file: 07/1/Functions_to_DataFrames
+    - title: "7.2 Merging Data"
+      file: 07/2/Merge
+    - title: "7.3 Grouping Data"
+      file: 07/3/Groups
+    - title: "7.4 Pivot Tables"
+      file: 07/4/pivots
 
   - title: "8. String Data and Fuzzy Matching"
     file: 08/Fuzzy_Matching
