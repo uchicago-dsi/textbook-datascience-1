@@ -123,13 +123,13 @@ parts:
     file: 11/Probability_Intro
     sections:
     - title: "11.1 Definitions and Rules"
-      file: 11/1/Probability_1_Rules_Definitions
+      file: 11/1/Probability_1_RulesDefinitions
     - title: "11.2 A Simulation-Based Solution" 
-      file: 11/2/Probability_2_Simulation_Solution
+      file: 11/2/Probability_2_SimulationSolution
     - title: "11.3 Mathematical Derivation vs Computational Estimation" 
-      file: 11/3/Probability_3_Math_vs_Computation
+      file: 11/3/Probability_3_MathVsComputation
     - title: "11.4 The Birthday Problem: Relaxed Assumptions" 
-      file: 11/4/Probability_4_Birthday_Pb_Relaxed_Assumptions
+      file: 11/4/Probability_4_BirthdayPb_RelaxedAssumptions
 
   - title: "12. Empirical and Probability Distributions"
     file: 12/empirical-distributions
