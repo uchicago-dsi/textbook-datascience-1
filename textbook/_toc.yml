@@ -71,15 +71,17 @@ parts:
     - title: "6.6 Selection by Condition"
       file: 06/6/Select_Condition
 
-  - title: "7. Merge, Group and Pivot Table"
+  - title: "7. DataFrame Methods and Operations"
     file: 07/merge-group-pivot
     sections:
-    - title: "7.1 Merging Data"
-      file: 07/1/Merge
-    - title: "7.2 Grouping Data"
-      file: 07/2/Groups
-    - title: "7.3 Pivot Tables"
-      file: 07/3/pivots
+    - title: "7.1 Applying Functions"
+      file: 07/1/Functions_to_DataFrames
+    - title: "7.2 Merging Data"
+      file: 07/2/Merge
+    - title: "7.3 Grouping Data"
+      file: 07/3/Groups
+    - title: "7.4 Pivot Tables"
+      file: 07/4/pivots
 
   - title: "8. String Data and Fuzzy Matching"
     file: 08/Fuzzy_Matching
@@ -118,16 +120,16 @@ parts:
       file: 10/4/biases
 
   - title: "11. Probability"
-    file: 11/Probability
+    file: 11/Probability_Intro
     sections:
     - title: "11.1 Definitions and Rules"
-      file: 11/1/Rules_Definitions
+      file: 11/1/Probability_1_RulesDefinitions
     - title: "11.2 A Simulation-Based Solution" 
-      file: 11/2/Simulation_Solution
+      file: 11/2/Probability_2_SimulationSolution
     - title: "11.3 Mathematical Derivation vs Computational Estimation" 
-      file: 11/3/Math_vs_Computation
+      file: 11/3/Probability_3_MathVsComputation
     - title: "11.4 The Birthday Problem: Relaxed Assumptions" 
-      file: 11/4/Birthday_Pb_Relaxed_Assumptions
+      file: 11/4/Probability_4_BirthdayPb_RelaxedAssumptions
 
   - title: "12. Empirical and Probability Distributions"
     file: 12/empirical-distributions
@@ -170,17 +172,24 @@ parts:
     sections:
     - title: "15.1 Data Ethics and the Law" 
       file: 15/1/ethics-and-law
-    - title: "15.2 Pillar 1" 
+    - title: "15.2 Pillar 1: Data Transparency & Accountability" 
       file: 15/2/pillar1
-    - title: "15.3 Pillar 2" 
+    - title: "15.3 Pillar 2: Data Privacy" 
       file: 15/3/pillar2
-    - title: "15.4 Pillar 3" 
+    - title: "15.4 Pillar 3: Informed Consent" 
       file: 15/4/pillar3
-    - title: "15.5 Pillar 4" 
+    - title: "15.5 Pillar 4: Mitigating Unintended Consequences" 
       file: 15/5/pillar4
 
   - title: "16. Data Science Case Study"
-    file: 16/placeholder16
+    file: 16/traffic_stops
+    sections:
+    - title: "16.1 Background"
+      file: 16/1/background
+    - title: "16.2 Investigation"
+      file: 16/2/investigation
+    - title: "16.3 Conclusions"
+      file: 16/3/conclusions 
 
 - caption: "Data Science II"
   chapters:
