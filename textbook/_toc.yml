@@ -181,15 +181,13 @@ parts:
     - title: "15.5 Pillar 4: Mitigating Unintended Consequences" 
       file: 15/5/pillar4
 
-  - title: "16. Data Science Case Study"
+  - title: "16. Traffic Stops Case Study"
     file: 16/traffic_stops
     sections:
-    - title: "16.1 Background"
+    - title: "16.1 Study Background"
       file: 16/1/background
-    - title: "16.2 Investigation"
+    - title: "16.2 Investigating Traffic Stops"
       file: 16/2/investigation
-    - title: "16.3 Conclusions"
-      file: 16/3/conclusions 
 
 - caption: "Data Science II"
   chapters:
