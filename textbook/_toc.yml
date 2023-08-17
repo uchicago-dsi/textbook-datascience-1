@@ -181,7 +181,7 @@ parts:
     - title: "15.5 Pillar 4: Mitigating Unintended Consequences" 
       file: 15/5/pillar4
 
-  - title: "16. Data Science Case Study"
+  - title: "16. Data Science Case Study: Traffic Stops"
     file: 16/traffic_stops
     sections:
     - title: "16.1 Background"
