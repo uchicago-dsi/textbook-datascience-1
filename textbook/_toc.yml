@@ -48,7 +48,7 @@ parts:
   - title: "5. Randomness and Control Statements"
     file: 05/randomness-and-control-statement
     sections:
-    - title: "5.1 Randomness"
+    - title: "5.1 Random Choice"
       file: 05/1/Intro
     - title: "5.2 Conditional Statements"
       file: 05/2/Control_Statements_conditionals
