@@ -1,4 +1,5 @@
 # Data Collection
+
 *Amanda R. Kube Jotte*
 
 With recent increased capacity for data storage and large scale analyses, "Big Data" has become a hot topic in both data science and broader society. However, bigger data is not always better data.
