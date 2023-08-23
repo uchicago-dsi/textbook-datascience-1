@@ -6,4 +6,4 @@ Distilling large and complex sets of data into more easily digestible forms is a
 
 The visual that we choose is dependent on the type of data. Two major data types that can be visualized graphically are **numerical data** and **categorical data**.
 
-Numerical data is commonly visualized using <i>histograms</i>, <i>scatter plots</i> and <i>line graphs</i>. Categorical data can be depicted using <i>bar graphs</i>, <i>box and whisker plots</i>, and <i>pie charts</i>. There are a vast number of other methods to visualize these data types, (<i>e.g.</i> cartograms, heatmaps, etc.), but the aforementioned graphs are the most commonly used among data scientists.
+Numerical data is commonly visualized using <i>histograms</i>, <i>scatter plots</i> and <i>line graphs</i>. Categorical data can be depicted using <i>bar graphs</i> and <i>pie charts</i>. There are a vast number of other methods to visualize these data types, (<i>e.g.</i> box and whisker plots, heatmaps, etc.), but the aforementioned graphs can greatly distill complex datasets and are commonly used throughout multiple disciplines.
