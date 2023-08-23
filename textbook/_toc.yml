@@ -40,6 +40,8 @@ parts:
       file: 04/2/Dictionaries
     - title: "4.3 Arrays"
       file: 04/3/Arrays-Intro
+    - title: "4.4 Array Indexing and Slicing"
+      file: 04/4/Arrays-Slicing
     - title: "4.5 Assignment for Mutable Data Types"
       file: 04/5/assignment
 
@@ -98,16 +100,12 @@ parts:
   - title: "9. Data Visualization"
     file: 09/data-visualization
     sections:
-    - title: "9.1 Introduction to Matplotlib & Pyplot"
-      file: 09/1/Intro-to-Matplotlib
-    - title: "9.2 Numerical Data"
-      file: 09/2/Numerical_Data
-    - title: "9.3 Categorical Data"
-      file: 09/3/Categorical_Data
-    - title: "9.4 Other Visualization Techniques"
-      file: 09/4/other-viz
-      
-
+    - title: "9.1 Libraries"
+      file: 09/1/Libraries
+    - title: "9.2 Categorical Data"
+      file: 09/2/Categorical_Data
+    - title: "9.3 Numerical Data"
+      file: 09/3/Numerical_Data
 
   - title: "10. Data Collection"
     file: 10/data-collection
@@ -174,13 +172,13 @@ parts:
     sections:
     - title: "15.1 Data Ethics and the Law" 
       file: 15/1/ethics-and-law
-    - title: "15.2 Pillar 1: Mitigating Unintended Consequences" 
+    - title: "15.2 Pillar 1: Data Transparency & Accountability" 
       file: 15/2/pillar1
     - title: "15.3 Pillar 2: Data Privacy" 
       file: 15/3/pillar2
     - title: "15.4 Pillar 3: Informed Consent" 
       file: 15/4/pillar3
-    - title: "15.5 Pillar 4: Data Transparency & Accountability" 
+    - title: "15.5 Pillar 4: Mitigating Unintended Consequences" 
       file: 15/5/pillar4
 
   - title: "16. Traffic Stops Case Study"
