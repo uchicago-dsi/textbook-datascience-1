@@ -3,7 +3,7 @@ format: jb-book
 root: intro
 
 parts:
-- caption: "Data Science I"
+- caption: "Part I: Exploring Data"
   chapters:
   
   - title: "1. What is Data Science?"
@@ -189,7 +189,7 @@ parts:
     - title: "16.2 Investigating Traffic Stops"
       file: 16/2/investigation
 
-- caption: "Data Science II"
+- caption: "Part II: Using Data to Understand Our World"
   chapters:
   - title: "17. Prediction and Correlation"
     file: 17/prediction-and-correlation
