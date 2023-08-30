@@ -8,6 +8,9 @@ sphinx:
     execution_show_tb: true
     html_favicon: favicon.ico
 
+execute:
+  timeout: 100
+
 parse:
   myst_enable_extensions:
     - amsmath
