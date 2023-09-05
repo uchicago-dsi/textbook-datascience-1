@@ -3,7 +3,7 @@ format: jb-book
 root: intro
 
 parts:
-- caption: "Data Science I"
+- caption: "Part I: Exploring Data"
   chapters:
   
   - title: "1. What is Data Science?"
@@ -40,15 +40,13 @@ parts:
       file: 04/2/Dictionaries
     - title: "4.3 Arrays"
       file: 04/3/Arrays-Intro
-    - title: "4.4 Array Indexing and Slicing"
-      file: 04/4/Arrays-Slicing
-    - title: "4.5 Assignment for Mutable Data Types"
-      file: 04/5/assignment
+    - title: "4.4 Assignment for Mutable Data Types"
+      file: 04/4/assignment
 
   - title: "5. Randomness and Control Statements"
     file: 05/randomness-and-control-statement
     sections:
-    - title: "5.1 Randomness"
+    - title: "5.1 Random Choice"
       file: 05/1/Intro
     - title: "5.2 Conditional Statements"
       file: 05/2/Control_Statements_conditionals
@@ -100,12 +98,14 @@ parts:
   - title: "9. Data Visualization"
     file: 09/data-visualization
     sections:
-    - title: "9.1 Libraries"
-      file: 09/1/Libraries
-    - title: "9.2 Categorical Data"
-      file: 09/2/Categorical_Data
-    - title: "9.3 Numerical Data"
-      file: 09/3/Numerical_Data
+    - title: "9.1 Introduction to Matplotlib"
+      file: 09/1/Intro-to-Matplotlib
+    - title: "9.2 Numerical Data"
+      file: 09/2/Numerical_Data
+    - title: "9.3 Categorical Data"
+      file: 09/3/Categorical_Data
+    - title: "9.4 Other Visualization Techniques"
+      file: 09/4/other-viz
 
   - title: "10. Data Collection"
     file: 10/data-collection
@@ -181,17 +181,15 @@ parts:
     - title: "15.5 Pillar 4: Mitigating Unintended Consequences" 
       file: 15/5/pillar4
 
-  - title: "16. Data Science Case Study"
+  - title: "16. Traffic Stops Case Study"
     file: 16/traffic_stops
     sections:
-    - title: "16.1 Background"
+    - title: "16.1 Study Background"
       file: 16/1/background
-    - title: "16.2 Investigation"
+    - title: "16.2 Investigating Traffic Stops"
       file: 16/2/investigation
-    - title: "16.3 Conclusions"
-      file: 16/3/conclusions 
 
-- caption: "Data Science II"
+- caption: "Part II: Using Data to Understand Our World"
   chapters:
   - title: "17. Prediction and Correlation"
     file: 17/prediction-and-correlation
