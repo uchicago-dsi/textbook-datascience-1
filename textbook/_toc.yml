@@ -58,12 +58,12 @@ parts:
     sections:
     - title: "6.1 Creating a DataFrame"
       file: 06/1/Creating_DataFrame
-    - title: "6.2 Extracting Columns"
-      file: 06/2/Extracting_Columns
-    - title: "6.3 Accessing Rows"
-      file: 06/3/Accessing_Rows
-    - title: "6.4 Adding Columns"
-      file: 06/4/Adding_Columns
+    - title: "6.2 Accessing Columns"
+      file: 06/2/Accessing_Columns
+    - title: "6.3 Column Operations"
+      file: 06/3/Column_Operations
+    - title: "6.4 Accessing Rows"
+      file: 06/4/Accessing_Rows
     - title: "6.5 Selection by Label"
       file: 06/5/Select_Label
     - title: "6.6 Selection by Condition"
