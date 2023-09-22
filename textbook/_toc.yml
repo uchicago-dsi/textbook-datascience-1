@@ -84,16 +84,18 @@ parts:
   - title: "8. String Data and Fuzzy Matching"
     file: 08/Fuzzy_Matching
     sections: 
-    - title: "8.1 Coping with Unicode"
-      file: 08/1/Unicode
-    - title: "8.2 Canonicalization"
-      file: 08/2/Canonicalization
-    - title: "8.3 Set-Based (Jaccard) Similarity"
-      file: 08/3/Set_Based_Similarity
-    - title: "8.4 Sequence-Based Similarlity"
-      file: 08/4/Sequence_Based_Similarity
-    - title: "8.5 Reduced Alphabet Similarity"
-      file: 08/5/Reduced_Alphabets 
+    - title: "8.1 Set-Based (Jaccard) Similarity"
+      file: 08/1/Set_Based_Similarity
+    - title: "8.2 Sequence-Based Similarlity"
+      file: 08/2/Sequence_Based_Similarity
+    - title: "8.3 Canonicalization"
+      file: 08/3/Canonicalization
+    - title: "8.4 Reduced Alphabet Similarity"
+      file: 08/4/Reduced_Alphabets 
+    - title: "8.5 Example: Building Inspection reports"
+      file: 08/5/Levenshtein_Inspection_Example 
+    - title: "8.6 Encoding and Unicode"
+      file: 08/6/Unicode
 
   - title: "9. Data Visualization"
     file: 09/data-visualization
