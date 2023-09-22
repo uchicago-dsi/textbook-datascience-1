@@ -91,11 +91,11 @@ parts:
     - title: "8.3 Canonicalization"
       file: 08/3/Canonicalization
     - title: "8.4 Reduced Alphabet Similarity"
-      file: 08/5/Reduced_Alphabets 
-    - title: "8.6 Example: Building Inspection reports"
-      file: 08/6/Levenshtein_Inspection_Example 
-    - title: "8.7 Encoding and Unicode"
-      file: 08/7/Unicode
+      file: 08/4/Reduced_Alphabets 
+    - title: "8.5 Example: Building Inspection reports"
+      file: 08/5/Levenshtein_Inspection_Example 
+    - title: "8.6 Encoding and Unicode"
+      file: 08/6/Unicode
 
   - title: "9. Data Visualization"
     file: 09/data-visualization
