@@ -204,38 +204,38 @@ parts:
     - title: "17.2 Correlation" 
       file: 17/2/correlation
 
-  - title: "18. Simple Linear Regression"
-    file: 18/placeholder18
+  # - title: "18. Simple Linear Regression"
+  #   file: 18/placeholder18
 
-  - title: "19. Multiple Linear Regression"
-    file: 19/placeholder19
+  # - title: "19. Multiple Linear Regression"
+  #   file: 19/placeholder19
 
-  - title: "20. Relational Databases and SQL"
-    file: 20/placeholder20
+  # - title: "20. Relational Databases and SQL"
+  #   file: 20/placeholder20
 
-  - title: "21. Data Warehouses and Data Lakes"
-    file: 21/placeholder21
+  # - title: "21. Data Warehouses and Data Lakes"
+  #   file: 21/placeholder21
 
-  - title: "22. Scalable Data Processing"
-    file: 22/placeholder22
+  # - title: "22. Scalable Data Processing"
+  #   file: 22/placeholder22
 
-  - title: "23. Classification"
-    file: 23/placeholder23
+  # - title: "23. Classification"
+  #   file: 23/placeholder23
 
-  - title: "24. Clustering"
-    file: 24/placeholder24
+  # - title: "24. Clustering"
+  #   file: 24/placeholder24
 
-  - title: "25. Feature Engineering and Feature Selection"
-    file: 25/placeholder25
+  # - title: "25. Feature Engineering and Feature Selection"
+  #   file: 25/placeholder25
 
-  - title: "26. Prediction with Many Features"
-    file: 26/placeholder26
+  # - title: "26. Prediction with Many Features"
+  #   file: 26/placeholder26
 
-  - title: "27. Neural Networks"
-    file: 27/placeholder27
+  # - title: "27. Neural Networks"
+  #   file: 27/placeholder27
 
-  - title: "28. Cloud Computing"
-    file: 28/placeholder28
+  # - title: "28. Cloud Computing"
+  #   file: 28/placeholder28
 
-  - title: "29. Reproducibility"
-    file: 29/placeholder29
+  # - title: "29. Reproducibility"
+  #   file: 29/placeholder29
