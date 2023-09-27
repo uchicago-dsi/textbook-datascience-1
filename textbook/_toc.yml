@@ -9,25 +9,25 @@ parts:
   - title: "1. What is Data Science?"
     file: 01/placeholder1
 
-- title: "2. Data Science Case Study"
-  file: 02/placeholder2
+  - title: "2. Data Science Case Study"
+    file: 02/placeholder2
 
-- title: "3. Programming in Python"
-  file: 03/programming-in-python
-  sections:
-  - title: "Operations"
-    file: 03/1/Operations
-  - title: "Assignment Statements"
-    file: 03/2/Assignments
-  - title: "Data Types"
-    file: 03/3/DataTypes
-  - title: "Comparisons"
-    file: 03/4/Comparison
-  - title: "Functions"
-    file: 03/5/IntroFunctions
+  - title: "3. Programming in Python"
+    file: 03/programming-in-python
     sections:
-    - file: 03/5/1/BuiltIn
-    - file: 03/5/2/Functions
+    - title: "Operations"
+      file: 03/1/Operations
+    - title: "Assignment Statements"
+      file: 03/2/Assignments
+    - title: "Data Types"
+      file: 03/3/DataTypes
+    - title: "Comparisons"
+      file: 03/4/Comparison
+    - title: "Functions"
+      file: 03/5/IntroFunctions
+      sections:
+      - file: 03/5/1/BuiltIn
+      - file: 03/5/2/Functions
 
   - title: "4. Collections of Data"
     file: 04/DataStructures
@@ -107,13 +107,13 @@ parts:
     - title: "9.4 Other Visualization Techniques"
       file: 09/4/other-viz
 
-- title: "10. Data Collection"
-  file: 10/data-collection
-  sections:
-  - file: 10/1/causality
-  - file: 10/2/experiments
-  - file: 10/3/sampling
-  - file: 10/4/biases
+  - title: "10. Data Collection"
+    file: 10/data-collection
+    sections:
+    - file: 10/1/causality
+    - file: 10/2/experiments
+    - file: 10/3/sampling
+    - file: 10/4/biases
 
 # This chapter's contents are to be split up into other chapters.
 #
