@@ -7,6 +7,9 @@ sphinx:
   config:
     execution_show_tb: true
 
+execute:
+  timeout: 100
+
 parse:
   myst_enable_extensions:
     - amsmath

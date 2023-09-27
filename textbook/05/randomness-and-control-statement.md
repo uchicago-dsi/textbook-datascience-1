@@ -2,8 +2,8 @@
 
 *Susanna Lange*
 
-Whether modeling a real-world example, like rolling dice, tossing a coin, or randomly selecting a subset of a population for a survey, the process of selecting a choice from a list of options at random is very useful. This chapter will cover the basics of random selection, including how to implement a random choice in Python.
+So far we have discussed different methods of storing data. But what can we do with data storage such as lists and arrays? We can use them to model a real-world example, like rolling dice or tossing a coin, or randomly selecting a subset of a population for a survey. We can also perform some action on each element of our data. 
 
-Additionally, we introduce programming control statements, which allow us to select or iterate statements and expressions.
+This chapter will introduce programming control statements, which allow us to select or iterate over statements and expressions. Additionally, we will cover the basics of random selection, including how to implement a random choice in Python.
 
-We'll ultilize these ideas to *simulate* experiments, that is to imitate real-world examples using code.
+We will utilize these ideas to *simulate* experiments, that is to imitate real-world examples using code.
