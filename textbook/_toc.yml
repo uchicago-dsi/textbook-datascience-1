@@ -15,21 +15,19 @@ parts:
   - title: "3. Programming in Python"
     file: 03/programming-in-python
     sections:
-    - title: "3.1 Operations"
+    - title: "Operations"
       file: 03/1/Operations
-    - title: "3.2 Assignment Statements"
+    - title: "Assignment Statements"
       file: 03/2/Assignments
-    - title: "3.3 Data Types"
+    - title: "Data Types"
       file: 03/3/DataTypes
-    - title: "3.4 Comparisons"
-      file: 03/4/Comparisons
-    - title: "3.5 Functions"
+    - title: "Comparisons"
+      file: 03/4/Comparison
+    - title: "Functions"
       file: 03/5/IntroFunctions
       sections:
-      - title: "3.5.1 Built-In Functions and Methods"
-        file: 03/5/1/BuiltIn
-      - title: "3.5.2 User-Defined Functions"
-        file: 03/5/2/Functions
+      - file: 03/5/1/BuiltIn
+      - file: 03/5/2/Functions
 
   - title: "4. Collections of Data"
     file: 04/DataStructures
@@ -112,14 +110,19 @@ parts:
   - title: "10. Data Collection"
     file: 10/data-collection
     sections:
-    - title: "10.1 Causality vs Association"
-      file: 10/1/causality
-    - title: "10.2 Observational vs Experimental Studies"
-      file: 10/2/experiments
-    - title: "10.3 Sampling"
-      file: 10/3/sampling
-    - title: "10.4 Biases"
-      file: 10/4/biases
+    - file: 10/1/causality
+    - file: 10/2/experiments
+    - file: 10/3/sampling
+    - file: 10/4/biases
+
+# This chapter's contents are to be split up into other chapters.
+#
+# - file: 09/randomness-and-sampling
+#   sections:
+#   - file: 09/1/Intro
+#   - file: 09/2/Control_Statements_conditionals
+#   - file: 09/3/Control_Statements_Iteration
+#   - file: 09/4/Random_Selection_and_Sampling
 
   - title: "11. Probability"
     file: 11/Probability_Intro
