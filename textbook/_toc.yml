@@ -15,21 +15,19 @@ parts:
   - title: "3. Programming in Python"
     file: 03/programming-in-python
     sections:
-    - title: "3.1 Operations"
+    - title: "Operations"
       file: 03/1/Operations
-    - title: "3.2 Assignment Statements"
+    - title: "Assignment Statements"
       file: 03/2/Assignments
-    - title: "3.3 Data Types"
+    - title: "Data Types"
       file: 03/3/DataTypes
-    - title: "3.4 Comparisons"
-      file: 03/4/Comparisons
-    - title: "3.5 Functions"
+    - title: "Comparisons"
+      file: 03/4/Comparison
+    - title: "Functions"
       file: 03/5/IntroFunctions
       sections:
-      - title: "3.5.1 Built-In Functions and Methods"
-        file: 03/5/1/BuiltIn
-      - title: "3.5.2 User-Defined Functions"
-        file: 03/5/2/Functions
+      - file: 03/5/1/BuiltIn
+      - file: 03/5/2/Functions
 
   - title: "4. Collections of Data"
     file: 04/DataStructures
@@ -58,12 +56,12 @@ parts:
     sections:
     - title: "6.1 Creating a DataFrame"
       file: 06/1/Creating_DataFrame
-    - title: "6.2 Extracting Columns"
-      file: 06/2/Extracting_Columns
-    - title: "6.3 Accessing Rows"
-      file: 06/3/Accessing_Rows
-    - title: "6.4 Adding Columns"
-      file: 06/4/Adding_Columns
+    - title: "6.2 Accessing Columns"
+      file: 06/2/Accessing_Columns
+    - title: "6.3 Column Operations"
+      file: 06/3/Column_Operations
+    - title: "6.4 Accessing Rows"
+      file: 06/4/Accessing_Rows
     - title: "6.5 Selection by Label"
       file: 06/5/Select_Label
     - title: "6.6 Selection by Condition"
@@ -84,16 +82,18 @@ parts:
   - title: "8. String Data and Fuzzy Matching"
     file: 08/Fuzzy_Matching
     sections: 
-    - title: "8.1 Coping with Unicode"
-      file: 08/1/Unicode
-    - title: "8.2 Canonicalization"
-      file: 08/2/Canonicalization
-    - title: "8.3 Set-Based (Jaccard) Similarity"
-      file: 08/3/Set_Based_Similarity
-    - title: "8.4 Sequence-Based Similarlity"
-      file: 08/4/Sequence_Based_Similarity
-    - title: "8.5 Reduced Alphabet Similarity"
-      file: 08/5/Reduced_Alphabets 
+    - title: "8.1 Set-Based (Jaccard) Similarity"
+      file: 08/1/Set_Based_Similarity
+    - title: "8.2 Sequence-Based Similarlity"
+      file: 08/2/Sequence_Based_Similarity
+    - title: "8.3 Canonicalization"
+      file: 08/3/Canonicalization
+    - title: "8.4 Reduced Alphabet Similarity"
+      file: 08/4/Reduced_Alphabets 
+    - title: "8.5 Example: Building Inspection reports"
+      file: 08/5/Levenshtein_Inspection_Example 
+    - title: "8.6 Encoding and Unicode"
+      file: 08/6/Unicode
 
   - title: "9. Data Visualization"
     file: 09/data-visualization
@@ -110,14 +110,19 @@ parts:
   - title: "10. Data Collection"
     file: 10/data-collection
     sections:
-    - title: "10.1 Causality vs Association"
-      file: 10/1/causality
-    - title: "10.2 Observational vs Experimental Studies"
-      file: 10/2/experiments
-    - title: "10.3 Sampling"
-      file: 10/3/sampling
-    - title: "10.4 Biases"
-      file: 10/4/biases
+    - file: 10/1/causality
+    - file: 10/2/experiments
+    - file: 10/3/sampling
+    - file: 10/4/biases
+
+# This chapter's contents are to be split up into other chapters.
+#
+# - file: 09/randomness-and-sampling
+#   sections:
+#   - file: 09/1/Intro
+#   - file: 09/2/Control_Statements_conditionals
+#   - file: 09/3/Control_Statements_Iteration
+#   - file: 09/4/Random_Selection_and_Sampling
 
   - title: "11. Probability"
     file: 11/Probability_Intro
@@ -201,6 +206,11 @@ parts:
 
   - title: "18. Simple Linear Regression"
     file: 18/placeholder18
+    sections:
+    - title: "18.1 Correlation and Regression"
+      file: 18/1/Correlation and Regression.ipynb
+    - title: "18.2 Finding and Interpreting Regressions"
+      file: 18/2/Finding and Interpreting Regressions.ipynb
 
   - title: "19. Multiple Linear Regression"
     file: 19/placeholder19

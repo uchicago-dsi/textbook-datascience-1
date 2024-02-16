@@ -1,5 +1,6 @@
 import json
 import pathlib
+import platform
 import random
 import re
 import string
@@ -26,6 +27,12 @@ REPO_NAME = 'textbook-datascience-1'
 REPO_URI = f'https://github.com/{REPO_OWNER}/{REPO_NAME}'
 
 REGISTRY_HOST = 'ghcr.io'
+
+BINFMT_TARGET = pathlib.Path('/proc/sys/fs/binfmt_misc/qemu-aarch64')
+
+BINFMT_TAG = 'a7996909642ee92942dcd6cff44b9b95f08dad64'
+
+BUILDER_NAME = 'textbook'
 
 
 def setup_env():
@@ -224,6 +231,8 @@ class Manage(Local):
         image_paths = frozenset(element.name for element in IMAGE_PATH.iterdir()
                                 if element.is_dir())
 
+        platforms = ('amd64', 'arm64')
+
         def __init__(self, parser):
             parser.add_argument(
                 'target',
@@ -236,18 +245,96 @@ class Manage(Local):
             distro_name = f'textbook-{self.args.target}'
             return f'{REGISTRY_HOST}/{REPO_OWNER}/{distro_name}'
 
-        @localmethod
-        def build(self, args):
-            """build a docker image"""
+        @cachedproperty
+        def platform_host(self):
+            platform_host = platform.processor()
+
+            if platform_host == 'x86_64':
+                return 'amd64'
+
+            if platform_host == 'aarch64':
+                return 'arm64'
+
+            return platform_host
+
+        @staticmethod
+        def platform_serialize(*platforms):
+            return ','.join(f'linux/{platform}' for platform in platforms)
+
+        @localmethod('--load', action='store_true',
+                     help="load images locally "
+                          "(assumed when only targeting host platform architecture)")
+        @localmethod('--push', action='store_true', help="push images to remote repository")
+        @localmethod('--platform', action='append', choices=platforms, dest='platforms',
+                     help="cpu architecture(s) for which to build (defaults to host architecture)")
+        def build(self, args, parser):
+            """build docker images"""
+            platforms = set(args.platforms) if args.platforms else {self.platform_host}
+
+            if args.load and self.platform_host not in platforms:
+                parser.error(f'cannot --load any of target platform architectures on host '
+                             f'system {self.platform_host!r}: {platforms!r}')
+
             timestamp_build = int(time.time())
 
-            yield self.local['docker'][
-                'build',
+            build_args = (
                 '--label', f'org.opencontainers.image.source={REPO_URI}',
                 '--tag', f'{self.registry_uri}:{timestamp_build}',
                 '--tag', f'{self.registry_uri}:latest',
                 IMAGE_PATH / args.target,
+            )
+
+            if platforms - {self.platform_host}:
+                # have to use buildx
+
+                # set up qemu
+                if not BINFMT_TARGET.exists():
+                    yield self.local.FG, self.local['docker'][
+                        'run',
+                        '--rm',
+                        '--privileged',
+                        f'docker/binfmt:{BINFMT_TAG}',
+                    ]
+
+                # set up builder
+                try:
+                    yield self.local.FG, self.local['docker'][
+                        'buildx',
+                        'ls',
+                    ] | self.local['grep'][BUILDER_NAME]
+                except self.local.ProcessExecutionError:
+                    yield self.local.FG, self.local['docker'][
+                        'buildx',
+                        'create',
+                        '--name', BUILDER_NAME,
+                        '--platform', self.platform_serialize(*self.platforms),
+                    ]
+
+                yield self.local.FG, self.local['docker'][
+                    'buildx',
+                    'use',
+                    BUILDER_NAME,
+                ]
+
+                yield self.local.FG, self.local['docker'][
+                    'buildx',
+                    'build',
+                    '--platform', self.platform_serialize(*platforms),
+                    ('--load',) if args.load else (),
+                    ('--push',) if args.push else (),
+                    build_args,
+                ]
+
+                return
+
+            # can just use vanilla build
+            yield self.local['docker'][
+                'build',
+                build_args,
             ]
+
+            if args.push:
+                yield from self['push'].prepare()
 
         @localmethod
         def push(self):
