@@ -225,7 +225,16 @@ parts:
     file: 22/placeholder22
 
   - title: "23. Classification"
-    file: 23/placeholder23
+    file: 23/classification_intro
+    sections:
+    - title: "23.1 Nearest Neighbor" 
+      file: 23/1/Nearest_Neighbor
+    - title: "23.2 K Nearest Neighbors" 
+      file: 23/2/K_Nearest_Neighbors
+    - title: "23.3 Features to Consider" 
+      file: 23/3/Features_to_Consider
+    - title: "23.4 Multiple Classes" 
+      file: 23/4/Multiple_Classes
 
   - title: "24. Clustering"
     file: 24/placeholder24
