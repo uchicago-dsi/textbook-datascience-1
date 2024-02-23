@@ -240,19 +240,19 @@ parts:
     file: 24/placeholder24
 
   - title: "25. Spatial and Temporal Data"
-    file: 25/placeholder21
+    file: 25/placeholder25
 
   - title: "26. Data Wrangling"
-    file: 26/placeholder20
+    file: 26/placeholder26
 
   - title: "27. Relational Databases and SQL"
-    file: 27/placeholder20
+    file: 27/placeholder27
 
   - title: "28. Scalable Data Processing"
-    file: 28/placeholder22
+    file: 28/placeholder28
 
   - title: "29. Cloud Computing"
-    file: 29/placeholder28
+    file: 29/placeholder29
 
   - title: "30. Reproducibility"
     file: 30/placeholder30
