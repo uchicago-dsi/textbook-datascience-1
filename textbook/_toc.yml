@@ -218,7 +218,7 @@ parts:
   - title: "20. Feature Engineering and Feature Selection"
     file: 20/placeholder20
 
-  - title: "21. Classification"
+  - title: "21. Classification with Nearest Neighbors"
     file: 21/classification_intro
     sections:
     - title: "21.1 Nearest Neighbor" 
@@ -233,29 +233,32 @@ parts:
   - title: "22. Additional Models and/or Logistic Regression"
     file: 22/placeholder22
 
-  - title: "23. Neural Networks and Deep Learning"
+  - title: "23. Confusion Matrices and Unbalanced Data"
     file: 23/placeholder23
 
-  - title: "24. Clustering"
+  - title: "24. Neural Networks and Deep Learning"
     file: 24/placeholder24
 
-  - title: "25. Spatial and Temporal Data"
+  - title: "25. Clustering"
     file: 25/placeholder25
 
-  - title: "26. Data Wrangling"
+  - title: "26. Spatial and Temporal Data"
     file: 26/placeholder26
 
-  - title: "27. Relational Databases and SQL"
+  - title: "27. Data Wrangling"
     file: 27/placeholder27
 
-  - title: "28. Scalable Data Processing"
+  - title: "28. Relational Databases and SQL"
     file: 28/placeholder28
 
-  - title: "29. Cloud Computing"
+  - title: "29. Scalable Data Processing"
     file: 29/placeholder29
 
-  - title: "30. Reproducibility"
+  - title: "30. Cloud Computing"
     file: 30/placeholder30
+
+  - title: "31. Reproducibility"
+    file: 31/placeholder31
 
 
 
