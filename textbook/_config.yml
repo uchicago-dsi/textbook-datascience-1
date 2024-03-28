@@ -1,17 +1,12 @@
-title: Introduction to Data Science
+title: Introduction to Data Science I & II
 author: the University of Chicago
 copyright: "2022"
-logo: "images/uchicago_python_nobackground.png"  # path to a logo file
+logo: "images/logo/uchicago_python_nobackground.png"  # path to a logo file
 
 sphinx:
   config:
     execution_show_tb: true
-
-execute:
-  timeout: 100
-
-html:
-  favicon: "images/logo/favicon.ico"  # A path to a favicon image
+    html_favicon: favicon.ico
 
 parse:
   myst_enable_extensions:
