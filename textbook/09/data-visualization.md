@@ -1,6 +1,6 @@
 # Data Visualization
 
-*Evelyn Campbell, Ph.D.*
+*Evelyn Campbell*
 
 Distilling large and complex sets of data into more easily digestible forms is an important component of data science. Through effective data visualization, we can concisely communicate the story that our data is telling. We do this by choosing appropriate visual depictions of our data to accurately represent what the data means.
 

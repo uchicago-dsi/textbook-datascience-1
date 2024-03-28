@@ -206,36 +206,118 @@ parts:
 
   - title: "18. Simple Linear Regression"
     file: 18/placeholder18
+    sections:
+    - title: "18.1 Correlation and Regression"
+      file: 18/1/Correlation and Regression.ipynb
+    - title: "18.2 Finding and Interpreting Regressions"
+      file: 18/2/Finding and Interpreting Regressions.ipynb
 
   - title: "19. Multiple Linear Regression"
     file: 19/placeholder19
 
-  - title: "20. Relational Databases and SQL"
+  - title: "20. Feature Engineering and Feature Selection"
     file: 20/placeholder20
 
-  - title: "21. Data Warehouses and Data Lakes"
-    file: 21/placeholder21
+  - title: "21. Classification with Nearest Neighbors"
+    file: 21/classification_intro
+    sections:
+    - title: "21.1 Nearest Neighbor" 
+      file: 21/1/Nearest_Neighbor
+    - title: "21.2 K Nearest Neighbors" 
+      file: 21/2/K_Nearest_Neighbors
+    - title: "21.3 Features to Consider" 
+      file: 21/3/Features_to_Consider
+    - title: "21.4 Multiple Classes" 
+      file: 21/4/Multiple_Classes
 
-  - title: "22. Scalable Data Processing"
+  - title: "22. Additional Models and/or Logistic Regression"
     file: 22/placeholder22
 
-  - title: "23. Classification"
+  - title: "23. Confusion Matrices and Unbalanced Data"
     file: 23/placeholder23
 
-  - title: "24. Clustering"
+  - title: "24. Neural Networks and Deep Learning"
     file: 24/placeholder24
 
-  - title: "25. Feature Engineering and Feature Selection"
+  - title: "25. Clustering"
     file: 25/placeholder25
 
-  - title: "26. Prediction with Many Features"
+  - title: "26. Spatial and Temporal Data"
     file: 26/placeholder26
 
-  - title: "27. Neural Networks"
+  - title: "27. Data Wrangling"
     file: 27/placeholder27
 
-  - title: "28. Cloud Computing"
+  - title: "28. Relational Databases and SQL"
     file: 28/placeholder28
 
-  - title: "29. Reproducibility"
+  - title: "29. Scalable Data Processing"
     file: 29/placeholder29
+
+  - title: "30. Cloud Computing"
+    file: 30/placeholder30
+
+  - title: "31. Reproducibility"
+    file: 31/placeholder31
+
+
+
+
+########### Old TOC Ordering
+# - title: "17. Prediction and Correlation"
+#     file: 17/prediction-and-correlation
+#     sections:
+#     - title: "17.1 Prediction" 
+#       file: 17/1/prediction
+#     - title: "17.2 Correlation" 
+#       file: 17/2/correlation
+
+#   - title: "18. Simple Linear Regression"
+#     file: 18/placeholder18
+#     sections:
+#     - title: "18.1 Correlation and Regression"
+#       file: 18/1/Correlation and Regression.ipynb
+#     - title: "18.2 Finding and Interpreting Regressions"
+#       file: 18/2/Finding and Interpreting Regressions.ipynb
+
+#   - title: "19. Multiple Linear Regression"
+#     file: 19/placeholder19
+
+#   - title: "20. Relational Databases and SQL"
+#     file: 20/placeholder20
+
+#   - title: "21. Data Warehouses and Data Lakes"
+#     file: 21/placeholder21
+
+#   - title: "22. Scalable Data Processing"
+#     file: 22/placeholder22
+
+#   - title: "23. Classification"
+#     file: 23/classification_intro
+#     sections:
+#     - title: "23.1 Nearest Neighbor" 
+#       file: 23/1/Nearest_Neighbor
+#     - title: "23.2 K Nearest Neighbors" 
+#       file: 23/2/K_Nearest_Neighbors
+#     - title: "23.3 Features to Consider" 
+#       file: 23/3/Features_to_Consider
+#     - title: "23.4 Multiple Classes" 
+#       file: 23/4/Multiple_Classes
+
+#   - title: "24. Clustering"
+#     file: 24/placeholder24
+
+#   - title: "25. Feature Engineering and Feature Selection"
+#     file: 25/placeholder25
+
+#   - title: "26. Prediction with Many Features"
+#     file: 26/placeholder26
+
+#   - title: "27. Neural Networks"
+#     file: 27/placeholder27
+
+#   - title: "28. Cloud Computing"
+#     file: 28/placeholder28
+
+#   - title: "29. Reproducibility"
+#     file: 29/placeholder29
