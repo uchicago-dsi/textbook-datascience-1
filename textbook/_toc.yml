@@ -211,6 +211,10 @@ parts:
       file: 18/1/Correlation and Regression.ipynb
     - title: "18.2 Finding and Interpreting Regressions"
       file: 18/2/Finding and Interpreting Regressions.ipynb
+    - title: "18.3 Regressions and Confidence Intervals"
+      file: 18/3/Regressions and Confidence Intervals.ipynb
+    - title: "18.4 Prediction Intervals and Other Model Concerns"
+      file: 18/4/Prediction Intervals and Other Model Concerns.ipynb
 
   - title: "19. Multiple Linear Regression"
     file: 19/placeholder19
