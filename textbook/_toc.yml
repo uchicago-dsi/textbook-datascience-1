@@ -211,7 +211,6 @@ parts:
       file: 18/1/Correlation and Regression.ipynb
     - title: "18.2 Finding and Interpreting Regressions"
       file: 18/2/Finding and Interpreting Regressions.ipynb
-    - title: "
 
   - title: "19. Multiple Linear Regression"
     file: 19/placeholder19
