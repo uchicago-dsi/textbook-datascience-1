@@ -15,15 +15,15 @@ parts:
   - title: "3. Programming in Python"
     file: 03/programming-in-python
     sections:
-    - title: "Operations"
+    - title: "3.1 Operations"
       file: 03/1/Operations
-    - title: "Assignment Statements"
+    - title: "3.2 Assignment Statements"
       file: 03/2/Assignments
     - title: "Data Types"
       file: 03/3/DataTypes
-    - title: "Comparisons"
+    - title: "3.3 Comparisons"
       file: 03/4/Comparison
-    - title: "Functions"
+    - title: "3.4 Functions"
       file: 03/5/IntroFunctions
       sections:
       - file: 03/5/1/BuiltIn
@@ -110,10 +110,14 @@ parts:
   - title: "10. Data Collection"
     file: 10/data-collection
     sections:
-    - file: 10/1/causality
-    - file: 10/2/experiments
-    - file: 10/3/sampling
-    - file: 10/4/biases
+    - title: "10.1 Causality versus Association"
+      file: 10/1/causality
+    - title: "10.2 Observation versus Experimental Studies"
+      file: 10/2/experiments
+    - title: "10.3 Sampling"
+      file: 10/3/sampling
+    - title: "10.4 Biases"
+      file: 10/4/biases
 
 # This chapter's contents are to be split up into other chapters.
 #
@@ -221,6 +225,9 @@ parts:
 
   - title: "20. Feature Engineering and Feature Selection"
     file: 20/placeholder20
+    sections:
+    - title: "20.1 Feature Engineering"
+      file: 18/1/feature_engineering.ipynb
 
   - title: "21. Classification with Nearest Neighbors"
     file: 21/classification_intro
