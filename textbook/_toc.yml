@@ -250,8 +250,13 @@ parts:
   - title: "24. Neural Networks and Deep Learning"
     file: 24/placeholder24
 
-  - title: "25. Clustering"
-    file: 25/placeholder25
+  - title: "25. Unsupervised Learning and Clustering"
+    file: 25/unsupervised_learning
+    sections:
+    - title: "25.1 K-Means Clustering"
+      file: 25/1/kmeans
+    - title: "25.2 Hierarchical Clustering"
+      file: 25/2/hierarchical
 
   - title: "26. Spatial and Temporal Data"
     file: 26/placeholder26
