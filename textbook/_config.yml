@@ -6,6 +6,8 @@ logo: ""  # path to a logo file
 sphinx:
   config:
     execution_show_tb: true
+  extra_extensions:
+    - sphinx_proof
 
 execute:
   timeout: 100
