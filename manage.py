@@ -198,7 +198,8 @@ class Manage(Local):
             ('--user', '0') if args.as_root else (),
             f'{self.registry_uri}:latest',
             'pip',
-            'list',
+            'install',
+            'sphinx-proof',
         ]
 
         yield self.local['docker'][
