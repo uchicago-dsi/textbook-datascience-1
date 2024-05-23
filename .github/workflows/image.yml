@@ -3,7 +3,6 @@ name: Image
 on:
   push:
     branches:
-      - 'master'
       - 'draft_build'
     paths:
       - 'image/**'
