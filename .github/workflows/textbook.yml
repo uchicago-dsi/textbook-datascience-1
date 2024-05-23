@@ -30,7 +30,7 @@ jobs:
         run: |
           pip install argcmdr==0.13.1
           pip install sphinx-proof
-          pip list
+          jupyter-book --version
 
       - name: Build textbook
         run: |
