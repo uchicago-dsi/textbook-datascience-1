@@ -35,7 +35,7 @@ BINFMT_TAG = 'a7996909642ee92942dcd6cff44b9b95f08dad64'
 
 BUILDER_NAME = 'textbook'
 
-sys.path.append('/opt/hostedtoolcache/Python/3.10.14/x64/lib/python3.10/site-packages')
+sys.path.append('/opt/hostedtoolcache/Python/3.10.14/x64/lib/python3.10/site-packages/sphinx_proof')
 
 
 def setup_env():
