@@ -209,6 +209,17 @@ class Manage(Local):
             '--volume', f'{PREVIEW_PATH}:/home/jovyan/preview',
             ('--user', '0') if args.as_root else (),
             f'{self.registry_uri}:latest',
+            'pip',
+            'list',
+        ]
+
+        yield self.local['docker'][
+            'run',
+            '--rm',
+            '--volume', f'{TEXTBOOK_PATH}:/home/jovyan/textbook',
+            '--volume', f'{PREVIEW_PATH}:/home/jovyan/preview',
+            ('--user', '0') if args.as_root else (),
+            f'{self.registry_uri}:latest',
             'jupyter-book',
             'build',
             '--quiet',
