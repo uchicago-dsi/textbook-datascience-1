@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - 'master'
+      - 'draft_build'
     paths:
       - 'image/**'
       - '.github/workflows/image.yml'
