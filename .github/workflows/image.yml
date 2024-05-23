@@ -1,0 +1,43 @@
+name: Image
+
+on:
+  push:
+    branches:
+      - 'master'
+    paths:
+      - 'image/**'
+      - '.github/workflows/image.yml'
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: true
+
+jobs:
+  build-push:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.10'
+
+      - name: Install management dependencies
+        run: |
+          pip install argcmdr==0.13.1
+
+      # Currently only supports jupyter-service image
+
+      - name: Log in to the Container registry
+        uses: docker/login-action@v1.10.0
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build images and push to container registry
+        run: manage --show image jupyter-service build --platform=amd64 --platform=arm64 --push
