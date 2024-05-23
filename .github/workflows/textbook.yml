@@ -29,7 +29,6 @@ jobs:
       - name: Install management dependencies
         run: |
           pip install argcmdr==0.13.1
-          pip install sphinx-proof
 
       - name: Build textbook
         run: |
