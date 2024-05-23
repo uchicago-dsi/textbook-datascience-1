@@ -8,7 +8,7 @@ sphinx:
     execution_show_tb: true
     html_favicon: favicon.ico
     extensions:
-      - sphinx_proof
+      - sphinx-proof
 
 parse:
   myst_enable_extensions:
