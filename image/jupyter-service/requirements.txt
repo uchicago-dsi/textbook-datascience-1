@@ -1,2 +1,2 @@
-jupyter-book==0.13.1
+jupyter-book
 jupyterlab-spellchecker==0.7.2
