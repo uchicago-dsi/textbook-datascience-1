@@ -4,4 +4,3 @@ sphinx-proof==0.2.1
 sphinx-multitoc-numbering==0.1.3
 plotly==6.2.0
 argcmdr==0.13.1
-
