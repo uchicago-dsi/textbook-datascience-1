@@ -1,5 +1,2 @@
 argcmdr==0.13.1
-numpy
-pandas
-scikit-learn
 sphinx-proof
