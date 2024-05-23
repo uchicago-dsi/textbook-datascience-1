@@ -7,8 +7,8 @@ sphinx:
   config:
     execution_show_tb: true
     html_favicon: favicon.ico
-  extra_extensions:
-    - sphinx-proof
+    extensions:
+      - sphinx_proof
 
 html:
   favicon: "images/logo/favicon.ico"  # A path to a favicon image
