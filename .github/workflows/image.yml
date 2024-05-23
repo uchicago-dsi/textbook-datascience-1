@@ -3,11 +3,10 @@ name: Image
 on:
   push:
     branches:
-      - 'draft_build'
+      - 'master'
     paths:
       - 'image/**'
       - '.github/workflows/image.yml'
-  workflow_dispatch:
 
 concurrency:
   group: ${{ github.workflow }}
