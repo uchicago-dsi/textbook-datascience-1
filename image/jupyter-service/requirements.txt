@@ -1,8 +1,2 @@
 jupyter-book==0.13.1
 jupyterlab-spellchecker==0.7.2
-sphinx
-myst-nb==0.17.2
-myst-parser==0.18.1
-nbclient==0.5.13
-sphinx-proof
-
