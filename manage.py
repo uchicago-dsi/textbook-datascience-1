@@ -191,6 +191,11 @@ class Manage(Local):
             ]
 
         yield self.local['docker'][
+            'pip',
+            'list',
+        ]
+
+        yield self.local['docker'][
             'run',
             '--rm',
             '--volume', f'{TEXTBOOK_PATH}:/home/jovyan/textbook',
