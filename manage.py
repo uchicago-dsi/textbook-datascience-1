@@ -5,6 +5,7 @@ import random
 import re
 import string
 import time
+import sys
 
 from argcmdr import Local, localmethod, SHH
 from descriptors import cachedproperty
@@ -33,6 +34,8 @@ BINFMT_TARGET = pathlib.Path('/proc/sys/fs/binfmt_misc/qemu-aarch64')
 BINFMT_TAG = 'a7996909642ee92942dcd6cff44b9b95f08dad64'
 
 BUILDER_NAME = 'textbook'
+
+sys.path.append('/opt/hostedtoolcache/Python/3.10.14/x64/lib/python3.10/site-packages')
 
 
 def setup_env():
