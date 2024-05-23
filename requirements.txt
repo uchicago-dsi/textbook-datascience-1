@@ -1,2 +1,0 @@
-argcmdr==0.13.1
-sphinx-proof
