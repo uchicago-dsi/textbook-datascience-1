@@ -28,7 +28,7 @@ jobs:
 
       - name: Install management dependencies
         run: |
-          pip install -r requirements.txt
+          pip install argcmdr==0.13.1
 
       - name: Build textbook
         run: |
