@@ -224,7 +224,7 @@ parts:
     file: 19/placeholder19
 
   - title: "20. Feature Engineering and Feature Selection"
-    file: 20/placeholder20
+    file: 20/ch20intro
     sections:
     - title: "20.1 Feature Engineering"
       file: 20/1/feature_engineering.ipynb
