@@ -227,7 +227,7 @@ parts:
     file: 20/placeholder20
     sections:
     - title: "20.1 Feature Engineering"
-      file: 18/1/feature_engineering.ipynb
+      file: 20/1/feature_engineering.ipynb
 
   - title: "21. Classification with Nearest Neighbors"
     file: 21/classification_intro
