@@ -19,15 +19,17 @@ parts:
       file: 03/1/Operations
     - title: "3.2 Assignment Statements"
       file: 03/2/Assignments
-    - title: "Data Types"
+    - title: "3.4 Data Types"
       file: 03/3/DataTypes
-    - title: "3.3 Comparisons"
+    - title: "3.5 Comparisons"
       file: 03/4/Comparison
-    - title: "3.4 Functions"
+    - title: "3.6 Functions"
       file: 03/5/IntroFunctions
       sections:
-      - file: 03/5/1/BuiltIn
-      - file: 03/5/2/Functions
+      - title: "3.6.1 Built-In Functions"
+        file: 03/5/1/BuiltIn
+      - title: "3.6.2 User-Defined Functions"
+        file: 03/5/2/Functions
 
   - title: "4. Collections of Data"
     file: 04/DataStructures
@@ -228,6 +230,8 @@ parts:
     sections:
     - title: "20.1 Feature Engineering"
       file: 20/1/feature_engineering.ipynb
+    - title: "20.2 Feature Selection"
+      file: 20/2/feature_selection.ipynb
 
   - title: "21. Classification with Nearest Neighbors"
     file: 21/classification_intro
