@@ -259,8 +259,12 @@ parts:
     sections:
     - title: "25.1 K-Means Clustering"
       file: 25/1/kmeans
-    - title: "25.2 Hierarchical Clustering"
-      file: 25/2/hierarchical
+    - title: "25.2 K-Means Clustering Example"
+      file: 25/2/kmeans_example
+    - title: "25.3 Hierarchical Clustering"
+      file: 25/3/hierarchical
+    - title: "25.4 Hierarchical Clustering Example"
+      file: 25/4/hierarchical_example
 
   - title: "26. Spatial and Temporal Data"
     file: 26/placeholder26
