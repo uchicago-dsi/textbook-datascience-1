@@ -4,7 +4,7 @@ root: intro
 
 parts:
 - caption: "Part I: Exploring Data"
-  numbered: True
+  numbered: 2
   chapters:
   
   - title: "What is Data Science?"
@@ -193,7 +193,7 @@ parts:
       file: 16/2/investigation
 
 - caption: "Part II: Using Data to Understand Our World"
-  numbered: True
+  numbered: 2
   chapters:
   - title: "Prediction and Correlation"
     file: 17/prediction-and-correlation
