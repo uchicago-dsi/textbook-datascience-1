@@ -1,3 +1,4 @@
 jupyter-book==0.13.1
 jupyterlab-spellchecker==0.7.2
 sphinx-proof
+sphinx-multitoc-numbering

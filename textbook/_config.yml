@@ -10,6 +10,7 @@ sphinx:
     html_favicon: favicon.ico
   extra_extensions:
     - sphinx_proof
+    - sphinx_multitoc_numbering
 
 parse:
   myst_enable_extensions:
