@@ -227,36 +227,36 @@ parts:
       file: 20/2/feature_selection.ipynb
 
   - title: "Regularization and Cross Validation"
-    file: 24/placeholder24
+    file: 21/placeholder21
 
   - title: "Classification with Logistic Regression"
     file: 22/placeholder22
 
-  - title: "21. Classification with Nearest Neighbors"
-    file: 21/classification_intro
+  - title: "Classification with Nearest Neighbors"
+    file: 23/classification_intro
     sections:
-    - title: "21.1 Nearest Neighbor" 
-      file: 21/1/Nearest_Neighbor
-    - title: "21.2 K Nearest Neighbors" 
-      file: 21/2/K_Nearest_Neighbors
-    - title: "21.3 Features to Consider" 
-      file: 21/3/Features_to_Consider
-    - title: "21.4 Multiple Classes" 
-      file: 21/4/Multiple_Classes
+    - title: "Nearest Neighbor" 
+      file: 23/1/Nearest_Neighbor
+    - title: "K Nearest Neighbors" 
+      file: 23/2/K_Nearest_Neighbors
+    - title: "Features to Consider" 
+      file: 23/3/Features_to_Consider
+    - title: "Multiple Classes" 
+      file: 23/4/Multiple_Classes
 
   - title: "Neural Networks and Deep Learning"
     file: 24/placeholder24
 
   - title: "Tree Models"
-    file: 24/placeholder24
+    file: 25/placeholder25
 
-  - title: "25. Unsupervised Learning and Clustering"
-    file: 25/unsupervised_learning
+  - title: "Unsupervised Learning and Clustering"
+    file: 26/unsupervised_learning
     sections:
-    - title: "25.1 K-Means Clustering"
-      file: 25/1/kmeans
-    - title: "25.2 Hierarchical Clustering"
-      file: 25/2/hierarchical
+    - title: "K-Means Clustering"
+      file: 26/1/kmeans
+    - title: "Hierarchical Clustering"
+      file: 26/2/hierarchical
 
   - title: "27. Data Wrangling"
     file: 27/placeholder27
@@ -264,7 +264,7 @@ parts:
   - title: "28. Relational Databases and SQL"
     file: 28/placeholder28
 
-  - title: "31. Reproducibility"
+  - title: "Reproducibility"
     file: 29/placeholder29
 
   - title: "Case Study"
