@@ -10,6 +10,7 @@ sphinx:
     html_favicon: favicon.ico
   extra_extensions:
     - sphinx_proof
+    - sphinx_multitoc_numbering
 
 html:
   favicon: "images/logo/favicon.ico"  # A path to a favicon image
