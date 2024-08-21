@@ -4,6 +4,7 @@ root: intro
 
 parts:
 - caption: "Part I: Exploring Data"
+  numbered: True
   chapters:
   
   - title: "1. What is Data Science?"
@@ -121,15 +122,6 @@ parts:
     - title: "10.4 Biases"
       file: 10/4/biases
 
-# This chapter's contents are to be split up into other chapters.
-#
-# - file: 09/randomness-and-sampling
-#   sections:
-#   - file: 09/1/Intro
-#   - file: 09/2/Control_Statements_conditionals
-#   - file: 09/3/Control_Statements_Iteration
-#   - file: 09/4/Random_Selection_and_Sampling
-
   - title: "11. Probability"
     file: 11/Probability_Intro
     sections:
@@ -201,6 +193,7 @@ parts:
       file: 16/2/investigation
 
 - caption: "Part II: Using Data to Understand Our World"
+  numbered: True
   chapters:
   - title: "17. Prediction and Correlation"
     file: 17/prediction-and-correlation
@@ -233,6 +226,12 @@ parts:
     - title: "20.2 Feature Selection"
       file: 20/2/feature_selection.ipynb
 
+  - title: "Regularization and Cross Validation"
+    file: 24/placeholder24
+
+  - title: "Classification with Logistic Regression"
+    file: 22/placeholder22
+
   - title: "21. Classification with Nearest Neighbors"
     file: 21/classification_intro
     sections:
@@ -245,13 +244,10 @@ parts:
     - title: "21.4 Multiple Classes" 
       file: 21/4/Multiple_Classes
 
-  - title: "22. Additional Models and/or Logistic Regression"
-    file: 22/placeholder22
+  - title: "Neural Networks and Deep Learning"
+    file: 24/placeholder24
 
-  - title: "23. Confusion Matrices and Unbalanced Data"
-    file: 23/placeholder23
-
-  - title: "24. Neural Networks and Deep Learning"
+  - title: "Tree Models"
     file: 24/placeholder24
 
   - title: "25. Unsupervised Learning and Clustering"
@@ -266,23 +262,17 @@ parts:
     - title: "25.4 Hierarchical Clustering Example"
       file: 25/4/hierarchical_example
 
-  - title: "26. Spatial and Temporal Data"
-    file: 26/placeholder26
-
   - title: "27. Data Wrangling"
     file: 27/placeholder27
 
   - title: "28. Relational Databases and SQL"
     file: 28/placeholder28
 
-  - title: "29. Scalable Data Processing"
+  - title: "31. Reproducibility"
     file: 29/placeholder29
 
-  - title: "30. Cloud Computing"
+  - title: "Case Study"
     file: 30/placeholder30
-
-  - title: "31. Reproducibility"
-    file: 31/placeholder31
 
 
 
