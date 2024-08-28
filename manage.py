@@ -190,6 +190,7 @@ class Manage(Local):
                 f'{self.registry_uri}:latest',
             ]
 
+        
         yield self.local['docker'][
             'run',
             '--rm',
