@@ -53,6 +53,8 @@ parts:
       file: 05/2/Control_Statements_conditionals
     - title: "Iteration and Simulation"
       file: 05/3/Control_Statements_Iteration
+    - title: "While Loops"
+      file: 05/4/while_loops
 
   - title: "DataFrames"
     file: 06/DataFrames
