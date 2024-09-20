@@ -72,7 +72,7 @@ parts:
     - title: "Selection by Condition"
       file: 06/6/Select_Condition
 
-  - title: "7. DataFrame Methods and Operations"
+  - title: "DataFrame Methods and Operations"
     file: 07/merge-group-pivot
     sections:
     - title: "Applying Functions"
