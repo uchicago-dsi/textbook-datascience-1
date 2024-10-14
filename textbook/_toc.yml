@@ -257,8 +257,12 @@ parts:
     sections:
     - title: "K-Means Clustering"
       file: 26/1/kmeans
+    - title: "K-Means Clustering Example"
+      file: 26/2/kmeans_example
     - title: "Hierarchical Clustering"
-      file: 26/2/hierarchical
+      file: 26/3/hierarchical
+    - title: "Hierarchical Clustering Example"
+      file: 26/4/hierarchical_example
 
   - title: "Data Wrangling"
     file: 27/placeholder27
