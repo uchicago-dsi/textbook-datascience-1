@@ -255,14 +255,14 @@ parts:
   - title: "Unsupervised Learning and Clustering"
     file: 26/unsupervised_learning
     sections:
-    - title: "25.1 K-Means Clustering"
-      file: 25/1/kmeans
-    - title: "25.2 K-Means Clustering Example"
-      file: 25/2/kmeans_example
-    - title: "25.3 Hierarchical Clustering"
-      file: 25/3/hierarchical
-    - title: "25.4 Hierarchical Clustering Example"
-      file: 25/4/hierarchical_example
+    - title: "K-Means Clustering"
+      file: 26/1/kmeans
+    - title: "K-Means Clustering Example"
+      file: 26/2/kmeans_example
+    - title: "Hierarchical Clustering"
+      file: 26/3/hierarchical
+    - title: "Hierarchical Clustering Example"
+      file: 26/4/hierarchical_example
 
   - title: "Data Wrangling"
     file: 27/placeholder27
