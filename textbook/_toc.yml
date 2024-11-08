@@ -261,7 +261,7 @@ parts:
       file: 26/2/kmeans_example
     - title: "Hierarchical Clustering"
       file: 26/3/hierarchical
-    - title: "Hierarchical Clustering Example"
+    - title: "Hierarchical Clustering Examples"
       file: 26/4/hierarchical_example
 
   - title: "Data Wrangling"
