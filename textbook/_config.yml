@@ -2,11 +2,17 @@ title: Introduction to Data Science I & II
 author: the University of Chicago
 copyright: "2022"
 logo: "images/logo/uchicago_python_nobackground.png"  # path to a logo file
+only_build_toc_files: true
 
 sphinx:
   config:
-    execution_show_tb: true
+    nb_execution_show_tb: true
     html_favicon: favicon.ico
+    html_js_files:
+    - https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js
+  extra_extensions:
+    - sphinx_proof
+    - sphinx_multitoc_numbering
 
 parse:
   myst_enable_extensions:
