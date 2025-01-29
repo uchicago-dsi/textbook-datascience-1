@@ -205,17 +205,18 @@ parts:
     - title: "Correlation" 
       file: 17/2/correlation
 
-  - title: "Simple Linear Regression"
-    file: 18/placeholder18
+
+  - title: "18. Simple Linear Regression"
+    file: 18/CH18Intro.ipynb
     sections:
-    - title: "Correlation and Regression"
-      file: 18/1/Correlation_and_Regression.ipynb
-    - title: "Finding and Interpreting Regressions"
-      file: 18/2/Finding_and_Interpreting_Regressions.ipynb
-    - title: "Regressions and Confidence Intervals"
-      file: 18/3/Regressions_and_Confidence_Intervals.ipynb
-    - title: "Prediction Intervals and Other Model Concerns"
-      file: 18/4/Prediction_Intervals_and_Other_Model_Concerns.ipynb
+    - title: "18.1 Correlation and Regression"
+      file: 18/1/Correlation and Regression.ipynb
+    - title: "18.2 Finding and Interpreting Regressions"
+      file: 18/2/Finding and Interpreting Regressions.ipynb
+    - title: "18.3 Regressions and Confidence Intervals"
+      file: 18/3/Regressions and Confidence Intervals.ipynb
+    - title: "18.4 Prediction Intervals and Other Model Concerns"
+      file: 18/4/Prediction Intervals and Other Model Concerns.ipynb
 
   - title: "Multiple Linear Regression"
     file: 19/placeholder19
