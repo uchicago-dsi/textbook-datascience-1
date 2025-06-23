@@ -72,7 +72,7 @@ parts:
     - title: "Selection by Condition"
       file: 06/6/Select_Condition
 
-  - title: "7. DataFrame Methods and Operations"
+  - title: "DataFrame Methods and Operations"
     file: 07/merge-group-pivot
     sections:
     - title: "Applying Functions"
@@ -205,17 +205,18 @@ parts:
     - title: "Correlation" 
       file: 17/2/correlation
 
-  - title: "Simple Linear Regression"
-    file: 18/placeholder18
+
+  - title: "18. Simple Linear Regression"
+    file: 18/CH18Intro.ipynb
     sections:
-    - title: "Correlation and Regression"
-      file: 18/1/Correlation and Regression.ipynb
-    - title: "Finding and Interpreting Regressions"
-      file: 18/2/Finding and Interpreting Regressions.ipynb
-    - title: "Regressions and Confidence Intervals"
-      file: 18/3/Regressions and Confidence Intervals.ipynb
-    - title: "Prediction Intervals and Other Model Concerns"
-      file: 18/4/Prediction Intervals and Other Model Concerns.ipynb
+    - title: "18.1 Correlation and Regression"
+      file: 18/1/Correlation-Regression
+    - title: "18.2 Finding and Interpreting Regressions"
+      file: 18/2/Finding-Regressions
+    - title: "18.3 Regressions and Confidence Intervals"
+      file: 18/3/Regressions-Confidence-Intervals
+    - title: "18.4 Prediction Intervals and Other Model Concerns"
+      file: 18/4/Prediction-Model-Concerns
 
   - title: "Multiple Linear Regression"
     file: 19/placeholder19
@@ -257,8 +258,12 @@ parts:
     sections:
     - title: "K-Means Clustering"
       file: 26/1/kmeans
+    - title: "K-Means Clustering Example"
+      file: 26/2/kmeans_example
     - title: "Hierarchical Clustering"
-      file: 26/2/hierarchical
+      file: 26/3/hierarchical
+    - title: "Hierarchical Clustering Examples"
+      file: 26/4/hierarchical_example
 
   - title: "Data Wrangling"
     file: 27/placeholder27
