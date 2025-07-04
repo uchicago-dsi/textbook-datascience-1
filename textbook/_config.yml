@@ -26,3 +26,7 @@ parse:
     - colon_fence
     - deflist
     - html_image
+
+html:
+  extra_js:
+    - glossary-sidebar.js

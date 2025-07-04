@@ -276,6 +276,9 @@ parts:
   - title: "Case Study"
     file: 30/placeholder30
 
+  - title: "Glossary"
+    file: glossary.md
+
 
 
 
