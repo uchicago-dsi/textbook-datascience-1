@@ -1,0 +1,12 @@
+{
+  "buildCommand": "make build-book",
+  "outputDirectory": "preview/html",
+  "installCommand": "echo 'Using Docker for build'",
+  "framework": null,
+  "git": {
+    "deploymentEnabled": {
+      "master": true,
+      "dev": true
+    }
+  }
+}
