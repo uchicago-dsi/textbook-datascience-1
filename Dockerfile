@@ -1,5 +1,4 @@
-ARG BASE_CONTAINER=jupyter/scipy-notebook
-FROM $BASE_CONTAINER
+FROM quay.io/jupyter/scipy-notebook:2025-03-14
 
 COPY requirements.txt /usr/local/share/requirements.txt
 
