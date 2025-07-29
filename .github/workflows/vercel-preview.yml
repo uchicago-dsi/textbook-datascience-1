@@ -18,6 +18,13 @@ jobs:
         run: npm install --global vercel@latest
       - name: Pull Vercel Environment Information
         run: vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}
+      - name: Test permissions
+        run: |
+          mkdir -p preview/test
+          echo "test" > preview/test/file.txt
+          ls -la preview/
+          docker run --rm -v ./preview:/home/jovyan/preview textbook-jupyter-service sh -c "ls -la /home/jovyan/preview && echo 'container test' > /home/jovyan/preview/container-test.txt"
+          ls -la preview/
       - name: Build Project Artifacts
         run: make build-book-ci
       - name: Deploy Project Artifacts to Vercel
