@@ -33,7 +33,6 @@ build-book-ci: check-docker build
 	@echo "Building static HTML version of the book for CI..."
 	@rm -rf preview
 	@mkdir -p preview
-	docker run --rm -v ./textbook:/home/jovyan/textbook $(IMAGE_NAME) jupyter-book build /home/jovyan/textbook
-	docker run --rm -v ./textbook:/home/jovyan/textbook -v ./preview:/home/jovyan/preview $(IMAGE_NAME) cp -r /home/jovyan/textbook/_build/html /home/jovyan/preview/
+	docker run --rm -v ./textbook:/home/jovyan/src -v ./preview:/home/jovyan/preview $(IMAGE_NAME) sh -c "cp -r /home/jovyan/src /home/jovyan/textbook && jupyter-book build /home/jovyan/textbook && cp -r /home/jovyan/textbook/_build/html /home/jovyan/preview/"
 	@echo "Book built successfully. You can find it in the 'preview/html' directory."
 
