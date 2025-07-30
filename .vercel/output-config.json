@@ -1,0 +1,27 @@
+{
+  "version": 3,
+  "routes": [
+    {
+      "src": "/favicon.ico",
+      "dest": "/static/favicon.ico"
+    },
+    {
+      "src": "/_static/(.*)",
+      "dest": "/static/_static/$1",
+      "headers": {
+        "cache-control": "max-age=31536000"
+      }
+    },
+    {
+      "src": "/_images/(.*)",
+      "dest": "/static/_images/$1",
+      "headers": {
+        "cache-control": "max-age=31536000"
+      }
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/static/$1"
+    }
+  ]
+}

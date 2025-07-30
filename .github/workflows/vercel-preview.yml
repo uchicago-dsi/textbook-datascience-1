@@ -24,5 +24,6 @@ jobs:
         run: |
           mkdir -p .vercel/output/static
           cp -r preview/html/* .vercel/output/static/
+          cp .vercel/output-config.json .vercel/output/config.json
       - name: Deploy Project Artifacts to Vercel
         run: vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }}
