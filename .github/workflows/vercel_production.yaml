@@ -1,4 +1,4 @@
-name: Vercel Preview Deployment
+name: Vercel Production Deployment
 
 env:
   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
@@ -6,18 +6,18 @@ env:
 
 on:
   push:
-    branches-ignore:
-      - master
+    branches:
+      - main
 
 jobs:
-  Deploy-Preview:
+  Deploy-Production:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - name: Install Vercel CLI
         run: npm install --global vercel@latest
       - name: Pull Vercel Environment Information
-        run: vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}
+        run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
       - name: Build Project Artifacts
         run: make build-book-ci
       - name: Prepare Vercel output
@@ -26,4 +26,4 @@ jobs:
           cp -r preview/html/* .vercel/output/static/
           cp .vercel/output-config.json .vercel/output/config.json
       - name: Deploy Project Artifacts to Vercel
-        run: vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }}
+        run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
