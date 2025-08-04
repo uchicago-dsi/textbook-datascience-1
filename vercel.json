@@ -5,8 +5,8 @@
   "framework": null,
   "git": {
     "deploymentEnabled": {
-      "master": true,
-      "dev": true
+      "main": false,
+      "dev": false
     }
   }
 }
