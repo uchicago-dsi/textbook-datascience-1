@@ -1,12 +1,12 @@
 {
-  "buildCommand": "make build-book",
+  "buildCommand": "make build-book-ci",
   "outputDirectory": "preview/html",
   "installCommand": "echo 'Using Docker for build'",
   "framework": null,
   "git": {
     "deploymentEnabled": {
-      "master": true,
-      "dev": true
+      "main": false,
+      "dev": false
     }
   }
 }
