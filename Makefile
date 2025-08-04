@@ -1,6 +1,7 @@
 SHELL=/bin/bash
 IMAGE_NAME=textbook-jupyter-service
 COMMON_ARGS=--rm -p 8888:8888 -v ./textbook:/home/jovyan/textbook
+
 .PHONY: check-docker build serve interactive build-book serve-book build-book-ci
 
 check-docker:
@@ -38,4 +39,3 @@ build-book-ci: check-docker build
 	docker cp temp-build-ci:/home/jovyan/textbook/_build/html ./preview/
 	docker rm temp-build-ci
 	@echo "Book built successfully. You can find it in the 'preview/html' directory."
-
