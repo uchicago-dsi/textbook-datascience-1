@@ -1,11 +1,11 @@
 ## Arithmetic Operators
--`+` : Addition
--`-` : Subtraction
--`*` : Multiplication
--`/` : Division (float)
--`//` : Floor Division
--`%` : Modulus (remainder)
--`**` : Exponentiation
+- `+` : Addition
+- `-` : Subtraction
+- `*` : Multiplication
+- `/` : Division (float)
+- `//` : Floor Division
+- `%` : Modulus (remainder)
+- `**` : Exponentiation
 
 ## Comparison Operators
 - `==` : Equal
@@ -29,7 +29,9 @@
 
 ## `bool()`
 
-## `\'` and `\"`
+## `\'` 
+
+## `\"`
 
 ## `\n`
 
