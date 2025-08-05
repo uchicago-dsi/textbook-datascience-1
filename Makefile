@@ -13,7 +13,7 @@ check-docker:
 build: check-docker
 	docker build -t $(IMAGE_NAME) .
 
-serve: check-docker build
+notebook: check-docker build
 	docker run $(COMMON_ARGS) $(IMAGE_NAME) start-notebook.sh --NotebookApp.notebook_dir=textbook 
 
 interactive: check-docker build
@@ -28,7 +28,7 @@ build-book: check-docker build
 serve-book: build-book
 	@echo "Starting local server for the book at http://localhost:8001"
 	@echo "Press Ctrl+C to stop."
-	@docker run --rm -p 8001:4000 -v ./preview/html:/home/jovyan/html -w /home/jovyan/html $(IMAGE_NAME) python3 -m http.server 4000 --bind 0.0.0.0
+	@docker run --rm -p 4000:4000 -v ./preview/html:/home/jovyan/html -w /home/jovyan/html $(IMAGE_NAME) python3 -m http.server 4000 --bind 0.0.0.0
 
 build-book-ci: check-docker build
 	@echo "Building static HTML version of the book for CI..."
