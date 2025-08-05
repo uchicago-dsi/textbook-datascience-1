@@ -6,9 +6,9 @@ All textbook content is generated from Jupyter Notebooks and Markdown files usin
 
 ## Getting Started
 
-### Prerequisites
+### Prerequisites (Make and Docker)
 
-Before you begin, you will need to have [Docker](https://docs.docker.com/get-docker/) installed on your computer.
+Before you begin, you will need to have [Docker](https://docs.docker.com/get-docker/) installed on your computer. You will also need to have `make` installed on your computer. If you are using a modern mac or any linux machine this will already be installed and available via the command line. If you are using Windows you will need to install `wsl` and make sure that docker is available. 
 
 ### Setup & Workflow
 
@@ -102,3 +102,23 @@ This textbook is hosted on [Vercel](https://vercel.com/) with automatic deployme
 - **Production Site**: Any merge into the `main` branch generates a new version of the live site at: https://ds1.datascience.uchicago.edu/intro.html
 
 This setup allows for testing changes in a preview environment before they go live to students.
+
+### GitHub Actions
+
+The deployment process is automated through GitHub Actions workflows:
+
+#### How Actions are Triggered
+
+- **Pull Request to `dev`**: When you create or update a pull request targeting the `dev` branch, GitHub Actions automatically builds a preview deployment
+- **Merge to `main`**: When changes are merged into the `main` branch, GitHub Actions triggers a production deployment
+
+#### Checking Action Status
+
+You can monitor the status of GitHub Actions in several ways:
+
+1. **Repository Actions Tab**: Visit https://github.com/uchicago-dsi/textbook-datascience-1/actions to see all workflow runs
+2. **Pull Request Status**: Check marks or X's appear next to commits in pull requests showing build status
+3. **Commit History**: Build status indicators appear next to commits in the repository's commit history
+4. **Notifications**: GitHub will send email notifications for failed builds if you're watching the repository
+
+Each action run shows detailed logs that can help diagnose any build or deployment issues.
