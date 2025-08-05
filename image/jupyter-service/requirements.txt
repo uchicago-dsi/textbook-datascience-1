@@ -3,3 +3,4 @@ jupyterlab-spellchecker==0.7.2
 sphinx-proof
 sphinx-multitoc-numbering
 plotly
+pyyaml

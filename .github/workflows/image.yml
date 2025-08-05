@@ -28,7 +28,7 @@ jobs:
 
       - name: Install management dependencies
         run: |
-          pip install argcmdr==0.13.1
+          pip install argcmdr==0.13.1 pyyaml
 
       # Currently only supports jupyter-service image
 

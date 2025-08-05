@@ -1,0 +1,182 @@
+import re
+import yaml
+from pathlib import Path
+from collections import defaultdict
+
+chapter_base_dir = Path("textbook/")
+output_file = chapter_base_dir / "glossary.md"
+output_code_file = chapter_base_dir / "code-glossary.md"
+toc_path = chapter_base_dir / "_toc.yml"
+
+# --- Parse TOC file ---
+def extract_chapter_paths(toc_file):
+    with toc_file.open() as f:
+        toc = yaml.safe_load(f)
+
+    chapter_links = {}
+    for part in toc.get("parts", []):
+        for chapter in part.get("chapters", []):
+            file = chapter.get("file")
+            if file:
+                match = re.match(r"(\d+)", file)
+                if match:
+                    chapter_num = match.group(1)
+                    chapter_links[chapter_num] = file + ".md"
+    return chapter_links
+
+chapter_map = extract_chapter_paths(toc_path)
+
+# --- Sorting function ---
+def sort_key(heading_line):
+    heading_text = heading_line.strip()
+    heading_text = re.sub(r'^##\s*`?(.*?)`?\s*$', r'\1', heading_text)
+    heading_text = heading_text.lower()
+    heading_text = re.sub(r'^(a|an|the)\s+', '', heading_text)
+    return heading_text
+
+# --- Parse glossary entries ---
+def parse_entries(files):
+    term_map = {}
+    for file in files:
+        lines = file.read_text().splitlines()
+        current = []
+        for line in lines:
+            if line.startswith("## "):
+                if current:
+                    key = sort_key(current[0])
+                    term_map[key] = (current, file)
+                current = [line]
+            else:
+                current.append(line)
+        if current:
+            key = sort_key(current[0])
+            term_map[key] = (current, file)
+    return term_map
+
+# --- Summarize for "New in This Chapter" ---
+def summarize_entries(entries):
+    summary = []
+    for entry, _ in sorted(entries.values(), key=lambda e: sort_key(e[0][0])):
+        if not entry:
+            continue
+        title_line = entry[0]
+        term = title_line.replace("##", "").strip("` ").strip()
+        desc_line = next((line for line in entry[1:] if line.strip()), "")
+        first_sentence = re.split(r"\.|\n", desc_line.strip())[0]
+        summary.append(f"- **{term}**: {first_sentence}")
+    return summary
+
+# --- Insert summary into chapter file ---
+def insert_at_end_of_file(md_file, term_summary, code_summary):
+    marker_start = "<!-- NEW_TERMS_START -->"
+    marker_end = "<!-- NEW_TERMS_END -->"
+    block = ["\n", marker_start, ":::: {.tip title=\"New in This Chapter\"}"]
+    block += term_summary + code_summary
+    block += ["::::", marker_end, "\n"]
+    block_str = "\n".join(block)
+
+    if md_file.exists():
+        content = md_file.read_text()
+        if marker_start in content and marker_end in content:
+            content = re.sub(
+                f"{marker_start}.*?{marker_end}",
+                block_str,
+                content,
+                flags=re.DOTALL
+            )
+        else:
+            content = content.rstrip() + block_str
+        md_file.write_text(content)
+
+# --- Process all chapters ---
+def process_chapter_glossaries():
+    global_terms = {}
+    global_code_terms = {}
+
+    for chapter_dir in sorted(chapter_base_dir.glob("??")):
+        chapter = chapter_dir.name
+        term_file = next(chapter_dir.rglob("*-glossary.md"), None)
+        code_file = next(chapter_dir.rglob("*-code-glossary.md"), None)
+
+        term_entries = parse_entries([term_file]) if term_file else {}
+        code_entries = parse_entries([code_file]) if code_file else {}
+
+        term_summary = summarize_entries(term_entries)
+        code_summary = summarize_entries(code_entries)
+
+        global_terms.update(term_entries)
+        global_code_terms.update(code_entries)
+
+        # Find last md file in chapter
+        subsection_dirs = sorted(chapter_dir.glob("[0-9]*"))
+        last_md_file = None
+        if subsection_dirs:
+            last_dir = sorted(subsection_dirs, key=lambda x: int(x.name))[-1]
+            md_files = sorted(last_dir.glob("*.md"))
+            if md_files:
+                last_md_file = md_files[-1]
+
+        if last_md_file:
+            insert_at_end_of_file(last_md_file, term_summary, code_summary)
+
+    return global_terms, global_code_terms
+
+# --- Global glossary builder ---
+def build_global_glossary(entries, top_anchor, output_path, title, preserve_case=False):
+    entries_by_letter = defaultdict(list)
+    for key, (entry, file) in entries.items():
+        first_char = key[0].upper()
+        if not first_char.isalpha():
+            first_char = "\\\#@"  # Group symbols/numbers
+        entries_by_letter[first_char].append((entry, file))
+
+    all_letters = sorted(entries_by_letter.keys(), key=lambda x: (x == "#", x))
+    index = "| ".join(
+        f"[{letter}]({'other' if letter == '\\\#@' else letter.lower()})"
+        for letter in all_letters
+    ) + "\n\n"
+
+    with output_path.open("w") as f:
+        f.write(f"({top_anchor})=\n# {title}\n\n")
+        f.write("<!-- AUTO-GENERATED: Do not edit this file directly -->\n\n")
+        f.write("## Index\n\n" + index)
+
+        for letter in all_letters:
+            anchor = letter.lower() if letter.isalpha() else "other"
+            f.write(f"({anchor})=\n## {letter} \n\n")
+
+            for entry, file in sorted(entries_by_letter[letter], key=lambda ef: sort_key(ef[0][0])):
+                # Resolve chapter link
+                parts = file.relative_to(chapter_base_dir).parts
+                chapter = parts[0] if parts else None
+                link = ""
+                if chapter and chapter in chapter_map:
+                    link = (
+                        f"\n<span style='font-size:smaller'>Learn more in "
+                        f"[Chapter {chapter.lstrip('0')}]({chapter_map[chapter]}), "
+                    )
+
+                # Format heading
+                heading = entry[0]
+                display_term = heading.replace("##", "").strip()
+                #display_term = term_raw.strip("` ")
+                if any(c in display_term for c in ['`', '\\', '"', "'"]):
+                    entry[0] = f"### ``{display_term}``"
+                else:
+                    entry[0] = f"### {display_term}"
+                if not preserve_case:
+                    display_term = display_term.title()
+                entry[0] = f"### {display_term}"
+
+                # Add footer links
+                if link:
+                    entry.append(link)
+                entry.append(f"[Back to Top]({top_anchor})")
+
+                f.write("\n".join(entry).strip() + "\n\n")
+
+
+# --- Run everything ---
+terms, code_terms = process_chapter_glossaries()
+build_global_glossary(terms, "index", output_file, "Glossary of Terms", preserve_case=False)
+build_global_glossary(code_terms, "code-index", output_code_file, "Glossary of Code", preserve_case=True)

@@ -183,13 +183,16 @@ class Manage(Local):
     @localmethod('--as-root', action='store_true',
                  help="run as root (useful in some environments)")
     def build(self, args):
-        """build textbook content for local preview"""
+        """textbook content for local preview"""
         if args.pull:
             yield self.local['docker'][
                 'pull',
                 f'{self.registry_uri}:latest',
             ]
-
+        # Run glossary builder
+        glossary_script = TEXTBOOK_PATH / "build-glossary.py"
+        if glossary_script.exists():
+            yield self.local['python3'][str(glossary_script)]
         
         yield self.local['docker'][
             'run',
