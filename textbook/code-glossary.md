@@ -13,8 +13,6 @@
 ### `abs(...)`
 Absolute value function: Returns the absolute value of the given input. 
 
-
-<span style='font-size:smaller'>Learn more in [Chapter 3](03/programming-in-python.md), 
 [Back to Top](code-index)
 
 ### Arithmetic Operators
@@ -26,15 +24,11 @@ Absolute value function: Returns the absolute value of the given input.
 - `%` : Modulus (remainder)
 - `**` : Exponentiation
 
-
-<span style='font-size:smaller'>Learn more in [Chapter 3](03/programming-in-python.md), 
 [Back to Top](code-index)
 
 ### Assignment Operator
 - `=` : Assigns an object to a variable
 
-
-<span style='font-size:smaller'>Learn more in [Chapter 3](03/programming-in-python.md), 
 [Back to Top](code-index)
 
 (b)=
@@ -42,8 +36,6 @@ Absolute value function: Returns the absolute value of the given input.
 
 ### `bool()`
 
-
-<span style='font-size:smaller'>Learn more in [Chapter 3](03/programming-in-python.md), 
 [Back to Top](code-index)
 
 (c)=
@@ -57,8 +49,6 @@ Absolute value function: Returns the absolute value of the given input.
 - `>` : Greater than 
 - `>=` : Greater or equal
 
-
-<span style='font-size:smaller'>Learn more in [Chapter 3](03/programming-in-python.md), 
 [Back to Top](code-index)
 
 (f)=
@@ -66,8 +56,6 @@ Absolute value function: Returns the absolute value of the given input.
 
 ### `float() `
 
-
-<span style='font-size:smaller'>Learn more in [Chapter 3](03/programming-in-python.md), 
 [Back to Top](code-index)
 
 ### Function Definition
@@ -79,8 +67,6 @@ def function_name(input_arguments):
     
     return output
 ```
-
-<span style='font-size:smaller'>Learn more in [Chapter 3](03/programming-in-python.md), 
 [Back to Top](code-index)
 
 (h)=
@@ -88,8 +74,6 @@ def function_name(input_arguments):
 
 ### `help()`
 
-
-<span style='font-size:smaller'>Learn more in [Chapter 3](03/programming-in-python.md), 
 [Back to Top](code-index)
 
 (i)=
@@ -97,8 +81,6 @@ def function_name(input_arguments):
 
 ### `int()`
 
-
-<span style='font-size:smaller'>Learn more in [Chapter 3](03/programming-in-python.md), 
 [Back to Top](code-index)
 
 (l)=
@@ -107,8 +89,6 @@ def function_name(input_arguments):
 ### `len(...)`
 Length function: Returns the length of given input. 
 
-
-<span style='font-size:smaller'>Learn more in [Chapter 3](03/programming-in-python.md), 
 [Back to Top](code-index)
 
 ### Logical (Boolean) operators
@@ -116,8 +96,6 @@ Length function: Returns the length of given input.
 - `or` : True if at least one is true 
 - `not` : True if input is false 
 
-
-<span style='font-size:smaller'>Learn more in [Chapter 3](03/programming-in-python.md), 
 [Back to Top](code-index)
 
 (m)=
@@ -126,77 +104,55 @@ Length function: Returns the length of given input.
 ### `math.ceil(...)`
 Returns the ceiling of the input.  
 
-
-<span style='font-size:smaller'>Learn more in [Chapter 3](03/programming-in-python.md), 
 [Back to Top](code-index)
 
 ### `math.e`
 Returns $e$.
 
-
-<span style='font-size:smaller'>Learn more in [Chapter 3](03/programming-in-python.md), 
 [Back to Top](code-index)
 
 ### `math.exp(...)`
 Returns $e$ to the power of the input. 
 
-
-<span style='font-size:smaller'>Learn more in [Chapter 3](03/programming-in-python.md), 
 [Back to Top](code-index)
 
 ### `math.factorial(...)`
 Returns the factorial of the input.
 
-
-<span style='font-size:smaller'>Learn more in [Chapter 3](03/programming-in-python.md), 
 [Back to Top](code-index)
 
 ### `math.floor(...)`
 Returns the floor of the input. 
 
-
-<span style='font-size:smaller'>Learn more in [Chapter 3](03/programming-in-python.md), 
 [Back to Top](code-index)
 
 ### `math.log(...)`
 Returns log of input. If no base is specified uses base $e$.
 
-
-<span style='font-size:smaller'>Learn more in [Chapter 3](03/programming-in-python.md), 
 [Back to Top](code-index)
 
 ### `math.pi`
 Returns pi. 
 
-
-<span style='font-size:smaller'>Learn more in [Chapter 3](03/programming-in-python.md), 
 [Back to Top](code-index)
 
 ### `math.sqrt(...)`
 Returns the square root of the input. 
 
-
-<span style='font-size:smaller'>Learn more in [Chapter 3](03/programming-in-python.md), 
 [Back to Top](code-index)
 
 ### `math` library
 
-
-<span style='font-size:smaller'>Learn more in [Chapter 3](03/programming-in-python.md), 
 [Back to Top](code-index)
 
 ### `max(...)`
 Maximum function: Returns the maximum of the given inputs.
 
-
-<span style='font-size:smaller'>Learn more in [Chapter 3](03/programming-in-python.md), 
 [Back to Top](code-index)
 
 ### `min(...)`
 Minimum function: Returns the maximum of the given inputs.  
 
-
-<span style='font-size:smaller'>Learn more in [Chapter 3](03/programming-in-python.md), 
 [Back to Top](code-index)
 
 (p)=
@@ -205,8 +161,6 @@ Minimum function: Returns the maximum of the given inputs.
 ### `print(...)`
 Print function: Prints the input
 
-
-<span style='font-size:smaller'>Learn more in [Chapter 3](03/programming-in-python.md), 
 [Back to Top](code-index)
 
 (r)=
@@ -215,8 +169,6 @@ Print function: Prints the input
 ### `round(...)`
 Rounding function: Returns the rounded input. 
 
-
-<span style='font-size:smaller'>Learn more in [Chapter 3](03/programming-in-python.md), 
 [Back to Top](code-index)
 
 (s)=
@@ -224,43 +176,31 @@ Rounding function: Returns the rounded input.
 
 ### `str()`
 
-
-<span style='font-size:smaller'>Learn more in [Chapter 3](03/programming-in-python.md), 
 [Back to Top](code-index)
 
 ### `string.lower()`
 Returns a lowercase version of the given string  
 
-
-<span style='font-size:smaller'>Learn more in [Chapter 3](03/programming-in-python.md), 
 [Back to Top](code-index)
 
 ### `string.replace('old', 'new')`
 Replaces any 'old' elements with 'new' in the given string  
 
-
-<span style='font-size:smaller'>Learn more in [Chapter 3](03/programming-in-python.md), 
 [Back to Top](code-index)
 
 ### `string.strip()`
 Returns the given string with additional spaces at beginning or end removed 
 
-
-<span style='font-size:smaller'>Learn more in [Chapter 3](03/programming-in-python.md), 
 [Back to Top](code-index)
 
 ### `string.upper()`
 Returns an uppercase version of the given string 
 
-
-<span style='font-size:smaller'>Learn more in [Chapter 3](03/programming-in-python.md), 
 [Back to Top](code-index)
 
 ### `sum(...)`
 Sum function: Returns the sum of a given iterable. 
 
-
-<span style='font-size:smaller'>Learn more in [Chapter 3](03/programming-in-python.md), 
 [Back to Top](code-index)
 
 (t)=
@@ -269,8 +209,6 @@ Sum function: Returns the sum of a given iterable.
 ### `type(...)`
 Data Type function: Returns the datatype of the input. 
 
-
-<span style='font-size:smaller'>Learn more in [Chapter 3](03/programming-in-python.md), 
 [Back to Top](code-index)
 
 (other)=
@@ -278,25 +216,17 @@ Data Type function: Returns the datatype of the input.
 
 ### `\"`
 
-
-<span style='font-size:smaller'>Learn more in [Chapter 3](03/programming-in-python.md), 
 [Back to Top](code-index)
 
 ### `\'`
 
-
-<span style='font-size:smaller'>Learn more in [Chapter 3](03/programming-in-python.md), 
 [Back to Top](code-index)
 
 ### `\n`
 
-
-<span style='font-size:smaller'>Learn more in [Chapter 3](03/programming-in-python.md), 
 [Back to Top](code-index)
 
 ### `\t`
 
-
-<span style='font-size:smaller'>Learn more in [Chapter 3](03/programming-in-python.md), 
 [Back to Top](code-index)
 

@@ -26,6 +26,7 @@ parse:
     - colon_fence
     - deflist
     - html_image
+    - html_admonition
 
 html:
   extra_js:

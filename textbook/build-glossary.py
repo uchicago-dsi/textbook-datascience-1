@@ -2,29 +2,68 @@ import re
 import yaml
 from pathlib import Path
 from collections import defaultdict
+import os
 
 chapter_base_dir = Path("textbook/")
 output_file = chapter_base_dir / "glossary.md"
 output_code_file = chapter_base_dir / "code-glossary.md"
 toc_path = chapter_base_dir / "_toc.yml"
 
-# --- Parse TOC file ---
-def extract_chapter_paths(toc_file):
+# --- TOC parsing with recursive section handling ---
+# Keep previous imports...
+
+# --- TOC parsing with recursive section handling ---
+def collect_files(section_list, chapter_num, chapter_to_files):
+    for section in section_list:
+        section_file = section.get("file")
+        if section_file:
+            chapter_to_files[chapter_num].append(section_file)
+        if "sections" in section:
+            collect_files(section["sections"], chapter_num, chapter_to_files)
+
+def extract_chapter_files(toc_file):
     with toc_file.open() as f:
         toc = yaml.safe_load(f)
 
-    chapter_links = {}
-    for part in toc.get("parts", []):
-        for chapter in part.get("chapters", []):
-            file = chapter.get("file")
-            if file:
-                match = re.match(r"(\d+)", file)
-                if match:
-                    chapter_num = match.group(1)
-                    chapter_links[chapter_num] = file + ".md"
-    return chapter_links
+    chapter_to_files = defaultdict(list)
 
-chapter_map = extract_chapter_paths(toc_path)
+    for part in toc.get("parts", []):
+        for chap in part.get("chapters", []):
+            file_stub = chap.get("file")
+            if not file_stub:
+                continue
+
+            m = re.match(r"(\d+)", file_stub)
+            if not m:
+                continue
+            chap_num = m.group(1)
+
+            # resolve this file stub to a real .ipynb or .md
+            for ext in (".ipynb", ".md"):
+                p = chapter_base_dir / (file_stub + ext)
+                if p.exists():
+                    chapter_to_files[chap_num].append(p)
+                    break
+
+            # now walk nested sections recursively
+            def walk(sections):
+                for sec in sections:
+                    stub = sec.get("file")
+                    if stub:
+                        for ext in (".ipynb", ".md"):
+                            p = chapter_base_dir / (stub + ext)
+                            if p.exists():
+                                chapter_to_files[chap_num].append(p)
+                                break
+                    if "sections" in sec:
+                        walk(sec["sections"])
+
+            if "sections" in chap:
+                walk(chap["sections"])
+
+    return chapter_to_files
+
+chapter_to_files = extract_chapter_files(toc_path)
 
 # --- Sorting function ---
 def sort_key(heading_line):
@@ -54,70 +93,120 @@ def parse_entries(files):
     return term_map
 
 # --- Summarize for "New in This Chapter" ---
-def summarize_entries(entries):
+def slugify(term):
+    # Lowercase, remove non-word characters except space, hyphen, underscore, then replace spaces with hyphens
+    return re.sub(r'[^\w\s-]', '', term.strip()).lower().replace(" ", "-")
+
+def summarize_entries(entries, glossary_filename):
     summary = []
     for entry, _ in sorted(entries.values(), key=lambda e: sort_key(e[0][0])):
         if not entry:
             continue
         title_line = entry[0]
-        term = title_line.replace("##", "").strip("` ").strip()
-        desc_line = next((line for line in entry[1:] if line.strip()), "")
-        first_sentence = re.split(r"\.|\n", desc_line.strip())[0]
-        summary.append(f"- **{term}**: {first_sentence}")
-    return summary
+        # Extract and clean term (strip ##, backticks, whitespace)
+        term_raw = title_line.replace("##", "").strip().strip("`")
+        slug = slugify(term_raw)
+
+        summary.append(f'<li><a href="{glossary_filename.replace(".md",".html")}#{slug}">{term_raw}</a></li>')
+    # Wrap in unordered list
+    return ["<ul>"] + summary + ["</ul>"]
+
 
 # --- Insert summary into chapter file ---
-def insert_at_end_of_file(md_file, term_summary, code_summary):
+def insert_at_end_of_file(file_path, term_links, code_links):
     marker_start = "<!-- NEW_TERMS_START -->"
     marker_end = "<!-- NEW_TERMS_END -->"
-    block = ["\n", marker_start, ":::: {.tip title=\"New in This Chapter\"}"]
-    block += term_summary + code_summary
-    block += ["::::", marker_end, "\n"]
-    block_str = "\n".join(block)
 
-    if md_file.exists():
-        content = md_file.read_text()
-        if marker_start in content and marker_end in content:
-            content = re.sub(
-                f"{marker_start}.*?{marker_end}",
-                block_str,
-                content,
-                flags=re.DOTALL
-            )
-        else:
-            content = content.rstrip() + block_str
-        md_file.write_text(content)
+    rel_glossary = os.path.relpath(chapter_base_dir / "glossary.html", start=file_path.parent)
+    rel_code_glossary = os.path.relpath(chapter_base_dir / "code-glossary.html", start=file_path.parent)
+
+    # block = ["\n", marker_start]
+    # #block += [":::{margin}"]
+    # block += [":::{admonition} New in This Chapter", ":class: tip"]
+    # block += ["**Terms**"] + term_summary
+    # block += ["**Code**"] + code_summary
+    # #block += [":::", "\n"]
+    # block += [":::", marker_end, "\n"]
+    
+    block = f"""
+    <!-- NEW_TERMS_START -->
+    ```html
+    <div class="admonition tip" name="html-admonition" style="background-color:#800000; color:white; padding:1em; border-radius:6px;">
+    <p class="title">New in This Chapter</p>
+    <div style="display: flex; gap: 2em; margin-top: 1em;">
+        <div>
+        <h4>Terms</h4>
+        <ul>
+            {''.join(f'<li><a href="{rel_glossary}#{slug}" style="color:white;">{term}</a></li>' for term, slug in term_links)}
+        </ul>
+        </div>
+        <div>
+        <h4>Code</h4>
+        <ul>
+            {''.join(f'<li><a href="{rel_code_glossary}#{slug}" style="color:white;">{term}</a></li>' for term, slug in code_links)}
+        </ul>
+        </div>
+    </div>
+    </div>
+    ```
+    <!-- NEW_TERMS_END -->
+    """
+
+    if file_path.exists():
+        if file_path.suffix == ".ipynb":
+            import nbformat
+            nb = nbformat.read(file_path, as_version=4)
+
+            nb.cells = [cell for cell in nb.cells if marker_start not in cell.get("source", "")]
+            nb.cells.append(nbformat.v4.new_markdown_cell(block))
+            nbformat.write(nb, file_path)
+
+        elif file_path.suffix == ".md":
+            content = file_path.read_text()
+            if marker_start in content and marker_end in content:
+                content = re.sub(
+                    f"{marker_start}.*?{marker_end}",
+                    block_str,
+                    content,
+                    flags=re.DOTALL
+                )
+            else:
+                content = content.rstrip() + block_str
+            file_path.write_text(content)
 
 # --- Process all chapters ---
 def process_chapter_glossaries():
     global_terms = {}
     global_code_terms = {}
 
-    for chapter_dir in sorted(chapter_base_dir.glob("??")):
-        chapter = chapter_dir.name
-        term_file = next(chapter_dir.rglob("*-glossary.md"), None)
-        code_file = next(chapter_dir.rglob("*-code-glossary.md"), None)
+    for chapter, files in sorted(chapter_to_files.items()):
+        # files is a list of Path objects, in TOC order
+        if not files:
+            continue
+
+        # last file in chapter
+        last_file = files[-1]
+
+        # your existing glossary logic:
+        term_file = next(Path(chapter_base_dir / chapter).rglob("*-glossary.md"), None)
+        code_file = next(Path(chapter_base_dir / chapter).rglob("*-code-glossary.md"), None)
 
         term_entries = parse_entries([term_file]) if term_file else {}
         code_entries = parse_entries([code_file]) if code_file else {}
 
-        term_summary = summarize_entries(term_entries)
-        code_summary = summarize_entries(code_entries)
+        if term_entries or code_entries:
+            term_links = [(entry[0].replace("##", "").strip().strip("`"), slugify(entry[0].replace("##", "").strip().strip("`")))
+              for entry, _ in sorted(term_entries.values(), key=lambda e: sort_key(e[0][0]))]
 
-        global_terms.update(term_entries)
-        global_code_terms.update(code_entries)
+            code_links = [(entry[0].replace("##", "").strip().strip("`"), slugify(entry[0].replace("##", "").strip().strip("`")))
+                        for entry, _ in sorted(code_entries.values(), key=lambda e: sort_key(e[0][0]))]
 
-        # Find last md file in chapter
-        subsection_dirs = sorted(chapter_dir.glob("[0-9]*"))
-        last_md_file = None
-        if subsection_dirs:
-            last_dir = sorted(subsection_dirs, key=lambda x: int(x.name))[-1]
-            md_files = sorted(last_dir.glob("*.md"))
-            if md_files:
-                last_md_file = md_files[-1]
 
-        if last_md_file:
-            insert_at_end_of_file(last_md_file, term_summary, code_summary)
+            global_terms.update(term_entries)
+            global_code_terms.update(code_entries)
+
+            insert_at_end_of_file(last_file, term_links, code_links)
+
 
     return global_terms, global_code_terms
 
@@ -150,10 +239,10 @@ def build_global_glossary(entries, top_anchor, output_path, title, preserve_case
                 parts = file.relative_to(chapter_base_dir).parts
                 chapter = parts[0] if parts else None
                 link = ""
-                if chapter and chapter in chapter_map:
+                if chapter and chapter in chapter_to_files[chapter]:
                     link = (
                         f"\n<span style='font-size:smaller'>Learn more in "
-                        f"[Chapter {chapter.lstrip('0')}]({chapter_map[chapter]}), "
+                        f"[Chapter {chapter.lstrip('0')}]({chapter_to_files[chapter]}), "
                     )
 
                 # Format heading
@@ -174,7 +263,6 @@ def build_global_glossary(entries, top_anchor, output_path, title, preserve_case
                 entry.append(f"[Back to Top]({top_anchor})")
 
                 f.write("\n".join(entry).strip() + "\n\n")
-
 
 # --- Run everything ---
 terms, code_terms = process_chapter_glossaries()
