@@ -4,3 +4,4 @@ sphinx-proof
 sphinx-multitoc-numbering
 plotly
 pyyaml
+nbformat

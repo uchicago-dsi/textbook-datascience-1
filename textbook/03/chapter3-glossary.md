@@ -5,7 +5,10 @@ The **modulo operation** (`%` in python) finds the remainder after division of o
 ```
 
 ## Floor Division
-Definition
+Division where the result is rounded down to the nearest whole number
+```python
+7 // 3  # returns 2 because 7 divided by 3 is 2.3 which is rounded down to 2
+```
 
 ## Syntax
 Definition

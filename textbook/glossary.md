@@ -12,8 +12,6 @@
 
 ### Argument
 
-
-<span style='font-size:smaller'>Learn more in [Chapter 3](03/programming-in-python.md), 
 [Back to Top](index)
 
 (b)=
@@ -21,8 +19,6 @@
 
 ### Boolean
 
-
-<span style='font-size:smaller'>Learn more in [Chapter 3](03/programming-in-python.md), 
 [Back to Top](index)
 
 (c)=
@@ -30,28 +26,20 @@
 
 ### Call [A Function]
 
-
-<span style='font-size:smaller'>Learn more in [Chapter 3](03/programming-in-python.md), 
 [Back to Top](index)
 
 ### Concatenate
 
-
-<span style='font-size:smaller'>Learn more in [Chapter 3](03/programming-in-python.md), 
 [Back to Top](index)
 
 (d)=
 ## D 
 
 ### Default Value
-
-<span style='font-size:smaller'>Learn more in [Chapter 3](03/programming-in-python.md), 
 [Back to Top](index)
 
 ### Docstring
 
-
-<span style='font-size:smaller'>Learn more in [Chapter 3](03/programming-in-python.md), 
 [Back to Top](index)
 
 (e)=
@@ -59,8 +47,6 @@
 
 ### Escape Sequence
 
-
-<span style='font-size:smaller'>Learn more in [Chapter 3](03/programming-in-python.md), 
 [Back to Top](index)
 
 (f)=
@@ -68,33 +54,23 @@
 
 ### Float
 
-
-<span style='font-size:smaller'>Learn more in [Chapter 3](03/programming-in-python.md), 
 [Back to Top](index)
 
 ### Floor Division
 Definition
 
-
-<span style='font-size:smaller'>Learn more in [Chapter 3](03/programming-in-python.md), 
 [Back to Top](index)
 
 ### Function (Built-In, User-Defined)
 
-
-<span style='font-size:smaller'>Learn more in [Chapter 3](03/programming-in-python.md), 
 [Back to Top](index)
 
 ### Function Body
 
-
-<span style='font-size:smaller'>Learn more in [Chapter 3](03/programming-in-python.md), 
 [Back to Top](index)
 
 ### Function Definition
 
-
-<span style='font-size:smaller'>Learn more in [Chapter 3](03/programming-in-python.md), 
 [Back to Top](index)
 
 (i)=
@@ -103,20 +79,14 @@ Definition
 ### Immutable Data Types
 Definition
 
-
-<span style='font-size:smaller'>Learn more in [Chapter 3](03/programming-in-python.md), 
 [Back to Top](index)
 
 ### Input
 
-
-<span style='font-size:smaller'>Learn more in [Chapter 3](03/programming-in-python.md), 
 [Back to Top](index)
 
 ### Integer
 
-
-<span style='font-size:smaller'>Learn more in [Chapter 3](03/programming-in-python.md), 
 [Back to Top](index)
 
 (l)=
@@ -124,14 +94,10 @@ Definition
 
 ### Lexicographic
 
-
-<span style='font-size:smaller'>Learn more in [Chapter 3](03/programming-in-python.md), 
 [Back to Top](index)
 
 ### Library / Module
 
-
-<span style='font-size:smaller'>Learn more in [Chapter 3](03/programming-in-python.md), 
 [Back to Top](index)
 
 (m)=
@@ -139,8 +105,6 @@ Definition
 
 ### Method
 
-
-<span style='font-size:smaller'>Learn more in [Chapter 3](03/programming-in-python.md), 
 [Back to Top](index)
 
 ### Modulo / Mod / Modulus
@@ -149,15 +113,11 @@ The **modulo operation** (`%` in python) finds the remainder after division of o
 7 % 3  # returns 1 because 7 divided by 3 is 2 with a remainder of 1
 ```
 
-
-<span style='font-size:smaller'>Learn more in [Chapter 3](03/programming-in-python.md), 
 [Back to Top](index)
 
 ### Mutable Data Types
 Definition
 
-
-<span style='font-size:smaller'>Learn more in [Chapter 3](03/programming-in-python.md), 
 [Back to Top](index)
 
 (o)=
@@ -165,20 +125,14 @@ Definition
 
 ### Object
 
-
-<span style='font-size:smaller'>Learn more in [Chapter 3](03/programming-in-python.md), 
 [Back to Top](index)
 
 ### Optional Argument
 
-
-<span style='font-size:smaller'>Learn more in [Chapter 3](03/programming-in-python.md), 
 [Back to Top](index)
 
 ### Output
 
-
-<span style='font-size:smaller'>Learn more in [Chapter 3](03/programming-in-python.md), 
 [Back to Top](index)
 
 (s)=
@@ -186,20 +140,14 @@ Definition
 
 ### Scope
 
-
-<span style='font-size:smaller'>Learn more in [Chapter 3](03/programming-in-python.md), 
 [Back to Top](index)
 
 ### String
 
-
-<span style='font-size:smaller'>Learn more in [Chapter 3](03/programming-in-python.md), 
 [Back to Top](index)
 
 ### Syntax
 Definition
 
-
-<span style='font-size:smaller'>Learn more in [Chapter 3](03/programming-in-python.md), 
 [Back to Top](index)
 
