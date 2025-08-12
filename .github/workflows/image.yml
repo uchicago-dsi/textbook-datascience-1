@@ -1,6 +1,7 @@
 name: Image
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - 'master'
@@ -27,7 +28,7 @@ jobs:
 
       - name: Install management dependencies
         run: |
-          pip install argcmdr==0.13.1
+          pip install argcmdr==0.13.1 pyyaml nbformat
 
       # Currently only supports jupyter-service image
 
