@@ -70,7 +70,6 @@ def sort_key(heading_line):
     heading_text = re.sub(r'^(a|an|the)\s+', '', heading_text)
     return heading_text
 
-# --- Parse glossary entries ---
 def parse_entries(files):
     term_map = {}
     for file in files:
@@ -80,19 +79,22 @@ def parse_entries(files):
             if line.startswith("## "):
                 if current:
                     key = sort_key(current[0])
-                    term_map[key] = (current, file)
+                    if key not in term_map:  # only add if not already in map
+                        term_map[key] = (current, file)
                 current = [line]
             else:
                 current.append(line)
         if current:
             key = sort_key(current[0])
-            term_map[key] = (current, file)
+            if key not in term_map:  # only add if not already in map
+                term_map[key] = (current, file)
     return term_map
 
 # --- Summarize for "New in This Chapter" ---
 def slugify(term):
-    # Lowercase, remove non-word characters except space, hyphen, underscore, then replace spaces with hyphens
-    return re.sub(r'[^\w\s-]', '', term.strip()).lower().replace(" ", "-")
+    s = re.sub(r'[^\w\s-]', '', term.strip()).lower()
+    s = re.sub(r'[\s_-]+', '-', s)
+    return s.strip('-')
 
 def summarize_entries(entries, glossary_filename):
     summary = []
@@ -117,58 +119,50 @@ def insert_at_end_of_file(file_path, term_links, code_links):
     rel_glossary = os.path.relpath(chapter_base_dir / "glossary.html", start=file_path.parent)
     rel_code_glossary = os.path.relpath(chapter_base_dir / "code-glossary.html", start=file_path.parent)
 
-    # block = ["\n", marker_start]
-    # #block += [":::{margin}"]
-    # block += [":::{admonition} New in This Chapter", ":class: tip"]
-    # block += ["**Terms**"] + term_summary
-    # block += ["**Code**"] + code_summary
-    # #block += [":::", "\n"]
-    # block += [":::", marker_end, "\n"]
-    
+    # Small helper to escape term text inside HTML
+    def html_escape(s):
+        return (s.replace("&", "&amp;")
+                 .replace("<", "&lt;")
+                 .replace(">", "&gt;")
+                 .replace('"', "&quot;")
+                 .replace("'", "&#39;"))
+
     block = f"""
-    <!-- NEW_TERMS_START -->
-    ```html
-    <div class="admonition tip" name="html-admonition" style="background-color:#800000; color:white; padding:1em; border-radius:6px;">
-    <p class="title">New in This Chapter</p>
-    <div style="display: flex; gap: 2em; margin-top: 1em;">
-        <div>
-        <h4>Terms</h4>
-        <ul>
-            {''.join(f'<li><a href="{rel_glossary}#{slug}" style="color:white;">{term}</a></li>' for term, slug in term_links)}
-        </ul>
-        </div>
-        <div>
-        <h4>Code</h4>
-        <ul>
-            {''.join(f'<li><a href="{rel_code_glossary}#{slug}" style="color:white;">{term}</a></li>' for term, slug in code_links)}
-        </ul>
-        </div>
+{marker_start}
+<div class="admonition tip" name="html-admonition" style="background-color:#800000; color:white; padding:1em; border-radius:6px;">
+<p class="title">New in This Chapter</p>
+<div style="display:flex; gap:2em; margin-top:1em; align-items:flex-start;">
+    <div>
+    <h4>Terms</h4>
+    <ul>
+        {''.join(f'<li><a href="{rel_glossary}#{slug}" style="color:white;">{html_escape(term)}</a></li>' for term, slug in term_links) if term_links else '<li><em>No new terms</em></li>'}
+    </ul>
     </div>
+    <div>
+    <h4>Code</h4>
+    <ul>
+        {''.join(f'<li><a href="{rel_code_glossary}#{slug}" style="color:white;">{html_escape(term)}</a></li>' for term, slug in code_links) if code_links else '<li><em>No new code</em></li>'}
+    </ul>
     </div>
-    ```
-    <!-- NEW_TERMS_END -->
-    """
+</div>
+</div>
+{marker_end}
+"""
 
     if file_path.exists():
         if file_path.suffix == ".ipynb":
             import nbformat
             nb = nbformat.read(file_path, as_version=4)
-
             nb.cells = [cell for cell in nb.cells if marker_start not in cell.get("source", "")]
             nb.cells.append(nbformat.v4.new_markdown_cell(block))
             nbformat.write(nb, file_path)
-
         elif file_path.suffix == ".md":
             content = file_path.read_text()
             if marker_start in content and marker_end in content:
-                content = re.sub(
-                    f"{marker_start}.*?{marker_end}",
-                    block,
-                    content,
-                    flags=re.DOTALL
-                )
+                content = re.sub(f"{re.escape(marker_start)}.*?{re.escape(marker_end)}",
+                                 block, content, flags=re.DOTALL)
             else:
-                content = content.rstrip() + block
+                content = content.rstrip() + "\n\n" + block + "\n"
             file_path.write_text(content)
 
 # --- Process all chapters ---
@@ -198,9 +192,12 @@ def process_chapter_glossaries():
             code_links = [(entry[0].replace("##", "").strip().strip("`"), slugify(entry[0].replace("##", "").strip().strip("`")))
                         for entry, _ in sorted(code_entries.values(), key=lambda e: sort_key(e[0][0]))]
 
-
-            global_terms.update(term_entries)
-            global_code_terms.update(code_entries)
+            for k, v in term_entries.items():
+                global_terms.setdefault(k, v)
+            for k, v in code_entries.items():
+                global_code_terms.setdefault(k, v)
+            # global_terms.update(term_entries)
+            # global_code_terms.update(code_entries)
 
             insert_at_end_of_file(last_file, term_links, code_links)
 
@@ -211,16 +208,13 @@ def process_chapter_glossaries():
 def build_global_glossary(entries, top_anchor, output_path, title, preserve_case=False):
     entries_by_letter = defaultdict(list)
     for key, (entry, file) in entries.items():
-        first_char = key[0].upper()
+        first_char = (key[0].upper() if key else "#")
         if not first_char.isalpha():
-            first_char = "\\\#@"  # Group symbols/numbers
+            first_char = "#"
         entries_by_letter[first_char].append((entry, file))
 
-    all_letters = sorted(entries_by_letter.keys(), key=lambda x: (x == "#", x))
-    index = "| ".join(
-        f"[{letter}]({'other' if letter == '\\\#@' else letter.lower()})"
-        for letter in all_letters
-    ) + "\n\n"
+    all_letters = sorted(entries_by_letter.keys(), key=lambda x: ("#" in x, x))
+    index = "| ".join(f"[{letter}]({'other' if letter == '#' else letter.lower()})" for letter in all_letters) + "\n\n"
 
     with output_path.open("w") as f:
         f.write(f"({top_anchor})=\n# {title}\n\n")
@@ -228,38 +222,50 @@ def build_global_glossary(entries, top_anchor, output_path, title, preserve_case
         f.write("## Index\n\n" + index)
 
         for letter in all_letters:
-            anchor = letter.lower() if letter.isalpha() else "other"
-            f.write(f"({anchor})=\n## {letter} \n\n")
+            anchor = "other" if letter == "#" else letter.lower()
+            f.write(f"({anchor})=\n## {letter}\n\n")
 
             for entry, file in sorted(entries_by_letter[letter], key=lambda ef: sort_key(ef[0][0])):
-                # Resolve chapter link
-                parts = file.relative_to(chapter_base_dir).parts
-                chapter = parts[0] if parts else None
-                link = ""
-                if chapter and chapter in chapter_to_files[chapter]:
-                    link = (
-                        f"\n<span style='font-size:smaller'>Learn more in "
-                        f"[Chapter {chapter.lstrip('0')}]({chapter_to_files[chapter]}), "
-                    )
+                # Resolve chapter folder (top-level under textbook/)
+                try:
+                    parts = file.relative_to(chapter_base_dir).parts
+                except Exception:
+                    parts = file.parts  # fallback if already relative
+                chapter_root = parts[0] if parts else None
 
-                # Format heading
-                heading = entry[0]
-                display_term = heading.replace("##", "").strip()
-                #display_term = term_raw.strip("` ")
-                if any(c in display_term for c in ['`', '\\', '"', "'"]):
-                    entry[0] = f"### ``{display_term}``"
-                else:
-                    entry[0] = f"### {display_term}"
+                # First file in this chapter (TOC order)
+                chapter_first = None
+                if chapter_root and chapter_root in chapter_to_files:
+                    for p in chapter_to_files[chapter_root]:
+                        if p.suffix in (".md", ".ipynb"):
+                            chapter_first = p
+                            break
+
+                link = ""
+                if chapter_first is not None:
+                    chapter_first_html = chapter_first.with_suffix(".html")
+                    rel = os.path.relpath(chapter_first_html, start=output_path.parent)
+                    ch_num = chapter_root.lstrip("0") or chapter_root
+                    link = f"\n<span style='font-size:smaller'>Learn more in [Chapter {ch_num}]({rel}).</span>"
+
+                # Heading text
+                display_term = entry[0].replace("##", "").strip().strip("` ")
                 if not preserve_case:
                     display_term = display_term.title()
-                entry[0] = f"### {display_term}"
 
-                # Add footer links
+                body = "\n".join(entry[1:]).strip()
+                f.write(f"### {display_term}\n\n")
+                if body:
+                    f.write(body + "\n\n")
+
                 if link:
-                    entry.append(link)
-                entry.append(f"[Back to Top]({top_anchor})")
+                    # link already includes <span> styling
+                    combined = f"{link} &nbsp;|&nbsp; [Back to Top]({top_anchor})"
+                else:
+                    combined = f"[Back to Top]({top_anchor})"
+                f.write(combined + "\n\n")
 
-                f.write("\n".join(entry).strip() + "\n\n")
+
 
 # --- Run everything ---
 terms, code_terms = process_chapter_glossaries()
