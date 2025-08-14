@@ -9,15 +9,6 @@ output_file = chapter_base_dir / "glossary.md"
 output_code_file = chapter_base_dir / "code-glossary.md"
 toc_path = chapter_base_dir / "_toc.yml"
 
-# --- TOC parsing with recursive section handling ---
-def collect_files(section_list, chapter_num, chapter_to_files):
-    for section in section_list:
-        section_file = section.get("file")
-        if section_file:
-            chapter_to_files[chapter_num].append(section_file)
-        if "sections" in section:
-            collect_files(section["sections"], chapter_num, chapter_to_files)
-
 def extract_chapter_files(toc_file):
     with toc_file.open() as f:
         toc = yaml.safe_load(f)
@@ -63,12 +54,20 @@ def extract_chapter_files(toc_file):
 chapter_to_files = extract_chapter_files(toc_path)
 
 # --- Sorting function ---
+# def sort_key(heading_line):
+#     heading_text = heading_line.strip()
+#     heading_text = re.sub(r'^##\s*`?(.*?)`?\s*$', r'\1', heading_text)
+#     heading_text = heading_text.lower()
+#     heading_text = re.sub(r'^(a|an|the)\s+', '', heading_text)
+#     return heading_text
+
 def sort_key(heading_line):
-    heading_text = heading_line.strip()
-    heading_text = re.sub(r'^##\s*`?(.*?)`?\s*$', r'\1', heading_text)
-    heading_text = heading_text.lower()
-    heading_text = re.sub(r'^(a|an|the)\s+', '', heading_text)
-    return heading_text
+    text = heading_line.strip()
+    text = re.sub(r'^\s*#+\s*', '', text)   # drop any leading ##, ###, etc.
+    text = text.replace('`', '')            # ignore backticks for sorting
+    text = text.lower()
+    text = re.sub(r'^(a|an|the)\s+', '', text)
+    return text
 
 def parse_entries(files):
     term_map = {}
@@ -96,20 +95,21 @@ def slugify(term):
     s = re.sub(r'[\s_-]+', '-', s)
     return s.strip('-')
 
-def summarize_entries(entries, glossary_filename):
-    summary = []
-    for entry, _ in sorted(entries.values(), key=lambda e: sort_key(e[0][0])):
-        if not entry:
-            continue
-        title_line = entry[0]
-        # Extract and clean term (strip ##, backticks, whitespace)
-        term_raw = title_line.replace("##", "").strip().strip("`")
-        slug = slugify(term_raw)
+def term_display_and_slug(heading_line):
+    """
+    heading_line: e.g., '## `math` library'
+    Returns:
+      display_term: exact heading text without the leading '##' (keeps backticks/escapes)
+      slug: cleaned for anchors (no backticks, unescaped sequences)
+    """
+    # Keep display exactly as authored (minus leading ##)
+    display = heading_line.lstrip('#').strip()
 
-        summary.append(f'<li><a href="{glossary_filename.replace(".md",".html")}#{slug}">{term_raw}</a></li>')
-    # Wrap in unordered list
-    return ["<ul>"] + summary + ["</ul>"]
+    # Build a cleaned version for the slug: remove backticks, then unescape \" \_ \(
+    cleaned = display.replace('`', '')
+    cleaned = re.sub(r'\\(.)', r'\1', cleaned)  # turn \" -> ", \_ -> _, etc.
 
+    return display, slugify(cleaned)
 
 # --- Insert summary into chapter file ---
 def insert_at_end_of_file(file_path, term_links, code_links):
@@ -126,25 +126,38 @@ def insert_at_end_of_file(file_path, term_links, code_links):
                  .replace(">", "&gt;")
                  .replace('"', "&quot;")
                  .replace("'", "&#39;"))
+    
+    def html_with_code_spans(s: str) -> str:
+        """Escape HTML and convert markdown-style `code` spans to <code>code</code>."""
+        parts = []
+        last = 0
+        for m in re.finditer(r'`([^`]+)`', s):
+            # text before the code span
+            parts.append(html_escape(s[last:m.start()]))
+            # code content (escaped) wrapped in <code>
+            parts.append(f"<code>{html_escape(m.group(1))}</code>")
+            last = m.end()
+        parts.append(html_escape(s[last:]))
+        return ''.join(parts)
 
     block = f"""
 {marker_start}
-<div class="admonition tip" name="html-admonition" style="background-color:#800000; color:white; padding:1em; border-radius:6px;">
-<p class="title">New in This Chapter</p>
-<div style="display:flex; gap:2em; margin-top:1em; align-items:flex-start;">
+<div class="admonition" style="border-left: 5px solid #800000; background:none; padding:1em; border-radius:6px; margin:1rem 0;">
+  <p class="admonition-title" style="color:#800000;">New in This Chapter</p>
+  <div style="display:flex; gap:2em; align-items:flex-start; flex-wrap:wrap;">
     <div>
-    <h4>Terms</h4>
-    <ul>
-        {''.join(f'<li><a href="{rel_glossary}#{slug}" style="color:white;">{html_escape(term)}</a></li>' for term, slug in term_links) if term_links else '<li><em>No new terms</em></li>'}
-    </ul>
+      <h4 style="margin:.2rem 0 .4rem 0; color:#800000;">Terms</h4>
+      <ul style="margin:0; padding-left:1.2rem;">
+        {''.join(f'<li><a href="{rel_glossary}#{slug}" style="color:inherit; text-decoration:underline;">{html_with_code_spans(term)}</a></li>' for term, slug in term_links) if term_links else '<li><em>No new terms</em></li>'}
+      </ul>
     </div>
     <div>
-    <h4>Code</h4>
-    <ul>
-        {''.join(f'<li><a href="{rel_code_glossary}#{slug}" style="color:white;">{html_escape(term)}</a></li>' for term, slug in code_links) if code_links else '<li><em>No new code</em></li>'}
-    </ul>
+      <h4 style="margin:.2rem 0 .4rem 0; color:#800000;">Code</h4>
+      <ul style="margin:0; padding-left:1.2rem;">
+        {''.join(f'<li><a href="{rel_code_glossary}#{slug}" style="color:inherit; text-decoration:underline;">{html_with_code_spans(term)}</a></li>' for term, slug in code_links) if code_links else '<li><em>No new code</em></li>'}
+      </ul>
     </div>
-</div>
+  </div>
 </div>
 {marker_end}
 """
@@ -186,11 +199,15 @@ def process_chapter_glossaries():
         code_entries = parse_entries([code_file]) if code_file else {}
 
         if term_entries or code_entries:
-            term_links = [(entry[0].replace("##", "").strip().strip("`"), slugify(entry[0].replace("##", "").strip().strip("`")))
-              for entry, _ in sorted(term_entries.values(), key=lambda e: sort_key(e[0][0]))]
+            term_links = []
+            for entry, _ in sorted(term_entries.values(), key=lambda e: sort_key(e[0][0])):
+                display, slug = term_display_and_slug(entry[0])
+                term_links.append((display, slug))
 
-            code_links = [(entry[0].replace("##", "").strip().strip("`"), slugify(entry[0].replace("##", "").strip().strip("`")))
-                        for entry, _ in sorted(code_entries.values(), key=lambda e: sort_key(e[0][0]))]
+            code_links = []
+            for entry, _ in sorted(code_entries.values(), key=lambda e: sort_key(e[0][0])):
+                display, slug = term_display_and_slug(entry[0])
+                code_links.append((display, slug))
 
             for k, v in term_entries.items():
                 global_terms.setdefault(k, v)
@@ -226,45 +243,59 @@ def build_global_glossary(entries, top_anchor, output_path, title, preserve_case
             f.write(f"({anchor})=\n## {letter}\n\n")
 
             for entry, file in sorted(entries_by_letter[letter], key=lambda ef: sort_key(ef[0][0])):
-                # Resolve chapter folder (top-level under textbook/)
+                # --- Resolve chapter folder (top-level under textbook/) ---
                 try:
                     parts = file.relative_to(chapter_base_dir).parts
                 except Exception:
                     parts = file.parts  # fallback if already relative
-                chapter_root = parts[0] if parts else None
 
-                # First file in this chapter (TOC order)
+                chapter_folder = parts[0] if parts else None
+
+                # Extract numeric chapter key (e.g., "01" from "01-intro")
+                chap_key = None
+                chap_num_display = None
+                if chapter_folder:
+                    m = re.match(r"(\d+)", chapter_folder)
+                    if m:
+                        chap_key = m.group(1)           # e.g., "01" (matches dict key)
+                        chap_num_display = str(int(chap_key))  # e.g., "1" for display
+
+                # First file in this chapter (from TOC order)
                 chapter_first = None
-                if chapter_root and chapter_root in chapter_to_files:
-                    for p in chapter_to_files[chapter_root]:
+                if chap_key and chap_key in chapter_to_files:
+                    for p in chapter_to_files[chap_key]:
                         if p.suffix in (".md", ".ipynb"):
                             chapter_first = p
                             break
 
-                link = ""
-                if chapter_first is not None:
+                # Build "Learn more" link if we have a target
+                link_html = ""
+                if chapter_first is not None and chap_num_display is not None:
                     chapter_first_html = chapter_first.with_suffix(".html")
                     rel = os.path.relpath(chapter_first_html, start=output_path.parent)
-                    ch_num = chapter_root.lstrip("0") or chapter_root
-                    link = f"\n<span style='font-size:smaller'>Learn more in [Chapter {ch_num}]({rel}).</span>"
+                    # Maroon accent for label; link inherits theme color
+                    link_html = f"<span style='color:#800000;'>Learn more in</span> [Chapter {chap_num_display}]({rel})"
 
                 # Heading text
-                display_term = entry[0].replace("##", "").strip().strip("` ")
-                if not preserve_case:
+                display_term, _ = term_display_and_slug(entry[0])
+
+                # Optional title-casing: only when there are NO backticks,
+                # so we don't break inline code like `math` or partial `math` library
+                if not preserve_case and '`' not in display_term:
                     display_term = display_term.title()
+
 
                 body = "\n".join(entry[1:]).strip()
                 f.write(f"### {display_term}\n\n")
                 if body:
                     f.write(body + "\n\n")
 
-                if link:
-                    # link already includes <span> styling
-                    combined = f"{link} &nbsp;|&nbsp; [Back to Top]({top_anchor})"
+                # Single-line footer: "Learn more in Chapter X | Back to Top"
+                if link_html:
+                    combined = f"{link_html} &nbsp;|&nbsp; [Back to Top]({top_anchor})"
                 else:
                     combined = f"[Back to Top]({top_anchor})"
                 f.write(combined + "\n\n")
-
 
 
 # --- Run everything ---
