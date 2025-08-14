@@ -140,7 +140,7 @@ def insert_at_end_of_file(file_path, term_links, code_links):
         parts.append(html_escape(s[last:]))
         return ''.join(parts)
 
-    block = f"""```{{html}}
+    block = f"""```{{raw}} html
 {marker_start}
 <div style="border-left:6px solid #800000; background: rgba(128,128,128,0.08) !important; box-shadow:none !important; padding:1rem; border-radius:10px; margin:1rem 0;">
   <div style="display:flex; align-items:center; gap:.6rem; margin-bottom:.6rem;">
