@@ -142,7 +142,7 @@ def insert_at_end_of_file(file_path, term_links, code_links):
 
     block = f"""
 {marker_start}
-<div class="nt-box" style="border-left:6px solid #800000; background:none; padding:1rem; border-radius:10px; margin:1rem 0;">
+<div style="border-left:6px solid #800000; background: rgba(128,128,128,0.08) !important; box-shadow:none !important; padding:1rem; border-radius:10px; margin:1rem 0;">
   <div style="display:flex; align-items:center; gap:.6rem; margin-bottom:.6rem;">
     <span style="display:inline-block; font-weight:700; padding:.25rem .6rem; border:1px solid #800000; border-radius:.5rem; background:rgba(128,0,0,.12); color:inherit;">
       New in This Chapter
@@ -183,7 +183,9 @@ display(HTML({repr(block)}))
             import nbformat
             nb = nbformat.read(file_path, as_version=4)
             nb.cells = [cell for cell in nb.cells if marker_start not in cell.get("source", "")]
-            nb.cells.append(nbformat.v4.new_code_cell(block2))
+            my_cell = nbformat.v4.new_code_cell(block2)
+            my_cell.metadata.setdefault("tags", []).append("remove-input")
+            nb.cells.append(my_cell)
             nbformat.write(nb, file_path)
         elif file_path.suffix == ".md":
             content = file_path.read_text()
