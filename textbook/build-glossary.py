@@ -141,7 +141,7 @@ def insert_at_end_of_file(file_path, term_links, code_links):
         return ''.join(parts)
 
     block = f"""
-```{=html}
+```{{=html}}
 {marker_start}
 <div class="admonition" style="border-left: 5px solid #800000; background:none; padding:1em; border-radius:6px; margin:1rem 0;">
   <p class="admonition-title" style="color:#800000;">New in This Chapter</p>
