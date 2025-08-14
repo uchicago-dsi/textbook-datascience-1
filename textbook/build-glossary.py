@@ -141,6 +141,7 @@ def insert_at_end_of_file(file_path, term_links, code_links):
         return ''.join(parts)
 
     block = f"""
+```{=html}
 {marker_start}
 <div class="admonition" style="border-left: 5px solid #800000; background:none; padding:1em; border-radius:6px; margin:1rem 0;">
   <p class="admonition-title" style="color:#800000;">New in This Chapter</p>
@@ -160,6 +161,7 @@ def insert_at_end_of_file(file_path, term_links, code_links):
   </div>
 </div>
 {marker_end}
+```
 """
 
     if file_path.exists():
@@ -272,9 +274,8 @@ def build_global_glossary(entries, top_anchor, output_path, title, preserve_case
                 link_html = ""
                 if chapter_first is not None and chap_num_display is not None:
                     chapter_first_html = chapter_first.with_suffix(".html")
-                    rel = os.path.relpath(chapter_first_html, start=output_path.parent)
-                    # Maroon accent for label; link inherits theme color
-                    link_html = f"<span style='color:#800000;'>Learn more in</span> [Chapter {chap_num_display}]({rel})"
+                    rel = os.path.relpath(chapter_first_html, start=output_path.parent).replace(".ipynb",".html").replace(".md",".html")
+                    link_html = f'Learn more in <a href="{rel}" style="color:inherit; text-decoration:underline;">Chapter {chap_num_display}</a>'
 
                 # Heading text
                 display_term, _ = term_display_and_slug(entry[0])
