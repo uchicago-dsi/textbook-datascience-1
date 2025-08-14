@@ -140,7 +140,7 @@ def insert_at_end_of_file(file_path, term_links, code_links):
         parts.append(html_escape(s[last:]))
         return ''.join(parts)
 
-    block = f"""
+    block = f"""```{{html}}
 {marker_start}
 <div style="border-left:6px solid #800000; background: rgba(128,128,128,0.08) !important; box-shadow:none !important; padding:1rem; border-radius:10px; margin:1rem 0;">
   <div style="display:flex; align-items:center; gap:.6rem; margin-bottom:.6rem;">
@@ -170,22 +170,23 @@ def insert_at_end_of_file(file_path, term_links, code_links):
   </div>
 </div>
 {marker_end}
+```
 """
 
-    block2 = f"""#| echo: false
-from IPython.display import HTML, display
-import html
-display(HTML({repr(block)}))
-"""
+#     block2 = f"""#| echo: false
+# from IPython.display import HTML, display
+# import html
+# display(HTML({repr(block)}))
+# """
 
     if file_path.exists():
         if file_path.suffix == ".ipynb":
             import nbformat
             nb = nbformat.read(file_path, as_version=4)
             nb.cells = [cell for cell in nb.cells if marker_start not in cell.get("source", "")]
-            my_cell = nbformat.v4.new_code_cell(block2)
-            my_cell.metadata.setdefault("tags", []).append("remove-input")
-            nb.cells.append(my_cell)
+            # my_cell = nbformat.v4.new_code_cell(block2)
+            # my_cell.metadata.setdefault("tags", []).append("remove-input")
+            nb.cells.append(nbformat.v4.new_markdown_cell(block))
             nbformat.write(nb, file_path)
         elif file_path.suffix == ".md":
             content = file_path.read_text()
