@@ -45,7 +45,7 @@ Definition
 
 ## docstring
 
-## argument
+## Argument
 
 ## Input
 

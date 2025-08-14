@@ -141,19 +141,28 @@ def insert_at_end_of_file(file_path, term_links, code_links):
         return ''.join(parts)
 
     block = f"""
-```{{=html}}
 {marker_start}
-<div class="admonition" style="border-left: 5px solid #800000; background:none; padding:1em; border-radius:6px; margin:1rem 0;">
-  <p class="admonition-title" style="color:#800000;">New in This Chapter</p>
-  <div style="display:flex; gap:2em; align-items:flex-start; flex-wrap:wrap;">
+<div class="nt-box" style="border-left:6px solid #800000; background:none; padding:1rem; border-radius:10px; margin:1rem 0;">
+  <div style="display:flex; align-items:center; gap:.6rem; margin-bottom:.6rem;">
+    <span style="display:inline-block; font-weight:700; padding:.25rem .6rem; border:1px solid #800000; border-radius:.5rem; background:rgba(128,0,0,.12); color:inherit;">
+      New in This Chapter
+    </span>
+  </div>
+
+  <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1.25rem; align-items:start;">
     <div>
-      <h4 style="margin:.2rem 0 .4rem 0; color:#800000;">Terms</h4>
+      <h4 style="margin:.25rem 0 .4rem; font-size:1rem; font-weight:700;">
+        <span style="border-bottom:2px solid rgba(128,0,0,.35); padding-bottom:2px;">Terms</span>
+      </h4>
       <ul style="margin:0; padding-left:1.2rem;">
         {''.join(f'<li><a href="{rel_glossary}#{slug}" style="color:inherit; text-decoration:underline;">{html_with_code_spans(term)}</a></li>' for term, slug in term_links) if term_links else '<li><em>No new terms</em></li>'}
       </ul>
     </div>
+
     <div>
-      <h4 style="margin:.2rem 0 .4rem 0; color:#800000;">Code</h4>
+      <h4 style="margin:.25rem 0 .4rem; font-size:1rem; font-weight:700;">
+        <span style="border-bottom:2px solid rgba(128,0,0,.35); padding-bottom:2px;">Code</span>
+      </h4>
       <ul style="margin:0; padding-left:1.2rem;">
         {''.join(f'<li><a href="{rel_code_glossary}#{slug}" style="color:inherit; text-decoration:underline;">{html_with_code_spans(term)}</a></li>' for term, slug in code_links) if code_links else '<li><em>No new code</em></li>'}
       </ul>
@@ -161,7 +170,12 @@ def insert_at_end_of_file(file_path, term_links, code_links):
   </div>
 </div>
 {marker_end}
-```
+"""
+
+    block2 = f"""#| echo: false
+from IPython.display import HTML, display
+import html
+display(HTML({repr(block)}))
 """
 
     if file_path.exists():
@@ -169,7 +183,7 @@ def insert_at_end_of_file(file_path, term_links, code_links):
             import nbformat
             nb = nbformat.read(file_path, as_version=4)
             nb.cells = [cell for cell in nb.cells if marker_start not in cell.get("source", "")]
-            nb.cells.append(nbformat.v4.new_markdown_cell(block))
+            nb.cells.append(nbformat.v4.new_code_cell(block2))
             nbformat.write(nb, file_path)
         elif file_path.suffix == ".md":
             content = file_path.read_text()
