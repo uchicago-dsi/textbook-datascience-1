@@ -142,9 +142,9 @@ def insert_at_end_of_file(file_path, term_links, code_links):
 
     block = f"""```{{raw}} html
 {marker_start}
-<div style="border-left:6px solid #800000; background: rgba(200,200,200,0.10) !important; box-shadow:none !important; padding:1rem; border-radius:10px; margin:1rem 0;">
+<div style="border-left:6px solid #800000; background: rgba(255,255,255,0.06) !important; box-shadow:none !important; padding:1rem; border-radius:10px; margin:1rem 0;">
   <div style="display:flex; align-items:center; gap:.6rem; margin-bottom:.6rem;">
-    <span style="display:inline-block; font-weight:700; padding:.25rem .6rem; border:1px solid #800000; border-radius:.5rem; background:rgba(128,0,0,.12); color:inherit;">
+    <span style="display:inline-block; font-weight:700; padding:.25rem .6rem; border:1px solid #800000; border-radius:.5rem; background:rgba(128,0,0,.25); color:inherit;">
       New in This Chapter
     </span>
   </div>
@@ -152,7 +152,7 @@ def insert_at_end_of_file(file_path, term_links, code_links):
   <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1.25rem; align-items:start;">
     <div>
       <h4 style="margin:.25rem 0 .4rem; font-size:1rem; font-weight:700;">
-        <span style="border-bottom:2px solid rgba(128,0,0,.35); padding-bottom:2px;">Terms</span>
+        <span style="border-bottom:2px solid rgba(128,0,0,.55); padding-bottom:2px;">Terms</span>
       </h4>
       <ul style="margin:0; padding-left:1.2rem;">
         {''.join(f'<li><a href="{rel_glossary}#{slug}" style="color:inherit; text-decoration:underline;">{html_with_code_spans(term)}</a></li>' for term, slug in term_links) if term_links else '<li><em>No new terms</em></li>'}
@@ -161,7 +161,7 @@ def insert_at_end_of_file(file_path, term_links, code_links):
 
     <div>
       <h4 style="margin:.25rem 0 .4rem; font-size:1rem; font-weight:700;">
-        <span style="border-bottom:2px solid rgba(128,0,0,.35); padding-bottom:2px;">Code</span>
+        <span style="border-bottom:2px solid rgba(128,0,0,.55); padding-bottom:2px;">Code</span>
       </h4>
       <ul style="margin:0; padding-left:1.2rem;">
         {''.join(f'<li><a href="{rel_code_glossary}#{slug}" style="color:inherit; text-decoration:underline;">{html_with_code_spans(term)}</a></li>' for term, slug in code_links) if code_links else '<li><em>No new code</em></li>'}
