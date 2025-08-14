@@ -142,7 +142,7 @@ def insert_at_end_of_file(file_path, term_links, code_links):
 
     block = f"""```{{raw}} html
 {marker_start}
-<div style="border-left:6px solid #800000; background: rgba(128,128,128,0.08) !important; box-shadow:none !important; padding:1rem; border-radius:10px; margin:1rem 0;">
+<div style="border-left:6px solid #800000; background: rgba(200,200,200,0.10) !important; box-shadow:none !important; padding:1rem; border-radius:10px; margin:1rem 0;">
   <div style="display:flex; align-items:center; gap:.6rem; margin-bottom:.6rem;">
     <span style="display:inline-block; font-weight:700; padding:.25rem .6rem; border:1px solid #800000; border-radius:.5rem; background:rgba(128,0,0,.12); color:inherit;">
       New in This Chapter
