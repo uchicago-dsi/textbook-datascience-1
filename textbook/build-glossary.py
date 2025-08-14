@@ -10,9 +10,6 @@ output_code_file = chapter_base_dir / "code-glossary.md"
 toc_path = chapter_base_dir / "_toc.yml"
 
 # --- TOC parsing with recursive section handling ---
-# Keep previous imports...
-
-# --- TOC parsing with recursive section handling ---
 def collect_files(section_list, chapter_num, chapter_to_files):
     for section in section_list:
         section_file = section.get("file")
@@ -166,12 +163,12 @@ def insert_at_end_of_file(file_path, term_links, code_links):
             if marker_start in content and marker_end in content:
                 content = re.sub(
                     f"{marker_start}.*?{marker_end}",
-                    block_str,
+                    block,
                     content,
                     flags=re.DOTALL
                 )
             else:
-                content = content.rstrip() + block_str
+                content = content.rstrip() + block
             file_path.write_text(content)
 
 # --- Process all chapters ---
