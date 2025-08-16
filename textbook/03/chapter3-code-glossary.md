@@ -29,6 +29,14 @@
 
 ## `bool()`
 
+## `NameError`
+
+## `SyntaxError`
+
+## `TypeError`
+
+## `ValueError`
+
 ## `\'` 
 
 ## `\"`
