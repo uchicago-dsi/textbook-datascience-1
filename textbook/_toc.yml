@@ -16,12 +16,12 @@ parts:
   - title: "Programming in Python"
     file: 03/programming-in-python
     sections:
-    - title: "Integers and Floats"
+    - title: "Working with Numeric Data"
       file: 03/1/NumericData
     - title: "Booleans"
       file: 03/2/Booleans
     - title: "Assignment Statements"
-      file: 03/3/Assignment
+      file: 03/3/Assignments
     - title: "Strings"
       file: 03/4/Strings
     - title: "Functions"
@@ -196,7 +196,16 @@ parts:
 
 - caption: "Part II: Using Data to Understand Our World"
   numbered: 2
+  file: intro_119/Intro.ipynb
   chapters:
+
+  - title: "Introduction to Machine Learning"
+    sections:
+    - title: "Introduction to Machine Learning"
+      file: ML/1/Introduction_to_Machine_Learning
+    - title: "Types of Machine Learning"
+      file: ML/2/Types_of_ML
+  
   - title: "Prediction and Correlation"
     file: 17/prediction-and-correlation
     sections:
