@@ -29,6 +29,14 @@
 
 ## `bool()`
 
+## `NameError`
+
+## `SyntaxError`
+
+## `TypeError`
+
+## `ValueError`
+
 ## `\'` 
 
 ## `\"`
@@ -112,3 +120,6 @@ def function_name(input_arguments):
     
     return output
 ```
+
+## Comment Character
+- `#` : Signals to Python that anything written after it should be ignored

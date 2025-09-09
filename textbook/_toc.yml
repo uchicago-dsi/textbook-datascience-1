@@ -16,14 +16,14 @@ parts:
   - title: "Programming in Python"
     file: 03/programming-in-python
     sections:
-    - title: "Operations"
-      file: 03/1/Operations
+    - title: "Integers and Floats"
+      file: 03/1/NumericData
+    - title: "Booleans"
+      file: 03/2/Booleans
     - title: "Assignment Statements"
-      file: 03/2/Assignments
-    - title: "Data Types"
-      file: 03/3/DataTypes
-    - title: "Comparisons"
-      file: 03/4/Comparison
+      file: 03/3/Assignment
+    - title: "Strings"
+      file: 03/4/Strings
     - title: "Functions"
       file: 03/5/IntroFunctions
       sections:
@@ -84,21 +84,21 @@ parts:
     - title: "Pivot Tables"
       file: 07/4/pivots
 
-  - title: "String Data and Fuzzy Matching"
-    file: 08/Fuzzy_Matching
-    sections: 
-    - title: "Set-Based (Jaccard) Similarity"
-      file: 08/1/Set_Based_Similarity
-    - title: "Sequence-Based Similarlity"
-      file: 08/2/Sequence_Based_Similarity
-    - title: "Canonicalization"
-      file: 08/3/Canonicalization
-    - title: "Reduced Alphabet Similarity"
-      file: 08/4/Reduced_Alphabets 
-    - title: "Example: Building Inspection reports"
-      file: 08/5/Levenshtein_Inspection_Example 
-    - title: "Encoding and Unicode"
-      file: 08/6/Unicode
+  # - title: "String Data and Fuzzy Matching"
+  #   file: 08/Fuzzy_Matching
+  #   sections: 
+  #   - title: "Set-Based (Jaccard) Similarity"
+  #     file: 08/1/Set_Based_Similarity
+  #   - title: "Sequence-Based Similarlity"
+  #     file: 08/2/Sequence_Based_Similarity
+  #   - title: "Canonicalization"
+  #     file: 08/3/Canonicalization
+  #   - title: "Reduced Alphabet Similarity"
+  #     file: 08/4/Reduced_Alphabets 
+  #   - title: "Example: Building Inspection reports"
+  #     file: 08/5/Levenshtein_Inspection_Example 
+  #   - title: "Encoding and Unicode"
+  #     file: 08/6/Unicode
 
   - title: "Data Visualization"
     file: 09/data-visualization
@@ -269,6 +269,23 @@ parts:
 
   - title: "Relational Databases and SQL"
     file: 28/placeholder28
+
+  # Not changing folder names yet to avoid merge conflicts
+  - title: "String Data and Fuzzy Matching"
+    file: 08_fuzzy/Fuzzy_Matching
+    sections: 
+    - title: "Set-Based (Jaccard) Similarity"
+      file: 08_fuzzy/1/Set_Based_Similarity
+    - title: "Sequence-Based Similarlity"
+      file: 08_fuzzy/2/Sequence_Based_Similarity
+    - title: "Canonicalization"
+      file: 08_fuzzy/3/Canonicalization
+    - title: "Reduced Alphabet Similarity"
+      file: 08_fuzzy/4/Reduced_Alphabets 
+    - title: "Example: Building Inspection reports"
+      file: 08_fuzzy/5/Levenshtein_Inspection_Example 
+    - title: "Encoding and Unicode"
+      file: 08_fuzzy/6/Unicode
 
   - title: "Reproducibility"
     file: 29/placeholder29

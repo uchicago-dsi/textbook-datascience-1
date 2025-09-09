@@ -35,7 +35,9 @@ Definition
 
 ## Call [a function]
 
-## Library / Module
+## Library 
+
+## Module
 
 ## Object
 
@@ -60,3 +62,16 @@ Definition
 ## Optional Argument
 
 ## Default Value
+
+## Binary
+
+## Expression
+
+## Assignment Statement
+
+## Variable / Variable Name
+
+## Reserved Words
+
+## Comment / Comment Out
+
