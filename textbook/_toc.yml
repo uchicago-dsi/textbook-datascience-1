@@ -206,7 +206,7 @@ parts:
       file: 17/2/correlation
 
   - title: "Simple Linear Regression"
-    file: 18/placeholder18
+    file: 18/CH18Intro.ipynb
     sections:
     - title: "Correlation and Regression"
       file: 18/1/Correlation_and_Regression.ipynb
