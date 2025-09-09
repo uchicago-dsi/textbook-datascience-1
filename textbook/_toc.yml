@@ -196,13 +196,14 @@ parts:
 
 - caption: "Part II: Using Data to Understand Our World"
   numbered: 2
-  file: intro_119/Intro.ipynb
   chapters:
 
+  - title: "Introduction to Part 2"
+    file: intro_119/Intro.ipynb
+
   - title: "Introduction to Machine Learning"
+    file: ML/1/Introduction_to_Machine_Learning
     sections:
-    - title: "Introduction to Machine Learning"
-      file: ML/1/Introduction_to_Machine_Learning
     - title: "Types of Machine Learning"
       file: ML/2/Types_of_ML
   
