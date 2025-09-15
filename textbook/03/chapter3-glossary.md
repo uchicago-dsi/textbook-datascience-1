@@ -131,3 +131,8 @@ Text in code that Python ignores. Used for notes or explanations.
 ```python
     # This is a comment
 ```
+
+## Interpreted Language
+A programming language where the code is executed line by line by an interpreter, rather than being compiled into machine code all at once.  
+
+Python is an interpreted language, which means you can run code directly in the console or a notebook and see results immediately. This makes it easier to test and experiment, but it can also be slower than compiled languages like C or Java.
