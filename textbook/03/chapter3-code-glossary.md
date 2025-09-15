@@ -1,125 +1,272 @@
 ## Arithmetic Operators
-- `+` : Addition
-- `-` : Subtraction
-- `*` : Multiplication
-- `/` : Division (float)
-- `//` : Floor Division
-- `%` : Modulus (remainder)
-- `**` : Exponentiation
+- `+` : Addition  
+- `-` : Subtraction  
+- `*` : Multiplication  
+- `/` : Division (always returns a float)  
+- `//` : Floor Division (rounded down to nearest whole number)  
+- `%` : Modulus (remainder after division)  
+- `**` : Exponentiation (power)  
 
 ## Comparison Operators
-- `==` : Equal
-- `!=` : Not equal
-- `<` : Less than
-- `<=` : Less or equal 
-- `>` : Greater than 
-- `>=` : Greater or equal
+- `==` : Equal  
+- `!=` : Not equal  
+- `<` : Less than  
+- `<=` : Less than or equal  
+- `>` : Greater than  
+- `>=` : Greater than or equal  
 
 ## Assignment Operator
-- `=` : Assigns an object to a variable
+- `=` : Assigns a value to a variable  
 
-## Logical (Boolean) operators
-- `and` : True if both are true 
-- `or` : True if at least one is true 
-- `not` : True if input is false 
+## Logical (Boolean) Operators
+- `and` : True if both are true  
+- `or` : True if at least one is true  
+- `not` : True if input is false  
 
-## `float() `
+## float()
+Converts a value into a float (decimal number).  
 
-## `int()`
+```python
+float(7)   # 7.0
+```
 
-## `bool()`
+## int()
+Converts a value into an integer (whole number).  
 
-## `NameError`
+```python
+int(7.9)   # 7
+```
 
-## `SyntaxError`
+## bool()
+Converts a value into a boolean (True or False).  
 
-## `TypeError`
+```python
+bool(0)    # False
+bool(5)    # True
+```
 
-## `ValueError`
+## NameError
+Error raised when you try to use a variable or function name that has not been defined.  
 
-## `\'` 
+```python
+print(x)   # NameError: name 'x' is not defined
+```
 
-## `\"`
+## SyntaxError
+Error raised when Python code is written incorrectly and does not follow Python’s rules.  
 
-## `\n`
+```python
+if True print("hi")   # SyntaxError
+```
 
-## `\t`
+## TypeError
+Error raised when an operation or function is applied to a value of the wrong type.  
 
-## `str()`
+```python
+"5" + 2   # TypeError
+```
 
-## `max(...)`
-Maximum function: Returns the maximum of the given inputs.
+## ValueError
+Error raised when a function receives an argument of the right type but an inappropriate value.  
 
-## `help()`
+```python
+int("hello")   # ValueError
+```
 
-## `min(...)`   
-Minimum function: Returns the maximum of the given inputs.  
+## Escape Sequences
+- `\'` : Inserts a single quote in a string  
+- `\"` : Inserts a double quote in a string  
+- `\n` : Newline (starts a new line)  
+- `\t` : Tab (inserts horizontal spacing)  
 
-## `sum(...)`      
-Sum function: Returns the sum of a given iterable. 
+```python
+print("Line 1\nLine 2")
+# Line 1
+# Line 2
+```
 
-## `abs(...)`     
-Absolute value function: Returns the absolute value of the given input. 
+## str()
+Converts a value into a string.  
 
-## `round(...)`   
-Rounding function: Returns the rounded input. 
+```python
+str(123)   # '123'
+```
 
-## `len(...)`   
-Length function: Returns the length of given input. 
+## max(...)
+Returns the maximum (largest) value from the given inputs.  
 
-## `type(...)`   
-Data Type function: Returns the datatype of the input. 
+```python
+max(3, 9, 5)   # 9
+```
 
-## `print(...)`   
-Print function: Prints the input
+## min(...)   
+Returns the minimum (smallest) value from the given inputs.  
 
-## `math` library
+```python
+min(3, 9, 5)   # 3
+```
 
-## `math.log(...)`      
-Returns log of input. If no base is specified uses base $e$.
+## sum(...)      
+Returns the sum of all values in a given iterable (like a list).  
 
-## `math.exp(...)`   
-Returns $e$ to the power of the input. 
+```python
+sum([1, 2, 3])   # 6
+```
 
-## `math.sqrt(...)`     
-Returns the square root of the input. 
+## abs(...)     
+Returns the absolute value of the given number.  
 
-## `math.floor(...)`   
-Returns the floor of the input. 
+```python
+abs(-7)   # 7
+```
 
-## `math.ceil(...)`   
-Returns the ceiling of the input.  
+## round(...)   
+Rounds a number to the nearest integer (or to a specified number of decimal places if given).  
 
-## `math.factorial(...)`   
-Returns the factorial of the input.
+```python
+round(3.14159, 2)   # 3.14
+```
 
-## `math.pi`   
-Returns pi. 
+## len(...)   
+Returns the length (number of items) of the given input.  
 
-## `math.e`   
-Returns $e$.
+```python
+len("hello")   # 5
+```
 
-## `string.replace('old', 'new')`      
-Replaces any 'old' elements with 'new' in the given string  
+## type(...)   
+Returns the data type of the input.  
 
-## `string.upper()` 
-Returns an uppercase version of the given string 
+```python
+type(3.14)   # <class 'float'>
+```
 
-## `string.lower()`    
-Returns a lowercase version of the given string  
+## print(...)   
+Displays the input on the console.  
 
-## `string.strip()` 
-Returns the given string with additional spaces at beginning or end removed 
+```python
+print("hello")   # hello
+```
+
+## help()
+Displays documentation about functions, objects, or modules.  
+
+```python
+help(len)
+```
+
+## math library
+A standard Python library that provides mathematical functions and constants.  
+
+```python
+import math
+```
+
+## math.log(...)      
+Returns the logarithm of a number. Uses base e (natural log) if no base is specified.  
+
+```python
+import math
+math.log(8, 2)   # 3.0
+```
+
+## math.exp(...)   
+Returns e to the power of the given number.  
+
+```python
+import math
+math.exp(2)   # 7.389...
+```
+
+## math.sqrt(...)     
+Returns the square root of the input.  
+
+```python
+import math
+math.sqrt(16)   # 4.0
+```
+
+## math.floor(...)   
+Rounds the input down to the nearest whole number.  
+
+```python
+import math
+math.floor(3.9)   # 3
+```
+
+## math.ceil(...)   
+Rounds the input up to the nearest whole number.  
+
+```python
+import math
+math.ceil(3.1)   # 4
+```
+
+## math.factorial(...)   
+Returns the factorial of the input.  
+
+```python
+import math
+math.factorial(5)   # 120
+```
+
+## math.pi   
+The constant $\pi$ (pi ≈ 3.14159).  
+
+```python
+import math
+math.pi   # 3.14159...
+```
+
+## math.e   
+The constant $e$ (Euler’s number ≈ 2.71828).  
+
+```python
+import math
+math.e   # 2.71828...
+```
+
+## string.replace('old', 'new')      
+Returns a copy of the string with all 'old' substrings replaced by 'new'.  
+
+```python
+"hello world".replace("world", "Python")
+# 'hello Python'
+```
+
+## string.upper() 
+Returns the string in all uppercase letters.  
+
+```python
+"hello".upper()   # 'HELLO'
+```
+
+## string.lower()    
+Returns the string in all lowercase letters.  
+
+```python
+"HELLO".lower()   # 'hello'
+```
+
+## string.strip() 
+Returns the string with whitespace removed from the beginning and end.  
+
+```python
+"  hello  ".strip()   # 'hello'
+```
 
 ## Function Definition
-```python 
+```python
 def function_name(input_arguments):
-    """ Documentation on what your function does """
+    """ Docstring """
     
-    body of function
-    
+    # body of function
     return output
 ```
 
 ## Comment Character
-- `#` : Signals to Python that anything written after it should be ignored
+- `#` : Signals to Python that anything written after it should be ignored  
+
+```python
+# This is a comment
+```
