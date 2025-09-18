@@ -240,6 +240,8 @@ parts:
       file: 20/1/feature_engineering.ipynb
     - title: "Feature Selection"
       file: 20/2/feature_selection.ipynb
+    - title: "Feature Engineering and Selection in Practice"
+      file: 20/3/case_study.ipynb
 
   - title: "Regularization and Cross Validation"
     file: 21/placeholder21
