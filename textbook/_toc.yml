@@ -198,12 +198,15 @@ parts:
   numbered: 2
   chapters:
 
-  - title: "Introduction to Part 2"
+  - title: "Where are we now?"
+    numbered: false
     file: intro_119/Intro.ipynb
 
   - title: "Introduction to Machine Learning"
-    file: ML/1/Introduction_to_Machine_Learning
+    file: intro_119/Intro.ipynb
     sections:
+    - title: "Introduction to Machine Learning"
+      file: ML/1/Introduction_to_Machine_Learning
     - title: "Types of Machine Learning"
       file: ML/2/Types_of_ML
   
