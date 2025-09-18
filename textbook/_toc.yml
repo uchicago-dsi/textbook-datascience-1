@@ -195,186 +195,183 @@ parts:
       file: 16/2/investigation
 
 - caption: "Part II: Using Data to Understand Our World"
-  numbered: false
+  numbered: 2
   chapters:
+  
   - title: "Where are we now?"
     file: intro_119/Intro.ipynb
-  
-  - part:
-    numbered: 2
-    chapters:
     
-    - title: "Prediction and Correlation"
-      file: 17/prediction-and-correlation
-      sections:
-      - title: "Prediction" 
-        file: 17/1/prediction
-      - title: "Correlation" 
-        file: 17/2/correlation
+  - title: "Prediction and Correlation"
+    file: 17/prediction-and-correlation
+    sections:
+    - title: "Prediction" 
+      file: 17/1/prediction
+    - title: "Correlation" 
+      file: 17/2/correlation
 
-    - title: "Simple Linear Regression"
-      file: 18/CH18Intro.ipynb
-      sections:
-      - title: "Correlation and Regression"
-        file: 18/1/Correlation_and_Regression.ipynb
-      - title: "Finding and Interpreting Regressions"
-        file: 18/2/Finding_and_Interpreting_Regressions.ipynb
-      - title: "Regressions and Confidence Intervals"
-        file: 18/3/Regressions_and_Confidence_Intervals.ipynb
-      - title: "Prediction Intervals and Other Model Concerns"
-        file: 18/4/Prediction_Intervals_and_Other_Model_Concerns.ipynb
+  - title: "Simple Linear Regression"
+    file: 18/CH18Intro.ipynb
+    sections:
+    - title: "Correlation and Regression"
+      file: 18/1/Correlation_and_Regression.ipynb
+    - title: "Finding and Interpreting Regressions"
+      file: 18/2/Finding_and_Interpreting_Regressions.ipynb
+    - title: "Regressions and Confidence Intervals"
+      file: 18/3/Regressions_and_Confidence_Intervals.ipynb
+    - title: "Prediction Intervals and Other Model Concerns"
+      file: 18/4/Prediction_Intervals_and_Other_Model_Concerns.ipynb
 
-    - title: "Multiple Linear Regression"
-      file: 19/placeholder19
+  - title: "Multiple Linear Regression"
+    file: 19/placeholder19
 
+  - title: "Introduction to Machine Learning"
+    file: intro_119/Intro.ipynb
+    sections:
     - title: "Introduction to Machine Learning"
-      file: intro_119/Intro.ipynb
-      sections:
-      - title: "Introduction to Machine Learning"
-        file: ML/1/Introduction_to_Machine_Learning
-      - title: "Types of Machine Learning"
-        file: ML/2/Types_of_ML
+      file: ML/1/Introduction_to_Machine_Learning
+    - title: "Types of Machine Learning"
+      file: ML/2/Types_of_ML
 
-    - title: "Feature Engineering and Feature Selection"
-      file: 20/ch20intro
-      sections:
-      - title: "Feature Engineering"
-        file: 20/1/feature_engineering.ipynb
-      - title: "Feature Selection"
-        file: 20/2/feature_selection.ipynb
+  - title: "Feature Engineering and Feature Selection"
+    file: 20/ch20intro
+    sections:
+    - title: "Feature Engineering"
+      file: 20/1/feature_engineering.ipynb
+    - title: "Feature Selection"
+      file: 20/2/feature_selection.ipynb
 
-    - title: "Regularization and Cross Validation"
-      file: 21/placeholder21
+  - title: "Regularization and Cross Validation"
+    file: 21/placeholder21
 
-    - title: "Classification with Logistic Regression"
-      file: 22/placeholder22
+  - title: "Classification with Logistic Regression"
+    file: 22/placeholder22
 
-    - title: "Classification with Nearest Neighbors"
-      file: 23/classification_intro
-      sections:
-      - title: "Nearest Neighbor" 
-        file: 23/1/Nearest_Neighbor
-      - title: "K Nearest Neighbors" 
-        file: 23/2/K_Nearest_Neighbors
-      - title: "Features to Consider" 
-        file: 23/3/Features_to_Consider
-      - title: "Multiple Classes" 
-        file: 23/4/Multiple_Classes
+  - title: "Classification with Nearest Neighbors"
+    file: 23/classification_intro
+    sections:
+    - title: "Nearest Neighbor" 
+      file: 23/1/Nearest_Neighbor
+    - title: "K Nearest Neighbors" 
+      file: 23/2/K_Nearest_Neighbors
+    - title: "Features to Consider" 
+      file: 23/3/Features_to_Consider
+    - title: "Multiple Classes" 
+      file: 23/4/Multiple_Classes
 
-    - title: "Neural Networks and Deep Learning"
-      file: 24/placeholder24
+  - title: "Neural Networks and Deep Learning"
+    file: 24/placeholder24
 
-    - title: "Tree Models"
-      file: 25/placeholder25
+  - title: "Tree Models"
+    file: 25/placeholder25
 
-    - title: "Unsupervised Learning and Clustering"
-      file: 26/unsupervised_learning
-      sections:
-      - title: "K-Means Clustering"
-        file: 26/1/kmeans
-      - title: "K-Means Clustering Example"
-        file: 26/2/kmeans_example
-      - title: "Hierarchical Clustering"
-        file: 26/3/hierarchical
-      - title: "Hierarchical Clustering Examples"
-        file: 26/4/hierarchical_example
+  - title: "Unsupervised Learning and Clustering"
+    file: 26/unsupervised_learning
+    sections:
+    - title: "K-Means Clustering"
+      file: 26/1/kmeans
+    - title: "K-Means Clustering Example"
+      file: 26/2/kmeans_example
+    - title: "Hierarchical Clustering"
+      file: 26/3/hierarchical
+    - title: "Hierarchical Clustering Examples"
+      file: 26/4/hierarchical_example
 
-    - title: "Data Wrangling"
-      file: 27/placeholder27
+  - title: "Data Wrangling"
+    file: 27/placeholder27
 
-    - title: "Relational Databases and SQL"
-      file: 28/placeholder28
+  - title: "Relational Databases and SQL"
+    file: 28/placeholder28
 
-    # Not changing folder names yet to avoid merge conflicts
-    - title: "String Data and Fuzzy Matching"
-      file: 08_fuzzy/Fuzzy_Matching
-      sections: 
-      - title: "Set-Based (Jaccard) Similarity"
-        file: 08_fuzzy/1/Set_Based_Similarity
-      - title: "Sequence-Based Similarlity"
-        file: 08_fuzzy/2/Sequence_Based_Similarity
-      - title: "Canonicalization"
-        file: 08_fuzzy/3/Canonicalization
-      - title: "Reduced Alphabet Similarity"
-        file: 08_fuzzy/4/Reduced_Alphabets 
-      - title: "Example: Building Inspection reports"
-        file: 08_fuzzy/5/Levenshtein_Inspection_Example 
-      - title: "Encoding and Unicode"
-        file: 08_fuzzy/6/Unicode
+  # Not changing folder names yet to avoid merge conflicts
+  - title: "String Data and Fuzzy Matching"
+    file: 08_fuzzy/Fuzzy_Matching
+    sections: 
+    - title: "Set-Based (Jaccard) Similarity"
+      file: 08_fuzzy/1/Set_Based_Similarity
+    - title: "Sequence-Based Similarlity"
+      file: 08_fuzzy/2/Sequence_Based_Similarity
+    - title: "Canonicalization"
+      file: 08_fuzzy/3/Canonicalization
+    - title: "Reduced Alphabet Similarity"
+      file: 08_fuzzy/4/Reduced_Alphabets 
+    - title: "Example: Building Inspection reports"
+      file: 08_fuzzy/5/Levenshtein_Inspection_Example 
+    - title: "Encoding and Unicode"
+      file: 08_fuzzy/6/Unicode
 
-    - title: "Reproducibility"
-      file: 29/placeholder29
+  - title: "Reproducibility"
+    file: 29/placeholder29
 
-    - title: "Case Study"
-      file: 30/placeholder30
+  - title: "Case Study"
+    file: 30/placeholder30
 
-  - caption: ""
-    numbered: false
-    chapters:
-    - title: "Glossary of Terms"
-      file: glossary.md
-    
-    - title: "Glossary of Code"
-      file: code-glossary.md
+- caption: ""
+  numbered: false
+  chapters:
+  - title: "Glossary of Terms"
+    file: glossary.md
+  
+  - title: "Glossary of Code"
+    file: code-glossary.md
 
 
 
 
-  ########### Old TOC Ordering
-  # - title: "17. Prediction and Correlation"
-  #     file: 17/prediction-and-correlation
-  #     sections:
-  #     - title: "17.1 Prediction" 
-  #       file: 17/1/prediction
-  #     - title: "17.2 Correlation" 
-  #       file: 17/2/correlation
+########### Old TOC Ordering
+# - title: "17. Prediction and Correlation"
+#     file: 17/prediction-and-correlation
+#     sections:
+#     - title: "17.1 Prediction" 
+#       file: 17/1/prediction
+#     - title: "17.2 Correlation" 
+#       file: 17/2/correlation
 
-  #   - title: "18. Simple Linear Regression"
-  #     file: 18/placeholder18
-  #     sections:
-  #     - title: "18.1 Correlation and Regression"
-  #       file: 18/1/Correlation and Regression.ipynb
-  #     - title: "18.2 Finding and Interpreting Regressions"
-  #       file: 18/2/Finding and Interpreting Regressions.ipynb
+#   - title: "18. Simple Linear Regression"
+#     file: 18/placeholder18
+#     sections:
+#     - title: "18.1 Correlation and Regression"
+#       file: 18/1/Correlation and Regression.ipynb
+#     - title: "18.2 Finding and Interpreting Regressions"
+#       file: 18/2/Finding and Interpreting Regressions.ipynb
 
-  #   - title: "19. Multiple Linear Regression"
-  #     file: 19/placeholder19
+#   - title: "19. Multiple Linear Regression"
+#     file: 19/placeholder19
 
-  #   - title: "20. Relational Databases and SQL"
-  #     file: 20/placeholder20
+#   - title: "20. Relational Databases and SQL"
+#     file: 20/placeholder20
 
-  #   - title: "21. Data Warehouses and Data Lakes"
-  #     file: 21/placeholder21
+#   - title: "21. Data Warehouses and Data Lakes"
+#     file: 21/placeholder21
 
-  #   - title: "22. Scalable Data Processing"
-  #     file: 22/placeholder22
+#   - title: "22. Scalable Data Processing"
+#     file: 22/placeholder22
 
-  #   - title: "23. Classification"
-  #     file: 23/classification_intro
-  #     sections:
-  #     - title: "23.1 Nearest Neighbor" 
-  #       file: 23/1/Nearest_Neighbor
-  #     - title: "23.2 K Nearest Neighbors" 
-  #       file: 23/2/K_Nearest_Neighbors
-  #     - title: "23.3 Features to Consider" 
-  #       file: 23/3/Features_to_Consider
-  #     - title: "23.4 Multiple Classes" 
-  #       file: 23/4/Multiple_Classes
+#   - title: "23. Classification"
+#     file: 23/classification_intro
+#     sections:
+#     - title: "23.1 Nearest Neighbor" 
+#       file: 23/1/Nearest_Neighbor
+#     - title: "23.2 K Nearest Neighbors" 
+#       file: 23/2/K_Nearest_Neighbors
+#     - title: "23.3 Features to Consider" 
+#       file: 23/3/Features_to_Consider
+#     - title: "23.4 Multiple Classes" 
+#       file: 23/4/Multiple_Classes
 
-  #   - title: "24. Clustering"
-  #     file: 24/placeholder24
+#   - title: "24. Clustering"
+#     file: 24/placeholder24
 
-  #   - title: "25. Feature Engineering and Feature Selection"
-  #     file: 25/placeholder25
+#   - title: "25. Feature Engineering and Feature Selection"
+#     file: 25/placeholder25
 
-  #   - title: "26. Prediction with Many Features"
-  #     file: 26/placeholder26
+#   - title: "26. Prediction with Many Features"
+#     file: 26/placeholder26
 
-  #   - title: "27. Neural Networks"
-  #     file: 27/placeholder27
+#   - title: "27. Neural Networks"
+#     file: 27/placeholder27
 
-  #   - title: "28. Cloud Computing"
-  #     file: 28/placeholder28
+#   - title: "28. Cloud Computing"
+#     file: 28/placeholder28
 
-  #   - title: "29. Reproducibility"
-  #     file: 29/placeholder29
+#   - title: "29. Reproducibility"
+#     file: 29/placeholder29
