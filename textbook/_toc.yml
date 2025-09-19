@@ -227,10 +227,8 @@ parts:
     file: 19/placeholder19
 
   - title: "Introduction to Machine Learning"
-    file: intro_119/Intro.ipynb
+    file: ML/1/Introduction_to_Machine_Learning
     sections:
-    - title: "Introduction to Machine Learning"
-      file: ML/1/Introduction_to_Machine_Learning
     - title: "Types of Machine Learning"
       file: ML/2/Types_of_ML
 
