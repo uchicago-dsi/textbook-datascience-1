@@ -37,12 +37,14 @@ parts:
     sections:
     - title: "Lists"
       file: 04/1/Lists
+    - title: "Tuples"
+      file: 04/2/Tuples
     - title: "Dictionaries"
-      file: 04/2/Dictionaries
+      file: 04/3/Dictionaries
+    - title: "Sets"
+      file: 04/4/Sets
     - title: "Arrays"
-      file: 04/3/Arrays-Intro
-    - title: "Assignment for Mutable Data Types"
-      file: 04/4/assignment
+      file: 04/5/Arrays-Intro
 
   - title: "Randomness and Control Statements"
     file: 05/randomness-and-control-statement

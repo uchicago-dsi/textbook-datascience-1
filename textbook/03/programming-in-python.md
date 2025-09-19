@@ -1,5 +1,5 @@
-Programming in Python
-====================
+# Programming in Python
+*Amanda R. Kube Jotte*
 
 The previous two chapters have shown the vast array of problems that can be studied using data science. In order to work on these problems, we need to be able to manipulate and analyze our data using code. One of the most popular programming languages for this purpose is Python, and it will be the primary tool we use throughout this book. In this chapter, we will begin with the basics of programming in Python.
 
