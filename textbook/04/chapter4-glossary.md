@@ -21,4 +21,23 @@ my_tuple = (1,2,3)
 
 ## Index
 
+
 ## Mutation
+
+
+## 0-Indexed
+
+
+## Slice
+
+## Unpacking (a tuple)
+
+## Dot Operator
+
+## Aliasing
+
+## Elementwise (calculations)
+
+## Attribute
+
+## Broadcasting
