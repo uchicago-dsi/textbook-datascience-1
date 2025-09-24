@@ -52,3 +52,8 @@
 ## `np.power()`
 
 ## `np.log()`
+
+## `list.sort()`
+
+## `list.reverse()`
+
