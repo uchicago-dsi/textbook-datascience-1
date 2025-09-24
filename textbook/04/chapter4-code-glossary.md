@@ -57,3 +57,8 @@
 
 ## `list.reverse()`
 
+## `np.zeros`
+
+## `np.ones`
+
+## `array.astype()`

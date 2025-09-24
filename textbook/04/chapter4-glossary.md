@@ -1,11 +1,6 @@
 ## List
 
-
 ## Tuple
-
-```python
-my_tuple = (1,2,3)
-```
 
 ## Set
 
@@ -41,3 +36,9 @@ my_tuple = (1,2,3)
 ## Attribute
 
 ## Broadcasting
+
+## Type-Casting
+
+## Shallow Copy
+
+## Deep Copy
