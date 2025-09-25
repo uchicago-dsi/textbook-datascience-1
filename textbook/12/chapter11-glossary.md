@@ -107,8 +107,6 @@ Note this may be useful if you are comparing values from multiple normal distrib
 ## Central Limit Theorem (CLT)
 An important mathematical theorem which states that the distribution of sample means from a sufficiently large random sample (with replacement) will be approximately normally distributed. The CTL allows us to estimate the mean and standard deviation of a distribution of sample means. If the mean and standard deviation of the population you are sampling from are $\mu$ and $\sigma$ respectively, then the mean and standard deviation of the distribution of sample means are $\mu$ and $\frac{σ}{\sqrt{n}}$, respectively, where n is the sample size. 
 
-
-
 ## Binomial Distribution
 
 ## Bernoulli Trial
