@@ -1,7 +1,6 @@
 ## Deterministic Sampling
 A type of sampling with no random chance involved.
 
-
 ## Probabilistic Sampling
 A type of sampling where the probability of each unit being chosen is known before sampling is done. For example, **Sample random samples (SRS)**, in which each unit has equal probability of being chosen, is an example of a probabilistic sample.
 
@@ -60,3 +59,49 @@ Measurement of the spread for an empirical distribution. Defined as:
 
 ### Sample Standard Deviation
 The square root of the sample variance, denoted by $s$
+
+## Uniform Distribution
+A distribution where all events in a given sample space are equally likely to occur. Examples include, the distribution of possible outcomes when tossing a fair coin, rolling a die, or using a random number generator. Notice these examples include both discrete and continuous random variables.
+
+## Law of Large Numbers
+As the number of experiments increases, the mean of the empirical distribution gets closer to the mean of the probability distribution (also known as the expected value).
+
+## Discrete Uniform Distribution
+A probability distribution that assigns equal (uniform) probability to all outcomes in a discrete sample space. For example, rolling a fair six-sided die is a discrete uniform distribution, as the theoretical probability of rolling each side is $\frac{1}{6}$
+
+For a sample space containing $n$ elements, the Probability Mass Function (PMF) is defined by:
+
+> $P(X=x)=\frac{1}{n}$ for all x in the sample space S (0 otherwise).
+
+Further, if $E$ is an event containing multiple elements from the sample space, then:
+
+> $P(E)=\frac{\text{Number of elements in E}}{n}$
+
+## Continuous Uniform Distribution
+A probability distribution that assigns equal (uniform) probability to each continuous random variable $X$, on the interval $[a, b]$. 
+
+For example, if to randomly sample a random variable from a continuous sample space between 1 and 6, our random variable that takes values between 1 and 6 would be denoted by $X \sim U(1,6)$. 
+
+The PDF for a continuous uniform random variable is:
+
+> $f(x) = \frac{1}{b-a}$ when $x$ is between $a$ and $b$ and 0 otherwise.
+
+From this distribution, we calculate the middle of the interval:
+
+> $\mu = \frac{b+a}{2}$
+
+and the variance:
+
+> $\sigma^2 = \frac{(b-a)^2}{12}$ 
+
+## Normal Distribution
+
+## Standard Normal Distribution
+
+## Central Limit Theorem
+
+## Binomial Distribution
+
+## Bernoulli Trial
+
+## Normal Approximation to the Binomial Distribution
