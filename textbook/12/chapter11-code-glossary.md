@@ -28,3 +28,9 @@ A function that randomly generates continuous values from a uniform distribution
 np.random.uniform(low = 1, high = 6, size = 10)
 ```
 
+## stats.norm()
+Generates a normal continuous distribution with mean (`loc`) and standard deviation (`scale`)
+
+```python
+stats.norm(loc, scale)
+```

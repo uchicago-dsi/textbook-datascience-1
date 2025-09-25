@@ -95,10 +95,19 @@ and the variance:
 > $\sigma^2 = \frac{(b-a)^2}{12}$ 
 
 ## Normal Distribution
+A continuous distribution that is symmetric and bell-shaped. Due to its symmetry, the three measures of center mode, median, and mean, are exactly the same for the normal distribution. Moreover, the normal distribution is defined entirely in terms of its mean and standard deviation. Notationally, given a random variable $X$ that is normally distributed, we can say $X \sim N(\mu,\sigma)$, where $\mu$ and $\sigma$ are the mean and standard deviation of the distribution, respectively.
 
 ## Standard Normal Distribution
+A special case of the normal distribution that occurs when $\mu = 0$ and $\sigma = 1$. Given a random variable and any values for $\mu$ and $\sigma$, that is $X  ∼  N(\mu, \sigma)$, we can *transform* to a standard normal, by normalizing it! That is:
 
-## Central Limit Theorem
+$$\frac{X-\mu}{\sigma}$$
+
+Note this may be useful if you are comparing values from multiple normal distributions.
+
+## Central Limit Theorem (CLT)
+An important mathematical theorem which states that the distribution of sample means from a sufficiently large random sample (with replacement) will be approximately normally distributed. The CTL allows us to estimate the mean and standard deviation of a distribution of sample means. If the mean and standard deviation of the population you are sampling from are $\mu$ and $\sigma$ respectively, then the mean and standard deviation of the distribution of sample means are $\mu$ and $\frac{σ}{\sqrt{n}}$, respectively, where n is the sample size. 
+
+
 
 ## Binomial Distribution
 
