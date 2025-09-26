@@ -1,8 +1,13 @@
-## np.mean() 
-Calculates the mean of elements in an array.
+## np.concatenate()
+Concatenates (combines) a sequence of different arrays
 
 ```python
-a = [10,20,30,40,50]
-np.mean([a])   # 30
+np.concatenate(array1, array2)
 ```
 
+## np.random.binomial()
+Randomly draws samples from a binomial distribution where `n` is the number of trials, `p` is the probability of success, and `size` 
+
+```python
+np.random.binomial(n, p, size)
+```
