@@ -39,7 +39,10 @@ $${\rm TVD}=\frac{1}{2} \sum |p_i-q_i|$$
 In the above formula, $p_i$'s are proportions of subjects in various categories in one sample while $q_i$'s are proportions in the second sample.
 
 ## Significance Level
+A cut-off value, $\alpha$, that is used as a threshold to determine whether to accept the null or alternative hypothesis. A commonly used significance level is $\alpha=0.05$. If the p-value is smaller than $\alpha < 0.5$, we reject $H_0$, otherwise we fail to reject it.
 
 ## Type 1 error
+Rejection of the null hypothesis $H_0$ when it is true. The type 1 error rate is equal to the significance level ($\alpha$). 
 
 ## Type 2 error
+Failure to reject the null hypothesis $H_0$ when it is false.
