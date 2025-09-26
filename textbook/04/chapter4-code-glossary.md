@@ -4,11 +4,6 @@ A popular Python library for numerical computing. Provides arrays, mathematical 
 ## `NoneType`
 The data type of the special value `None`, which represents “nothing” or “no value.”  
 
-```python
-x = None
-print(type(x))  # <class 'NoneType'>
-```
-
 ## `list.insert()`
 Inserts an element at a specified position in a list.  
 
@@ -101,7 +96,7 @@ print("cherry" not in fruits)  # True
 ```
 
 ## `np.array()`
-Creates a NumPy array from a Python list (or other sequence).  
+Creates a `numpy` array from a list (or other sequence).  
 
 ```python
 import numpy as np
@@ -124,7 +119,7 @@ for i in range(3):
 ```
 
 ## `array.shape`
-An attribute of a NumPy array showing its dimensions.  
+An attribute of a `numpy` array showing its dimensions.  
 
 ```python
 arr = np.array([[1, 2], [3, 4]])
@@ -206,7 +201,7 @@ print(np.power(arr, 2))  # [1 4 9]
 ```
 
 ## `np.log()`
-Computes the natural logarithm of array elements.  
+Computes the natural logarithm (log with base *e*) of array elements.  
 
 ```python
 arr = np.array([1, np.e, np.e**2])
