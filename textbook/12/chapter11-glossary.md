@@ -1,5 +1,5 @@
 ## Deterministic Sampling
-A type of sampling with no random chance involved.
+A type of sampling when the selection of a sample is fixed or predictable, as opposed to involving randomness. 
 
 ## Probabilistic Sampling
 A type of sampling where the probability of each unit being chosen is known before sampling is done. For example, **Sample random samples (SRS)**, in which each unit has equal probability of being chosen, is an example of a probabilistic sample.
@@ -107,8 +107,22 @@ Note this may be useful if you are comparing values from multiple normal distrib
 ## Central Limit Theorem (CLT)
 An important mathematical theorem which states that the distribution of sample means from a sufficiently large random sample (with replacement) will be approximately normally distributed. The CTL allows us to estimate the mean and standard deviation of a distribution of sample means. If the mean and standard deviation of the population you are sampling from are $\mu$ and $\sigma$ respectively, then the mean and standard deviation of the distribution of sample means are $\mu$ and $\frac{σ}{\sqrt{n}}$, respectively, where n is the sample size. 
 
-## Binomial Distribution
-
 ## Bernoulli Trial
+A random experiment with two possible outcomes, often described as 'success' or 'failure'. 
+
+## Binomial Distribution
+A discrete probability distribution which describes the probability of two outcomes (success or failure) in a sequence of independent trials (Bernoulli trials). For a binomial distribution, there are a fixed number of trails, where the probability of success $p$, is the same for each trial.
 
 ## Normal Approximation to the Binomial Distribution
+When the number of trials, n, is sufficiently large, we can approximate a binomial distribution using a normal distribution. The number of trails, n, is deemed sufficiently large when we can satisfy the following conditions:
+
+- Is $np \geq 5$?
+- Is $n(1-p) \geq 5$?
+
+If both conditions are met, you can approximate the binomial distribution with a normal distribution with mean:
+
+> $\mu = np$
+
+and standard deviation:
+
+> $\sigma = \sqrt{np(1-p)}$
