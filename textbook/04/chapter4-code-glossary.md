@@ -247,3 +247,8 @@ Converts the elements of an array to a different data type.
 arr = np.array([1.5, 2.8, 3.2])
 print(arr.astype(int))  # [1 2 3]
 ```
+
+## `array.flatten`
+
+
+## `np.sort()`

@@ -101,7 +101,7 @@ print(df.shape)  # (3, 1)
 ```
 
 ## Broadcasting
-A set of rules in NumPy that allow arrays of different shapes to be combined in arithmetic operations by “stretching” one to match the other.  
+A set of rules in `numpy` that allow arrays of different shapes to be combined in arithmetic operations by “stretching” one to match the other.  
 
 ```python
 import numpy as np
@@ -137,3 +137,6 @@ deep = copy.deepcopy(original)
 original[0][0] = 99
 print(deep)  # [[1, 2], [3, 4]]
 ```
+
+## Flatten (an array)
+
