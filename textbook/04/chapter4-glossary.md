@@ -140,3 +140,5 @@ print(deep)  # [[1, 2], [3, 4]]
 
 ## Flatten (an array)
 
+The process of converting a multi-dimensional array into a one-dimensional array. In `numpy`, this can be done with the `.flatten()` method, which returns a **copy** of the data in a single dimension.  
+
