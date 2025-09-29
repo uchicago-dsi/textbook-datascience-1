@@ -247,3 +247,72 @@ Converts the elements of an array to a different data type.
 arr = np.array([1.5, 2.8, 3.2])
 print(arr.astype(int))  # [1 2 3]
 ```
+
+## `array.flatten`
+Returns a **copy** of the array collapsed into one dimension. Useful for turning a multi-dimensional array into a simple list-like array.  
+
+```python
+arr = np.array([[1, 2], [3, 4]])
+print(arr.flatten())  # [1 2 3 4]
+```
+
+## `np.sort()`
+Returns a sorted copy of an array. By default, it sorts in *ascending order* along the last axis. For descending order, reverse the result with slicing (`[::-1]`).  
+
+```python
+arr = np.array([3, 1, 2])
+print(np.sort(arr))        # [1 2 3]
+print(np.sort(arr)[::-1])  # [3 2 1]
+```
+
+## `dict.keys()`
+A method that returns a view object containing all the keys in a dictionary.  
+
+```python
+student = {"name": "Alice", "age": 20}
+print(student.keys())  # dict_keys(['name', 'age'])
+```
+
+## `dict.values()`
+A method that returns a view object containing all the values in a dictionary.  
+
+```python
+student = {"name": "Alice", "age": 20}
+print(student.values())  # dict_values(['Alice', 20])
+```
+
+## `dict.items()`
+A method that returns a view object of the dictionary’s key–value pairs as tuples.  
+
+```python
+student = {"name": "Alice", "age": 20}
+print(student.items())  # dict_items([('name', 'Alice'), ('age', 20)])
+```
+
+## `dict.update()`
+A method that updates a dictionary with key–value pairs from another dictionary (or from keyword arguments). Existing keys are overwritten.  
+
+```python
+student = {"name": "Alice", "age": 20}
+student.update({"age": 21, "major": "Data Science"})
+print(student)  # {'name': 'Alice', 'age': 21, 'major': 'Data Science'}
+```
+
+## View Object
+A special object returned by certain dictionary methods such as `.keys()`, `.values()`, and `.items()`.  
+A view object acts like a dynamic “window” into the dictionary’s contents:  
+
+- It automatically updates if the dictionary is changed.  
+- It is iterable, meaning you can loop over it just like a list.  
+- If you need a fixed snapshot of the contents, you can convert it into a list with `list()`.  
+
+```python
+student = {"name": "Alice", "age": 20}
+keys_view = student.keys()
+print(keys_view)  # dict_keys(['name', 'age'])
+
+student["major"] = "Data Science"
+print(keys_view)  # dict_keys(['name', 'age', 'major'])  # updated automatically
+
+print(list(keys_view))  # ['name', 'age', 'major']
+```
