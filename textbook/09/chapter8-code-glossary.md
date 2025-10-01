@@ -67,8 +67,12 @@ Adds a title to a plot.
 [Docs](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.title.html)
 
 ## plt.xlabel() / plt.ylabel()
-Add axis labels.  
+Add x-axis labels.  
 [Docs](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.xlabel.html)
+
+## plt.ylabel()
+Add y-axis labels.  
+[Docs](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.ylabel.html)
 
 ## plt.figure()
 Creates a new plotting figure.  
@@ -90,17 +94,23 @@ Creates a figure with one or more subplots, returning (fig, ax).
 Adds a title to the entire figure (all subplots).  
 [Docs](https://matplotlib.org/stable/api/figure_api.html#matplotlib.figure.Figure.suptitle)
 
-## ax.set_title() / ax.set_xlabel() / ax.set_ylabel()
-Set labels and titles for a specific subplot.  
-[Docs](https://matplotlib.org/stable/api/axes_api.html)
-
-## ax.set_ylim() / ax.set_xticks()
-Control y-axis range and x-axis tick marks for a subplot.  
+## axis methods
+- ax.set_title()
+- ax.set_xlabel()
+- ax.set_ylabel()
+- ax.set_ylim()
+- ax.set_xticks()
+  
+Set labels, titles, x-axis ticks, or y-axis range for a specific subplot.  
 [Docs](https://matplotlib.org/stable/api/axes_api.html)
 
 ## df.hist()
 A pandas method for quick histograms.  
 [Docs](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.hist.html)
+
+## df.plot.box()
+A pandas method for quick box-and-whisker plots.  
+[Docs](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.boxplot.html)
 
 ## ax.bar()
 Bar plot for a specific subplot (axis object).  
@@ -130,7 +140,7 @@ Creates a pie chart.
 Adds a legend to a plot.  
 [Docs](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.legend.html)
 
-## plt.boxplot() / df.plot.box()
+## plt.boxplot()
 Box-and-whisker plots for distributions.  
 [Docs](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.boxplot.html)
 
