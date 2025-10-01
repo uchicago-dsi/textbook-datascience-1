@@ -1,12 +1,12 @@
 # Code Glossary
 
-## `np.random.choice(...)`
+## np.random.choice(...)
 outputs exactly one item from the input sequence, selecting from it randomly and uniformly - or with equal opportunity. 
 
-## `np.append(array, value)`
+## np.append(array, value)
 a numpy function which creates a new array from an existing one (arr) attaching value to the end.
 
-## `np.empty(0)` 
+## np.empty(0)
 creates an empty array. 
 
 ## If Statement
