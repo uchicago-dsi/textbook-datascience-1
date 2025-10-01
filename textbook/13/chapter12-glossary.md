@@ -25,14 +25,6 @@ A hypothesis test performed to investigate whether there is a difference between
 ## A/B Test
 A hypothesis test performed to investigate whether there is a difference between two random samples or groups (e.g., Group A and Group B). This is also called a Two Sample Test.
 
-## Boxplot
-Also called a box and whisker plot, a boxplot is a graphical visualization of a data distribution. The bottom edge of the box demarcates the 25th percentile (Quartile 1, or Q1) of the data. The top edge of the box demarcates the 75th percentile (Quartile 3, or Q3). Thus, the box itself represents the range in which the middle 50% of the data falls (Q3-Q1). This range is also commonly referred to as the Interquartile Range (IQR).
-
-The horizontal line within the box indicates the median value of the distribution (50th percentile). When using the `matplotlib.boxplot()` function, the top whisker (what looks like a T above the box) extends to the largest data point of the distribution that falls within the range $Q3 + 1.5*IQR$. The bottom whisker (what looks like an upside down T below the box) extends to the smallest data point within the range $Q1 - 1.5*IQR$. Data points with a value larger or smaller than the whiskers are considered outliers and represented as circles above or below the whiskers.
-
-### Interquartile Range (IQR)
-The range in which 50% of datapoints from a distribution fall, also calculated as Quartile 3 (75th percentile) - Quartile 1 (25th percentile).
-
 ## Permutation Test
 A procedure to shuffle data to approximate the sampling distribution of a test statistic.
 
