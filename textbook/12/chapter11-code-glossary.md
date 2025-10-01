@@ -14,7 +14,7 @@ a = [10,20,30,40,50]
 np.std([a])   #14.14
 ```
 
-## .sample()
+## sample()
 Samples one or more rows from a dataframe. `.sample()` can take in multiple arguments, including `n` (number of rows to sample; defaults to 1), `random_state` (the initial state of the pseudo-random generator; defaults to None), and `replace` (whether we want to "replace" rows for re-sampling; defaults to False)
 
 ```python
