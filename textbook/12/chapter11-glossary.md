@@ -2,31 +2,25 @@
 A type of sampling when the selection of a sample is fixed or predictable, as opposed to involving randomness. 
 
 ## Probabilistic Sampling
-A type of sampling where the probability of each unit being chosen is known before sampling is done. For example, **Sample random samples (SRS)**, in which each unit has equal probability of being chosen, is an example of a probabilistic sample.
+A type of sampling where the probability of each unit being chosen is known before sampling is done. Simple random samples (SRS) are an example of probabilistic sampling.
 
 ## Distributions
 Possible outcomes for a random event and their probabilities.
 
 ## Probability Distributions
-The theoretical likelihood of a distribution. Probability distributions can be studied and understood without collecting any sample or conducting an experiment. See Probability Mass Function and Probability Density Function for examples.
+The theoretical likelihood of a distribution. Probability distributions can be studied and understood without collecting any sample or conducting an experiment.
 
 ## Empirical probability distributions
 The observed distribution that may come from multiple samples or repeated experiments.
 
 ## Random variable
-A numerical quantity representing an outcome of the event, often denoted by uppercase letters $X$ or $Y$.
-
-## Discrete
-Finite or countable infinite elements in its sample space.
-
-## Continuous
-Infinite elements in its sample space.
+A numerical quantity representing an outcome of an event, often denoted by uppercase letters $X$ or $Y$.
 
 ## Discerete Random Variable
-Refers occasions where the sample space is a set of possible outcomes. For example, $\{\text{Heads}, \text{Tails} \}$ for the outcome of a coin flip.
+A random variable containing finite or countably infinite elements in its sample space. The sample space of a discrete random variable is a set of distinct possible outcomes. 
 
 ## Continuous Random Variable
-The sample space is often an interval of possible outcomes. An example of this would be an interval of possible adult heights in inches [24, 107].
+A random variable containing infinite elements in a sample space. The sample space of a continuous random variable is often often an interval of possible outcomes. 
 
 ## Probability Mass Function (PMF)
 A function that assigns the probability of each possible outcome of a random variable for discrete random variables. 
@@ -38,16 +32,23 @@ All probabilities, $P(X=x)$, must satisfy the following criteria:
 - the sum of all probabilities of elements in the sample space equals 1
 
 ## Probability Density Function (pdf) 
-A function to compute probabilities for continuous random variables. Unlike the discrete case, where all probabilities in a sample space will sum to 1, in the continuous case this corresponds to an area of 1 under the curve of the probability density function. 
+A function to compute probabilities for continuous random variables. Unlike the discrete case, where all probabilities in a sample space will sum to 1, in the continuous case, this corresponds to an area of 1 under the curve of the probability density function. 
+
+## Center
+A summary statistic of the data that measures the center of a distribution. Measures of center are often calculated using mean, expected value, median, or mode.
+
+## Spread
+A summary statistic of the data that measures how the data is dispersed. Measures of spread include variance and standard deviation.
 
 ## Expected Value
-A common measure of the center of a random variable, defined by $\mu(X)$ or $E(X)$. This describes the average value of the sample space. 
+A common measure of the center of a random variable, defined by $\mu(X)$ or $E(X)$. This describes the average value of the sample space. For a discrete distribution, this corresponds to a weighted average, with the given probabilities as weights. For example, given $x_1, ...,x_n$ elements in a sample space with associated probabilities $p_1, p_2, ..., p_n$, we find the mean by computing 
+> $\mu = \sum_{i=1}^n x_i*p_i$.
 
 ## Variance
 The spread of data, symbolized by $\sigma^2(X)=Var(X)$. This describes how the data is dispersed.
 
 ## Standard Deviation
-The square root of the variance symbolized by $\sigma(X)$. The standard deviation is a measure of how far each element is from the mean, in fact we can think of it as an average measure of how far all our data is from the mean. 
+The square root of the variance symbolized by $\sigma(X)$. The standard deviation is a measure of how far each element is from the mean. In other words, the standard deviation is the average measure of how far all our data is from the mean. 
 
 ## Sample Mean
 Measure of center for an empirical distribution.  Defined as: 
@@ -57,11 +58,11 @@ Measure of center for an empirical distribution.  Defined as:
 Measurement of the spread for an empirical distribution. Defined as: 
 >$s^2 = \frac{\Sigma (x_i - \bar{x})^2}{n-1}$
 
-### Sample Standard Deviation
+## Sample Standard Deviation
 The square root of the sample variance, denoted by $s$
 
 ## Uniform Distribution
-A distribution where all events in a given sample space are equally likely to occur. Examples include, the distribution of possible outcomes when tossing a fair coin, rolling a die, or using a random number generator. Notice these examples include both discrete and continuous random variables.
+A distribution where all events in a given sample space are equally likely to occur. Examples include, the distribution of possible outcomes when tossing a fair coin, rolling a die, or using a random number generator. Uniform distributions can include both discrete and continuous random variables.
 
 ## Law of Large Numbers
 As the number of experiments increases, the mean of the empirical distribution gets closer to the mean of the probability distribution (also known as the expected value).
@@ -95,7 +96,7 @@ and the variance:
 > $\sigma^2 = \frac{(b-a)^2}{12}$ 
 
 ## Normal Distribution
-A continuous distribution that is symmetric and bell-shaped. Due to its symmetry, the three measures of center mode, median, and mean, are exactly the same for the normal distribution. Moreover, the normal distribution is defined entirely in terms of its mean and standard deviation. Notationally, given a random variable $X$ that is normally distributed, we can say $X \sim N(\mu,\sigma)$, where $\mu$ and $\sigma$ are the mean and standard deviation of the distribution, respectively.
+A continuous distribution, often nicknamed the "bell-curve", owing to its symmetric and bell-shaped characteristics. Due to the symmetry of the normal distribution, the three measures of center (mode, median, and mean) are exactly the same. The normal distribution is defined entirely in terms of its mean and standard deviation. Notationally, given a random variable $X$ that is normally distributed, we can say $X \sim N(\mu,\sigma)$, where $\mu$ and $\sigma$ are the mean and standard deviation of the distribution, respectively.
 
 ## Standard Normal Distribution
 A special case of the normal distribution that occurs when $\mu = 0$ and $\sigma = 1$. Given a random variable and any values for $\mu$ and $\sigma$, that is $X  ∼  N(\mu, \sigma)$, we can *transform* to a standard normal, by normalizing it! That is:
@@ -111,10 +112,10 @@ An important mathematical theorem which states that the distribution of sample m
 A random experiment with two possible outcomes, often described as 'success' or 'failure'. 
 
 ## Binomial Distribution
-A discrete probability distribution which describes the probability of two outcomes (success or failure) in a sequence of independent trials (Bernoulli trials). For a binomial distribution, there are a fixed number of trails, where the probability of success $p$, is the same for each trial.
+A discrete probability distribution which describes the probability of two outcomes (success or failure) in a sequence of independent trials (Bernoulli trials). For a binomial distribution, there are a fixed number of trials, where the probability of success $p$, is the same for each trial.
 
 ## Normal Approximation to the Binomial Distribution
-When the number of trials, n, is sufficiently large, we can approximate a binomial distribution using a normal distribution. The number of trails, n, is deemed sufficiently large when we can satisfy the following conditions:
+When the number of trials, n, is sufficiently large, we can approximate a binomial distribution using a normal distribution. The number of trials, n, is deemed sufficiently large when we can satisfy the following conditions:
 
 - Is $np \geq 5$?
 - Is $n(1-p) \geq 5$?

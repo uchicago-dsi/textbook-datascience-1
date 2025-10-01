@@ -22,7 +22,7 @@ DataFrame.sample(n = 1, random_state = None, replace = False)
 ```
 
 ## np.random.uniform()
-A function that randomly generates continuous values from a uniform distribution. The function takes in a value for `low` and `high` as well as a `size` (the number of samples to draw) and draws from the continuous uniform probability distribution on the interval [`low` to `high`). 
+A function that randomly generates continuous values from a uniform distribution. The function takes in a value for `low` and `high` as well as `size` (the number of samples to draw) and draws from the continuous uniform probability distribution on the interval [`low` to `high`). 
 
 ```python
 np.random.uniform(low = 1, high = 6, size = 10)
