@@ -1,4 +1,4 @@
-## `pandas.DataFrame.groupby()`
+## pandas.DataFrame.groupby()
 Helps with groupby operations on dataframes that involves grouping records based on one or more criteria such that different aggregate functions can be applied on the groups.  
 
 ```python
@@ -18,7 +18,7 @@ level_groups = course_df.groupby('Level')
 print(level_groups.get_group('I')[['Size']].mean()) #Size  41.5
 ```
 
-## `np.random.choice()`
+## np.random.choice()
 Allows for random sampling from a given array of items. Can also be used to take in an integer argument, `a`, and randomly sample integers from within the range given by `np.arange(a)`. By default, the sampling is with replacement. But this can be altered by setting the parameter `replace` to `False`.
 
 ```python
@@ -36,8 +36,8 @@ random_integers = np.random.choice(5, size=5)
 print(f"Random integers up to 5: {random_integers}") # Random integers up to 5: [1 4 2 0 1]
 ```
 
-## `np.random.seed()`
-In order to get reproducible results out of functions that utilizes the `np.random` module in different executions, it is advisable to set a seed. This is done to initialize the pseudo-random number generator algorithm, ensuring that a 'randomized' generation of numbers within Numpy's random functions is ultimately reproducible when using the same seed value.
+## np.random.seed()
+In order to get reproducible results out of functions that utilizes the `np.random` module in different executions, it is advisable to set a seed. This is done to initialize the pseudo-random number generator algorithm, ensuring that a 'randomized' generation of numbers within `numpy`'s random functions is ultimately reproducible when using the same seed value.
 
 ```python
 # Set a specific seed value
