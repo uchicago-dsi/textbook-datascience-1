@@ -9,6 +9,23 @@ output_file = chapter_base_dir / "glossary.md"
 output_code_file = chapter_base_dir / "code-glossary.md"
 toc_path = chapter_base_dir / "_toc.yml"
 
+def find_terms_glossary(chapter_dir: str):
+    root = chapter_base_dir / chapter_dir
+    for p in root.rglob("*-glossary.md"):
+        name = p.name.lower()
+        if name.endswith("-code-glossary.md"):
+            continue                      # <-- exclude code glossary
+        if name.endswith("-glossary.md"):
+            return p
+    return None
+
+def find_code_glossary(chapter_dir: str):
+    root = chapter_base_dir / chapter_dir
+    for p in root.rglob("*-code-glossary.md"):
+        if p.name.lower().endswith("-code-glossary.md"):
+            return p
+    return None
+
 def extract_chapter_files(toc_file):
     with toc_file.open() as f:
         toc = yaml.safe_load(f)
@@ -232,8 +249,9 @@ def process_chapter_glossaries():
         last_file = files[-1]
 
         # your existing glossary logic:
-        term_file = find_exact_suffix(chapter, "-glossary.md")
-        code_file = find_exact_suffix(chapter, "-code-glossary.md")
+        term_file = find_terms_glossary(chapter)
+        code_file = find_code_glossary(chapter)
+
 
         term_entries = parse_entries([term_file]) if term_file else {}
         code_entries = parse_entries([code_file]) if code_file else {}
