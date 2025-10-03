@@ -7,9 +7,9 @@ Edited by [Dan L. Nicolae](https://www.stat.uchicago.edu/~nicolae/), [Michael J.
 %%
 ## Contributing Authors
 
-**Amanda R. Kube Jotte, MS, PhD**: Assistant Instructional Professor, Data Science Institute, University of Chicago
+[**Amanda R. Kube Jotte, MS, PhD**](https://amandakube.github.io/): Assistant Instructional Professor, Data Science Institute, University of Chicago
 
-**Dan L. Nicolae, PhD**: Professor, Departments of Statistics,Human Genetics, Medicine, Section of Genetic Medicine, and the College and Faculty Co-Director, Data Science Institute, University of Chicago
+[**Dan L. Nicolae, PhD**](https://www.stat.uchicago.edu/~nicolae/): Professor, Departments of Statistics,Human Genetics, Medicine, Section of Genetic Medicine, and the College and Faculty Co-Director, Data Science Institute, University of Chicago
 
 **Evelyn Campbell, PhD**: Consultant, Impactus Research and Counseling
 
@@ -19,7 +19,7 @@ Edited by [Dan L. Nicolae](https://www.stat.uchicago.edu/~nicolae/), [Michael J.
 
 **Jesse London**: Software Engineer, Data Science Institute, University of Chicago
 
-**Kriti Sehgal, MS, PhD**: Preceptor, Data Science Institute, University of Chicago
+[**Kriti Sehgal, MS, PhD**](https://kritisehgal01.github.io/): Preceptor, Data Science Institute, University of Chicago
 
 **Satadisha Saha Bhowmick, PhD**: Preceptor, Data Science Institute, University of Chicago
 
