@@ -1,4 +1,3 @@
-
 ## df.apply(given_function)
 The .apply method is used to execute a function on a DataFrame or subsets of a DataFrame. Note, the given_function can be a built-in or user defined function.
 
