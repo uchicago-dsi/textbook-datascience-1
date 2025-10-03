@@ -335,7 +335,7 @@ def build_global_glossary(entries, top_anchor, output_path, title, preserve_case
                     link_html = f'Learn more in <a href="{rel}" style="color:inherit; text-decoration:underline;">Chapter {chap_num_minus_one}</a>'
 
                 # Heading text
-                display_term, _ = term_display_and_slug(entry[0])
+                display_term, slug = term_display_and_slug(entry[0])
 
                 # Optional title-casing: only when there are NO backticks,
                 # so we don't break inline code like `math` or partial `math` library
@@ -344,7 +344,7 @@ def build_global_glossary(entries, top_anchor, output_path, title, preserve_case
 
 
                 body = "\n".join(entry[1:]).strip()
-                f.write(f"### {display_term}\n\n")
+                f.write(f"({slug})=\n### {display_term}\n\n")
                 if body:
                     f.write(body + "\n\n")
 
