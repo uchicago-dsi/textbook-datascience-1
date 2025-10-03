@@ -20,6 +20,8 @@ jobs:
         run: pip install -r requirements.txt
       - name: Pull Vercel Environment Information
         run: vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}
+      - name: Build glossary files
+        run: python textbook/build-glossary.py
       - name: Build Project Artifacts
         run: make build-book-ci
       - name: Prepare Vercel output

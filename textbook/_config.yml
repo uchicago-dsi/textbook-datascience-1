@@ -1,12 +1,23 @@
-title: Introduction to Data Science I & II
+title: Introduction to Data Science
 author: the University of Chicago
 copyright: "2025"
 logo: "images/logo/uchicago_python_nobackground.png"  # path to a logo file
+only_build_toc_files: true
+execute:
+  timeout: 600
 
 sphinx:
   config:
-    execution_show_tb: true
+    nb_execution_show_tb: true
     html_favicon: favicon.ico
+    html_js_files:
+    - https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js
+  extra_extensions:
+    - sphinx_proof
+    - sphinx_multitoc_numbering
+
+html:
+  favicon: "images/logo/favicon.ico"  # A path to a favicon image
 
 parse:
   myst_enable_extensions:
@@ -17,3 +28,8 @@ parse:
     - colon_fence
     - deflist
     - html_image
+    - html_admonition
+
+html:
+  extra_js:
+    - glossary-sidebar.js
