@@ -1,5 +1,3 @@
-# Code Glossary
-
 ## np.random.choice(...)
 outputs exactly one item from the input sequence, selecting from it randomly and uniformly - or with equal opportunity. 
 

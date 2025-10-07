@@ -3,15 +3,15 @@ format: jb-book
 root: intro
 
 parts:
-- caption: "Part I: Exploring Data"
+- caption: "" #"Part I: Exploring Data"
   numbered: 2
   chapters:
   
   - title: "What is Data Science?"
     file: 01/placeholder1
 
-  - title: "Data Science Case Study"
-    file: 02/placeholder2
+  # - title: "Data Science Case Study"
+  #   file: 02/placeholder2
 
   - title: "Programming in Python"
     file: 03/programming-in-python
@@ -103,207 +103,208 @@ parts:
   #     file: 08/6/Unicode
 
   - title: "Data Visualization"
-    file: 09/data-visualization
+    file: 08/data-visualization
     sections:
     - title: "Introduction to Matplotlib"
-      file: 09/1/Intro-to-Matplotlib
+      file: 08/1/Intro-to-Matplotlib
     - title: "Numerical Data"
-      file: 09/2/Numerical_Data
+      file: 08/2/Numerical_Data
     - title: "Categorical Data"
-      file: 09/3/Categorical_Data
+      file: 08/3/Categorical_Data
     - title: "Other Visualization Techniques"
-      file: 09/4/other-viz
+      file: 08/4/other-viz
 
   - title: "Data Collection"
-    file: 10/data-collection
+    file: 09/data-collection
     sections:
     - title: "Causality versus Association"
-      file: 10/1/causality
+      file: 09/1/causality
     - title: "Observation versus Experimental Studies"
-      file: 10/2/experiments
+      file: 09/2/experiments
     - title: "Sampling"
-      file: 10/3/sampling
+      file: 09/3/sampling
     - title: "Biases"
-      file: 10/4/biases
+      file: 09/4/biases
 
   - title: "Probability"
-    file: 11/Probability_Intro
+    file: 10/Probability_Intro
     sections:
     - title: "Definitions and Rules"
-      file: 11/1/Probability_1_RulesDefinitions
+      file: 10/1/Probability_1_RulesDefinitions
     - title: "A Simulation-Based Solution" 
-      file: 11/2/Probability_2_SimulationSolution
+      file: 10/2/Probability_2_SimulationSolution
     - title: "Mathematical Derivation vs Computational Estimation" 
-      file: 11/3/Probability_3_MathVsComputation
+      file: 10/3/Probability_3_MathVsComputation
     - title: "The Birthday Problem: Relaxed Assumptions" 
-      file: 11/4/Probability_4_BirthdayPb_RelaxedAssumptions
+      file: 10/4/Probability_4_BirthdayPb_RelaxedAssumptions
 
   - title: "Empirical and Probability Distributions"
-    file: 12/empirical-distributions
+    file: 11/empirical-distributions
     sections:
     - title: "Distributions Overview" 
-      file: 12/1/distributions
+      file: 11/1/distributions
     - title: "Uniform Distribution" 
-      file: 12/2/uniform
+      file: 11/2/uniform
     - title: "Normal Distribution" 
-      file: 12/3/normal
+      file: 11/3/normal
     - title: "Binomial Distribution" 
-      file: 12/4/binomial
+      file: 11/4/binomial
 
   - title: "Hypothesis Testing"
-    file: 13/HypothesisTesting_Intro
+    file: 12/HypothesisTesting_Intro
     sections:
     - title: "Evaluating Consistency Between Data and a Model" 
-      file: 13/1/HypothesisTesting_1_Consistency
+      file: 12/1/HypothesisTesting_1_Consistency
     - title: "Hypothesis Testing" 
-      file: 13/2/HypothesisTesting_2_Test
+      file: 12/2/HypothesisTesting_2_Test
     - title: "Two-Sample Testing" 
-      file: 13/3/HypothesisTesting_3_TwoSample
+      file: 12/3/HypothesisTesting_3_TwoSample
     - title: "Categorical Data" 
-      file: 13/4/HypothesisTesting_4_Categorical
+      file: 12/4/HypothesisTesting_4_Categorical
     - title: "Connections with Classical Statistical Methods" 
-      file: 13/5/HypothesisTesting_5_ClassicalStats
+      file: 12/5/HypothesisTesting_5_ClassicalStats
 
   - title: "Estimation and Confidence Intervals"
-    file: 14/ConfidenceIntervals_Intro
+    file: 13/ConfidenceIntervals_Intro
     sections:
     - title: "Theoretical Justification for Confidence Intervals" 
-      file: 14/1/ConfidenceIntervals_1_Theory
+      file: 13/1/ConfidenceIntervals_1_Theory
     - title: "The Bootstrap" 
-      file: 14/2/ConfidenceIntervals_2_Bootstrap
+      file: 13/2/ConfidenceIntervals_2_Bootstrap
     - title: "Percentile Bootstrap Confidence Intervals" 
-      file: 14/3/ConfidenceIntervals_3_PercentileBootstrap
+      file: 13/3/ConfidenceIntervals_3_PercentileBootstrap
 
   - title: "Ethics and Pitfalls in Data Science"
-    file: 15/data-ethics-intro
+    file: 14/data-ethics-intro
     sections:
     - title: "Data Ethics and the Law" 
-      file: 15/1/ethics-and-law
+      file: 14/1/ethics-and-law
     - title: "Pillar 1: Data Transparency & Accountability" 
-      file: 15/2/pillar1
+      file: 14/2/pillar1
     - title: "Pillar 2: Data Privacy" 
-      file: 15/3/pillar2
+      file: 14/3/pillar2
     - title: "Pillar 3: Informed Consent" 
-      file: 15/4/pillar3
+      file: 14/4/pillar3
     - title: "Pillar 4: Mitigating Unintended Consequences" 
-      file: 15/5/pillar4
+      file: 14/5/pillar4
 
   - title: "Traffic Stops Case Study"
-    file: 16/traffic_stops
+    file: 15/traffic_stops
     sections:
     - title: "Study Background"
-      file: 16/1/background
+      file: 15/1/background
     - title: "Investigating Traffic Stops"
-      file: 16/2/investigation
+      file: 15/2/investigation
 
-- caption: "Part II: Using Data to Understand Our World"
-  numbered: 2
-  chapters:
+# - caption: "Part II: Using Data to Understand Our World"
+#   numbered: 2
+#   chapters:
   
-  - title: "Where are we now?"
-    file: intro_119/Intro.ipynb
+#   - title: "Where are we now?"
+#     file: intro_119/Intro.ipynb
     
-  - title: "Prediction and Correlation"
-    file: 17/prediction-and-correlation
-    sections:
-    - title: "Prediction" 
-      file: 17/1/prediction
-    - title: "Correlation" 
-      file: 17/2/correlation
+#   - title: "Prediction and Correlation"
+#     file: 16/prediction-and-correlation
+#     sections:
+#     - title: "Prediction" 
+#       file: 16/1/prediction
+#     - title: "Correlation" 
+#       file: 16/2/correlation
 
-  - title: "Simple Linear Regression"
-    file: 18/CH18Intro.ipynb
-    sections:
-    - title: "Correlation and Regression"
-      file: 18/1/Correlation_and_Regression.ipynb
-    - title: "Finding and Interpreting Regressions"
-      file: 18/2/Finding_and_Interpreting_Regressions.ipynb
-    - title: "Regressions and Confidence Intervals"
-      file: 18/3/Regressions_and_Confidence_Intervals.ipynb
-    - title: "Prediction Intervals and Other Model Concerns"
-      file: 18/4/Prediction_Intervals_and_Other_Model_Concerns.ipynb
+#   - title: "Simple Linear Regression"
+#     file: 17/CH18Intro.ipynb
+#     sections:
+#     - title: "Correlation and Regression"
+#       file: 17/1/Correlation_and_Regression.ipynb
+#     - title: "Finding and Interpreting Regressions"
+#       file: 17/2/Finding_and_Interpreting_Regressions.ipynb
+#     - title: "Regressions and Confidence Intervals"
+#       file: 17/3/Regressions_and_Confidence_Intervals.ipynb
+#     - title: "Prediction Intervals and Other Model Concerns"
+#       file: 17/4/Prediction_Intervals_and_Other_Model_Concerns.ipynb
 
-  - title: "Multiple Linear Regression"
-    file: 19/placeholder19
+#   - title: "Multiple Linear Regression"
+#     file: 18/placeholder19
 
-  - title: "Introduction to Machine Learning"
-    file: ML/1/Introduction_to_Machine_Learning
-    sections:
-    - title: "Types of Machine Learning"
-      file: ML/2/Types_of_ML
+#   - title: "Introduction to Machine Learning"
+#     file: ML/1/Introduction_to_Machine_Learning
+#     sections:
+#     - title: "Types of Machine Learning"
+#       file: ML/2/Types_of_ML
 
-  - title: "Feature Engineering and Feature Selection"
-    file: 20/ch20intro
-    sections:
-    - title: "Feature Engineering"
-      file: 20/1/feature_engineering.ipynb
-    - title: "Feature Selection"
-      file: 20/2/feature_selection.ipynb
+#   - title: "Feature Engineering and Feature Selection"
+#     file: 19/ch20intro
+#     sections:
+#     - title: "Feature Engineering"
+#       file: 19/1/feature_engineering.ipynb
+#     - title: "Feature Selection"
+#       file: 19/2/feature_selection.ipynb
+#     - title: "Feature Engineering and Selection in Practice"
+#       file: 19/3/case_study.ipynb
 
-  - title: "Regularization and Cross Validation"
-    file: 21/placeholder21
+#   - title: "Regularization and Cross Validation"
+#     file: 20/placeholder21
 
-  - title: "Classification with Logistic Regression"
-    file: 22/placeholder22
+#   - title: "Classification with Logistic Regression"
+#     file: 21/placeholder22
 
-  - title: "Classification with Nearest Neighbors"
-    file: 23/classification_intro
-    sections:
-    - title: "Nearest Neighbor" 
-      file: 23/1/Nearest_Neighbor
-    - title: "K Nearest Neighbors" 
-      file: 23/2/K_Nearest_Neighbors
-    - title: "Features to Consider" 
-      file: 23/3/Features_to_Consider
-    - title: "Multiple Classes" 
-      file: 23/4/Multiple_Classes
+#   - title: "Classification with Nearest Neighbors"
+#     file: 22/classification_intro
+#     sections:
+#     - title: "Nearest Neighbor" 
+#       file: 22/1/Nearest_Neighbor
+#     - title: "K Nearest Neighbors" 
+#       file: 22/2/K_Nearest_Neighbors
+#     - title: "Features to Consider" 
+#       file: 22/3/Features_to_Consider
+#     - title: "Multiple Classes" 
+#       file: 22/4/Multiple_Classes
 
-  - title: "Neural Networks and Deep Learning"
-    file: 24/placeholder24
+#   - title: "Neural Networks and Deep Learning"
+#     file: 23/placeholder24
 
-  - title: "Tree Models"
-    file: 25/placeholder25
+#   - title: "Tree Models"
+#     file: 24/placeholder25
 
-  - title: "Unsupervised Learning and Clustering"
-    file: 26/unsupervised_learning
-    sections:
-    - title: "K-Means Clustering"
-      file: 26/1/kmeans
-    - title: "K-Means Clustering Example"
-      file: 26/2/kmeans_example
-    - title: "Hierarchical Clustering"
-      file: 26/3/hierarchical
-    - title: "Hierarchical Clustering Examples"
-      file: 26/4/hierarchical_example
+#   - title: "Unsupervised Learning and Clustering"
+#     file: 25/unsupervised_learning
+#     sections:
+#     - title: "K-Means Clustering"
+#       file: 25/1/kmeans
+#     - title: "K-Means Clustering Example"
+#       file: 25/2/kmeans_example
+#     - title: "Hierarchical Clustering"
+#       file: 25/3/hierarchical
+#     - title: "Hierarchical Clustering Examples"
+#       file: 25/4/hierarchical_example
 
-  - title: "Data Wrangling"
-    file: 27/placeholder27
+#   - title: "Data Wrangling"
+#     file: 26/placeholder27
 
-  - title: "Relational Databases and SQL"
-    file: 28/placeholder28
+#   - title: "Relational Databases and SQL"
+#     file: 27/placeholder28
 
-  # Not changing folder names yet to avoid merge conflicts
-  - title: "String Data and Fuzzy Matching"
-    file: 08_fuzzy/Fuzzy_Matching
-    sections: 
-    - title: "Set-Based (Jaccard) Similarity"
-      file: 08_fuzzy/1/Set_Based_Similarity
-    - title: "Sequence-Based Similarlity"
-      file: 08_fuzzy/2/Sequence_Based_Similarity
-    - title: "Canonicalization"
-      file: 08_fuzzy/3/Canonicalization
-    - title: "Reduced Alphabet Similarity"
-      file: 08_fuzzy/4/Reduced_Alphabets 
-    - title: "Example: Building Inspection reports"
-      file: 08_fuzzy/5/Levenshtein_Inspection_Example 
-    - title: "Encoding and Unicode"
-      file: 08_fuzzy/6/Unicode
+#   - title: "String Data and Fuzzy Matching"
+#     file: 28/Fuzzy_Matching
+#     sections: 
+#     - title: "Set-Based (Jaccard) Similarity"
+#       file: 28/1/Set_Based_Similarity
+#     - title: "Sequence-Based Similarlity"
+#       file: 28/2/Sequence_Based_Similarity
+#     - title: "Canonicalization"
+#       file: 28/3/Canonicalization
+#     - title: "Reduced Alphabet Similarity"
+#       file: 28/4/Reduced_Alphabets 
+#     - title: "Example: Building Inspection reports"
+#       file: 28/5/Levenshtein_Inspection_Example 
+#     - title: "Encoding and Unicode"
+#       file: 28/6/Unicode
 
-  - title: "Reproducibility"
-    file: 29/placeholder29
+#   - title: "Reproducibility"
+#     file: 29/placeholder29
 
-  - title: "Case Study"
-    file: 30/placeholder30
+#   - title: "Case Study"
+#     file: 30/placeholder30
 
 - caption: ""
   numbered: false
