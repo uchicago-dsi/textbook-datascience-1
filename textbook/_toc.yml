@@ -10,8 +10,8 @@ parts:
   - title: "What is Data Science?"
     file: 01/placeholder1
 
-  # - title: "Data Science Case Study"
-  #   file: 02/placeholder2
+   - title: "Data Science Case Study"
+     file: 02/placeholder2
 
   - title: "Programming in Python"
     file: 03/programming-in-python
@@ -196,115 +196,115 @@ parts:
     - title: "Investigating Traffic Stops"
       file: 15/2/investigation
 
-# - caption: "Part II: Using Data to Understand Our World"
-#   numbered: 2
-#   chapters:
+- caption: "Part II: Using Data to Understand Our World"
+  numbered: 2
+  chapters:
   
-#   - title: "Where are we now?"
-#     file: intro_119/Intro.ipynb
+  - title: "Where are we now?"
+    file: intro_119/Intro.ipynb
     
-#   - title: "Prediction and Correlation"
-#     file: 16/prediction-and-correlation
-#     sections:
-#     - title: "Prediction" 
-#       file: 16/1/prediction
-#     - title: "Correlation" 
-#       file: 16/2/correlation
+  - title: "Prediction and Correlation"
+    file: 16/prediction-and-correlation
+    sections:
+    - title: "Prediction" 
+      file: 16/1/prediction
+    - title: "Correlation" 
+      file: 16/2/correlation
 
-#   - title: "Simple Linear Regression"
-#     file: 17/CH18Intro.ipynb
-#     sections:
-#     - title: "Correlation and Regression"
-#       file: 17/1/Correlation_and_Regression.ipynb
-#     - title: "Finding and Interpreting Regressions"
-#       file: 17/2/Finding_and_Interpreting_Regressions.ipynb
-#     - title: "Regressions and Confidence Intervals"
-#       file: 17/3/Regressions_and_Confidence_Intervals.ipynb
-#     - title: "Prediction Intervals and Other Model Concerns"
-#       file: 17/4/Prediction_Intervals_and_Other_Model_Concerns.ipynb
+  - title: "Simple Linear Regression"
+    file: 17/CH18Intro.ipynb
+    sections:
+    - title: "Correlation and Regression"
+      file: 17/1/Correlation_and_Regression.ipynb
+    - title: "Finding and Interpreting Regressions"
+      file: 17/2/Finding_and_Interpreting_Regressions.ipynb
+    - title: "Regressions and Confidence Intervals"
+      file: 17/3/Regressions_and_Confidence_Intervals.ipynb
+    - title: "Prediction Intervals and Other Model Concerns"
+      file: 17/4/Prediction_Intervals_and_Other_Model_Concerns.ipynb
 
-#   - title: "Multiple Linear Regression"
-#     file: 18/placeholder19
+  - title: "Multiple Linear Regression"
+    file: 18/placeholder19
 
-#   - title: "Introduction to Machine Learning"
-#     file: ML/1/Introduction_to_Machine_Learning
-#     sections:
-#     - title: "Types of Machine Learning"
-#       file: ML/2/Types_of_ML
+  - title: "Introduction to Machine Learning"
+    file: ML/1/Introduction_to_Machine_Learning
+    sections:
+    - title: "Types of Machine Learning"
+      file: ML/2/Types_of_ML
 
-#   - title: "Feature Engineering and Feature Selection"
-#     file: 19/ch20intro
-#     sections:
-#     - title: "Feature Engineering"
-#       file: 19/1/feature_engineering.ipynb
-#     - title: "Feature Selection"
-#       file: 19/2/feature_selection.ipynb
-#     - title: "Feature Engineering and Selection in Practice"
-#       file: 19/3/case_study.ipynb
+  - title: "Feature Engineering and Feature Selection"
+    file: 19/ch20intro
+    sections:
+    - title: "Feature Engineering"
+      file: 19/1/feature_engineering.ipynb
+    - title: "Feature Selection"
+      file: 19/2/feature_selection.ipynb
+    - title: "Feature Engineering and Selection in Practice"
+      file: 19/3/case_study.ipynb
 
-#   - title: "Regularization and Cross Validation"
-#     file: 20/placeholder21
+  - title: "Regularization and Cross Validation"
+    file: 20/placeholder21
 
-#   - title: "Classification with Logistic Regression"
-#     file: 21/placeholder22
+  - title: "Classification with Logistic Regression"
+    file: 21/placeholder22
 
-#   - title: "Classification with Nearest Neighbors"
-#     file: 22/classification_intro
-#     sections:
-#     - title: "Nearest Neighbor" 
-#       file: 22/1/Nearest_Neighbor
-#     - title: "K Nearest Neighbors" 
-#       file: 22/2/K_Nearest_Neighbors
-#     - title: "Features to Consider" 
-#       file: 22/3/Features_to_Consider
-#     - title: "Multiple Classes" 
-#       file: 22/4/Multiple_Classes
+  - title: "Classification with Nearest Neighbors"
+    file: 22/classification_intro
+    sections:
+    - title: "Nearest Neighbor" 
+      file: 22/1/Nearest_Neighbor
+    - title: "K Nearest Neighbors" 
+      file: 22/2/K_Nearest_Neighbors
+    - title: "Features to Consider" 
+      file: 22/3/Features_to_Consider
+    - title: "Multiple Classes" 
+      file: 22/4/Multiple_Classes
 
-#   - title: "Neural Networks and Deep Learning"
-#     file: 23/placeholder24
+  - title: "Neural Networks and Deep Learning"
+    file: 23/placeholder24
 
-#   - title: "Tree Models"
-#     file: 24/placeholder25
+  - title: "Tree Models"
+    file: 24/placeholder25
 
-#   - title: "Unsupervised Learning and Clustering"
-#     file: 25/unsupervised_learning
-#     sections:
-#     - title: "K-Means Clustering"
-#       file: 25/1/kmeans
-#     - title: "K-Means Clustering Example"
-#       file: 25/2/kmeans_example
-#     - title: "Hierarchical Clustering"
-#       file: 25/3/hierarchical
-#     - title: "Hierarchical Clustering Examples"
-#       file: 25/4/hierarchical_example
+  - title: "Unsupervised Learning and Clustering"
+    file: 25/unsupervised_learning
+    sections:
+    - title: "K-Means Clustering"
+      file: 25/1/kmeans
+    - title: "K-Means Clustering Example"
+      file: 25/2/kmeans_example
+    - title: "Hierarchical Clustering"
+      file: 25/3/hierarchical
+    - title: "Hierarchical Clustering Examples"
+      file: 25/4/hierarchical_example
 
-#   - title: "Data Wrangling"
-#     file: 26/placeholder27
+  - title: "Data Wrangling"
+    file: 26/placeholder27
 
-#   - title: "Relational Databases and SQL"
-#     file: 27/placeholder28
+  - title: "Relational Databases and SQL"
+    file: 27/placeholder28
 
-#   - title: "String Data and Fuzzy Matching"
-#     file: 28/Fuzzy_Matching
-#     sections: 
-#     - title: "Set-Based (Jaccard) Similarity"
-#       file: 28/1/Set_Based_Similarity
-#     - title: "Sequence-Based Similarlity"
-#       file: 28/2/Sequence_Based_Similarity
-#     - title: "Canonicalization"
-#       file: 28/3/Canonicalization
-#     - title: "Reduced Alphabet Similarity"
-#       file: 28/4/Reduced_Alphabets 
-#     - title: "Example: Building Inspection reports"
-#       file: 28/5/Levenshtein_Inspection_Example 
-#     - title: "Encoding and Unicode"
-#       file: 28/6/Unicode
+  - title: "String Data and Fuzzy Matching"
+    file: 28/Fuzzy_Matching
+    sections: 
+    - title: "Set-Based (Jaccard) Similarity"
+      file: 28/1/Set_Based_Similarity
+    - title: "Sequence-Based Similarlity"
+      file: 28/2/Sequence_Based_Similarity
+    - title: "Canonicalization"
+      file: 28/3/Canonicalization
+    - title: "Reduced Alphabet Similarity"
+      file: 28/4/Reduced_Alphabets 
+    - title: "Example: Building Inspection reports"
+      file: 28/5/Levenshtein_Inspection_Example 
+    - title: "Encoding and Unicode"
+      file: 28/6/Unicode
 
-#   - title: "Reproducibility"
-#     file: 29/placeholder29
+  - title: "Reproducibility"
+    file: 29/placeholder29
 
-#   - title: "Case Study"
-#     file: 30/placeholder30
+  - title: "Case Study"
+    file: 30/placeholder30
 
 - caption: ""
   numbered: false
