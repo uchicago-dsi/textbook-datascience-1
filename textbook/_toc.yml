@@ -3,14 +3,14 @@ format: jb-book
 root: intro
 
 parts:
-- caption: "" #"Part I: Exploring Data"
+- caption: "Part I: Exploring Data"
   numbered: 2
   chapters:
   
   - title: "What is Data Science?"
     file: 01/placeholder1
 
-   - title: "Data Science Case Study"
+  - title: "Data Science Case Study"
      file: 02/placeholder2
 
   - title: "Programming in Python"
