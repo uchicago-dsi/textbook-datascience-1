@@ -9,9 +9,9 @@ parts:
   
   - title: "What is Data Science?"
     file: 01/placeholder1
-
+    
   - title: "Data Science Case Study"
-     file: 02/placeholder2
+    file: 02/placeholder2
 
   - title: "Programming in Python"
     file: 03/programming-in-python
