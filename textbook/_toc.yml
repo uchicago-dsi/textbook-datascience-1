@@ -86,24 +86,8 @@ parts:
     - title: "Pivot Tables"
       file: 07/4/pivots
 
-  # - title: "String Data and Fuzzy Matching"
-  #   file: 08/Fuzzy_Matching
-  #   sections: 
-  #   - title: "Set-Based (Jaccard) Similarity"
-  #     file: 08/1/Set_Based_Similarity
-  #   - title: "Sequence-Based Similarlity"
-  #     file: 08/2/Sequence_Based_Similarity
-  #   - title: "Canonicalization"
-  #     file: 08/3/Canonicalization
-  #   - title: "Reduced Alphabet Similarity"
-  #     file: 08/4/Reduced_Alphabets 
-  #   - title: "Example: Building Inspection reports"
-  #     file: 08/5/Levenshtein_Inspection_Example 
-  #   - title: "Encoding and Unicode"
-  #     file: 08/6/Unicode
-
   - title: "Data Visualization"
-    file: 08/data-visualization
+    file: 08/data-visualization.md
     sections:
     - title: "Introduction to Matplotlib"
       file: 08/1/Intro-to-Matplotlib
