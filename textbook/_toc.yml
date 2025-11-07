@@ -201,12 +201,12 @@ parts:
   chapters:
   
   - title: "Prediction and The Data Science Pipeline"
-    file: 19/intro_119/Intro.ipynb
+    file: 16/Intro.ipynb
     sections:
-    - title: "Prediction and Correlation"
-      file: 16/prediction-and-correlation
-    - title: "Prediction" 
+    - title: "Prediction"
       file: 16/1/prediction
+    - title: "Correlation" 
+      file: 16/2/prediction
 
   - title: "Simple Linear Regression"
     file: 17/CH18Intro.ipynb
