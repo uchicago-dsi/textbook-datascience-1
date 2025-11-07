@@ -200,28 +200,27 @@ parts:
   numbered: 2
   chapters:
   
-  - title: "Where are we now?"
-    file: intro_119/Intro.ipynb
-    
-  - title: "Prediction and Correlation"
-    file: 16/prediction-and-correlation
+  - title: "Prediction and The Data Science Pipeline"
+    file: 19/intro_119/Intro.ipynb
     sections:
+    - title: "Prediction and Correlation"
+      file: 16/prediction-and-correlation
     - title: "Prediction" 
       file: 16/1/prediction
-    - title: "Correlation" 
-      file: 16/2/correlation
 
   - title: "Simple Linear Regression"
     file: 17/CH18Intro.ipynb
     sections:
+    - title: "Correlation"
+      file: 17/1/correlation
     - title: "Correlation and Regression"
-      file: 17/1/Correlation_and_Regression.ipynb
+      file: 17/2/Correlation_and_Regression.ipynb
     - title: "Finding and Interpreting Regressions"
-      file: 17/2/Finding_and_Interpreting_Regressions.ipynb
+      file: 17/3/Finding_and_Interpreting_Regressions.ipynb
     - title: "Regressions and Confidence Intervals"
-      file: 17/3/Regressions_and_Confidence_Intervals.ipynb
+      file: 17/4/Regressions_and_Confidence_Intervals.ipynb
     - title: "Prediction Intervals and Other Model Concerns"
-      file: 17/4/Prediction_Intervals_and_Other_Model_Concerns.ipynb
+      file: 17/5/Prediction_Intervals_and_Other_Model_Concerns.ipynb
 
   - title: "Multiple Linear Regression"
     file: 18/placeholder19
@@ -261,7 +260,16 @@ parts:
       file: 22/4/Multiple_Classes
 
   - title: "Neural Networks and Deep Learning"
-    file: 23/placeholder24
+    file: 23/Intro
+    sections:
+    - title: "The Inspiration"
+      file: 23/1/The_Inspiration
+    - title: "Artificial Neurons"
+      file: 23/2/Artificial_neurons
+    - title: "Neurons to Neural Networks"
+      files: 23/3/Neurons_to_Neural_Networks
+    - title: "Learning in Neural Networks"
+      files: 23/4/Learning_in_NN
 
   - title: "Tree Models"
     file: 24/placeholder25
