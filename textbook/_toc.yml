@@ -86,24 +86,8 @@ parts:
     - title: "Pivot Tables"
       file: 07/4/pivots
 
-  # - title: "String Data and Fuzzy Matching"
-  #   file: 08/Fuzzy_Matching
-  #   sections: 
-  #   - title: "Set-Based (Jaccard) Similarity"
-  #     file: 08/1/Set_Based_Similarity
-  #   - title: "Sequence-Based Similarlity"
-  #     file: 08/2/Sequence_Based_Similarity
-  #   - title: "Canonicalization"
-  #     file: 08/3/Canonicalization
-  #   - title: "Reduced Alphabet Similarity"
-  #     file: 08/4/Reduced_Alphabets 
-  #   - title: "Example: Building Inspection reports"
-  #     file: 08/5/Levenshtein_Inspection_Example 
-  #   - title: "Encoding and Unicode"
-  #     file: 08/6/Unicode
-
   - title: "Data Visualization"
-    file: 08/data-visualization
+    file: 08/data-visualization.md
     sections:
     - title: "Introduction to Matplotlib"
       file: 08/1/Intro-to-Matplotlib
@@ -201,12 +185,12 @@ parts:
   chapters:
   
   - title: "Prediction and The Data Science Pipeline"
-    file: 19/intro_119/Intro.ipynb
+    file: 16/Intro.ipynb
     sections:
-    - title: "Prediction and Correlation"
-      file: 16/prediction-and-correlation
-    - title: "Prediction" 
+    - title: "Prediction"
       file: 16/1/prediction
+    - title: "Correlation" 
+      file: 16/2/prediction
 
   - title: "Simple Linear Regression"
     file: 17/CH18Intro.ipynb
