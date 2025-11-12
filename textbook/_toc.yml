@@ -87,7 +87,7 @@ parts:
       file: 07/4/pivots
 
   - title: "Data Visualization"
-    file: 08/data-visualization.md
+    file: 08/data-visualization
     sections:
     - title: "Introduction to Matplotlib"
       file: 08/1/Intro-to-Matplotlib
@@ -185,26 +185,24 @@ parts:
   chapters:
   
   - title: "Prediction and The Data Science Pipeline"
-    file: 16/Intro.ipynb
+    file: 16/Intro
     sections:
     - title: "Prediction"
       file: 16/1/prediction
     - title: "Correlation" 
-      file: 16/2/prediction
+      file: 16/2/correlation
 
   - title: "Simple Linear Regression"
     file: 17/CH18Intro.ipynb
     sections:
-    - title: "Correlation"
-      file: 17/1/correlation
     - title: "Correlation and Regression"
-      file: 17/2/Correlation_and_Regression.ipynb
+      file: 17/1/Correlation_and_Regression.ipynb
     - title: "Finding and Interpreting Regressions"
-      file: 17/3/Finding_and_Interpreting_Regressions.ipynb
+      file: 17/2/Finding_and_Interpreting_Regressions.ipynb
     - title: "Regressions and Confidence Intervals"
-      file: 17/4/Regressions_and_Confidence_Intervals.ipynb
+      file: 17/3/Regressions_and_Confidence_Intervals.ipynb
     - title: "Prediction Intervals and Other Model Concerns"
-      file: 17/5/Prediction_Intervals_and_Other_Model_Concerns.ipynb
+      file: 17/4/Prediction_Intervals_and_Other_Model_Concerns.ipynb
 
   - title: "Multiple Linear Regression"
     file: 18/placeholder19
@@ -226,7 +224,12 @@ parts:
       file: 19/3/case_study.ipynb
 
   - title: "Regularization and Cross Validation"
-    file: 20/placeholder21
+    file: 20/regularization-crossvalidation
+    sections:
+    - title: "Cross-Validation and Regularization"
+      file: 20/1/model_tuning
+    # - title: "Model Complexity and Overfitting"
+    # - title: "Regularization"
 
   - title: "Classification with Logistic Regression"
     file: 21/placeholder22
