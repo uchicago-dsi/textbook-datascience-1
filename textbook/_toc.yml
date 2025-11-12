@@ -140,6 +140,7 @@ parts:
 
   - title: "Empirical and Probability Distributions"
     file: 11/empirical-distributions
+    numbered: false
     sections:
     - title: "Distributions Overview" 
       file: 11/1/distributions
