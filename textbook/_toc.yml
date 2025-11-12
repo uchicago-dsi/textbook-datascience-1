@@ -254,9 +254,9 @@ parts:
     - title: "Artificial Neurons"
       file: 23/2/Artificial_neurons
     - title: "Neurons to Neural Networks"
-      files: 23/3/Neurons_to_Neural_Networks
+      file: 23/3/Neurons_to_Neural_Networks
     - title: "Learning in Neural Networks"
-      files: 23/4/Learning_in_NN
+      file: 23/4/Learning_in_NN
 
   - title: "Tree Models"
     file: 24/placeholder25
