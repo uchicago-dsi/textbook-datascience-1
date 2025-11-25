@@ -298,7 +298,14 @@ def build_global_glossary(entries, top_anchor, output_path, title, preserve_case
 
         for letter in all_letters:
             anchor = "other" if letter == "#" else letter.lower()
-            f.write(f"({anchor})=\n## {letter}\n\n")
+            
+            ns_anchor = f"{top_anchor}-{anchor}"          # e.g., "code-index-a" or "index-a"
+            
+            # MyST label (namespaced) + visible heading
+            f.write(f"({ns_anchor})=\n## {letter}\n\n")
+            
+            # HTML fallback id (same, namespaced)
+            f.write(f'<a id="{ns_anchor}"></a>\n\n')
 
             for entry, file in sorted(entries_by_letter[letter], key=lambda ef: sort_key(ef[0][0])):
                 # --- Resolve chapter folder (top-level under textbook/) ---
