@@ -358,5 +358,5 @@ def build_global_glossary(entries, top_anchor, output_path, title, preserve_case
 
 # --- Run everything ---
 terms, code_terms = process_chapter_glossaries()
-build_global_glossary(terms, "index", output_file, "Glossary of Terms", preserve_case=False)
+build_global_glossary(terms, "term-index", output_file, "Glossary of Terms", preserve_case=False)
 build_global_glossary(code_terms, "code-index", output_code_file, "Glossary of Code", preserve_case=True)
