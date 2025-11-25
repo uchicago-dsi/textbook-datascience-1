@@ -350,9 +350,9 @@ def build_global_glossary(entries, top_anchor, output_path, title, preserve_case
 
                 # Single-line footer: "Learn more in Chapter X | Back to Top"
                 if link_html:
-                    combined = f"{link_html} &nbsp;|&nbsp; [Back to Top](#{top_anchor})"
+                    combined = f"{link_html} &nbsp;|&nbsp; {{ref}}`Back to Top <{top_anchor}>`"
                 else:
-                    combined = f"[Back to Top](#{top_anchor})"
+                    combined = f"{{ref}}`Back to Top <{top_anchor}>`"
                 f.write(combined + "\n\n")
 
 
