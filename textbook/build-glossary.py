@@ -289,7 +289,7 @@ def build_global_glossary(entries, top_anchor, output_path, title, preserve_case
         entries_by_letter[first_char].append((entry, file))
 
     all_letters = sorted(entries_by_letter.keys(), key=lambda x: ("#" in x, x))
-    iindex = " | ".join(f"[{letter}](#{'other' if letter == '#' else letter.lower()})" for letter in all_letters) + "\n\n"
+    index = " | ".join(f"[{letter}](#{'other' if letter == '#' else letter.lower()})" for letter in all_letters) + "\n\n"
 
 
     with output_path.open("w") as f:
