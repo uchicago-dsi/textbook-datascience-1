@@ -289,10 +289,8 @@ def build_global_glossary(entries, top_anchor, output_path, title, preserve_case
         entries_by_letter[first_char].append((entry, file))
 
     all_letters = sorted(entries_by_letter.keys(), key=lambda x: ("#" in x, x))
-    index = " | ".join(
-    f"[{letter}](#{top_anchor}-{'other' if letter == '#' else letter.lower()})"
-    for letter in all_letters
-) + "\n\n"
+    iindex = " | ".join(f"[{letter}](#{'other' if letter == '#' else letter.lower()})" for letter in all_letters) + "\n\n"
+
 
     with output_path.open("w") as f:
         f.write(f"({top_anchor})=\n# {title}\n\n")
@@ -301,14 +299,12 @@ def build_global_glossary(entries, top_anchor, output_path, title, preserve_case
 
         for letter in all_letters:
             anchor = "other" if letter == "#" else letter.lower()
+
+            # Optional: keep a MyST label if you want, but it's not required for the index
+            # f.write(f"({top_anchor}-{anchor})=\n")
             
-            ns_anchor = f"{top_anchor}-{anchor}"          # e.g., "code-index-a" or "index-a"
-            
-            # MyST label (namespaced) + visible heading
-            f.write(f"({ns_anchor})=\n## {letter}\n\n")
-            
-            # HTML fallback id (same, namespaced)
-            f.write(f'<a id="{ns_anchor}"></a>\n\n')
+            f.write(f"## {letter}\n\n")
+            f.write(f'<a id="{anchor}"></a>\n\n')
 
             for entry, file in sorted(entries_by_letter[letter], key=lambda ef: sort_key(ef[0][0])):
                 # --- Resolve chapter folder (top-level under textbook/) ---
