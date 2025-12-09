@@ -1,0 +1,377 @@
+subject_id,label,value,valueuom
+10000032,Hemoglobin,11.9,g/dL
+10000032,MCHC,34.5,%
+10001217,Hemoglobin,11.8,g/dL
+10001217,MCHC,34.4,%
+10001217,MCHC,32.4,%
+10001725,% Hemoglobin A1c,___,%
+10001725,Hemoglobin,13.9,g/dL
+10001725,Hemoglobin,14.4,g/dL
+10001725,MCHC,35.3,%
+10002428,Carboxyhemoglobin,3,%
+10002428,Hemoglobin,8.3,g/dL
+10002428,MCHC,32.0,g/dL
+10002428,MCHC,31.5,%
+10002428,Methemoglobin,0,%
+10002495,% Hemoglobin A1c,___,%
+10002495,Hemoglobin,11.9,g/dL
+10002495,Hemoglobin,14.0,g/dL
+10002495,MCHC,34.0,g/dL
+10002495,MCHC,32.9,g/dL
+10002930,% Hemoglobin A1c,___,%
+10002930,% Hemoglobin A1c,___,%
+10002930,Hemoglobin,9.1,g/dL
+10002930,MCHC,27.8,%
+10003046,Hemoglobin,12.6,g/dL
+10003046,Hemoglobin,15.9,g/dL
+10003046,MCHC,35.3,%
+10003046,MCHC,35.0,%
+10003400,Hemoglobin,9.3,g/dL
+10003400,MCHC,32.4,g/dL
+10004235,Carboxyhemoglobin,0,%
+10004235,Hemoglobin,10.9,g/dL
+10004235,Hemoglobin,10.8,g/dL
+10004235,MCHC,32.0,%
+10004235,MCHC,31.9,g/dL
+10004235,Methemoglobin,0,%
+10004422,% Hemoglobin A1c,___,%
+10004422,Hemoglobin,10.6,g/dL
+10004422,MCHC,33.9,%
+10004422,MCHC,34.2,%
+10004457,% Hemoglobin A1c,___,%
+10004457,% Hemoglobin A1c,___,%
+10004457,Hemoglobin,12.1,g/dL
+10004457,Hemoglobin,16.1,g/dL
+10004457,MCHC,32.1,%
+10004720,% Hemoglobin A1c,___,%
+10004720,Hemoglobin,11.0,g/dL
+10004720,MCHC,32.4,g/dL
+10004733,% Hemoglobin A1c,___,%
+10004733,Hemoglobin,10.3,g/dL
+10004733,MCHC,32.3,%
+10005348,% Hemoglobin A1c,___,%
+10005348,% Hemoglobin A1c,___,%
+10005348,Hemoglobin,11.4,g/dL
+10005348,MCHC,33.2,%
+10005348,MCHC,33.6,%
+10005817,% Hemoglobin A1c,___,%
+10005817,Hemoglobin,9.0,g/dL
+10005817,Hemoglobin,8.7,g/dL
+10005817,MCHC,34.0,g/dL
+10005866,Hemoglobin,12.7,g/dL
+10005866,Hemoglobin,13.3,g/dL
+10005866,MCHC,32.9,g/dL
+10005866,MCHC,31.7,g/dL
+10005909,Hemoglobin,11.0,g/dL
+10005909,Hemoglobin,9.3,g/dL
+10005909,MCHC,31.6,g/dL
+10005909,MCHC,32.0,g/dL
+10006053,Hemoglobin,9.5,g/dL
+10006053,Hemoglobin,7.8,g/dL
+10006053,MCHC,35.5,%
+10006053,MCHC,32.3,%
+10006580,% Hemoglobin A1c,___,%
+10006580,Hemoglobin,9.6,g/dL
+10006580,MCHC,31.9,%
+10007058,% Hemoglobin A1c,___,%
+10007058,Hemoglobin,12.0,g/dL
+10007058,MCHC,32.0,g/dL
+10007795,Hemoglobin,7.9,g/dL
+10007795,Hemoglobin,7.6,g/dL
+10007795,MCHC,31.2,%
+10007795,MCHC,30.8,%
+10007818,Hemoglobin,8.6,g/dL
+10007818,Hemoglobin,11.7,g/dL
+10007818,MCHC,33.5,g/dL
+10007818,MCHC,33.1,g/dL
+10007928,Hemoglobin,9.9,g/dL
+10007928,MCHC,34.2,%
+10007928,MCHC,33.2,%
+10008287,Hemoglobin,11.9,g/dL
+10008287,MCHC,32.6,g/dL
+10008287,MCHC,32.8,g/dL
+10008454,% Hemoglobin A1c,___,%
+10008454,Hemoglobin,9.7,g/dL
+10008454,Hemoglobin,9.4,g/dL
+10008454,MCHC,35.1,%
+10008454,MCHC,35.9,%
+10009035,% Hemoglobin A1c,___,%
+10009035,Hemoglobin,16.4,g/dL
+10009035,Hemoglobin,14.2,g/dL
+10009035,MCHC,36.7,%
+10009049,Hemoglobin,15.3,g/dL
+10009049,Hemoglobin,12.3,g/dL
+10009049,MCHC,33.3,%
+10009049,MCHC,34.0,%
+10009628,Hemoglobin,7.1,g/dL
+10009628,Hemoglobin,14.0,g/dL
+10009628,MCHC,36.3,%
+10010471,Hemoglobin,8.9,g/dL
+10010471,Hemoglobin,10.1,g/dL
+10010471,MCHC,29.9,g/dL
+10010471,MCHC,30.4,g/dL
+10010867,Hemoglobin,9.7,g/dL
+10010867,MCHC,31.3,g/dL
+10010867,MCHC,30.2,g/dL
+10011398,% Hemoglobin A1c,___,%
+10011398,% Hemoglobin A1c,___,%
+10011398,Hemoglobin,9.5,g/dL
+10011398,Hemoglobin,7.7,g/dL
+10011398,MCHC,32.8,%
+10011398,MCHC,33.2,%
+10012552,% Hemoglobin A1c,___,%
+10012552,Hemoglobin,8.3,g/dL
+10012552,Hemoglobin,9.4,g/dL
+10012552,MCHC,34.2,%
+10012853,Carboxyhemoglobin,5,%
+10012853,Hemoglobin,10.2,g/dL
+10012853,MCHC,28.3,g/dL
+10012853,Methemoglobin,0,%
+10013049,% Hemoglobin A1c,___,%
+10013049,Hemoglobin,10.3,g/dL
+10013049,Hemoglobin,13.5,g/dL
+10013049,MCHC,33.9,%
+10014078,Hemoglobin,9.9,g/dL
+10014078,MCHC,34.9,%
+10014078,MCHC,34.8,%
+10014354,% Hemoglobin A1c,___,%
+10014354,Hemoglobin,8.3,g/dL
+10014354,Heparin,1.03,IU/mL
+10014354,"Heparin, LMW",___,IU/mL
+10014354,MCHC,32.9,g/dL
+10014354,MCHC,33.3,g/dL
+10014729,% Hemoglobin A1c,___,%
+10014729,Hemoglobin,9.3,g/dL
+10014729,MCHC,34.4,%
+10015272,Hemoglobin,7.9,g/dL
+10015272,Hemoglobin,8.9,g/dL
+10015272,MCHC,31.9,g/dL
+10015272,MCHC,30.9,g/dL
+10015860,% Hemoglobin A1c,___,%
+10015860,Hemoglobin,10.2,g/dL
+10015860,Hemoglobin,9.1,g/dL
+10015860,MCHC,32.8,g/dL
+10015860,MCHC,34.1,g/dL
+10015931,% Hemoglobin A1c,___,%
+10015931,Hemoglobin,7.0,g/dL
+10015931,Hemoglobin,8.1,g/dL
+10015931,MCHC,32.7,g/dL
+10015931,MCHC,32.9,g/dL
+10016150,% Hemoglobin A1c,___,%
+10016150,Hemoglobin,15.2,g/dL
+10016150,MCHC,34.6,%
+10016742,Hemoglobin,8.8,g/dL
+10016742,MCHC,31.5,g/dL
+10016742,MCHC,32.0,g/dL
+10016810,Hemoglobin,11.9,g/dL
+10016810,Hemoglobin,12.5,g/dL
+10016810,MCHC,34.6,%
+10017492,% Hemoglobin A1c,___,%
+10017492,Hemoglobin,12.9,g/dL
+10017492,MCHC,31.8,%
+10018081,Carboxyhemoglobin,0,%
+10018081,Hemoglobin,11.4,g/dL
+10018081,Hemoglobin,13.5,g/dL
+10018081,MCHC,31.7,%
+10018081,MCHC,32.3,%
+10018081,Methemoglobin,0,%
+10018328,Hemoglobin,11.4,g/dL
+10018328,MCHC,33.0,g/dL
+10018328,MCHC,33.0,g/dL
+10018423,% Hemoglobin A1c,___,%
+10018423,Hemoglobin,14.4,g/dL
+10018423,MCHC,31.4,g/dL
+10018423,MCHC,31.6,g/dL
+10018501,Hemoglobin,14.1,g/dL
+10018501,MCHC,34.8,%
+10018501,MCHC,34.8,%
+10018845,Hemoglobin,8.7,g/dL
+10018845,MCHC,32.5,%
+10019003,Hemoglobin,11.3,g/dL
+10019003,Hemoglobin,10.3,g/dL
+10019003,MCHC,32.3,g/dL
+10019172,% Hemoglobin A1c,___,%
+10019172,Hemoglobin,13.8,g/dL
+10019172,Hemoglobin,9.8,g/dL
+10019172,MCHC,33.9,%
+10019385,% Hemoglobin A1c,___,%
+10019385,Hemoglobin,15.6,g/dL
+10019385,Hemoglobin,15.5,g/dL
+10019385,MCHC,32.6,g/dL
+10019385,MCHC,31.4,g/dL
+10019568,Carboxyhemoglobin,___,%
+10019568,Hemoglobin,11.6,g/dL
+10019568,Hemoglobin,13.9,g/dL
+10019568,MCHC,33.8,%
+10019568,MCHC,33.6,%
+10019568,Methemoglobin,0,%
+10019777,Hemoglobin,8.8,g/dL
+10019777,Hemoglobin,8.4,g/dL
+10019777,MCHC,33.7,g/dL
+10019777,MCHC,32.9,g/dL
+10019917,Hemoglobin,9.6,g/dL
+10019917,Hemoglobin,13.4,g/dL
+10019917,MCHC,34.8,%
+10020187,Hemoglobin,11.9,g/dL
+10020187,Hemoglobin,12.0,g/dL
+10020187,MCHC,32.3,g/dL
+10020187,MCHC,31.7,g/dL
+10020306,% Hemoglobin A1c,___,%
+10020306,Hemoglobin,11.2,g/dL
+10020306,MCHC,30.2,g/dL
+10020306,MCHC,29.1,g/dL
+10020640,Hemoglobin,8.1,g/dL
+10020640,MCHC,32.4,%
+10020740,% Hemoglobin A1c,___,%
+10020740,Hemoglobin,10.1,g/dL
+10020740,MCHC,31.9,%
+10020786,Hemoglobin,12.1,g/dL
+10020786,Hemoglobin,12.6,g/dL
+10020786,MCHC,32.8,g/dL
+10020944,Hemoglobin,9.2,g/dL
+10020944,Hemoglobin,10.0,g/dL
+10020944,MCHC,30.9,%
+10021118,% Hemoglobin A1c,___,%
+10021118,Hemoglobin,10.5,g/dL
+10021118,Hemoglobin,13.5,g/dL
+10021118,MCHC,32.4,g/dL
+10021312,Hemoglobin,12.1,g/dL
+10021312,Hemoglobin,13.0,g/dL
+10021312,MCHC,31.3,g/dL
+10021487,Hemoglobin,8.3,g/dL
+10021487,Hemoglobin,8.1,g/dL
+10021487,MCHC,32.1,%
+10021487,MCHC,29.7,%
+10021666,Hemoglobin,11.8,g/dL
+10021666,Hemoglobin,11.2,g/dL
+10021666,MCHC,31.3,%
+10021666,MCHC,32.7,%
+10021938,Hemoglobin,10.1,g/dL
+10021938,MCHC,32.5,%
+10021938,MCHC,31.6,%
+10022017,% Hemoglobin A1c,___,%
+10022017,Hemoglobin,11.8,g/dL
+10022017,MCHC,32.8,g/dL
+10022017,MCHC,32.1,g/dL
+10022041,Hemoglobin,11.1,g/dL
+10022041,Hemoglobin,10.3,g/dL
+10022041,MCHC,33.6,%
+10022281,Hemoglobin,11.3,g/dL
+10022281,MCHC,33.9,%
+10022880,Hemoglobin,12.0,g/dL
+10022880,Hemoglobin,16.2,g/dL
+10022880,MCHC,35.8,%
+10022880,MCHC,35.7,%
+10023117,% Hemoglobin A1c,___,%
+10023117,Hemoglobin,12.2,g/dL
+10023117,Hemoglobin,11.7,g/dL
+10023117,MCHC,28.0,g/dL
+10023239,% Hemoglobin A1c,___,%
+10023239,Hemoglobin,11.9,g/dL
+10023239,Hemoglobin,12.0,g/dL
+10023239,MCHC,33.4,g/dL
+10023771,% Hemoglobin A1c,___,%
+10023771,Hemoglobin,13.1,g/dL
+10023771,Hemoglobin,10.8,g/dL
+10023771,MCHC,34.9,%
+10023771,MCHC,34.2,%
+10024043,% Hemoglobin A1c,___,%
+10024043,Hemoglobin,18.3,g/dL
+10024043,Hemoglobin,16.9,g/dL
+10024043,MCHC,35.1,%
+10025463,Hemoglobin,11.0,g/dL
+10025463,MCHC,33.3,%
+10025612,Hemoglobin,13.5,g/dL
+10025612,Hemoglobin,12.1,g/dL
+10025612,MCHC,34.1,%
+10025612,MCHC,34.0,%
+10026255,% Hemoglobin A1c,___,%
+10026255,Hemoglobin,9.3,g/dL
+10026255,MCHC,31.9,%
+10026255,MCHC,32.1,%
+10026354,Carboxyhemoglobin,3,%
+10026354,Hemoglobin,14.9,g/dL
+10026354,Hemoglobin,13.3,g/dL
+10026354,MCHC,33.3,g/dL
+10026354,Methemoglobin,0,%
+10026406,Hemoglobin,14.5,g/dL
+10026406,Hemoglobin,14.7,g/dL
+10026406,MCHC,33.8,g/dL
+10027445,% Hemoglobin A1c,___,%
+10027445,Hemoglobin,10.7,g/dL
+10027445,Hemoglobin,11.3,g/dL
+10027445,MCHC,33.5,%
+10027445,MCHC,30.9,%
+10027602,Hemoglobin,11.9,g/dL
+10027602,Hemoglobin,11.4,g/dL
+10027602,MCHC,33.2,%
+10029291,Hemoglobin,12.7,g/dL
+10029291,MCHC,32.1,g/dL
+10029291,MCHC,31.9,g/dL
+10029484,% Hemoglobin A1c,___,%
+10029484,Hemoglobin,11.8,g/dL
+10029484,Hemoglobin,12.8,g/dL
+10029484,MCHC,35.8,%
+10029484,MCHC,33.9,%
+10031404,Hemoglobin,12.4,g/dL
+10031404,MCHC,31.7,g/dL
+10031404,MCHC,32.5,g/dL
+10031757,Hemoglobin,12.8,g/dL
+10031757,Hemoglobin,11.6,g/dL
+10031757,MCHC,31.4,%
+10032725,% Hemoglobin A1c,___,%
+10032725,Hemoglobin,10.3,g/dL
+10032725,Hemoglobin,10.4,g/dL
+10032725,MCHC,33.8,%
+10035185,% Hemoglobin A1c,___,%
+10035185,Hemoglobin,11.8,g/dL
+10035185,Hemoglobin,12.9,g/dL
+10035185,MCHC,34.7,g/dL
+10035185,MCHC,33.7,g/dL
+10035631,Hemoglobin,9.2,g/dL
+10035631,Hemoglobin,16.4,g/dL
+10035631,Hemoglobin C,0,%
+10035631,MCHC,33.7,g/dL
+10035631,MCHC,35.2,g/dL
+10036156,Hemoglobin,9.6,g/dL
+10036156,Hemoglobin,9.5,g/dL
+10036156,MCHC,33.6,%
+10036156,MCHC,34.2,%
+10037861,% Hemoglobin A1c,___,%
+10037861,% Hemoglobin A1c,___,%
+10037861,Hemoglobin,13.8,g/dL
+10037861,Hemoglobin,14.3,g/dL
+10037861,MCHC,30.3,g/dL
+10037928,% Hemoglobin A1c,___,%
+10037928,Hemoglobin,13.4,g/dL
+10037928,Hemoglobin,12.4,g/dL
+10037928,MCHC,33.3,g/dL
+10037975,Hemoglobin,12.9,g/dL
+10037975,Hemoglobin,9.8,g/dL
+10037975,MCHC,32.3,%
+10038081,Hemoglobin,8.2,g/dL
+10038081,MCHC,32.9,g/dL
+10038933,Hemoglobin,15.4,g/dL
+10038933,MCHC,34.7,%
+10038933,MCHC,34.9,%
+10038992,% Hemoglobin A1c,___,%
+10038992,Hemoglobin,9.1,g/dL
+10038992,Hemoglobin,10.1,g/dL
+10038992,MCHC,33.1,g/dL
+10038999,Hemoglobin,7.4,g/dL
+10038999,MCHC,31.3,g/dL
+10039708,% Hemoglobin A1c,___,%
+10039708,Carboxyhemoglobin,0.3,%
+10039708,Hemoglobin,10.1,g/dL
+10039708,MCHC,34.0,g/dL
+10039831,Hemoglobin,12.0,g/dL
+10039831,Hemoglobin,11.3,g/dL
+10039831,MCHC,35.6,%
+10039831,MCHC,35.9,%
+10039997,% Hemoglobin A1c,___,%
+10039997,Hemoglobin,11.5,g/dL
+10039997,MCHC,32.5,g/dL
+10040025,% Hemoglobin A1c,___,%
+10040025,Hemoglobin,8.9,g/dL
+10040025,MCHC,31.6,g/dL
+10040025,MCHC,30.7,g/dL
