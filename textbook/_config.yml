@@ -3,6 +3,8 @@ author: the University of Chicago
 copyright: "2025"
 logo: "images/logo/uchicago_python_nobackground.png"  # path to a logo file
 only_build_toc_files: true
+execute:
+  timeout: 600
 
 sphinx:
   config:

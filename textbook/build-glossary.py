@@ -9,6 +9,23 @@ output_file = chapter_base_dir / "glossary.md"
 output_code_file = chapter_base_dir / "code-glossary.md"
 toc_path = chapter_base_dir / "_toc.yml"
 
+def find_terms_glossary(chapter_dir: str):
+    root = chapter_base_dir / chapter_dir
+    for p in root.rglob("*-glossary.md"):
+        name = p.name.lower()
+        if name.endswith("-code-glossary.md"):
+            continue                      # <-- exclude code glossary
+        if name.endswith("-glossary.md"):
+            return p
+    return None
+
+def find_code_glossary(chapter_dir: str):
+    root = chapter_base_dir / chapter_dir
+    for p in root.rglob("*-code-glossary.md"):
+        if p.name.lower().endswith("-code-glossary.md"):
+            return p
+    return None
+
 def extract_chapter_files(toc_file):
     with toc_file.open() as f:
         toc = yaml.safe_load(f)
@@ -116,29 +133,66 @@ def insert_at_end_of_file(file_path, term_links, code_links):
     marker_start = "<!-- NEW_TERMS_START -->"
     marker_end = "<!-- NEW_TERMS_END -->"
 
+    # If nothing to show, remove old block (if present) and return
+    if not term_links and not code_links:
+        if file_path.exists() and file_path.suffix == ".md":
+            content = file_path.read_text()
+            if marker_start in content and marker_end in content:
+                content = re.sub(f"{re.escape(marker_start)}.*?{re.escape(marker_end)}", "", content, flags=re.DOTALL)
+                file_path.write_text(content.strip() + "\n")
+        elif file_path.exists() and file_path.suffix == ".ipynb":
+            import nbformat
+            nb = nbformat.read(file_path, as_version=4)
+            nb.cells = [c for c in nb.cells if marker_start not in c.get("source", "")]
+            nbformat.write(nb, file_path)
+        return
+
     rel_glossary = os.path.relpath(chapter_base_dir / "glossary.html", start=file_path.parent)
     rel_code_glossary = os.path.relpath(chapter_base_dir / "code-glossary.html", start=file_path.parent)
 
-    # Small helper to escape term text inside HTML
     def html_escape(s):
         return (s.replace("&", "&amp;")
                  .replace("<", "&lt;")
                  .replace(">", "&gt;")
                  .replace('"', "&quot;")
                  .replace("'", "&#39;"))
-    
+
     def html_with_code_spans(s: str) -> str:
-        """Escape HTML and convert markdown-style `code` spans to <code>code</code>."""
-        parts = []
-        last = 0
+        parts, last = [], 0
         for m in re.finditer(r'`([^`]+)`', s):
-            # text before the code span
             parts.append(html_escape(s[last:m.start()]))
-            # code content (escaped) wrapped in <code>
             parts.append(f"<code>{html_escape(m.group(1))}</code>")
             last = m.end()
         parts.append(html_escape(s[last:]))
         return ''.join(parts)
+
+    # Build only the sections we actually have
+    sections = []
+    if term_links:
+        terms_html = f"""
+        <div>
+          <h4 style="margin:.25rem 0 .4rem; font-size:1rem; font-weight:700;">
+            <span style="border-bottom:2px solid rgba(128,0,0,.55); padding-bottom:2px;">Terms</span>
+          </h4>
+          <ul style="margin:0; padding-left:1.2rem;">
+            {''.join(f'<li><a href="{rel_glossary}#{slug}" style="color:inherit; text-decoration:underline;">{html_with_code_spans(term)}</a></li>' for term, slug in term_links)}
+          </ul>
+        </div>
+        """
+        sections.append(terms_html)
+
+    if code_links:
+        code_html = f"""
+        <div>
+          <h4 style="margin:.25rem 0 .4rem; font-size:1rem; font-weight:700;">
+            <span style="border-bottom:2px solid rgba(128,0,0,.55); padding-bottom:2px;">Code</span>
+          </h4>
+          <ul style="margin:0; padding-left:1.2rem;">
+            {''.join(f'<li><a href="{rel_code_glossary}#{slug}" style="color:inherit; text-decoration:underline;">{html_with_code_spans(term)}</a></li>' for term, slug in code_links)}
+          </ul>
+        </div>
+        """
+        sections.append(code_html)
 
     block = f"""```{{raw}} html
 {marker_start}
@@ -150,52 +204,36 @@ def insert_at_end_of_file(file_path, term_links, code_links):
   </div>
 
   <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1.25rem; align-items:start;">
-    <div>
-      <h4 style="margin:.25rem 0 .4rem; font-size:1rem; font-weight:700;">
-        <span style="border-bottom:2px solid rgba(128,0,0,.55); padding-bottom:2px;">Terms</span>
-      </h4>
-      <ul style="margin:0; padding-left:1.2rem;">
-        {''.join(f'<li><a href="{rel_glossary}#{slug}" style="color:inherit; text-decoration:underline;">{html_with_code_spans(term)}</a></li>' for term, slug in term_links) if term_links else '<li><em>No new terms</em></li>'}
-      </ul>
-    </div>
-
-    <div>
-      <h4 style="margin:.25rem 0 .4rem; font-size:1rem; font-weight:700;">
-        <span style="border-bottom:2px solid rgba(128,0,0,.55); padding-bottom:2px;">Code</span>
-      </h4>
-      <ul style="margin:0; padding-left:1.2rem;">
-        {''.join(f'<li><a href="{rel_code_glossary}#{slug}" style="color:inherit; text-decoration:underline;">{html_with_code_spans(term)}</a></li>' for term, slug in code_links) if code_links else '<li><em>No new code</em></li>'}
-      </ul>
-    </div>
+    {''.join(sections)}
   </div>
 </div>
 {marker_end}
 ```
 """
-
-#     block2 = f"""#| echo: false
-# from IPython.display import HTML, display
-# import html
-# display(HTML({repr(block)}))
-# """
-
+    # write/replace block as before
     if file_path.exists():
         if file_path.suffix == ".ipynb":
             import nbformat
             nb = nbformat.read(file_path, as_version=4)
             nb.cells = [cell for cell in nb.cells if marker_start not in cell.get("source", "")]
-            # my_cell = nbformat.v4.new_code_cell(block2)
-            # my_cell.metadata.setdefault("tags", []).append("remove-input")
             nb.cells.append(nbformat.v4.new_markdown_cell(block))
             nbformat.write(nb, file_path)
         elif file_path.suffix == ".md":
             content = file_path.read_text()
             if marker_start in content and marker_end in content:
                 content = re.sub(f"{re.escape(marker_start)}.*?{re.escape(marker_end)}",
-                                 block, content, flags=re.DOTALL)
+                                block, content, flags=re.DOTALL)
             else:
                 content = content.rstrip() + "\n\n" + block + "\n"
             file_path.write_text(content)
+
+def find_exact_suffix(chapter_dir: str, suffix: str):
+    """Return the first file in chapter_dir whose *name* ends exactly with suffix."""
+    root = chapter_base_dir / chapter_dir
+    for p in root.rglob(f"*{suffix}"):
+        if p.name.endswith(suffix):
+            return p
+    return None
 
 # --- Process all chapters ---
 def process_chapter_glossaries():
@@ -211,8 +249,9 @@ def process_chapter_glossaries():
         last_file = files[-1]
 
         # your existing glossary logic:
-        term_file = next(Path(chapter_base_dir / chapter).rglob("*-glossary.md"), None)
-        code_file = next(Path(chapter_base_dir / chapter).rglob("*-code-glossary.md"), None)
+        term_file = find_terms_glossary(chapter)
+        code_file = find_code_glossary(chapter)
+
 
         term_entries = parse_entries([term_file]) if term_file else {}
         code_entries = parse_entries([code_file]) if code_file else {}
@@ -242,6 +281,12 @@ def process_chapter_glossaries():
 
 # --- Global glossary builder ---
 def build_global_glossary(entries, top_anchor, output_path, title, preserve_case=False):
+    """
+    Build a global glossary page.
+
+    top_anchor: a unique MyST label for this file, e.g. "term-index" or "code-index".
+                We'll also use it to namespace letter sections: top_anchor + "-a", etc.
+    """
     entries_by_letter = defaultdict(list)
     for key, (entry, file) in entries.items():
         first_char = (key[0].upper() if key else "#")
@@ -250,18 +295,36 @@ def build_global_glossary(entries, top_anchor, output_path, title, preserve_case
         entries_by_letter[first_char].append((entry, file))
 
     all_letters = sorted(entries_by_letter.keys(), key=lambda x: ("#" in x, x))
-    index = "| ".join(f"[{letter}]({'other' if letter == '#' else letter.lower()})" for letter in all_letters) + "\n\n"
 
     with output_path.open("w") as f:
+        # --- Top label + heading ---
+        # This defines the MyST label that Back to Top will point to.
         f.write(f"({top_anchor})=\n# {title}\n\n")
         f.write("<!-- AUTO-GENERATED: Do not edit this file directly -->\n\n")
-        f.write("## Index\n\n" + index)
 
+        # --- Index using MyST labels (no #) ---
+        # e.g. [A](term-index-a) or [A](code-index-a)
+        index_line = " | ".join(
+            f"[{letter}]({top_anchor}-{'other' if letter == '#' else letter.lower()})"
+            for letter in all_letters
+        ) + "\n\n"
+
+        f.write("## Index\n\n")
+        f.write(index_line)
+
+        # --- Per-letter sections ---
         for letter in all_letters:
-            anchor = "other" if letter == "#" else letter.lower()
-            f.write(f"({anchor})=\n## {letter}\n\n")
+            anchor_suffix = "other" if letter == "#" else letter.lower()
+            ns_anchor = f"{top_anchor}-{anchor_suffix}"   # e.g. term-index-a
 
-            for entry, file in sorted(entries_by_letter[letter], key=lambda ef: sort_key(ef[0][0])):
+            # MyST label + visible heading
+            f.write(f"({ns_anchor})=\n## {letter}\n\n")
+
+            # Now write each term under that letter
+            for entry, file in sorted(
+                entries_by_letter[letter],
+                key=lambda ef: sort_key(ef[0][0])
+            ):
                 # --- Resolve chapter folder (top-level under textbook/) ---
                 try:
                     parts = file.relative_to(chapter_base_dir).parts
@@ -276,8 +339,9 @@ def build_global_glossary(entries, top_anchor, output_path, title, preserve_case
                 if chapter_folder:
                     m = re.match(r"(\d+)", chapter_folder)
                     if m:
-                        chap_key = m.group(1)           # e.g., "01" (matches dict key)
-                        chap_num_display = str(int(chap_key))  # e.g., "1" for display
+                        chap_key = m.group(1)              # e.g., "01"
+                        chap_num_display = int(chap_key)   # e.g., 1
+                        chap_num_minus_one = chap_num_display - 1
 
                 # First file in this chapter (from TOC order)
                 chapter_first = None
@@ -287,36 +351,43 @@ def build_global_glossary(entries, top_anchor, output_path, title, preserve_case
                             chapter_first = p
                             break
 
-                # Build "Learn more" link if we have a target
+                # Build "Learn more" link if we have a chapter target
                 link_html = ""
                 if chapter_first is not None and chap_num_display is not None:
                     chapter_first_html = chapter_first.with_suffix(".html")
-                    rel = os.path.relpath(chapter_first_html, start=output_path.parent).replace(".ipynb",".html").replace(".md",".html")
-                    link_html = f'Learn more in <a href="{rel}" style="color:inherit; text-decoration:underline;">Chapter {chap_num_display}</a>'
+                    rel = os.path.relpath(
+                        chapter_first_html,
+                        start=output_path.parent
+                    ).replace(".ipynb", ".html").replace(".md", ".html")
 
-                # Heading text
-                display_term, _ = term_display_and_slug(entry[0])
+                    link_html = (
+                        f'Learn more in '
+                        f'<a href="{rel}" style="color:inherit; text-decoration:underline;">'
+                        f'Chapter {chap_num_display}</a>'
+                    )
 
-                # Optional title-casing: only when there are NO backticks,
-                # so we don't break inline code like `math` or partial `math` library
+                # Heading text for the term entry itself
+                display_term, slug = term_display_and_slug(entry[0])
+
+                # Optional title-casing (only if no backticks)
                 if not preserve_case and '`' not in display_term:
                     display_term = display_term.title()
 
-
                 body = "\n".join(entry[1:]).strip()
-                f.write(f"### {display_term}\n\n")
+
+                # MyST label for the term (this is what chapter pages link to via #slug)
+                f.write(f"({slug})=\n### {display_term}\n\n")
                 if body:
                     f.write(body + "\n\n")
 
-                # Single-line footer: "Learn more in Chapter X | Back to Top"
+                # Footer: Back to Top via MyST {ref} to the top_anchor
                 if link_html:
-                    combined = f"{link_html} &nbsp;|&nbsp; [Back to Top]({top_anchor})"
+                    combined = f"{link_html} &nbsp;|&nbsp; {{ref}}`Back to Top <{top_anchor}>`"
                 else:
-                    combined = f"[Back to Top]({top_anchor})"
+                    combined = f"{{ref}}`Back to Top <{top_anchor}>`"
                 f.write(combined + "\n\n")
-
 
 # --- Run everything ---
 terms, code_terms = process_chapter_glossaries()
-build_global_glossary(terms, "index", output_file, "Glossary of Terms", preserve_case=False)
+build_global_glossary(terms, "term-index", output_file, "Glossary of Terms", preserve_case=False)
 build_global_glossary(code_terms, "code-index", output_code_file, "Glossary of Code", preserve_case=True)
