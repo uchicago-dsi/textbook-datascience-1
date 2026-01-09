@@ -259,7 +259,16 @@ parts:
       file: 23/4/Learning_in_NN
 
   - title: "Tree Models"
-    file: 24/placeholder25
+    file: 24/Intro
+    sections:
+    - title: "Decision Trees"
+      file: 24/1/Decision_trees
+    - title: "Decision Trees in Practice"
+      file: 24/2/Decision_Trees_in_Practice
+    - title: "Ensemble Learning"
+      file: 24/3/Ensemble_Methods
+    - title: "Implementing Ensemble Methods with Python"
+      file: 24/4/Ensemble_methods_with_Python
 
   - title: "Unsupervised Learning and Clustering"
     file: 25/unsupervised_learning
