@@ -193,7 +193,7 @@ parts:
       file: 16/2/correlation
 
   - title: "Simple Linear Regression"
-    file: 17/CH18Intro.ipynb
+    file: 17/SLRIntro.ipynb
     sections:
     - title: "Correlation and Regression"
       file: 17/1/Correlation_and_Regression.ipynb
@@ -205,34 +205,31 @@ parts:
       file: 17/4/Prediction_Intervals_and_Other_Model_Concerns.ipynb
 
   - title: "Multiple Linear Regression"
-    file: 18/placeholder19
+    file: 18/placeholder18
 
   - title: "Introduction to Machine Learning"
-    file: ML/1/Introduction_to_Machine_Learning
+    file: 19/1/Introduction_to_Machine_Learning
     sections:
     - title: "Types of Machine Learning"
-      file: ML/2/Types_of_ML
+      file: 19/2/Types_of_ML
 
   - title: "Feature Engineering and Feature Selection"
-    file: 19/ch20intro
+    file: 20/feature_engineering_selection
     sections:
     - title: "Feature Engineering"
-      file: 19/1/feature_engineering.ipynb
+      file: 20/1/feature_engineering.ipynb
     - title: "Feature Selection"
-      file: 19/2/feature_selection.ipynb
+      file: 20/2/feature_selection.ipynb
     - title: "Feature Engineering and Selection in Practice"
-      file: 19/3/case_study.ipynb
+      file: 20/3/case_study.ipynb
 
   - title: "Regularization and Cross Validation"
-    file: 20/regularization-crossvalidation
+    file: 21/regularization-crossvalidation
     sections:
     - title: "Cross-Validation and Regularization"
-      file: 20/1/model_tuning
+      file: 21/1/model_tuning
     # - title: "Model Complexity and Overfitting"
     # - title: "Regularization"
-
-  - title: "Classification with Logistic Regression"
-    file: 21/placeholder22
 
   - title: "Classification with Nearest Neighbors"
     file: 22/classification_intro
@@ -246,41 +243,44 @@ parts:
     - title: "Multiple Classes" 
       file: 22/4/Multiple_Classes
 
-  - title: "Neural Networks and Deep Learning"
-    file: 23/Intro
-    sections:
-    - title: "The Inspiration"
-      file: 23/1/The_Inspiration
-    - title: "Artificial Neurons"
-      file: 23/2/Artificial_neurons
-    - title: "Neurons to Neural Networks"
-      file: 23/3/Neurons_to_Neural_Networks
-    - title: "Learning in Neural Networks"
-      file: 23/4/Learning_in_NN
+  - title: "Classification with Logistic Regression"
+    file: 23/placeholder23
 
-  - title: "Tree Models"
+  - title: "Neural Networks and Deep Learning"
     file: 24/Intro
     sections:
+    - title: "The Inspiration"
+      file: 24/1/The_Inspiration
+    - title: "Artificial Neurons"
+      file: 24/2/Artificial_neurons
+    - title: "Neurons to Neural Networks"
+      file: 24/3/Neurons_to_Neural_Networks
+    - title: "Learning in Neural Networks"
+      file: 24/4/Learning_in_NN
+
+  - title: "Tree Models"
+    file: 25/Intro
+    sections:
     - title: "Decision Trees"
-      file: 24/1/Decision_trees
+      file: 25/1/Decision_trees
     - title: "Decision Trees in Practice"
-      file: 24/2/Decision_Trees_in_Practice
+      file: 25/2/Decision_Trees_in_Practice
     - title: "Ensemble Learning"
-      file: 24/3/Ensemble_Methods
+      file: 25/3/Ensemble_Methods
     - title: "Implementing Ensemble Methods with Python"
-      file: 24/4/Ensemble_methods_with_Python
+      file: 25/4/Ensemble_methods_with_Python
 
   - title: "Unsupervised Learning and Clustering"
-    file: 25/unsupervised_learning
+    file: 26/unsupervised_learning
     sections:
     - title: "K-Means Clustering"
-      file: 25/1/kmeans
+      file: 26/1/kmeans
     - title: "K-Means Clustering Example"
-      file: 25/2/kmeans_example
+      file: 26/2/kmeans_example
     - title: "Hierarchical Clustering"
-      file: 25/3/hierarchical
+      file: 26/3/hierarchical
     - title: "Hierarchical Clustering Examples"
-      file: 25/4/hierarchical_example
+      file: 26/4/hierarchical_example
 
   - title: "Data Wrangling"
     file: 27/data_wrangling
@@ -291,29 +291,29 @@ parts:
       file: 27/2/Conclusions
 
   - title: "Relational Databases and SQL"
-    file: 27/placeholder28
+    file: 28/placeholder28
 
   - title: "String Data and Fuzzy Matching"
-    file: 28/Fuzzy_Matching
+    file: 29/Fuzzy_Matching
     sections: 
     - title: "Set-Based (Jaccard) Similarity"
-      file: 28/1/Set_Based_Similarity
-    - title: "Sequence-Based Similarlity"
-      file: 28/2/Sequence_Based_Similarity
+      file: 29/1/Set_Based_Similarity
+    - title: "Sequence-Based Similarity"
+      file: 29/2/Sequence_Based_Similarity
     - title: "Canonicalization"
-      file: 28/3/Canonicalization
+      file: 29/3/Canonicalization
     - title: "Reduced Alphabet Similarity"
-      file: 28/4/Reduced_Alphabets 
-    - title: "Example: Building Inspection reports"
-      file: 28/5/Levenshtein_Inspection_Example 
+      file: 29/4/Reduced_Alphabets 
+    - title: "Example: Building Inspection Reports"
+      file: 29/5/Levenshtein_Inspection_Example 
     - title: "Encoding and Unicode"
-      file: 28/6/Unicode
+      file: 29/6/Unicode
 
   - title: "Reproducibility"
-    file: 29/placeholder29
-
-  - title: "Case Study"
     file: 30/placeholder30
+
+  # - title: "Case Study"
+  #   file: 30/placeholder30
 
 - caption: ""
   numbered: false
