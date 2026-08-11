@@ -1,3 +1,4 @@
+(sec-dataframe-methods-and-operations)=
 # DataFrame Methods and Operations
 
 *Susanna Lange*
