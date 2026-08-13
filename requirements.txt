@@ -6,3 +6,4 @@ plotly==6.2.0
 pyyaml
 nbformat
 mlxtend
+nltk
