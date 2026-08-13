@@ -34,6 +34,8 @@ build-book-ci: check-docker build
 	@echo "Building static HTML version of the book for CI..."
 	@rm -rf preview
 	@mkdir -p preview
+	@mkdir -p textbook/_build
+	@chmod -R 777 textbook/_build
 	docker run --rm \
 		-v $(CURDIR)/textbook:/home/jovyan/textbook \
 		$(IMAGE_NAME) \
