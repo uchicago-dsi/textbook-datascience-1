@@ -14,6 +14,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
+      - name: Restore Jupyter execution cache
+        uses: actions/cache@v4
+        with:
+          path: textbook/_build/.jupyter_cache
+          key: jupyter-book-dev-${{ github.sha }}
+          restore-keys: |
+            jupyter-book-dev-
       - name: Install Vercel CLI
         run: npm install --global vercel@latest
       - name: Install Python dependencies
