@@ -31,6 +31,16 @@ jobs:
         run: python textbook/build-glossary.py
       - name: Build Project Artifacts
         run: make build-book-ci
+      - name: Check Jupyter execution cache
+        run: |
+          echo "Working directory:"
+          pwd
+          echo "Contents of textbook/_build:"
+          ls -la textbook/_build || true
+          echo "Contents of Jupyter cache:"
+          ls -la textbook/_build/.jupyter_cache || true
+          echo "Cache size:"
+          du -sh textbook/_build/.jupyter_cache || true
       - name: Prepare Vercel output
         run: |
           mkdir -p .vercel/output/static
