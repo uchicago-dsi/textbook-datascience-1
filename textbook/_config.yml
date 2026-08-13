@@ -4,6 +4,7 @@ copyright: "2025"
 logo: "images/logo/uchicago_python_nobackground.png"  # path to a logo file
 only_build_toc_files: true
 execute:
+  execute_notebooks: cache
   timeout: 600
 
 sphinx:
